@@ -4,6 +4,42 @@
 \section{A Little History}
 \label{sec:history}
 
+	The current `Standard Model' of particle physics was completed in June 2012 with the announcement of the Higgs boson by the \texttt{ATLAS} collaboration.
+	This discovery with the final piece needed to complete the picture developed over the course of the past century beginning with the discovery of the electron in 1897.
+	The Standard Model is a gauge quantum field theory describing three of the four observed fundamental forces - with the inclusion of gravity remaining elusive.
+	The local gauge structure is given by:
+
+	\begin{equation}
+		SU(3)\times SU(2)\times U(1),
+		\label{eq:SMGauge}
+	\end{equation}
+
+	where the $SU(3)$ describes the strong nuclear force (Quantum Chromodynamics or QCD), while the $SU(2)_L\times U(1)$ describes the electroweak (EW) sector.
+
+	The fundamental particle content can be broken down in to the following three catagories:
+
+	\begin{itemize}
+		\item Fermions: These spin-$1/2$ particles obey the spin-statistics theorem and comprise all the known visible matter in the universe.
+		Comprising three so-called `generations' fermions can be further subdivided in to quarks and leptons.  Both quarks and leptons
+		carry fractional electromagnetic charge but only quarks are charged under the strong $SU(3)$ group.
+		\item Gauge bosons: These spin-$1$ excitations arise from the quantisation of the above gauge fields and mediate the three forces detailed above.
+		The gauge bosons of the strong and electromagnetic sectors are massless while the electroweak bosons acquire mass through famous Higgs mechanism.
+		\item The Higgs boson: The Higgs boson is seen as the result of the spontaneous symmetry breaking of a continuous symmetry.
+		This is a gauge-invariant way to give mass to fermions and vector bosons in the standard model which was crutial since such states had long been
+		observed at experiments.
+	\end{itemize}
+
 \section{Thesis Outline}
 \label{sec:outline}
 
+	The aim of this thesis is to detail the importance of a certain class of perurbatibely high-order terms in events with QCD radiation in the final state.  In particular
+	corrections to parton-parton collisions with a $\zg$ electroweak boson in the final state will be considered.
+
+	Firstly, in Chapter \ref{chap:theory} I will introduce quantum chromodynamics, the theory of the strong sector in the standard model, and detail how we might use this
+	to calculate physical observables (such as cross-sections and differential distributions) at hadron colliders such as the Large Hadron Collider.  I will discuss how
+	these observables fall prey to divergences in QCD-like quantum field theoreies with massless states and mention briefly how they may be dealt with.  I will then
+	describe how the compuationally expensive integrals derived may be efficiently evaluated using Monte-Carlo coupled with variance reduction techniques such as
+	importance sampling.
+
+	In Chapter \ref{chap:HEQCD} the details of QCD in the `High Energy' limit are discussed.  We will see how, in this limit, the traditional fixed-order perturbative
+	view of scattering cross-sections fades as another subset of terms, namely the Leading Logarithmic contributions, become more important.
