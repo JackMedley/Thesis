@@ -1,0 +1,161 @@
+%\documentclass[11pt,a4paper]{book} % double-sided
+\documentclass[12pt,a4paper]{report}
+
+\usepackage{subfigure,epsfig,amstext,floatfig,alltt,fancyhdr,setspace}
+\usepackage{amsmath, slashed}
+\include{macros}
+\initfloatingfigs
+
+%%% helps to discourage hyphenation 10000 for no hyphens but dodgy line lengths%%%
+\hyphenpenalty=5000
+\tolerance=1000
+
+%%%%%%% FINAL THESIS MARGINS  %%%%%%%%%
+\setlength{\oddsidemargin}{1.46cm}
+\setlength{\evensidemargin}{-0.04cm}
+\setlength{\textwidth}{14.5cm}
+\setlength{\topmargin}{-0.54cm}
+\setlength{\textheight}{21.9cm}
+\renewcommand{\hoffset}{0cm}
+\renewcommand{\voffset}{0cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% In the beginning ....
+\begin{document}
+
+%% First do introductory stuff - leave this as pagestyle empty until after
+%% the table of contents
+%\pagestyle{empty}
+\include{title}
+%\ \newpage		% Newpage needed if doing double sided.
+
+%% Include abstract - use separate parskip for this and then set parskip for
+%% rest of thesis.
+%\pagestyle{plain}
+
+% Jacks extra definitions
+\newcommand{\bk}[3]{
+	\langle #1 | #2 | #3 \rangle
+}
+
+\newcommand{\zg}[0]{{Z/\gamma^*}}
+
+\newcommand{\lr}[1]{
+	\langle #1 \rangle
+}
+\newcommand{\rl}[2]{
+	|#1 \rangle\langle #2|
+}
+\newcommand{\gu}[1]{
+	\gamma^{#1}
+}
+\newcommand{\gl}[1]{
+	\gamma_{#1}
+}
+\newcommand{\lspin}[3]{
+	\overline{#1}_{#2}^{#3}
+}
+\newcommand{\rspin}[3]{
+	{#1}_{#2}^{#3}
+}
+\newcommand{\half}[0]{
+	\frac{1}{2}
+}
+
+%-----------------------------------------------------------------------------
+
+\pagestyle{fancy}
+\fancyhead{} %clear all fields
+\renewcommand{\headheight}{28pt}
+\cfoot{}
+\fancyfoot[LE,RO]{\thepage}
+
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername \ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1} {}}
+
+\fancyhead[LE]{\small \slshape \leftmark}       % Chapter in the right on even pages
+\fancyhead[RO]{\small \slshape \rightmark}      % Section in the left on odd pages
+\renewcommand{\headrulewidth}{0.3pt}    	% Width of head rule
+
+%-----------------------------------------------------------------------------
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\onehalfspacing
+
+\addcontentsline{toc}{chapter}{Abstract}
+\include{abstract}
+
+% \ \newpage		% Newpage needed if printing double sided.
+
+\addcontentsline{toc}{chapter}{Declaration}
+\include{declaration}
+
+%\ \newpage		% Newpage needed if printing double sided.
+
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\include{acknowledgements}
+
+\singlespacing
+
+%\ \newpage		% Newpage needed if printing double sided.
+
+\addcontentsline{toc}{chapter}{Contents}
+\tableofcontents
+
+%\ \newpage		% Newpage needed if printing double sided.
+%\ \newpage		% Newpage needed if printing double sided.
+
+\addcontentsline{toc}{chapter}{List of figures}
+\listoffigures
+
+%\ \newpage		% Newpage needed if printing double sided.
+
+\addcontentsline{toc}{chapter}{List of tables}
+\listoftables
+
+%\ \newpage		% Newpage needed if printing double sided.
+%\ \newpage		% Newpage needed if printing double sided.
+
+\clearpage % this command stops table page becoming page 1
+
+%% Now the body of the text - note that parskip has to be reset after the TOC
+
+\onehalfspacing
+\pagenumbering{arabic}
+
+\setcounter{page}{1}
+
+%% Add chapters here %%
+\include{chapter1-Intro}	% Introduction
+\include{chapter2-Theory}	% General theory
+\include{chapter2.5-MC}	% General theory
+\include{chapter3-HEJ}		% High energy theory
+\include{chapter4-Z}		% Z+Jets
+\include{chapter5-ttbar}	% ttbar+jets
+\include{chapter6-ExptComp}	% Experimental comparisons (Pure jets and W/Z ratios)
+\include{chapter7-Conclusions}	% Conclusions and outlook
+
+\renewcommand{\chaptername}[1]{Appendix A.}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername \ #1}{}}
+
+\appendix
+\include{appA}
+
+\small{
+\singlespacing
+
+%% And finally the references
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{these}
+\bibliography{papers}
+
+\addcontentsline{toc}{chapter}{Publications}
+\include{mypapers}
+
+}
+
+%% The END !!!
+\end{document}
+
