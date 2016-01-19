@@ -4,55 +4,84 @@
 \section{A Little History}
 \label{sec:history}
 
-	The current `Standard Model' of particle physics was completed in June 2012 with the announcement of the Higgs boson by the \texttt{ATLAS} collaboration.
+	The current `Standard Model' of particle physics was completed in June 2012 with the announcement of the Higgs boson by the ATLAS collaboration.
 	This discovery with the final piece needed to complete the picture developed over the course of the past century beginning with the discovery of the electron in 1897.
 
 	The Standard Model is a gauge quantum field theory describing three of the four observed fundamental forces - with the inclusion of gravity remaining elusive.
-	The local gauge structure is given by:
+	The local gauge structure is given by\footnote{The subscripts on the groups are simply a convenient notation.  The `c' on $SU(3)$ acts to remind us that it is
+	the strong `colour' coupling being described.  The `L' on $SU(2)$ indicates that all right-handed states are in the trivial representation of the group and the
+	`Y' on the $U(1)$ is a reminder that this is the hypercharge group and not the electromagnetic group.}:
 
 	\begin{equation}
-		SU(3)\times SU(2)\times U(1),
+		SU(3)_c\times SU(2)_L\times U(1)_Y.
 		\label{eq:SMGauge}
 	\end{equation}
 
-	where the $SU(3)$ describes the strong nuclear force (Quantum Chromodynamics or QCD), while the $SU(2)_L\times U(1)$ describes the electroweak (EW) sector.
+	The $SU(3)_c$ group describes the strong nuclear force (Quantum Chromodynamics or QCD) and the 8 gauge generators give us the massless spin-1 gluons,
+	$G_a^\mu(x)\ a=1,\ldots,8$, present in the standard model.
+	There are three states, $W_a^\mu(s)\ a=1,\ldots,3$, associated with the $SU(2)_L$ group and a further one, $B^\mu(x)$, coming from the $U(1)_Y$ group.
 
-	The fundamental particle content can be broken down in to the following three catagories:
+	The only remaining boson to complete the standard model arises from the complex scalar Higgs field who's ground state is not invariant under the action of $SU(2)_L\times U(1)_Y$.
+	This field breaks the standard model gauge symmetry to
 
-	\begin{itemize}
-		\item Fermions: These spin-$1/2$ particles obey the spin-statistics theorem and comprise all the known visible matter in the universe.
-		Comprising three so-called `generations' fermions can be further subdivided in to quarks and leptons.  Both quarks and leptons
-		carry fractional electromagnetic charge but only quarks are charged under the strong $SU(3)$ group.
-		\item Gauge bosons: These spin-$1$ excitations arise from the quantisation of the above gauge fields and mediate the three forces detailed above.
-		The gauge bosons of the strong and electromagnetic sectors are massless while the electroweak bosons acquire mass through famous Higgs mechanism.
-		\item The Higgs boson: The Higgs boson is seen as the result of the spontaneous symmetry breaking of a continuous symmetry.
-		This is a gauge-invariant way to give mass to fermions and vector bosons in the standard model which was crutial since such states had long been
-		observed at experiments.
-	\end{itemize}
+	\begin{equation}
+		SU(3)_c\times U(1)_{em},
+		\label{eq:SMGaugeBroken}
+	\end{equation}
+
+	where now the $U(1)$ refers to the electromagnetic charge.  After the `Spontaneous Symmetry Breaking' occurs the four aforementioned bosons, $W_a^\mu(s)$ and $B^\mu(x)$
+	acquire mass and combinations of them are physically realised as the experimentally observer electroweak boson; The massive states $W^\pm, Z^0$ and the massless photon, $\gamma$.
+	The photon and the $Z^0$ bosons are of particular importance in the work that follows.
+
+	The fundamental particle content of the Standard Model also includes fermions. These are spin-$1/2$ particles which obey the spin-statistics theorem (and
+	hence the Pauli exclusion principle) and comprise all known visible matter in the universe.
+
+	The fermions are structured in three so-called `generations' and can be further subdivided in to quarks and leptons.  Both quarks and leptons
+	carry fractional electromagnetic charge but only quarks are charged under the strong $SU(3)$ group.
 
 \section{Thesis Outline}
 \label{sec:outline}
 
-	The aim of this thesis is to detail the importance of a certain class of perurbatibely high-order terms in events with QCD radiation in the final state.  In particular
-	corrections to parton-parton collisions with a $\zg$ electroweak boson in the final state will be considered.
+	The aim of this thesis is to detail the importance of a certain class of perurbatively high-order terms in events with QCD radiation in the final state.  In particular
+	we will consider corrections to parton-parton collisions with a $Z^0$ or $\gamma$ in association with high energy QCD radiation in the final state.
 
-	Firstly, in Chapter \ref{chap:theory} I will introduce quantum chromodynamics, the theory of the strong sector in the standard model, and detail how we might use this
+	In chapter \ref{chap:theory} I will begin by introduce quantum chromodynamics, the theory of the strong sector in the standard model, and detail how we might use this
 	to calculate physical observables (such as cross-sections and differential distributions) at hadron colliders such as the Large Hadron Collider.  I will discuss how
-	these observables fall prey to divergences in QCD-like quantum field theoreies with massless states and mention briefly how they may be dealt with.  I will then
-	describe how the compuationally expensive integrals derived may be efficiently evaluated using Monte-Carlo coupled with variance reduction techniques such as
-	importance sampling.
+	these observables fall prey to divergences in QCD-like quantum field theories with massless states and mention briefly how such divergences can be handled.  I will then
+	describe how the computationally expensive integrals derived in subsequent chapters may be efficiently evaluated using Monte-Carlo techniques.
 
-	In Chapter \ref{chap:HEQCD} the details of QCD in the `High Energy' limit are discussed.  After completing a few instructive calculations we will see how,
-	in this limit, the traditional fixed-order perturbative view of scattering cross-sections fades as another subset of terms, namely the Leading
-	Logarithmic contributions, become more important.  I will discuss previous work in the High Energy limit of QCD and how this can be used to factorise
-	parton-parton scattering amplitudes into convenient `currents' which, when combined with gauge-invariant effective gluon emission terms can be used to
+	In chapter \ref{chap:HEQCD} the details of QCD in the `High Energy' limit are discussed.  After completing a few instructive calculations we will see how,
+	in this limit, the traditional fixed-order perturbation theory view of calculating cross-sections fades as another subset of terms, namely the `Leading
+	Logarithmic' contributions, become more important.  I will discuss previous work in the High Energy limit of QCD and how this can be used to factorise
+	complex parton-parton scattering amplitudes into combinations of `currents' which, when combined with gauge-invariant effective gluon emission terms can be used to
 	construct approximate high-multiplicity matrix elements.
 
-	In Chapter \ref{chap:Zs} the work of the previous chapter is extended to the case where there is a massive $Z^0$ boson or an off-shell photon, $\gamma^*$,
+	In chapter \ref{chap:Zs} the work of the previous chapter is extended to the case where there is a massive $Z^0$ boson or an off-shell photon, $\gamma^*$,
 	in the final state.  A current for this process is derived and the complexities arising from two separate interferences are explained and dealt with.  I
 	compare this new matrix element to the results obtained from a Leading Order (in the strong coupling, $\alpha_s$) generator \texttt{MadGraph} in wide
-	regions of phase space and see good agreement.  This result must then be regularised to avoid the divergences discussed in Chapter \ref{chap:theory} and
+	regions of phase space and see good agreement.  This result must then be regularised to avoid the divergences discussed in chapter \ref{chap:theory} and
 	this is work is presented.  The procedure for matching this regularised result to well-known Leading Order results is shown and the importance of these
 	non-resummation terms is shown.  Lastly three comparisons of the High Energy Jets Z+Jets Monte-Carlo generator to recent experimental studies
 	\texttt{ATLAS} and \texttt{CMS} at the LHC are shown.
+
+	In chapter \ref{chap:ttbar} we apply the massive spinor-helicity to the production of a $t\overline t$ pair in hadronic collisions.  Using the
+	\texttt{PySpinor} package we calculate values for the full-mass matrix element and compare them to leading-order (in $\alpha_s$) results from
+	\texttt{MadGraph}.  This is a process in which the leading logarithmic contribution starts at one order higher than in previous work and so the effects
+	of the resummation are not as expected to be as crucial as in the case of chapter \ref{chap:Zs} - however at large values for the centre-of-mass energy
+	(such as that a future high energy circular collider) these `next-to-leading' logarithms will once again lead to the breakdown of fixed-order
+	perturbation theory.
+
+	In chapter \ref{chap:ATLAS} we discuss the results of a lengthy study of jet production from the \texttt{ATLAS} collaboration.  This analysis was a thorough
+	look at BFKL-like dynamics in proton-proton colliders and the HEJ predictions are seen to describe the data well in the regions of phase-space where
+	we know the effects of our resummation become relevant.
+
+	From here we move towards comparisons with experiments using the results of chapter \ref{chap:Zs}, and the resulting publicly available Monte Carlo
+	package, to a recent experimental prediction of the ratio of the $W^\pm$+jets rate to the $\zg$+jets rate.  Our predictions are compared against
+	next-to-leading order (in $\alpha_s$) results from \texttt{NJet} and leading order results from \texttt{MadGraph}.
+
+	In chapter \ref{chap:100TeV}, with a study of $\zg$+Jets at a centre-of-mass energy of 100TeV relevant for the discussion of
+	the next wave of high energy particle physics experiments (such as any Future Circular Collider) which are of great interest to the community at large.  We see....DO THE STUDY BEFORE
+	WRITING THIS!
+
+	Finally, in chapter \ref{chap:conclusion} I summarise the results of the above chapters and provide a short outlook for future work.
 
