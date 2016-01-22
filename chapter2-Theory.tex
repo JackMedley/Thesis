@@ -372,12 +372,173 @@
 \section{Monte Carlo Techniques}
 \label{sec:MC}
 
-\subsection{One Dimensional Monte Carlo}
+\subsection{One Dimensional Integration}
 \label{sub:MCOneD}
 
-\subsection{Higher Dimensional Monte Carlo}
+	Integrals are ubiquitous in every field of physics and particle physics is no different.  We have already seen many examples where meaningful physical results
+	can only be obtained after computing an integral two good examples of this are the convolution of the parton distribution functions with the partonic
+	cross-section seen in section \ref{eqn:pdfFactorisation} and the more complex multi-dimensional integrals seen in section \ref{sec:oneLoop} the calculation
+	of the one-loop correction to quark-antiquark production.
+
+	For some of the integrals derived here it is not always feasible (and sometimes not even possible) to calculate them analytically.  In these situations
+	we must use a numerical approach to approximate the full result.  Such approaches generally fall in to one of two categories; quadrature
+	or Monte-Carlo random sampling approaches.  The most appropriate solution depends the integrand itself (and in particular our prior knowledge of
+	the integrand) and the number of dimensions we are integrating over.
+
+	Here we briefly consider the one-dimensional case.  Given an integral:
+
+	\begin{equation}
+		I = \int_a^b f(x)dx,
+		\label{eqn:1DIntegral}
+	\end{equation}
+
+	we can use well known results such as the Compound Simpson's Rule to approximate the integral by
+
+	\begin{equation}
+		I \approx \frac{h}{3}\sum_{i=0}^{N/2}\left(f(x_{2i-2}) + 4f(x_{2i-1}) + f(x_{2i})\right) + \mathcal{O}(N^{-4}),
+		\label{eqn:simpson}
+	\end{equation}
+
+	where $N$ is the number of times we have subdivided the integral range $(a, b)$ and $x_i = a + \frac{i(b-a)}{N}$ are the points at which we sample the integrand.
+	The error quoted on equation \ref{eqn:simpson} only shows the dependence on the sampling rate and it should be noted that there are other factors arising
+	from the size of the domain of integration and on derivatives of the integrand, $f(x)$.  The $N^{-4}$ scaling of the error in this method makes it a good choice
+	for numerics in one-dimension.
+
+	The Monte-Carlo approach to approximating \ref{eqn:1DIntegral} would be to (pseudo-)randomly select a series of $N$ points, $x_i$, from within the domain of integration
+	and then compute the integral as follows:
+
+	\begin{equation}
+		I \approx I_{MC} = \frac{b-a}{N}\sum_{i=0}^{N}f(x_i) + \mathcal{O}(N^{-\frac{1}{2}}).
+	\end{equation}
+
+	Convergence of this result is assured by the weak law of large numbers (also known as Bernoulli's Theorem) which states that for a series of
+	independent and identically distributed random variables, ${X_1,\ldots,X_N}$, each with $\mathbb{E}(X_i) = \mu$ the sample mean approaches the population mean as $N\rightarrow\infty$.
+	That is,
+
+	\begin{equation}
+		\lim_{N\rightarrow\infty}\frac{X_1+\cdots+X_N}{N}=\mu.
+	\end{equation}
+
+	We can see this explicitly since the expectation of $I_{MC}$ under the continuous probability density function $p$ is:
+
+	\begin{align*}
+		\mathbb{E}_p[I_{MC}] &= \mathbb{E}_p\left[\frac{b-a}{N}\sum_{i=0}^{N}f(x_i)\right]    \\
+		                   &= \frac{b-a}{N}\sum_{i=0}^{N}\mathbb{E}_p\left[f(x_i)\right]    \\
+		                   &= \frac{b-a}{N}\sum_{i=0}^{N}\int_{-\infty}^{+\infty}f(x)p(x)dx \\
+		                   \intertext{Where $p(x)=\frac{1}{b-a}$ is the uniform probability distribution for $x\in(a, b)$, hence}
+		                   &= \frac{b-a}{N}\frac{1}{b-a}\sum_{i=0}^{N}\int_{a}^{b}f(x)dx \\
+		                   &= \int_{a}^{b}f(x)dx = I.
+	\end{align*}
+
+	Since the convergence of the Monte-Carlo approximation clearly scales significantly worse that the case for quadrature it would seem
+	that it is not worth considering and, indeed, for low numbers of dimensions it is not. However, this is not the case when considering
+	integrals in dimension $d\geq2$.
+
+\subsection{Higher Dimensional Integration}
 \label{sub:MCND}
+
+	In the case of higher dimensional integrals e.g.
+
+	\begin{equation}
+		I = \int_{[a, b]}f(\vec{x})d\vec{x} = \int_{x_1=a_1}^{x_1=b_1}\cdots\int_{x_n=a_n}^{x_n=b_n}f(x_1, \ldots, x_n)dx_1\ldots dx_n,
+	\end{equation}
+
+	we can still look to generalisations of the quadrature methods touched on in section \ref{sub:MCOneD} however the convergence of
+	these methods is less favourable.  Quadrature methods have errors which scale with the number of dimensions we are integrating over,
+	e.g. $\mathcal{O}(N^{-\frac{4}{d}})$ for the compound Simpson's rule.  We can argue this intuitively since if we have $N$ points in one
+	dimension to get an error which scales as $\mathcal{O}(N^{-4})$ then in two dimensions we would require $N^2$ to achieve
+	the same density of samplings and hence $N^2\sim\mathcal{O}(N^{-4})\implies N^2\sim\mathcal{O}(N^{-\frac{4}{2}})$ and more generally
+	$\mathcal{O}(N^{-\frac{4}{d}})$.
+
+	By comparison the error of a Monte Carlo approximate stays fixed at $\mathcal{O}(N^{-\frac{1}{2}})$ regardless of the number of
+	dimensions in the problem integrals.  We are spared from this so-called `curse of dimensionality' by the Central Limit Theorem
+	which states that for a sequence of independent and identically distributed random variables $X_1, \ldots, X_N$ each with
+	variance $\sigma^2$ we have:
+
+	\begin{equation}
+		\frac{X_1 + \cdots + X_N - N\mathbb{E}(X_1)}{\sqrt{N}\sigma}\xrightarrow{\lim{N\rightarrow\infty}}\mathcal{N}(0, 1),
+	\end{equation}
+
+	where $\mathcal{N}(0, 1)$ is the normal distribution with mean zero and variance 1.  Then using the additive and multiplicative scaling
+	of the normal distribution we see that:
+
+	\begin{equation}
+		\sum_{i=1}^{N}X_i\xrightarrow{\lim{N\rightarrow\infty}}\mathcal{N}\left(\mu, \frac{\sigma^2}{N}\right),
+	\end{equation}
+
+	where $\mu$ is the mean of the variables $X_i$.  The variance of a normal distribution is well known and we can use this to see that
+	for a $d$-dimensional integral we can approximate our uncertainty as:
+
+	\begin{align}
+		\int_{[a, b]}f(\vec{x})d\vec{x} &= V\langle f\rangle \pm V\sqrt{\frac{\langle f\rangle^2 - \langle f^2\rangle}{N}}\\
+		                                &\equiv V\langle f\rangle \pm V\frac{\sigma_{MC}}{\sqrt{N}},
+		\label{eqn:HighDMC}
+	\end{align}
+
+	where $V$ is the volume of the domain of integration, $\langle f\rangle=\sum_i f(x_i)$ and $\langle f^2\rangle=\sum_i f(x_i)^2$.
 
 \subsection{Variation Reduction Techniques}
 \label{sub:VarReduction}
+
+	In equation~\ref{eqn:HighDMC} we saw that the error estimate of a Monte Carlo approximation depends no only on the number of points sampled,
+	$N$, but also on $\sigma_{MC}$.  We can try to reduce $\sigma_{MC}$ by reducing how `variable' the integrand is, for instance in the extreme
+	example where our integrand is $f(x)=f_0$, a constant, it is clear that one Monte Carlo sample is sufficient to compute the integral exactly.
+	Previously when computing $\mathbb{E}_p[I_{MC}]$ we used a uniform probability density function but we are free to use any distribution we like
+	to perform the integration.  This can be seen since:
+
+	\begin{align*}
+		\mathbb{E}_p[I_{MC}] &= \int f(x)p(x)dx, \\
+		                     &= \int\frac{f(x)p(x)q(x)}{q(x)}, \\
+		                     &= \mathbb{E}_q\left[\frac{I_{MC}p(x)}{q(x)}\right],
+	\end{align*}
+
+	where $q(x)$ is our `importance sampling' distribution.  For example let us consider the integral
+
+	\begin{align}
+		I = \int_{-5}^{+5}e^{-3|x|}.
+		\label{eqn:simpleIS}
+	\end{align}
+
+	The integrand of equation \ref{eqn:simpleIS} is shown in figure~\ref{fig:simpleIS} along with two potential choices of density functions.  Clearly the uniform distribution (shown in red) will sample the integrand equally across the domain however it is clear from looking
+	at the functional form of \ref{eqn:simpleIS} that that isn't the most efficient approach since it is strongly peaked near $x=0$ and hence that is where the largest contribution to the integral will come from.  However if we sample the modified integrand using pseudo-random numbers generated from $\mathcal{N}(0, 0.5)$ (shown in green in figure~\ref{fig:simpleIS}) we can reduce the variance of our approximation significantly.  Table~\ref{tab:simpleIS} shows how the approximation improves as we vary $N$ for the two cases of $q\sim\mathcal{U}(-5,5)$ and $q\sim\mathcal{N}(0,0.5)$.
+
+	\begin{table}[htp]
+		\begin{center}
+		\begin{tabular}{c | c | c}
+		$N$       & $q\sim\mathcal{U}(-5,5)$ & $q\sim\mathcal{N}(0,0.5)$ \\ \hline
+		$10^1$    & $1.0\pm0.1$              & $1.0\pm0.1$ \\
+		$10^2$    & $1.0\pm0.1$              & $1.0\pm0.1$ \\
+		$10^3$    & $1.0\pm0.1$              & $1.0\pm0.1$ \\
+		$10^4$    & $1.0\pm0.1$              & $1.0\pm0.1$ \\
+		\end{tabular}
+		\caption{The Monte-Carlo approximation to equation~\ref{eqn:simpleIS} as we vary the number of sampled points, $N$, shown in the naive sampling case and in the importance sampled case.}
+		\label{tab:simpleIS}
+		\end{center}
+	\end{table}
+
+	\begin{figure}[htp]
+		\includegraphics[width=\textwidth]{importanceSampling}
+		\caption{A simple importance sampling example (see equation~\ref{eqn:simpleIS}).  The integrand, $f(x)$, is shown in blue, the importance sampling
+		distribution is shown in green and, for comparison, the uniform probability density function used in the naive case of no importance sampling is also shown (in red).}
+		\label{fig:simpleIS}
+  	\end{figure}
+
+  	Table~\ref{tab:simpleIS} clearly shows the value of an importance sampling approach as convergence to the correct result of $1234$ is much faster than when we sampled uniformly.
+  	This approach relies on us having some prior knowledge of the behaviour of our integrand in order to select the correct probability density function to use\footnote{More novel approaches whereby the sampling distribution is modified to improve convergence as the Monte-Carlo iterations are calculated, such as the \texttt{VEGAS} algorithm exist but they will not be discussed here.}.
+  	A more realistic, and relevant, example of importance sampling comes from the cross-section for the production of a $Z^0$ boson in association with dijets.  The matrix element squared for such a process will have following form upon factoring out the $Z^0$ propagator squared:
+
+  	\begin{equation}
+  		|\mathcal{M}_{Z^0+jj}|^2 \sim \left|\frac{1}{p_Z^2 - M_Z^0 + i\Gamma_ZM_Z}\right|^2\times f(\text{QCD, EW})\times g(\text{Kinematic}),
+  		\label{eqn:schematicZ}
+  	\end{equation}
+
+  	where $p_Z$ is the momentum carried by the $Z^0$ boson, $M_Z$ is its mass, $\Gamma_Z$ is its width and $f(\text{QCD, EW})$ will contain all of the coupling information and $g(\text{Kinematic})$ encodes the remainder of the matrix element.  When using a Monte-Carlo approach to generate events of this kind we can use the schematic of \ref{eqn:schematicZ} to \emph{a priori} select an appropriate probability density function to sample from.  Figure~\ref{fig:breitWigner} shows the squared $Z^0$ propagator.  Obvious comparisons with figure~\ref{fig:simpleIS} can be drawn in the sense that were we to generate events with a uniform spread of values for $p_Z^2$ we would end with a very slow rate of convergence by oversampling areas where the integrand is very small and slowly varying.
+
+	\begin{figure}[htp]
+		\includegraphics[width=\textwidth]{breitWigner}
+		\caption{The absolute value squared of the $Z^0$ propagator for a range of values of the invariant mass squared of the $Z^0$, $p_Z^2$.  We can see it is strongly peaked at the $Z^0$ mass and, as such, is an ideal candidate for using importance sampling.}
+		\label{fig:breitWigner}
+  	\end{figure}
+
+  	Another good example of importance sampling is found in how we sample the incoming partons in our simulations.  Simple momentum conservation considerations lead us to values for the Bjorken scaling variables of our incoming partons, $x_a$ and $x_b$, and we can use these to intelligently sample the available partons.  The naive way to perform the sum over all possible incoming states would be to uniformly choose a random number corresponding to one of the light quarks, one the light anti-quarks or to a gluon\footnote{By `light (anti-)quarks' we mean all except the top and anti-top.  The parton density functions for these are not available and, even if they were, they would be small enough that we could safely ignore their contribution to cross-sections.}.  We can, however, do better than this by using what we know about how the parton density functions vary with $x_{a/b}$ - figure~\ref{fig:PDFdensities} shows this behaviour as measured by ***who?***.  By choosing to randomly sample then incoming parton types according to the relative values for the parton density functions we can, once again, reduce the variance of our numerical integrations as much as possible.
 

@@ -35,9 +35,23 @@
 
 	The fundamental particle content of the Standard Model also includes fermions. These are spin-$1/2$ particles which obey the spin-statistics theorem (and
 	hence the Pauli exclusion principle) and comprise all known visible matter in the universe.
+	The fermions are structured in three so-called `generations', shown in table \ref{tab:fermions} and can be further subdivided in to quarks and leptons.
+	Quarks are colour triplets under QCD but are also charged under the electroweak group.  The up ($u$), charm ($c$) and top ($t$) quarks have electric charge
+	$+\frac{2}{3}$ while the down ($d$), strange ($s$) and bottom ($b$) quarks have $-\frac{1}{3}$.
+	Leptons are singlets under $SU(3)$ and so do not couple to the strong sector.  The charged leptons $e$, $\mu$ and $\tau$ have electric charge
+	$-1$ and the neutrinos are neutral.
 
-	The fermions are structured in three so-called `generations' and can be further subdivided in to quarks and leptons.  Both quarks and leptons
-	carry fractional electromagnetic charge but only quarks are charged under the strong $SU(3)$ group.
+	\begin{table}[htp!]
+	\begin{center}
+	\begin{tabular}{c | c | c | c}
+	        & First Generation & Second Generation & Third Generation   \\ \hline
+	Quarks  &  $u$, $d$        & $c$, $s$          & $t$,               \\ \hline
+	Leptons &  $e$, $\nu_e$    & $\mu$, $\nu_\mu$  & $\tau$, $\nu_\tau$ \\
+	\end{tabular}
+	\caption{The fermion content of the standard model.}
+	\label{tab:fermions}
+	\end{center}
+	\end{table}
 
 \section{Thesis Outline}
 \label{sec:outline}
@@ -57,12 +71,13 @@
 	construct approximate high-multiplicity matrix elements.
 
 	In chapter \ref{chap:Zs} the work of the previous chapter is extended to the case where there is a massive $Z^0$ boson or an off-shell photon, $\gamma^*$,
-	in the final state.  A current for this process is derived and the complexities arising from two separate interferences are explained and dealt with.  I
-	compare this new matrix element to the results obtained from a Leading Order (in the strong coupling, $\alpha_s$) generator \texttt{MadGraph} in wide
-	regions of phase space and see good agreement.  This result must then be regularised to avoid the divergences discussed in chapter \ref{chap:theory} and
-	this is work is presented.  The procedure for matching this regularised result to well-known Leading Order results is shown and the importance of these
-	non-resummation terms is shown.  Lastly three comparisons of the High Energy Jets Z+Jets Monte-Carlo generator to recent experimental studies
-	\texttt{ATLAS} and \texttt{CMS} at the LHC are shown.
+	in the final state.  A `current' for this process is derived and the complexities arising from two separate sources of interference are explored.
+	This new result is for the matrix element is compared to the results obtained from a Leading Order (in the strong coupling, $\alpha_s$) generator
+	\texttt{MadGraph} at the level of the matrix element squared in wide regions of phase space is seen to be in good agreement.
+	This result must then be regularised to treat the divergences discussed in chapter \ref{chap:theory} and this process is presented.
+	The procedure for matching this regularised result to well-known Leading Order results is shown and the importance of the inclusion of these
+	non-resummation terms is discussed. Lastly three comparisons of the High Energy Jets Z+Jets Monte-Carlo generator to recent experimental
+	studies \texttt{ATLAS} and \texttt{CMS} at the LHC are shown.
 
 	In chapter \ref{chap:ttbar} we apply the massive spinor-helicity to the production of a $t\overline t$ pair in hadronic collisions.  Using the
 	\texttt{PySpinor} package we calculate values for the full-mass matrix element and compare them to leading-order (in $\alpha_s$) results from

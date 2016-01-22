@@ -1,13 +1,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A simple importance sampling example (see equation\nobreakspace {}2.51\hbox {}). The integrand, $f(x)$, is shown in blue, the importance sampling distribution is shown in green and, for comparison, the uniform probability density function used in the naive case of no importance sampling is also shown (in red).}}{22}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces The absolute value squared of the $Z^0$ propagator for a range of values of the invariant mass squared of the $Z^0$, $p_Z^2$. We can see it is strongly peaked at the $Z^0$ mass and, as such, is an ideal candidate for using importance sampling.}}{24}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces The possible emission sites for a neutral weak boson.}}{21}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Soft Emission}}{32}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {b}}}{32}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Virtual Emission}}{32}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {b}}}{32}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Examples of diagrams contributing to $2\rightarrow 4$ scattering. In figure 4.2\hbox {} the $p_2$ has been drawn with a dashed line to denote it is not resolvable. In figure 4.3\hbox {} the final state momenta have been labelled in a seemingly strange way - this was done to make clear the cancellation when working through the algebra.}}{32}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The possible emission sites for a neutral weak boson.}}{29}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Soft Emission}}{40}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {b}}}{40}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Virtual Emission}}{40}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {b}}}{40}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Examples of diagrams contributing to $2\rightarrow 4$ scattering. In figure 4.2\hbox {} the $p_2$ has been drawn with a dashed line to denote it is not resolvable. In figure 4.3\hbox {} the final state momenta have been labelled in a seemingly strange way - this was done to make clear the cancellation when working through the algebra.}}{40}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
