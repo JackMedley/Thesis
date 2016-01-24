@@ -1,15 +1,23 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces A simple importance sampling example (see equation\nobreakspace {}2.51\hbox {}). The integrand, $f(x)$, is shown in blue, the importance sampling distribution is shown in green and, for comparison, the uniform probability density function used in the naive case of no importance sampling is also shown (in red).}}{22}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces The absolute value squared of the $Z^0$ propagator for a range of values of the invariant mass squared of the $Z^0$, $p_Z^2$. We can see it is strongly peaked at the $Z^0$ mass and, as such, is an ideal candidate for using importance sampling.}}{24}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Tree level}}{12}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Virtual Emission, $\mathcal {A}_v$}}{12}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Self Energy, $\mathcal {A}_{se1}$}}{12}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Self Energy, $\mathcal {A}_{se2}$}}{12}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Real Emission, $\mathcal {A}_{r1}$}}{12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Real Emission, $\mathcal {A}_{r2}$}}{12}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Feynman diagrams for the $O(\alpha _s)$ correction to $\gamma ^*\rightarrow q\overline {q}$ process (a-d) and the two real emission diagrams (e-f)}}{12}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces A simple importance sampling example (see equation\nobreakspace {}2.100\hbox {}). The integrand, $f(x)$, is shown in blue, the importance sampling distribution is shown in green and, for comparison, the uniform probability density function used in the naive case of no importance sampling is also shown (in red).}}{33}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces The absolute value squared of the $Z^0$ propagator for a range of values of the invariant mass squared of the $Z^0$, $p_Z^2$. We can see it is strongly peaked at the $Z^0$ mass and, as such, is an ideal candidate for using importance sampling.}}{35}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Recent parton distribution function fits from the HERA experiment. The observed variation in $f(x_{a/b}, Q^2)$, especially at high $x_{a/b}$, can be exploited when computing the equation\nobreakspace {}\G@refundefinedtrue \text {\normalfont \bfseries ??}\GenericWarning { }{LaTeX Warning: Reference `eqn:pdfConvolution' on page 36 undefined} by using an importance sampling approach}}{36}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces The possible emission sites for a neutral weak boson.}}{29}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Soft Emission}}{40}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {b}}}{40}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Virtual Emission}}{40}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {b}}}{40}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Examples of diagrams contributing to $2\rightarrow 4$ scattering. In figure 4.2\hbox {} the $p_2$ has been drawn with a dashed line to denote it is not resolvable. In figure 4.3\hbox {} the final state momenta have been labelled in a seemingly strange way - this was done to make clear the cancellation when working through the algebra.}}{40}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The possible emission sites for a neutral weak boson.}}{40}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Soft Emission}}{51}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {b}}}{51}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Virtual Emission}}{51}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {b}}}{51}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Examples of diagrams contributing to $2\rightarrow 4$ scattering. In figure 4.2\hbox {} the $p_2$ has been drawn with a dashed line to denote it is not resolvable. In figure 4.3\hbox {} the final state momenta have been labelled in a seemingly strange way - this was done to make clear the cancellation when working through the algebra.}}{51}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
