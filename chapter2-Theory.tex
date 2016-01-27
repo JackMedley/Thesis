@@ -963,7 +963,7 @@
 \label{sub:VarReduction}
 
 	In equation~\ref{eqn:HighDMC} we saw that the error estimate of a Monte Carlo approximation depends no only on the number of points sampled,
-	$N$, but also on $\sigma_{MC}$.  We can try to reduce $\sigma_{MC}$ by reducing how `variable' the integrand is, for instance in the extreme
+	$N$, but also on $\sigma_{MC}$.  We can try to reduce $\sigma_{MC}$ by reducing how `variable' the integrand is over the domain of integration, for instance in the extreme
 	example where our integrand is $f(x)=f_0$, a constant, it is clear that one Monte Carlo sample is sufficient to compute the integral exactly.
 	Previously when computing $\mathbb{E}_p[I_{MC}]$ we used a uniform probability density function but we are free to use any distribution we like
 	to perform the integration.  This can be seen since:
@@ -977,26 +977,28 @@
 	where $q(x)$ is our `importance sampling' distribution.  For example let us consider the integral
 
 	\begin{align}
-		I = \int_{-5}^{+5}e^{-3|x|}.
+		I = 150\int_{0}^{\frac{1}{2}}x^2\arcsin x^2dx.
 		\label{eqn:simpleIS}
 	\end{align}
 
 	The integrand of equation \ref{eqn:simpleIS} is shown in figure~\ref{fig:simpleIS} along with two potential choices of density functions.
-	Clearly the uniform distribution (shown in red) will sample the integrand equally across the domain however it is clear from looking
-	at the functional form of \ref{eqn:simpleIS} that that isn't the most efficient approach since it is strongly peaked near $x=0$ and
-	hence that is where the largest contribution to the integral will come from.  However if we sample the modified integrand using
-	pseudo-random numbers generated from $\mathcal{N}(0, 0.5)$ (shown in green in figure~\ref{fig:simpleIS}) we can reduce the variance
-	of our approximation significantly.  Table~\ref{tab:simpleIS} shows how the approximation improves as we vary $N$ for the two cases
-	of $q\sim\mathcal{U}(-5,5)$ and $q\sim\mathcal{N}(0,0.5)$.
+	The uniform distribution (shown in red) will sample the integrand equally across the domain however it is clear from looking
+	at the functional form of equation \ref{eqn:simpleIS} that that isn't the most efficient approach since it is strongly peaked towards the
+	right hand side of the domain.  Hence that is where the largest contribution to the Monte Carlo sum will come from.  However if we sample
+	the modified integrand using pseudo-random numbers generated from a distribution proportional to $x^4$ (shown in green in figure~\ref{fig:simpleIS})
+	we can reduce the variance of our approximation significantly.  Table~\ref{tab:simpleIS} shows how the approximation improves as we vary
+	the number of samples, $N$, for the two cases of $q\sim\mathcal{U}(0,0.5)$ and $q\sim x^4$.
 
 	\begin{table}[htp]
 		\begin{center}
-		\begin{tabular}{c | c | c}
-		$N$       & $q\sim\mathcal{U}(-5,5)$ & $q\sim\mathcal{N}(0,0.5)$ \\ \hline
-		$10^1$    & $1.0\pm0.1$              & $1.0\pm0.1$ \\
-		$10^2$    & $1.0\pm0.1$              & $1.0\pm0.1$ \\
-		$10^3$    & $1.0\pm0.1$              & $1.0\pm0.1$ \\
-		$10^4$    & $1.0\pm0.1$              & $1.0\pm0.1$ \\
+		\begin{tabular}{c | c | c | c | c}
+		$N$       & \multicolumn{2}{c|}{$q\sim\mathcal{U}(0.0,0.5)$} & \multicolumn{2}{c}{$q\sim x^4$} \\ \hline
+		          & Approximation & Error       & Approximation & Error       \\ \hline
+		$10^1$    & $0.5111428 \pm 1.5932607$ & $0.4318912$ & $0.9424279 \pm 1.6817093$ & $0.0006061$ \\
+		$10^2$    & $0.9098668 \pm 2.0212007$ & $0.0331672$ & $0.9429298 \pm 2.6653523$ & $0.0001042$ \\
+		$10^3$    & $0.9456974 \pm 2.0415918$ & $0.0026633$ & $0.9431454 \pm 0.8430513$ & $8.936\times10^{-5}$ \\
+		$10^4$    & $0.9438040 \pm 2.0222993$ & $0.0007699$ & $0.9430386 \pm 0.2665659$ & $4.504\times10^{-6}$ \\
+		$10^5$    & $0.9337252 \pm 2.0040391$ & $0.0093088$ & $0.9430241 \pm 0.0842942$ & $2.848\times10^{-6}$ \\
 		\end{tabular}
 		\caption{The Monte-Carlo approximation to equation~\ref{eqn:simpleIS} as we vary the number of sampled points, $N$, shown in
 		the naive sampling case and in the importance sampled case.}
@@ -1012,10 +1014,11 @@
 		\label{fig:simpleIS}
   	\end{figure}
 
-  	Table~\ref{tab:simpleIS} clearly shows the value of an importance sampling approach as convergence to the correct result of $1234.5$
-  	is much faster than when we sampled uniformly. This approach relies on us having some prior knowledge of the behaviour of our
-  	integrand in order to select the correct probability density function to use\footnote{More novel approaches whereby the sampling
-  	distribution is modified to improve convergence as the Monte-Carlo iterations are calculated, such as the \texttt{VEGAS} algorithm,
+  	Table~\ref{tab:simpleIS} clearly shows the value of an importance sampling approach convergences to the correct result
+  	much faster than when we sample uniformly. Of course this tactic relies on us having some prior knowledge of the behaviour of our
+  	integrand in order to select the correct probability density function to use which, in more complicated examples is not always
+  	possible\footnote{More novel approaches whereby the sampling distribution is modified to improve convergence as the Monte-Carlo
+  	iterations are calculated, such as the \texttt{VEGAS} algorithm,
   	exist but they will not be discussed here.}. A more realistic, and relevant, example of importance sampling comes from the
   	cross-section for the production of a $Z^0$ boson in association with dijets.  The matrix element squared for such a process
   	will have following form upon factoring out the $Z^0$ propagator squared:
@@ -1049,8 +1052,8 @@
   	Another good example of importance sampling is found in how we sample the incoming partons in our simulations.  Simple momentum
   	conservation considerations lead us to values for the Bjorken scaling variables of our incoming partons, $x_a$ and $x_b$, and we
   	can use these to intelligently sample the available partons.  The naive way to perform the sum over all possible incoming states
-  	would be to uniformly choose a random number corresponding to one of the light quarks, one the light anti-quarks or to a gluon
-  	\footnote{By `light (anti-)quarks' we mean all except the top and anti-top.  The parton density functions for these are not available
+  	would be to uniformly choose a random number corresponding to one of the light quarks, one the light anti-quarks or to a
+  	gluon\footnote{By `light (anti-)quarks' we mean all except the top and anti-top.  The parton density functions for these are not available
   	and, even if they were, they would be small enough that we could safely ignore their contribution to cross-sections.}.  We can,
   	however, do better than this by using what we know about how the parton density functions vary with $x_{a/b}$ - figure~\ref{fig:PDFdensities}
   	shows this behaviour as measured by the HERA experiment.  By choosing to randomly sample then incoming parton types according to the relative values
