@@ -7,7 +7,7 @@
 \DeclareMathOperator{\Tr}{Tr}
 \include{macros}
 \initfloatingfigs
-
+\graphicspath{{figures/}}
 %%% helps to discourage hyphenation 10000 for no hyphens but dodgy line lengths%%%
 \hyphenpenalty=5000
 \tolerance=1000
@@ -22,23 +22,12 @@
 \renewcommand{\voffset}{0cm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Hack to avoid 'noindent'-ing everywhere
-% \setlength{\parindent}{0pt}
-
 %% In the beginning ....
 \begin{document}
 
-%% First do introductory stuff - leave this as pagestyle empty until after
-%% the table of contents
-%\pagestyle{empty}
 \include{title}
-%\ \newpage		% Newpage needed if doing double sided.
 
-%% Include abstract - use separate parskip for this and then set parskip for
-%% rest of thesis.
-%\pagestyle{plain}
-
-% Jacks extra definitions
+% Extra definitions
 \newcommand{\bk}[3]{
 	\langle #1 | #2 | #3 \rangle
 }
@@ -70,7 +59,7 @@
 %-----------------------------------------------------------------------------
 
 \pagestyle{fancy}
-\fancyhead{} %clear all fields
+\fancyhead{}
 \renewcommand{\headheight}{28pt}
 \cfoot{}
 \fancyfoot[LE,RO]{\thepage}
@@ -135,7 +124,6 @@
 %% Add chapters here %%
 \include{chapter1-Intro}	% Introduction
 \include{chapter2-Theory}	% General theory
-\include{chapter2.5-MC}	% General theory
 \include{chapter3-HEJ}		% High energy theory
 \include{chapter4-Z}		% Z+Jets
 \include{chapter5-ttbar}	% ttbar+jets
@@ -146,7 +134,7 @@
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername \ #1}{}}
 
 \appendix
-\include{appA}
+\include{appendixA-PySpinor}
 
 \small{
 \singlespacing

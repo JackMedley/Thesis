@@ -1,5 +1,0 @@
-#!/bin/bash
-
-pdflatex thesis.tex
-rm *.lot *.lof *.toc *.glo *.dvi *.log *.aux
-
