@@ -831,7 +831,7 @@
 	\end{align*}
 	\end{subequations}
 
-	which is the Dirac equation for a quark.  The result for antiquarks follows similarly.  \\Now we have forms for massive quarks and antiquarks in terms of massless spinors we can use all of the spinor-helicity machinery to make our computations more 	efficient.  Slightly more useful forms of equations \ref{u_def} and \ref{v_def} can be found by decomposing $q$ in to massless components once again: $q=\widetilde{q}+k$ (once again this acts as a definition for $\widetilde{q}$).  Then from equation \ref{u_def}:
+	which is the Dirac equation for a quark.  The result for antiquarks follows similarly.  \\Now we have forms for massive quarks and antiquarks in terms of massless spinors we can use all of the spinor-helicity machinery to make our computations more 	efficient.  Slightly more useful forms of equations \ref{u_def} and \ref{v_def} can be found by decomposing $q$ into massless components once again: $q=\widetilde{q}+k$ (once again this acts as a definition for $\widetilde{q}$).  Then from equation \ref{u_def}:
 
 	\begin{subequations}
 	\begin{align*}
@@ -863,7 +863,7 @@
 	of the one-loop correction to quark-antiquark production.
 
 	For some of the integrals derived here it is not always feasible (and sometimes not even possible) to calculate them analytically.  In these situations
-	we must use a numerical approach to approximate the full result.  Such approaches generally fall in to one of two categories; quadrature
+	we must use a numerical approach to approximate the full result.  Such approaches generally fall into one of two categories; quadrature
 	or Monte-Carlo random sampling approaches.  The most appropriate solution depends the integrand itself (and in particular our prior knowledge of
 	the integrand) and the number of dimensions we are integrating over.
 
@@ -886,7 +886,7 @@
 	from the size of the domain of integration and on derivatives of the integrand, $f(x)$.  The $N^{-4}$ scaling of the error in this method makes it a good choice
 	for numerics in one-dimension.
 
-	The Monte-Carlo approach to approximating \ref{eqn:1DIntegral} would be to (pseudo-)randomly select a series of $N$ points, $x_i$, from within the domain of integration
+	The Monte-Carlo approach to approximating equation \eqref{eqn:1DIntegral} would be to (pseudo-)randomly select a series of $N$ points, $x_i$, from within the domain of integration
 	and then compute the integral as follows:
 
 	\begin{equation}
@@ -905,15 +905,15 @@
 
 	\begin{align*}
 		\mathbb{E}_p[I_{MC}] &= \mathbb{E}_p\left[\frac{b-a}{N}\sum_{i=0}^{N}f(x_i)\right]    \\
-		                   &= \frac{b-a}{N}\sum_{i=0}^{N}\mathbb{E}_p\left[f(x_i)\right]    \\
-		                   &= \frac{b-a}{N}\sum_{i=0}^{N}\int_{-\infty}^{+\infty}f(x)p(x)dx \\
-		                   \intertext{Where $p(x)=\frac{1}{b-a}$ is the uniform probability distribution for $x\in(a, b)$, hence}
-		                   &= \frac{b-a}{N}\frac{1}{b-a}\sum_{i=0}^{N}\int_{a}^{b}f(x)dx \\
-		                   &= \int_{a}^{b}f(x)dx = I.
+		                     &= \frac{b-a}{N}\sum_{i=0}^{N}\mathbb{E}_p\left[f(x_i)\right]    \\
+		                     &= \frac{b-a}{N}\sum_{i=0}^{N}\int_{-\infty}^{+\infty}f(x)p(x)dx \\
+		                     \intertext{where $p(x)=\frac{1}{b-a}$ is the uniform probability distribution for $x\in(a, b)$.  Hence,}
+		\mathbb{E}_p[I_{MC}] &= \frac{b-a}{N}\frac{1}{b-a}\sum_{i=0}^{N}\int_{a}^{b}f(x)dx \\
+		                     &= \int_{a}^{b}f(x)dx = I.
 	\end{align*}
 
 	Since the convergence of the Monte-Carlo approximation clearly scales significantly worse that the case for quadrature it would seem
-	that it is not worth considering and, indeed, for low numbers of dimensions it is not. However, this is not the case when considering
+	that it is not worth considering and, indeed, for a single dimension it is not. However, the picture changes when we consider
 	integrals in dimension $d\geq2$.
 
 \subsection{Higher Dimensional Integration}
@@ -932,8 +932,8 @@
 	the same density of samplings and hence $N^2\sim\mathcal{O}(N^{-4})\implies N^2\sim\mathcal{O}(N^{-\frac{4}{2}})$ and more generally
 	$\mathcal{O}(N^{-\frac{4}{d}})$.
 
-	By comparison the error of a Monte Carlo approximate stays fixed at $\mathcal{O}(N^{-\frac{1}{2}})$ regardless of the number of
-	dimensions in the problem integrals.  We are spared from this so-called `curse of dimensionality' by the Central Limit Theorem
+	By comparison the error of a Monte Carlo approximation stays fixed at $\mathcal{O}(N^{-\frac{1}{2}})$ regardless of the number of
+	dimensions in the integrals.  We are spared from this so-called `curse of dimensionality' by the Central Limit Theorem
 	which states that for a sequence of independent and identically distributed random variables $X_1, \ldots, X_N$ each with
 	variance $\sigma^2$ we have:
 
@@ -941,14 +941,14 @@
 		\frac{X_1 + \cdots + X_N - N\mathbb{E}(X_1)}{\sqrt{N}\sigma}\xrightarrow{\lim{N\rightarrow\infty}}\mathcal{N}(0, 1),
 	\end{equation}
 
-	where $\mathcal{N}(0, 1)$ is the normal distribution with mean zero and variance 1.  Then using the additive and multiplicative scaling
+	\noindent where $\mathcal{N}(0, 1)$ is the normal distribution with mean zero and variance 1.  Then using the additive and multiplicative scaling
 	of the normal distribution we see that:
 
 	\begin{equation}
 		\sum_{i=1}^{N}X_i\xrightarrow{\lim{N\rightarrow\infty}}\mathcal{N}\left(\mu, \frac{\sigma^2}{N}\right),
 	\end{equation}
 
-	where $\mu$ is the mean of the variables $X_i$.  The variance of a normal distribution is well known and we can use this to see that
+	\noindent where $\mu$ is the mean of the variables $X_i$.  The variance of a normal distribution is well known and we can use this to see that
 	for a $d$-dimensional integral we can approximate our uncertainty as:
 
 	\begin{align}
@@ -957,12 +957,12 @@
 		\label{eqn:HighDMC}
 	\end{align}
 
-	where $V$ is the volume of the domain of integration, $\langle f\rangle=\sum_i f(x_i)$ and $\langle f^2\rangle=\sum_i f(x_i)^2$.
+	\noindent where $V$ is the volume of the domain of integration, $\langle f\rangle=\sum_i f(x_i)$ and $\langle f^2\rangle=\sum_i f(x_i)^2$.
 
 \subsection{Variation Reduction Techniques}
 \label{sub:VarReduction}
 
-	In equation~\ref{eqn:HighDMC} we saw that the error estimate of a Monte Carlo approximation depends no only on the number of points sampled,
+	In equation~\ref{eqn:HighDMC} we saw that the error estimate of a Monte Carlo approximation depends not only on the number of points sampled,
 	$N$, but also on $\sigma_{MC}$.  We can try to reduce $\sigma_{MC}$ by reducing how `variable' the integrand is over the domain of integration, for instance in the extreme
 	example where our integrand is $f(x)=f_0$, a constant, it is clear that one Monte Carlo sample is sufficient to compute the integral exactly.
 	Previously when computing $\mathbb{E}_p[I_{MC}]$ we used a uniform probability density function but we are free to use any distribution we like
@@ -974,7 +974,7 @@
 		                     &= \mathbb{E}_q\left[\frac{I_{MC}p(x)}{q(x)}\right],
 	\end{align*}
 
-	where $q(x)$ is our `importance sampling' distribution.  For example let us consider the integral
+	\noindent where $q(x)$ is our `importance sampling' distribution.  For example let us consider the integral
 
 	\begin{align}
 		I = 150\int_{0}^{\frac{1}{2}}x^2\arcsin x^2dx.

@@ -15,15 +15,15 @@
 		\label{eq:SMGauge}
 	\end{equation}
 
-	The subscripts on the groups are simply a convenient notation.  The `c' on $SU(3)$ acts to remind us that it is
+	The subscripts on the groups are simply a convenient notation.  The `c' on $SU(3)$ indicates that it is
 	the strong `colour' coupling being described.  The `L' on $SU(2)$ indicates that all right-handed states are in
-	the trivial representation of the group and the `Y' on the $U(1)$ is a reminder that this is the hypercharge group
+	the trivial representation of the group and the `Y' on the $U(1)$ indicates that this is the hypercharge group
 	and not the electromagnetic group. The $SU(3)_c$ group describes the strong nuclear force (Quantum Chromodynamics
 	or QCD) and its 8 gauge generators give us the massless spin-1 gluons, $G_a^\mu(x),\ a=1,\ldots,8$, present in
-	the standard model. There are three states, $W_a^\mu(s),\ a=1,\ldots,3$, associated with the $SU(2)_L$ group and
+	the standard model. There are three weak boson states, $W_a^\mu(s),\ a=1,\ldots,3$, associated with the $SU(2)_L$ group and
 	a further one, $B^\mu(x)$, which comes from the $U(1)_Y$ group.
 
-	The only remaining boson to complete the standard model arises from the complex scalar Higgs field who's ground state is not invariant under the action of $SU(2)_L\times U(1)_Y$.
+	The only remaining boson to complete the standard model arises from the complex scalar Higgs field whose ground state is not invariant under the action of $SU(2)_L\times U(1)_Y$.
 	This field breaks the standard model gauge symmetry to
 
 	\begin{equation}
@@ -31,13 +31,13 @@
 		\label{eq:SMGaugeBroken}
 	\end{equation}
 
-	where the $U(1)_{em}$ refers to the electromagnetic charge.  After this `Spontaneous Symmetry Breaking' occurs the four aforementioned bosons, $W_a^\mu(s)$ and $B^\mu(x)$
+	\noindent where the $U(1)_{em}$ refers to the electromagnetic charge.  After this `Spontaneous Symmetry Breaking' occurs three of the four aforementioned bosons, $W_a^\mu(s)$ and $B^\mu(x)$
 	acquire mass and combinations of them are physically realised as the experimentally observer electroweak boson; The massive states $W^\pm, Z^0$ and the massless photon, $\gamma$.
 	The photon and the $Z^0$ bosons are of particular importance in the work that follows.
 
 	The fundamental particle content of the Standard Model also includes fermions. These are spin-$1/2$ particles which obey the spin-statistics theorem (and
-	hence the Pauli exclusion principle) and comprise all known visible matter in the universe.
-	The fermions are structured in three so-called `generations', shown in table \ref{tab:fermions} and can be further subdivided in to quarks and leptons.
+	hence the Pauli exclusion principle) and comprise, along with the gluons which binds the nucleus together, all known visible matter in the universe.
+	The fermions are structured in three so-called `generations', shown in table \ref{tab:fermions} and can be further subdivided into quarks and leptons.
 	Quarks are colour triplets under QCD but are also charged under the electroweak group.  The up ($u$), charm ($c$) and top ($t$) quarks have electric charge
 	$+\frac{2}{3}$ while the down ($d$), strange ($s$) and bottom ($b$) quarks have $-\frac{1}{3}$.
 	Leptons are singlets under $SU(3)$ and so do not couple to the strong sector.  The charged leptons $e$, $\mu$ and $\tau$ have electric charge
@@ -58,28 +58,32 @@
 \section{Thesis Outline}
 \label{sec:outline}
 
-	The aim of this thesis is to detail the importance of a certain class of perurbatively high-order terms in events with QCD radiation in the final state.  In particular
+	The aim of this thesis is to detail the importance of a certain class of perurbatively higher-order terms in events with QCD radiation in the final state.  In particular
 	we will consider corrections to parton-parton collisions with a $Z^0$ or $\gamma$ in association with high energy QCD radiation in the final state.
 
-	In chapter \ref{chap:theory} I will begin by introduce quantum chromodynamics, the theory of the strong sector in the standard model, and detail how we might use this
+	In chapter \ref{chap:theory} I will begin by introducing quantum chromodynamics, the theory of the strong sector in the standard model, and detail how we might use this
 	to calculate physical observables (such as cross-sections and differential distributions) at hadron colliders such as the Large Hadron Collider.  I will discuss how
 	these observables fall prey to divergences in QCD-like quantum field theories with massless states and mention briefly how such divergences can be handled.  I will then
 	describe how the computationally expensive integrals derived in subsequent chapters may be efficiently evaluated using Monte-Carlo techniques.
 
 	In chapter \ref{chap:HEQCD} the details of QCD in the `High Energy' limit are discussed.  After completing a few instructive calculations we will see how,
 	in this limit, the traditional fixed-order perturbation theory view of calculating cross-sections fades as another subset of terms, namely the `Leading
-	Logarithmic' contributions, become more important.  I will discuss previous work in the High Energy limit of QCD and how this can be used to factorise
+	Logarithmic' terms in $\frac{s}{t}$, become more important.  I will discuss previous work in the High Energy limit of QCD and how this can be used to factorise
 	complex parton-parton scattering amplitudes into combinations of `currents' which, when combined with gauge-invariant effective gluon emission terms can be used to
 	construct approximate high-multiplicity matrix elements.
 
 	In chapter \ref{chap:Zs} the work of the previous chapter is extended to the case where there is a massive $Z^0$ boson or an off-shell photon, $\gamma^*$,
 	in the final state.  A `current' for this process is derived and the complexities arising from two separate sources of interference are explored.
-	This new result is for the matrix element is compared to the results obtained from a Leading Order (in the strong coupling, $\alpha_s$) generator
-	\texttt{MadGraph} at the level of the matrix element squared in wide regions of phase space is seen to be in good agreement.
+	This new result for the matrix element is compared to the results obtained from a Leading Order (in the strong coupling, $\alpha_s$) generator
+	\texttt{MadGraph} at the level of the matrix element squared in wide regions of phase space is seen to be in exact agreement.
 	This result must then be regularised to treat the divergences discussed in chapter \ref{chap:theory} and this process is presented.
-	The procedure for matching this regularised result to well-known Leading Order results is shown and the importance of the inclusion of these
+	The procedure for matching this regularised result to Leading Order results is shown and the importance of the inclusion of these
 	non-resummation terms is discussed. Lastly three comparisons of the High Energy Jets Z+Jets Monte-Carlo generator to recent experimental
 	studies \texttt{ATLAS} and \texttt{CMS} at the LHC are shown.
+
+	From here we use the results of chapter \ref{chap:Zs}, and the resulting publicly available Monte Carlo package, to compare our description to
+	a recent experimental prediction of the ratio of the $W^\pm$+jets rate to the $\zg$+jets rate.  Our predictions are compared against
+	next-to-leading order (in $\alpha_s$) results from \texttt{NJet} and leading order results from \texttt{MadGraph}.
 
 	In chapter \ref{chap:ttbar} we apply the massive spinor-helicity to the production of a $t\overline t$ pair in hadronic collisions.  Using the
 	\texttt{PySpinor} package we calculate values for the full-mass matrix element and compare them to leading-order (in $\alpha_s$) results from
@@ -90,11 +94,9 @@
 
 	In chapter \ref{chap:ATLAS} we discuss the results of a lengthy study of jet production from the \texttt{ATLAS} collaboration.  This analysis was a thorough
 	look at BFKL-like dynamics in proton-proton colliders and the HEJ predictions are seen to describe the data well in the regions of phase-space where
-	we know the effects of our resummation become relevant.
-
-	From here we move towards comparisons with experiments using the results of chapter \ref{chap:Zs}, and the resulting publicly available Monte Carlo
-	package, to a recent experimental prediction of the ratio of the $W^\pm$+jets rate to the $\zg$+jets rate.  Our predictions are compared against
-	next-to-leading order (in $\alpha_s$) results from \texttt{NJet} and leading order results from \texttt{MadGraph}.
+	we know the effects of our resummation become relevant.  We compare the predictions from both standalone HEJ and HEJ interfaced with \texttt{ARIADNE}, a
+	parton shower based on a dipole-cascade model.  Although the interface to \texttt{ARIADNE} increases the computational complexity significantly; we see that
+	the Sudakov logarithms added by significantly improve the description of data.
 
 	In chapter \ref{chap:100TeV}, with a study of $\zg$+Jets at a centre-of-mass energy of 100TeV relevant for the discussion of
 	the next wave of high energy particle physics experiments (such as any Future Circular Collider) which are of great interest to the community at large.  We see....DO THE STUDY BEFORE
