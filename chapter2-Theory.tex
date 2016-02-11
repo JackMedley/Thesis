@@ -3,8 +3,62 @@
 
 \section{The QCD Lagrangian}
 
-	As mentioned in section~\ref{sec:history} Quantum Chromodynamics (QCD) is the theory of the strong nuclear force.
-	We obtain the QCD Lagrangian by starting with...
+	We obtain the QCD Lagrangian by considering the spin-$\frac{1}{2}$ Dirac Lagrangian for the case of $f$
+	fermionic fields each with mass $m_f$:
+
+	\begin{equation}
+		\mathcal{L}_D = \sum_{f=1}^{6}\left(i\overline{\psi}_i^{(f)}\slashed{\partial}_{ij}\psi_j^{(f)} - m_f\overline{\psi}^{(f)}_i\psi_i^{(f)}\right),
+		\label{eqn:QCDLagrangian}
+	\end{equation}
+
+	\noindent where $\psi_i$ is vector of 3 fermion fields in the fundamental representation of $SU(3)$.
+	This is manifestly invariant under the \emph{global} $SU(3)$ transformation
+
+	\begin{equation}
+		\psi_i\rightarrow e^{i\alpha^aT^a_{ij}}\psi_i
+	\end{equation}
+
+	\noindent where $a=1,\ldots,8$, $\alpha^a$ are constant and $T^a$ are the generators of the $SU(3)$ group.
+	We can however promote this symmetry to a \emph{local} one by relaxing the constraint that $\alpha^a$ are
+	constant and instead allow them to depend on a space-time coordinate $\alpha^a = \alpha^a(x^\mu)$.  This
+	breaks the $SU(3)$ symmetry but we can recover the required transformation properties by replacing the
+	usual derivative term with a `covariant derivative' defined by:
+
+	\begin{equation}
+		\mathcal{D}^\mu_{ij} = \partial^\mu_{ij} - ig_sA^{\mu a}T^a_{ij},
+	\end{equation}
+
+	\noindent where $g_s$ is the QCD coupling constant and $A_\mu^a$ is the QCD gauge field associated with the gluon.
+	With this replacement the local $SU(3)$ invariance of \eqref{eqn:QCDLagrangian} is recovered.  We can also consider
+	the effect of self-interaction terms of the gluon field on our theory.  The field-strength tensor for $A^a_\mu$,
+	$F^a_{\mu\nu}$ is given by:
+
+	\begin{equation}
+		F^a_{\mu\nu} = \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + g_sf^{abc}A_\mu^bA_\nu^c
+	\end{equation}
+
+	\noindent where $f^{abc}$ are constants which define the algebra of the $SU(3)$ group and are given by
+
+	\begin{equation}
+		T^aT^b -T^bT^a = if^{abc}T^c.
+		\label{eqn:noncommuting}
+	\end{equation}
+
+	Equation \eqref{eqn:noncommuting} is what makes QCD fundamentally different the Quantum Electrodynamics (QED):  The simple
+	fact that the generators of the underlying group \emph{do not} commute makes performing calculations in QCD
+	significantly more complicated than it's Abelian cousin QED.
+
+	\begin{itemize}
+		\item Talk about extending this to the quantum Lagrangian,
+		\item Talk about renormalisation
+		\item Talk a bit about ghosts and Fadeev-Popov (already written),
+	\end{itemize}
+
+\section{QCD Feynman Rules}
+
+	\begin{itemize}
+		\item From the Lagrangian to the Feynman rules
+	\end{itemize}
 
 	The Lagrangian for QCD is more complicated than the one previously seen for QED.  This is in part due to us having to sum over different representations of the generating group, $SU(3)$, but mainly because the fields no longer commute with one another (they are non-Abelian in nature) and this leads to gauge boson self-interactions.  The full Lagrangian is as follows ~\cite{muta} (With the bare quantity subscripts suppressed):
 
@@ -41,7 +95,7 @@
 
 	and we can read off the various QCD vertex factors directly from the interaction Lagrangian.
 
-	\subsection{The Faddeev-Popov Procedure for NAGTs}
+	\subsection{The Fadeev-Popov Procedure for NAGTs}
 
 	All that remains to be done is to evaluate the gluon propagator.  As in QED when trying to compute the propagator of a massless gauge boson we can use the work of Faddeev and Popov.  The functional integral we want to evaluate is in the form:
 
@@ -49,7 +103,7 @@
 	\int DAe^{-\frac{i}{4}\int d^4xF^a_{\mu\nu}F^{a\mu\nu}}.
 	\end{equation}
 
-	Where $DA=\prod_x\prod_{a, \mu}dA^a_\mu$.  As briefly outlined above we would like to perform a functional integration over all possible gauge choices and then pick out the subset of gauges we are interested in by enforcing the gauge condition $G(A)=0$ to eliminate overcounting.  This constraint may be written as ~\cite{p&s}:
+	Where $DA=\prod_x\prod_{a, \mu}dA^a_\mu$.  As briefly outlined above we would like to perform a functional integration over all possible gauge choices and then pick out the subset of gauges we are interested in by enforcing the gauge condition $G(A)=0$ to eliminate over-counting.  This constraint may be written as ~\cite{p&s}:
 
 	\begin{equation}
 	\int D\alpha(x)\delta(G(A^\alpha))Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right) = 1.
@@ -78,7 +132,7 @@
 	\langle0|A_a(x)A_b(y)|0\rangle = G_F^{\mu\nu}(x-y) = \int \frac{d^4x}{(2\pi)^4}e^{-ik\cdot(x-y)}\delta_{ab}\frac{-i}{k^2+i\epsilon}\left(g^{\mu\nu}-(1-\xi)\frac{k^\mu k^\nu}{k^2}\right).
 	\end{equation}
 
-	but because the QCD gauge transformation is more involved than the QED eqivalent the determinant term still depends on $A_\mu$:
+	but because the QCD gauge transformation is more involved than the QED equivalent the determinant term still depends on $A_\mu$:
 
 	\begin{equation}
 	Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right) = Det\left(\frac{\partial_\mu D^\mu}{g_s}\right).
@@ -90,11 +144,11 @@
 	Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right) = \int D\chi D\overline{\chi}e^{i\int d^4x\overline{\chi}(-\partial_\mu D_\mu)\chi}.
 	\end{equation}
 
-	These non-physical modes are called the Faddeev-Popov ghosts/antighosts and are a consequence of enforcing gauge invariance - they are represented by the final term in equation (12a).
+	These non-physical modes are called the Fadeev-Popov ghosts/anti-ghosts and are a consequence of enforcing gauge invariance - they are represented by the final term in equation (12a).
 
 	\subsection{Renormalising the QCD Lagrangian}
 
-	Similarly to QED we anticipate divergent quantities in our calculations above tree level and so we introduce counterterms into our Lagrangian.  Similarly to equation (4) we have the following relations:
+	Similarly to QED we anticipate divergent quantities in our calculations above tree level and so we introduce counter terms into our Lagrangian.  Similarly to equation (4) we have the following relations:
 
 	\begin{subequations}
 	\begin{equation}
@@ -105,7 +159,7 @@
 	\end{equation}
 	\end{subequations}
 
-	Inserting these into equations (13) and (14) and rearranging so that we have $\mathcal{L^{QCD}} = \mathcal{L}_0 + \mathcal{L}_{ct}$ where $\mathcal{L}_0$ is as definied in equation (13) and the counterterm Lagrangian is:
+	Inserting these into equations (13) and (14) and rearranging so that we have $\mathcal{L^{QCD}} = \mathcal{L}_0 + \mathcal{L}_{ct}$ where $\mathcal{L}_0$ is as defined in equation (13) and the counter-term Lagrangian is:
 
 	\begin{equation}
 	\begin{split}
@@ -117,22 +171,32 @@
 
 \section{Factorisation at Hadronic Colliders}
 
-\section{A brief look at divergences and regularisation}
+	\begin{itemize}
+		\item Collinear factorisation which lets us pull out the PDFs as a convolution.
+		\item What is a PDF? *Roughly* how are they calculated?
+		\item
+	\end{itemize}
+
+\section{Divergences and Regularisation}
+
+	\begin{itemize}
+		\item How do divergences arise in QCD?  How can we deal with them?
+	\end{itemize}
 
 	In calculations above tree level we encounter divergences of various kinds which can be divided up into three classes:
 
 	\begin{itemize}
-	  \item Ultraviolet (UV) divergences:  These occur when all the components of a loop momenta tend to infinity, $k^\alpha\rightarrow\infty$, such that $k^2$ becomes the dominant term in propagator.  Since these extrememly high momentum modes corresponding to physics at very short distance scales we choose to 	interpret these divergences as an indication that our theory is only an effective theory and we shouldn't attempt to apply it to all scales.
+		\item Ultraviolet (UV) divergences:  These occur when all the components of a loop momenta tend to infinity, $k^\alpha\rightarrow\infty$, such that $k^2$ becomes the dominant term in propagator.  Since these extrememly high momentum modes corresponding to physics at very short distance scales we choose to 	interpret these divergences as an indication that our theory is only an effective theory and we shouldn't attempt to apply it to all scales.
 
-	  \item Infrared (IR) divergences:  These occur in theories with massles gauge bosons, such as QED and QCD, since a particle may emit any number of arbitrarily such bosons with infinitesimal energy and we would never be able to detect their emission.  In contrast to the UV divergences the IR becomes important 	in the region of phase space where $k^2\rightarrow0$.
+		\item Infrared (IR) divergences:  These occur in theories with massless gauge bosons, such as QED and QCD, since a particle may emit any number of arbitrarily such bosons with infinitesimal energy and we would never be able to detect their emission.  In contrast to the UV divergences the IR becomes important 	in the region of phase space where $k^2\rightarrow0$.
 
-	  \item Collinear (mass) divergences: These occur when we have massless bosons \emph{and} have massless on-shell particles in our calculation.  This can happen when we have, for example, a photon/gluon in the final state or the energy scale of the interaction is far higher than the mass of an emitted particle 	which admits taking that particles mass to be zero.  We can see this by considering a typical propagator factor:
+		\item Collinear (mass) divergences: These occur when we have massless bosons \emph{and} have massless on-shell particles in our calculation.  This can happen when we have, for example, a photon/gluon in the final state or the energy scale of the interaction is far higher than the mass of an emitted particle 	which admits taking that particles mass to be zero.  We can see this by considering a typical propagator factor:
 
-	  \begin{equation}
-	  \frac{1}{(p+k)^2-m^2}\sim\frac{1}{(p+k)^2} = \frac{1}{2p\cdot k} = \frac{1}{2E_pE_k(1-\cos\theta_{pk})}.
-	  \end{equation}
+		\begin{equation}
+			\frac{1}{(p+k)^2-m^2}\sim\frac{1}{(p+k)^2} = \frac{1}{2p\cdot k} = \frac{1}{2E_pE_k(1-\cos\theta_{pk})}.
+		\end{equation}
 
-	  Where we have used the on-shell relations $p^2=0$ and $k^2=0$.  Clearly as the angle of emission, $\theta_{pk}$, tends to zero (the collinear limit) this term will diverge.
+		Where we have used the on-shell relations $p^2=0$ and $k^2=0$.  Clearly as the angle of emission, $\theta_{pk}$, tends to zero (the collinear limit) this term will diverge.
 	\end{itemize}
 
 	If we are to extract any useful information above tree-level we will have to find ways to control these infinities.  We call these methods `regularisation schemes'
@@ -154,11 +218,21 @@
 
 	\subsection{The QCD Beta function}
 
-	What is the beta function? Why is it important? How is the Beta function defined?  What are the 5 diagrams needed to calculate the QCD beta function? Calculate a couple of these as an example - importance of result? Show that QCD CAN be treated perturbatively! Yaaay
+	\begin{itemize}
+		\item How does QCD look at different scales?
+		\item What is the beta function?
+		\item Why is it important? How is the Beta function defined?
+		\item What are the 5 diagrams needed to calculate the QCD beta function?
+		\item Calculate a couple of these as an example - importance of result? Show that QCD CAN be treated perturbatively! Yaaay
+	\end{itemize}
 
 \section{Perturbative QCD and Resummation}
 
 	\subsection{Expansions in the strong coupling constant}
+
+	\begin{itemize}
+		\item Talk about the idea of expanding the partonic cross-section etc.
+	\end{itemize}
 
 	\subsection{An Example Fixed-Order Calculation}
 
@@ -639,16 +713,27 @@
 	\end{equation}
 	\end{subequations}
 
-	\subsection{Limitations of Fixed-Order Schemes}
 
 	\subsection{Resumming Higher-Order Corrections}
 
-	What would a dijet NLO calculation look like in a traditional $\alpha_s$ perturbative expansion?
-	A few diagrams maybe?
-	A successful prediction followed by a couple of examples where fixed order is misguided: $n_{njets}\rightarrow3$, $d\phi$ of hardest two jets
+	\begin{itemize}
+		\item Limitations of Fixed-Order Schemes
+		\item Talk about the idea of expanding the partonic cross-section etc.
+		\item A successful prediction followed by a couple of examples where fixed
+		      order is misguided: $n_{njets}\rightarrow3$, $d\phi$ of hardest two jets
+	\end{itemize}
+
+\section{From Partons to Jets}
+	\label{sec:clustering}
+
+	\begin{itemize}
+		\item Why jets and not partons?
+		\item Jet clustering algorithms and their basic differences
+		\item FastJet
+	\end{itemize}
 
 \section{Spinor-Helicity Notation}
-\label{sec:SpinorHelicity}
+	\label{sec:SpinorHelicity}
 
 	It is convenient to work in Helicity-Spinor notation to evaluate Feynman diagrams in the MRK limit \cite{efficiently}.  As usual we have:
 
@@ -852,10 +937,10 @@
 	\end{subequations}
 
 \section{Monte Carlo Techniques}
-\label{sec:MC}
+	\label{sec:MC}
 
-\subsection{One Dimensional Integration}
-\label{sub:MCOneD}
+	\subsection{One Dimensional Integration}
+	\label{sub:MCOneD}
 
 	Integrals are ubiquitous in every field of physics and particle physics is no different.  We have already seen many examples where meaningful physical results
 	can only be obtained after computing an integral two good examples of this are the convolution of the parton distribution functions with the partonic
@@ -916,8 +1001,8 @@
 	that it is not worth considering and, indeed, for a single dimension it is not. However, the picture changes when we consider
 	integrals in dimension $d\geq2$.
 
-\subsection{Higher Dimensional Integration}
-\label{sub:MCND}
+	\subsection{Higher Dimensional Integration}
+	\label{sub:MCND}
 
 	In the case of higher dimensional integrals e.g.
 
@@ -959,8 +1044,8 @@
 
 	\noindent where $V$ is the volume of the domain of integration, $\langle f\rangle=\sum_i f(x_i)$ and $\langle f^2\rangle=\sum_i f(x_i)^2$.
 
-\subsection{Variation Reduction Techniques}
-\label{sub:VarReduction}
+	\subsection{Variation Reduction Techniques}
+	\label{sub:VarReduction}
 
 	In equation~\ref{eqn:HighDMC} we saw that the error estimate of a Monte Carlo approximation depends not only on the number of points sampled,
 	$N$, but also on $\sigma_{MC}$.  We can try to reduce $\sigma_{MC}$ by reducing how `variable' the integrand is over the domain of integration, for instance in the extreme

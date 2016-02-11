@@ -1,15 +1,28 @@
 \documentclass[11pt,a4paper]{book} % double-sided
-% \documentclass[12pt,a4paper]{report}
+% \documentclass[12pt,a4paper]{report} % one-sided
 
-\usepackage{subfigure,epsfig,amstext,Styles/floatfig,alltt,fancyhdr,setspace}
-\usepackage{amsmath, slashed, amsfonts, mathtools, epstopdf}
+% Packages
+\usepackage{subcaption, epsfig, amstext, Styles/floatfig, alltt,fancyhdr, setspace}
+\usepackage{amsmath, slashed, amsfonts, mathtools, epstopdf, xspace, amssymb}
+
+% Packages from paper
+\usepackage{cite,tabularx,cancel,flafter,ifpdf}
+\usepackage{graphicx, caption, color}
+\usepackage{amsmath, amssymb, epstopdf, slashed}
+\usepackage{parskip}
+\usepackage{float}
 
 \DeclareMathOperator{\Tr}{Tr}
 
 \include{macros}
+
+% No idea...
 \initfloatingfigs
+
+% Where to look for graphics
 \graphicspath{{Figures/}}
-%%% helps to discourage hyphenation 10000 for no hyphens but dodgy line lengths%%%
+
+% helps to discourage hyphenation 10000 for no hyphens but dodgy line lengths%%%
 \hyphenpenalty=5000
 \tolerance=1000
 
@@ -32,9 +45,7 @@
 \newcommand{\bk}[3]{
 	\langle #1 | #2 | #3 \rangle
 }
-
-\newcommand{\zg}[0]{{Z/\gamma^*}}
-
+\newcommand{\zg}[0]{Z/\gamma^*}
 \newcommand{\lr}[1]{
 	\langle #1 \rangle
 }
@@ -56,6 +67,8 @@
 \newcommand{\half}[0]{
 	\frac{1}{2}
 }
+\newcommand{\wbf}{VBF\xspace}
+\newcommand{\hej}{High Energy Jets\xspace}
 
 %-----------------------------------------------------------------------------
 
@@ -100,7 +113,6 @@
 \tableofcontents
 
 %\ \newpage		% Newpage needed if printing double sided.
-%\ \newpage		% Newpage needed if printing double sided.
 
 \addcontentsline{toc}{chapter}{List of figures}
 \listoffigures
@@ -111,11 +123,8 @@
 \listoftables
 
 %\ \newpage		% Newpage needed if printing double sided.
-%\ \newpage		% Newpage needed if printing double sided.
 
 \clearpage % this command stops table page becoming page 1
-
-%% Now the body of the text - note that parskip has to be reset after the TOC
 
 \onehalfspacing
 \pagenumbering{arabic}
@@ -131,19 +140,20 @@
 \include{chapter6-ExptComp}	% Experimental comparisons (Pure jets and W/Z ratios)
 \include{chapter7-Conclusions}	% Conclusions and outlook
 
-\renewcommand{\chaptername}[1]{Appendix A.}
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername \ #1}{}}
-
-\appendix
-\include{appendixA-PySpinor}
+% \renewcommand{\chaptername}[1]{Appendix A.}
+% \renewcommand{\chaptermark}[1]{\markboth{\chaptername \ #1}{}}
+% \appendix
+% \include{appendixA-PySpinor}
 
 \small{
 \singlespacing
 
 %% And finally the references
 \addcontentsline{toc}{chapter}{Bibliography}
-\bibliographystyle{these}
-\bibliography{papers}
+% \bibliographystyle{these}
+\bibliographystyle{acm}
+% \bibliography{papers}
+\bibliography{thesis}
 
 \addcontentsline{toc}{chapter}{Publications}
 \include{mypapers}
