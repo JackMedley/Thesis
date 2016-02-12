@@ -3,35 +3,43 @@
 
 \section{The QCD Lagrangian}
 
-	We obtain the QCD Lagrangian by considering the spin-$\frac{1}{2}$ Dirac Lagrangian for the case of $f$
-	fermionic fields each with mass $m_f$:
+	We obtain the QCD Lagrangian by considering the spin-$\frac{1}{2}$ Dirac Lagrangian for the case of 6
+	fermionic fields $\psi_i$ (which is well experimentally motivated) each with mass $m_f$:
 
 	\begin{equation}
-		\mathcal{L}_D = \sum_{f=1}^{6}\left(i\overline{\psi}_i^{(f)}\slashed{\partial}_{ij}\psi_j^{(f)} - m_f\overline{\psi}^{(f)}_i\psi_i^{(f)}\right),
+		\mathcal{L}_D = \sum_{f=1}^{6}\overline{\psi}_i^{(f)}\left(i\slashed{\partial}- m_f\right)I_{ij}\psi_j^{(f)},
 		\label{eqn:QCDLagrangian}
 	\end{equation}
 
-	\noindent where $\psi_i$ is vector of 3 fermion fields in the fundamental representation of $SU(3)$.
-	This is manifestly invariant under the \emph{global} $SU(3)$ transformation
+	\noindent where $I$ is the $3\times3$ identity matrix, $\psi_i$ is itself vector of 3 fermion fields in the fundamental
+	representation of $SU(3)$ with $i=1,\ldots,3$\footnote{The choice of 3 here is, again, experimentally motivated.
+	Here we will work explicitly with the gauge group $SU(3)$ although many of the results which follow can
+	be derived with a more general special unitary group $SU(N_c)$.}. This is manifestly invariant under the \emph{global}
+	$SU(3)$ transformation
 
 	\begin{equation}
 		\psi_i\rightarrow e^{i\alpha^aT^a_{ij}}\psi_i
 	\end{equation}
 
 	\noindent where $a=1,\ldots,8$, $\alpha^a$ are constant and $T^a$ are the generators of the $SU(3)$ group.
-	We can however promote this symmetry to a \emph{local} one by relaxing the constraint that $\alpha^a$ are
-	constant and instead allow them to depend on a space-time coordinate $\alpha^a = \alpha^a(x^\mu)$.  This
-	breaks the $SU(3)$ symmetry but we can recover the required transformation properties by replacing the
-	usual derivative term with a `covariant derivative' defined by:
+	We choose to promote this \emph{global} symmetry to a \emph{local} one by relaxing the constraint that $\alpha^a$ are
+	constant and instead allow them to depend on a space-time coordinate i.e.
+
+	\begin{equation}
+		\alpha^a = \alpha^a(x^\mu).
+	\end{equation}
+
+	This breaks the $SU(3)$ symmetry but we can recover the required invariance by replacing the
+	usual partial derivative term with a `covariant derivative' defined by:
 
 	\begin{equation}
 		\mathcal{D}^\mu_{ij} = \partial^\mu_{ij} - ig_sA^{\mu a}T^a_{ij},
 	\end{equation}
 
 	\noindent where $g_s$ is the QCD coupling constant and $A_\mu^a$ is the QCD gauge field associated with the gluon.
-	With this replacement the local $SU(3)$ invariance of \eqref{eqn:QCDLagrangian} is recovered.  We can also consider
-	the effect of self-interaction terms of the gluon field on our theory.  The field-strength tensor for $A^a_\mu$,
-	$F^a_{\mu\nu}$ is given by:
+	With this replacement the local $SU(3)$ invariance of \eqref{eqn:QCDLagrangian} is recovered.  We must also include
+	the effect of kinetic term for the gluon field on our theory.  We do this by considering the field-strength tensor for $A^a_\mu$,
+	$F^a_{\mu\nu}$ which is given by:
 
 	\begin{equation}
 		F^a_{\mu\nu} = \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + g_sf^{abc}A_\mu^bA_\nu^c
@@ -46,10 +54,63 @@
 
 	Equation \eqref{eqn:noncommuting} is what makes QCD fundamentally different the Quantum Electrodynamics (QED):  The simple
 	fact that the generators of the underlying group \emph{do not} commute makes performing calculations in QCD
-	significantly more complicated than it's Abelian cousin QED.
+	significantly more complicated than it's Abelian cousin QED.\\
+	In summary then the QCD Lagrangian is given by
+
+	\begin{equation}
+		\mathcal{L}_{\text{QCD (classical)}} = -\frac{1}{4}F_{\mu\nu}^aF^{a\mu\nu} + \sum_{f=1}^{6}\overline{\psi}_i^{(f)}\left(i\slashed{\partial}- m_f\right)I_{ij}\psi_j^{(f)}.
+	\end{equation}
+
+	This is referred to as the `classical' QCD Lagrangian since we have not included quantum effects such as
+	loop corrections.  The full `quantum' Lagrangian is as follows ~\cite{muta}:
+
+	\begin{equation}
+		\mathcal{L}^{QCD}=\overline{\psi_0}^i\left(i\slashed D^{ij}-m\delta^{ij}\right)\psi_0^j -
+			\frac{1}{4}F^a_{0\mu\nu}F^{a\mu\nu}_0 - \frac{1}{2\xi}(\partial^\mu A_{0\mu}^a)^2 +
+			(\partial^\mu\chi_0^{a*})\mathcal{D}_{\mu}^{ab}\chi_0^b,
+			\label{eqn:fullQCD}
+	\end{equation}
+
+	where $\mathcal{D}_{\mu}$ is the covariant derivative in the adjoint representation given by
+
+	\begin{equation}
+		\mathcal{D}_\mu^{ab} = \delta^{ab}\partial_\mu - g_sf^{abc}A^c_\mu.
+	\end{equation}
+
+	The subscript zeros in equation \eqref{eqn:fullQCD} indicate that these are `bare'
+	quantities - the meaning of this will become clear in section X.
+	The $\chi$ fields in equation \eqref{eqn:fullQCD} are the `ghost' excitations and their origin
+	will be explained in section 3.1.\\In order to derive the Feynman rules for QCD we begin by decomposing equation
+	(12) into a free Lagrangian and an interacting Lagrangian as follows:
+
+	\begin{equation}
+		\mathcal{L}_0^{QCD} = \overline{\psi}^i\left(i\slashed \partial-m\right)\psi^i -
+			\frac{1}{4}\partial_{[\mu}A_{\nu]}^a\partial^{[\mu}A^{\nu]a} -
+			\frac{1}{2\xi}(\partial^\mu A_\mu^a)(\partial^\nu A_\nu^a) +
+			(\partial^\mu \chi^{a*})(\partial_\mu \chi^a),
+	\end{equation}
+
+	\begin{equation}
+		\mathcal{L}_{I}^{QCD} = g_s\overline{\psi}^i T^a_{ij}\gamma^\mu\psi^j-\frac{g_s}{2}f^{abc}
+			\partial_{[\mu}A^a_{\nu]}A^{b\mu}A^{c\nu}-\frac{g_s^2}{4}f^{abe}f^{cde}A^a_\mu A^b_\nu
+			A^{c\mu}A^{d\nu}-g_sf^{abc}\partial^\mu\chi^{a*}\chi^bA^c_\mu.
+	\end{equation}
+
+	By calculating the QCD partition function and acting with the appropriate derivatives
+	we can find the fermion propagator and the ghost propagator, respectively:
+
+	\begin{equation}
+		\langle0|\psi_i(x)\psi_j(y)|0\rangle = S_F(x-y) = \int \frac{d^4k}{(2\pi)^4}
+			e^{-ik\cdot(x-y)}\delta_{ij}\frac{i}{\slashed k - m +i\epsilon},
+	\end{equation}
+	\begin{equation}
+		\langle0|\chi_a(x)\chi_b(y)|0\rangle = H_F(x-y) = \int \frac{d^4k}{(2\pi)^4}
+			e^{-ik\cdot(x-y)}\delta_{ab}\frac{i}{k^2+i\epsilon}.
+	\end{equation}
+
+	and we can read off the various QCD vertex factors directly from the interaction Lagrangian.
 
 	\begin{itemize}
-		\item Talk about extending this to the quantum Lagrangian,
 		\item Talk about renormalisation
 		\item Talk a bit about ghosts and Fadeev-Popov (already written),
 	\end{itemize}
@@ -60,79 +121,59 @@
 		\item From the Lagrangian to the Feynman rules
 	\end{itemize}
 
-	The Lagrangian for QCD is more complicated than the one previously seen for QED.  This is in part due to us having to sum over different representations of the generating group, $SU(3)$, but mainly because the fields no longer commute with one another (they are non-Abelian in nature) and this leads to gauge boson self-interactions.  The full Lagrangian is as follows ~\cite{muta} (With the bare quantity subscripts suppressed):
-
-	\begin{subequations}
-	\begin{equation}
-	\mathcal{L}^{QCD}=\overline{\psi}^i\left(i\slashed D^{ij}-m\delta^{ij}\right)\psi^j - \frac{1}{4}F^a_{\mu\nu}F^{a\mu\nu} - \frac{1}{2\xi}(\partial^\mu A_\mu^a)^2 + (\partial^\mu\chi^{a*})\mathcal{D}_{\mu}^{ab}\chi^b.
-	\end{equation}
-	\begin{equation}
-	D_\mu^{ij} = \delta^{ij}\partial_\mu - ig_s(T^c)^{ij}A^c_\mu.
-	\end{equation}
-	\begin{equation}
-	\mathcal{D}_\mu^{ab} = \delta^{ab}\partial_\mu - g_sf^{abc}A^c_\mu.
-	\end{equation}
-	\end{subequations}
-
-	where the indices $i$, $j$ run from 1 to 3, the indices $a$, $b$, $c$ run from 1 to 8, $D_\mu$ is the covariant derivative in the fundamental representation, $\mathcal{D}_{\mu}$ is the covariant derivative in the adjoint representation, $T^a$ are the generating matrices and finally $f^{abc}=i(T^a_{adj})^{bc}$.  The $\chi$ fields are the `ghost' excitations and their origin will be explained in section 3.1.\\In analogy to section (2) we begin by decomposing equation (12) into a free Lagrangian and an interacting Lagrangian as follows:
-
-	\begin{equation}
-	\mathcal{L}_0^{QCD} = \overline{\psi}^i\left(i\slashed \partial-m\right)\psi^i - \frac{1}{4}\partial_{[\mu}A_{\nu]}^a\partial^{[\mu}A^{\nu]a} - \frac{1}{2\xi}(\partial^\mu A_\mu^a)(\partial^\nu A_\nu^a) + (\partial^\mu \chi^{a*})(\partial_\mu \chi^a),
-	\end{equation}
-
-	\begin{equation}
-	\mathcal{L}_{I}^{QCD} = g_s\overline{\psi}^i T^a_{ij}\gamma^\mu\psi^j-\frac{g_s}{2}f^{abc}\partial_{[\mu}A^a_{\nu]}A^{b\mu}A^{c\nu}-\frac{g_s^2}{4}f^{abe}f^{cde}A^a_\mu A^b_\nu A^{c\mu}A^{d\nu}-g_sf^{abc}\partial^\mu\chi^{a*}\chi^bA^c_\mu.
-	\end{equation}
-
-	By calculating the QCD partition function and acting with the appropriate derivatives we can find the fermion propagator and the ghost propagator, respectively:
-
-	\begin{equation}
-	\langle0|\psi_i(x)\psi_j(y)|0\rangle = S_F(x-y) = \int \frac{d^4k}{(2\pi)^4}e^{-ik\cdot(x-y)}\delta_{ij}\frac{i}{\slashed k - m +i\epsilon},
-	\end{equation}
-	\begin{equation}
-	\langle0|\chi_a(x)\chi_b(y)|0\rangle = H_F(x-y) = \int \frac{d^4k}{(2\pi)^4}e^{-ik\cdot(x-y)}\delta_{ab}\frac{i}{k^2+i\epsilon}.
-	\end{equation}
-
-	and we can read off the various QCD vertex factors directly from the interaction Lagrangian.
-
 	\subsection{The Fadeev-Popov Procedure for NAGTs}
 
-	All that remains to be done is to evaluate the gluon propagator.  As in QED when trying to compute the propagator of a massless gauge boson we can use the work of Faddeev and Popov.  The functional integral we want to evaluate is in the form:
+	All that remains to be done is to evaluate the gluon propagator.  As in QED when trying
+	to compute the propagator of a massless gauge boson we can use the work of Fadeev and Popov.
+	The functional integral we want to evaluate is in the form:
 
 	\begin{equation}
 	\int DAe^{-\frac{i}{4}\int d^4xF^a_{\mu\nu}F^{a\mu\nu}}.
 	\end{equation}
 
-	Where $DA=\prod_x\prod_{a, \mu}dA^a_\mu$.  As briefly outlined above we would like to perform a functional integration over all possible gauge choices and then pick out the subset of gauges we are interested in by enforcing the gauge condition $G(A)=0$ to eliminate over-counting.  This constraint may be written as ~\cite{p&s}:
+	Where $DA=\prod_x\prod_{a, \mu}dA^a_\mu$.  As briefly outlined above we would like to perform
+	a functional integration over all possible gauge choices and then pick out the subset of gauges
+	we are interested in by enforcing the gauge condition $G(A)=0$ to eliminate over-counting.
+	This constraint may be written as ~\cite{p&s}:
 
 	\begin{equation}
 	\int D\alpha(x)\delta(G(A^\alpha))Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right) = 1.
 	\end{equation}
 
-	Where $A^\alpha_\mu = A_\mu - \frac{1}{g_s}\partial_\mu\alpha(x)$.  Making a gauge transformation ($A_\mu\rightarrow A^\alpha_\mu$) and inserting equation (18):
+	Where $A^\alpha_\mu = A_\mu - \frac{1}{g_s}\partial_\mu\alpha(x)$.  Making a gauge
+	transformation ($A_\mu\rightarrow A^\alpha_\mu$) and inserting equation (18):
 
 	\begin{subequations}
 	\begin{equation}
-	\int DAe^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}} = \int DA\int D\alpha(x)\delta(G(A^\alpha))Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right)e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}},
+	\int DAe^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}} = \int DA\int D\alpha(x)\delta(G(A^\alpha))
+	Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right)e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}},
 	\end{equation}
 	\begin{equation}
-	= \int D\alpha(x)\int DA\delta(G(A^\alpha))Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right)e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}}.
+	= \int D\alpha(x)\int DA\delta(G(A^\alpha))Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right)
+	e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}}.
 	\end{equation}
 	\end{subequations}
 
-	We are free to change the functional integration variable to $A_\mu^\alpha$ since everything is gauge invariant leading to an integrand which \emph{only} depends on $A^\alpha_\mu$.  We can therefore simply relabel back to $A_\mu$:
+	We are free to change the functional integration variable to $A_\mu^\alpha$ since everything
+	is gauge invariant leading to an integrand which \emph{only} depends on $A^\alpha_\mu$.
+	We can therefore simply relabel back to $A_\mu$:
 
 	\begin{equation}
-	= \left(\int D\alpha(x)\right)\int DA\delta(G(A))Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right)e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}}.
+	= \left(\int D\alpha(x)\right)\int DA\delta(G(A))Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right)
+	e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}}.
 	\end{equation}
 
-	The functional integration can now just be factored out as a constant and we can choose the function $G(A)$ as a generalisation of the Lorentz gauge: $G(A)=\partial^\mu A^a_\mu-\omega^a$.  This choice leads us to the correct gluon propagator - along with our free parameter, $\xi$:
+	The functional integration can now just be factored out as a constant and we can choose the
+	function $G(A)$ as a generalisation of the Lorentz gauge: $G(A)=\partial^\mu A^a_\mu-\omega^a$.
+	This choice leads us to the correct gluon propagator - along with our free parameter, $\xi$:
 
 	\begin{equation}
-	\langle0|A_a(x)A_b(y)|0\rangle = G_F^{\mu\nu}(x-y) = \int \frac{d^4x}{(2\pi)^4}e^{-ik\cdot(x-y)}\delta_{ab}\frac{-i}{k^2+i\epsilon}\left(g^{\mu\nu}-(1-\xi)\frac{k^\mu k^\nu}{k^2}\right).
+	\langle0|A_a(x)A_b(y)|0\rangle = G_F^{\mu\nu}(x-y) = \int \frac{d^4x}{(2\pi)^4}e^{-ik\cdot(x-y)}
+	\delta_{ab}\frac{-i}{k^2+i\epsilon}\left(g^{\mu\nu}-(1-\xi)\frac{k^\mu k^\nu}{k^2}\right).
 	\end{equation}
 
-	but because the QCD gauge transformation is more involved than the QED equivalent the determinant term still depends on $A_\mu$:
+	but because the QCD gauge transformation is more involved than the
+	QED equivalent the determinant term still depends on $A_\mu$:
 
 	\begin{equation}
 	Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right) = Det\left(\frac{\partial_\mu D^\mu}{g_s}\right).
@@ -141,31 +182,44 @@
 	We can however simply invent another type of field and choose to write out determinant as
 
 	\begin{equation}
-	Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right) = \int D\chi D\overline{\chi}e^{i\int d^4x\overline{\chi}(-\partial_\mu D_\mu)\chi}.
+		Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right) = \int D\chi D\overline{\chi}
+		e^{i\int d^4x\overline{\chi}(-\partial_\mu D_\mu)\chi}.
 	\end{equation}
 
-	These non-physical modes are called the Fadeev-Popov ghosts/anti-ghosts and are a consequence of enforcing gauge invariance - they are represented by the final term in equation (12a).
+	These non-physical modes are called the Fadeev-Popov ghosts/anti-ghosts and are a consequence
+	of enforcing gauge invariance - they are represented by the final term in equation (12a).
 
 	\subsection{Renormalising the QCD Lagrangian}
 
-	Similarly to QED we anticipate divergent quantities in our calculations above tree level and so we introduce counter terms into our Lagrangian.  Similarly to equation (4) we have the following relations:
+	Similarly to QED we anticipate divergent quantities in our calculations above tree level and
+	so we introduce counter terms into our Lagrangian.  Similarly to equation (4) we have the following relations:
 
 	\begin{subequations}
 	\begin{equation}
-	\psi_0 = Z_\psi^\frac{1}{2}\psi,  \hspace{15mm}  A_0^a = Z_A^\frac{1}{2}A^a,  \hspace{15mm}  \chi^a_0 = Z_\chi^\frac{1}{2}\chi^a,
+	\psi_0 = Z_\psi^\frac{1}{2}\psi,
+	\hspace{15mm}A_0^a = Z_A^\frac{1}{2}A^a,
+	\hspace{15mm}\chi^a_0 = Z_\chi^\frac{1}{2}\chi^a,
 	\end{equation}
 	\begin{equation}
-	m_0 = Z_mm,  \hspace{15mm}  g_{s0} = Z_sg_s,  \hspace{15mm}  \xi_0 = Z_\xi\xi.
+	m_0 = Z_mm,
+	\hspace{15mm}g_{s0} = Z_sg_s,
+	\hspace{15mm}\xi_0 = Z_\xi\xi.
 	\end{equation}
 	\end{subequations}
 
-	Inserting these into equations (13) and (14) and rearranging so that we have $\mathcal{L^{QCD}} = \mathcal{L}_0 + \mathcal{L}_{ct}$ where $\mathcal{L}_0$ is as defined in equation (13) and the counter-term Lagrangian is:
+	Inserting these into equations (13) and (14) and rearranging so that we have
+	$\mathcal{L^{QCD}} = \mathcal{L}_0 + \mathcal{L}_{ct}$ where $\mathcal{L}_0$
+	is as defined in equation (13) and the counter-term Lagrangian is:
 
 	\begin{equation}
 	\begin{split}
-	\mathcal{L}_{ct} = &-(Z_A - 1)\frac{1}{4}(F^a_{\mu\nu})^2 + (Z_\chi - 1)i(\partial^\mu\chi^a)(\partial_\mu\chi^a) + (Z_\psi - 1)\overline{\psi^i}(i\slashed \partial - m)\psi^i - Z_\psi(Z_m - 1)m\overline{\psi^i}\psi^i + \ldots \\
-	&-(Z_sZ_A^\frac{3}{2}-1)\frac{1}{2}g_sf^{abc}\partial_{[\mu]}A^a_{\nu]}A^{b\mu}A^{c\nu} - (Z_s^2Z^2_A - 1)\frac{1}{4}g_s^2f^{abe}f^{cde}A^a_\mu A^b_\nu A^{c\mu}A^{d\nu} - \ldots \\
-	&-(Z_sZ_\chi Z_A^\frac{1}{2} - 1)ig_sf^{abc}(\partial^\mu\chi^a)\chi^bA^c_\mu + (Z_sZ_\psi Z_A^\frac{1}{2} - 1)g_s\overline{\psi}^iT^a_{ij}\gamma^\mu\psi^jA^a_\mu.
+		\mathcal{L}_{ct} = &-(Z_A - 1)\frac{1}{4}(F^a_{\mu\nu})^2 + (Z_\chi - 1)
+		i(\partial^\mu\chi^a)(\partial_\mu\chi^a) + (Z_\psi - 1)\overline{\psi^i}
+		(i\slashed \partial - m)\psi^i - Z_\psi(Z_m - 1)m\overline{\psi^i}\psi^i + \ldots \\
+		&-(Z_sZ_A^\frac{3}{2}-1)\frac{1}{2}g_sf^{abc}\partial_{[\mu]}A^a_{\nu]}A^{b\mu}A^{c\nu} -
+		(Z_s^2Z^2_A - 1)\frac{1}{4}g_s^2f^{abe}f^{cde}A^a_\mu A^b_\nu A^{c\mu}A^{d\nu} - \ldots \\
+		&-(Z_sZ_\chi Z_A^\frac{1}{2} - 1)ig_sf^{abc}(\partial^\mu\chi^a)\chi^bA^c_\mu +
+		(Z_sZ_\psi Z_A^\frac{1}{2} - 1)g_s\overline{\psi}^iT^a_{ij}\gamma^\mu\psi^jA^a_\mu.
 	\end{split}
 	\end{equation}
 
@@ -186,34 +240,69 @@
 	In calculations above tree level we encounter divergences of various kinds which can be divided up into three classes:
 
 	\begin{itemize}
-		\item Ultraviolet (UV) divergences:  These occur when all the components of a loop momenta tend to infinity, $k^\alpha\rightarrow\infty$, such that $k^2$ becomes the dominant term in propagator.  Since these extrememly high momentum modes corresponding to physics at very short distance scales we choose to 	interpret these divergences as an indication that our theory is only an effective theory and we shouldn't attempt to apply it to all scales.
+		\item Ultraviolet (UV) divergences:  These occur when all the components of a loop momenta tend to
+		infinity, $k^\alpha\rightarrow\infty$, such that $k^2$ becomes the dominant term in propagator.
+		Since these extremely high momentum modes corresponding to physics at very short distance scales
+		we choose to interpret these divergences as an indication that our theory is only an
+		effective theory and we shouldn't attempt to apply it to all scales.
 
-		\item Infrared (IR) divergences:  These occur in theories with massless gauge bosons, such as QED and QCD, since a particle may emit any number of arbitrarily such bosons with infinitesimal energy and we would never be able to detect their emission.  In contrast to the UV divergences the IR becomes important 	in the region of phase space where $k^2\rightarrow0$.
+		\item Infrared (IR) divergences:  These occur in theories with massless gauge bosons, such as
+		QED and QCD, since a particle may emit any number of arbitrarily such bosons with infinitesimal
+		energy and we would never be able to detect their emission.  In contrast to the UV divergences
+		the IR becomes important in the region of phase space where $k^2\rightarrow0$.
 
-		\item Collinear (mass) divergences: These occur when we have massless bosons \emph{and} have massless on-shell particles in our calculation.  This can happen when we have, for example, a photon/gluon in the final state or the energy scale of the interaction is far higher than the mass of an emitted particle 	which admits taking that particles mass to be zero.  We can see this by considering a typical propagator factor:
+		\item Collinear (mass) divergences: These occur when we have massless bosons \emph{and} have
+		massless on-shell particles in our calculation.  This can happen when we have, for example,
+		a photon/gluon in the final state or the energy scale of the interaction is far higher than
+		the mass of an emitted particle which admits taking that particles mass to be zero.
+		We can see this by considering a typical propagator factor:
 
 		\begin{equation}
 			\frac{1}{(p+k)^2-m^2}\sim\frac{1}{(p+k)^2} = \frac{1}{2p\cdot k} = \frac{1}{2E_pE_k(1-\cos\theta_{pk})}.
 		\end{equation}
 
-		Where we have used the on-shell relations $p^2=0$ and $k^2=0$.  Clearly as the angle of emission, $\theta_{pk}$, tends to zero (the collinear limit) this term will diverge.
+		Where we have used the on-shell relations $p^2=0$ and $k^2=0$.  Clearly as the angle of
+		emission, $\theta_{pk}$, tends to zero (the collinear limit) this term will diverge.
 	\end{itemize}
 
-	If we are to extract any useful information above tree-level we will have to find ways to control these infinities.  We call these methods `regularisation schemes'
+	If we are to extract any useful information above tree-level we will have to find
+	ways to control these infinities.  We call these methods `regularisation schemes'
 
 	\subsection{Regularisation Schemes}
 
-	The general plan with all regularisation schemes is to introduce a new parameter to the calculation which is used to get a handle on exactly \emph{how} the integral diverges.  Once we have performed the integration we take the limiting case where the effect of the regulator vanishes we will see that the divergence now presents itself as some singular function of the regulator when $\Lambda^2\rightarrow\infty$.  There are many ways to regularise divergences each with their own advantages and disadvantages.  We will describe a few here:
+	The general plan with all regularisation schemes is to introduce a new parameter to the calculation which
+	is used to get a handle on exactly \emph{how} the integral diverges.  Once we have performed the integration
+	we take the limiting case where the effect of the regulator vanishes we will see that the divergence now
+	presents itself as some singular function of the regulator when $\Lambda^2\rightarrow\infty$.  There are
+	many ways to regularise divergences each with their own advantages and disadvantages.  We will describe a few here:
 
 	\begin{itemize}
-	\item Hard momentum cut-off: In the hard momentum cut-off approach we simply replace the upper bound with some finite large value, $\Lambda^2$.  This will regulate the UV and allow us to complete the calculation provided there are no IR or mass singularities.  While this method is very conceptually simple it does break both translational invariance and gauge invariance which is far from ideal.
-	\item Pauli-Villars regularisation: In the Pauli-Villars scheme we replace the normal propagators with propagators damped by a large mass:
-	      \begin{equation}
-	      \frac{1}{p^2-m^2}\rightarrow\frac{1}{p^2-m^2} - \frac{1}{p^2-M^2}.
-	      \end{equation}
-	      For $m\ll M$.  Once again this does not deal with any problems with the IR/mass singularities and in order to get this extra contributions we must add another field to our lagrangian which satisfies the opposite statistics to the field we are trying to regulate.
-	\item Mass regularisation: When using mass regularisation we give the gauge bosons a small mass to control any IR or mass divergences which might be present, we can then perform the integrals and the singularity re-emerges when we take the limit of massless bosons again.  The disadvantage of this scheme is that it does not regulate the UV region of phase space and massive gauge bosons are forbidden by gauge invariance unless we have a broken symmetry.
-	\item Dimensional regularisation:  In dimensional regularisation we analytically continue the number of space-time dimensions away from the standard $d=4$.  We still want to be able to return to our usual 4D theory so we choose $d=4-2\epsilon$ where $\epsilon$ is the regulator and we plan to take the limit $\epsilon\rightarrow 0$.  The advantage of this is that dimensional regularisation treats both the UV and the IR divergences and both translational invariance and gauge invariance are preserved.  However, this modification changes the well known Dirac algebra relations which makes computing the numerator slightly more involved.  There are also some tensors which cannot easily be generalised to arbitrary dimensions.
+		\item Hard momentum cut-off: In the hard momentum cut-off approach we simply replace the upper bound
+		with some finite large value, $\Lambda^2$.  This will regulate the UV and allow us to complete the
+		calculation provided there are no IR or mass singularities.  While this method is very conceptually
+		simple it does break both translational invariance and gauge invariance which is far from ideal.
+
+		\item Pauli-Villars regularisation: In the Pauli-Villars scheme we replace the normal propagators with propagators damped by a large mass:
+
+		      \begin{equation}
+			      \frac{1}{p^2-m^2}\rightarrow\frac{1}{p^2-m^2} - \frac{1}{p^2-M^2}.
+		      \end{equation}
+
+		      For $m\ll M$.  Once again this does not deal with any problems with the IR/mass singularities and in order to get this
+		      extra contributions we must add another field to our Lagrangian which satisfies the opposite statistics to the field we are trying to regulate.
+
+		\item Mass regularisation: When using mass regularisation we give the gauge bosons a small mass to control any
+		IR or mass divergences which might be present, we can then perform the integrals and the singularity re-emerges
+		when we take the limit of massless bosons again.  The disadvantage of this scheme is that it does not regulate
+		the UV region of phase space and massive gauge bosons are forbidden by gauge invariance unless we have a broken symmetry.
+
+		\item Dimensional regularisation:  In dimensional regularisation we analytically continue the number of space-time
+		dimensions away from the standard $d=4$.  We still want to be able to return to our usual 4D theory so we choose
+		$d=4-2\epsilon$ where $\epsilon$ is the regulator and we plan to take the limit $\epsilon\rightarrow 0$.  The
+		advantage of this is that dimensional regularisation treats both the UV and the IR divergences and both translational
+		invariance and gauge invariance are preserved.  However, this modification changes the well known Dirac algebra
+		relations which makes computing the numerator slightly more involved.  There are also some tensors which cannot
+		easily be generalised to arbitrary dimensions.
 	\end{itemize}
 
 	\subsection{The QCD Beta function}
@@ -268,7 +357,8 @@
 				\includegraphics[width=0.98\linewidth]{NLORealRight}
 				\caption{Real Emission, $\mathcal{A}_{r2}$}
 			\end{minipage}
-		\caption{Feynman diagrams for the $O(\alpha_s)$ correction to $\gamma^*\rightarrow q\overline{q}$ process (a-d) and the two real emission diagrams (e-f)}\label{fig:NLOContributions}
+		\caption{Feynman diagrams for the $O(\alpha_s)$ correction to $\gamma^*\rightarrow q\overline{q}$
+		process (a-d) and the two real emission diagrams (e-f)}\label{fig:NLOContributions}
 	\end{figure}
 
 	The Feynman diagrams which need to be included for the and $\mathcal{O}(1)$ and $\mathcal{O}(\alpha_s)$ corrections to the
@@ -310,7 +400,8 @@
 	colour states of the outgoing quarks):
 
 	\begin{equation}
-	|\overline{\mathcal{A}_0}|^2 = 3\sum_{\forall\lambda, r}e^2Q^2[\overline{u}^{\lambda_2}(k_2)\gamma^\mu v^{\lambda_1}(k_1)][\overline{v}^{\lambda_1}(k_1)\gamma^\nu v^{\lambda_2}(k_1)]\epsilon^r_\mu(p)\epsilon^r_{*\mu}(p).
+	|\overline{\mathcal{A}_0}|^2 = 3\sum_{\forall\lambda, r}e^2Q^2[\overline{u}^{\lambda_2}(k_2)\gamma^\mu
+	v^{\lambda_1}(k_1)][\overline{v}^{\lambda_1}(k_1)\gamma^\nu v^{\lambda_2}(k_1)]\epsilon^r_\mu(p)\epsilon^r_{*\mu}(p).
 	\end{equation}
 
 	We can now using Casimir's trick ~\cite{griff} to convert this spinor string into a trace, using the replacements
@@ -358,38 +449,48 @@
 	the second term in equation (30).  Using the Feynman rules we have:
 
 	\small
-	\begin{subequations}
-	\begin{equation}
-	\mathcal{A}_v = \int\frac{d^{d}k}{(2\pi)^{d}} \overline{u}^{\lambda_2}(k_2)(-ig_s\mu^\epsilon\gamma^\alpha T^a_{ij})\frac{i(\slashed k_1 + \slashed k)}{(k_1+k)^2}(-ieQ\gamma^\mu)\frac{i(\slashed k_2 - \slashed k)}{(k_2 - k)^2}(-g_s\mu^\epsilon\	gamma^\beta T^a_{ij})\epsilon^r_\mu(p)\frac{-i}{k^2}\left(g_{\alpha\beta} + (1-\xi)\frac{k^\alpha k^\beta}{k^2}\right)v^{\lambda_1}(k_1).
-	\end{equation}
-	\begin{equation}
-	\mathcal{A}_v = -ig_s^2eQ\mu^{2\epsilon}\Tr(T^aT^a)\overline{u}^{\lambda_2}(k_2)\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_1(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2}v^{\lambda_2}(k_2).
-	\end{equation}
-	\end{subequations}
+		\begin{subequations}
+		\begin{equation}
+			\mathcal{A}_v = \int\frac{d^{d}k}{(2\pi)^{d}} \overline{u}^{\lambda_2}(k_2)
+			(-ig_s\mu^\epsilon\gamma^\alpha T^a_{ij})\frac{i(\slashed k_1 + \slashed k)}{(k_1+k)^2}
+			(-ieQ\gamma^\mu)\frac{i(\slashed k_2 - \slashed k)}{(k_2 - k)^2}(-g_s\mu^\epsilon\gamma^\beta T^a_{ij})
+			\epsilon^r_\mu(p)\frac{-i}{k^2}\left(g_{\alpha\beta} +
+			(1-\xi)\frac{k^\alpha k^\beta}{k^2}\right)v^{\lambda_1}(k_1).
+		\end{equation}
+		\begin{equation}
+			\mathcal{A}_v = -ig_s^2eQ\mu^{2\epsilon}\Tr(T^aT^a)\overline{u}^{\lambda_2}
+			(k_2)\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_1(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2}v^{\lambda_2}(k_2).
+		\end{equation}
+		\end{subequations}
 	\normalsize
 
 	Where the numerator of the fraction is given by:
 
 	\begin{equation}
-	\mathcal{N}_1(k_1, k_2, k) = \gamma^\alpha(\slashed k_1 + \slashed k)\gamma^\mu(\slashed k_2 - \slashed k)\gamma_\beta\Big(g^{\alpha\beta} + (1-\xi)\frac{k^\alpha k^\beta}{k^2}\Big).
+	\mathcal{N}_1(k_1, k_2, k) = \gamma^\alpha(\slashed k_1 + \slashed k)\gamma^\mu(\slashed k_2 -
+	\slashed k)\gamma_\beta\Big(g^{\alpha\beta} + (1-\xi)\frac{k^\alpha k^\beta}{k^2}\Big).
 	\end{equation}
 
 	From equation (30) we see we need $\mathcal{A}_0^*\mathcal{A}_v$:
 
 	\begin{equation}
-	\mathcal{A}_0^*\mathcal{A}_v = g_s^2e^2Q^2\Tr(T^aT^a)[\overline{v}^{\lambda_1}(k_1)\gamma^\nu u(k_2)]\left[\overline{u}^{\lambda_2}(k_2)\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_1(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2}v^{\lambda_1}(k_1)\right]	\epsilon^r_{\mu}(p)\epsilon^r_{*\nu}(p).
+		\mathcal{A}_0^*\mathcal{A}_v = g_s^2e^2Q^2\Tr(T^aT^a)[\overline{v}^{\lambda_1}(k_1)\gamma^\nu u(k_2)]
+		\left[\overline{u}^{\lambda_2}(k_2)\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_1(k_1, k_2, k)}
+		{k^2(k_1+k)^2(k_2-k)^2}v^{\lambda_1}(k_1)\right]\epsilon^r_{\mu}(p)\epsilon^r_{*\nu}(p).
 	\end{equation}
 
 	And now performing the spin/polarisation/colour sum and average gives:
 
 	\begin{equation}
-	\overline{\mathcal{A}_0^*\mathcal{A}_v} = -\frac{g_s^2e^2Q^2}{2}\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_2(k_1, k_2,k)}{k^2(k_1+k)^2(k_2-k)^2}.
+	\overline{\mathcal{A}_0^*\mathcal{A}_v} = -\frac{g_s^2e^2Q^2}{2}\int\frac{d^{d}k}
+	{(2\pi)^{d}}\frac{\mathcal{N}_2(k_1, k_2,k)}{k^2(k_1+k)^2(k_2-k)^2}.
 	\end{equation}
 
 	Where:
 
 	\begin{equation}
-	\mathcal{N}_2(k_1, k_2, k) = \Tr[\slashed k_1 \gamma_\alpha(\slashed k_1 + \slashed k)\gamma_\mu(\slashed k_2 - \slashed k)\gamma_\beta\slashed k_2\gamma^\mu]\Big(g^{\alpha\beta} + (1-\xi)\frac{k^\alpha k^\beta}{k^2}\Big).
+	\mathcal{N}_2(k_1, k_2, k) = \Tr[\slashed k_1 \gamma_\alpha(\slashed k_1 + \slashed k)\gamma_\mu
+	(\slashed k_2 - \slashed k)\gamma_\beta\slashed k_2\gamma^\mu]\Big(g^{\alpha\beta} + (1-\xi)\frac{k^\alpha k^\beta}{k^2}\Big).
 	\end{equation}
 
 	Before we can proceed any further we must evaluate the trace term in the integral.  As mentioned in section X
@@ -409,14 +510,16 @@
 
 	\begin{equation}
 	\begin{split}
-	\Tr[\slashed k_1 \gamma_\alpha(\slashed k_1 + \slashed k)\gamma_\mu(\slashed k_2 &- \slashed k)\gamma^\alpha\slashed k_2\gamma^\mu] = s[s(8-4d) + \frac{(k_1\cdot k)(k_2\cdot k)}{s}(32-16d) \\
+	\Tr[\slashed k_1 \gamma_\alpha(\slashed k_1 + \slashed k)\gamma_\mu(\slashed k_2 &-
+	\slashed k)\gamma^\alpha\slashed k_2\gamma^\mu] = s[s(8-4d) + \frac{(k_1\cdot k)(k_2\cdot k)}{s}(32-16d) \\
 	&- (16-8d)(k_1\cdot k - k_2\cdot k) + k^2(16-12d+2d^2)].
 	\end{split}
 	\end{equation}
 
 	\begin{equation}
 	\begin{split}
-	\Tr[\slashed k_1 \gamma_\alpha(\slashed k_1 + \slashed k)\gamma_\mu(\slashed k_2 &- \slashed k)\gamma_\beta\slashed k_2\gamma^\mu]k^\alpha k^\beta = s[(k_1\cdot k)(k_2\cdot k)(16 - 8d) \\
+	\Tr[\slashed k_1 \gamma_\alpha(\slashed k_1 + \slashed k)\gamma_\mu(\slashed k_2 &- \slashed k)\gamma_\beta
+	\slashed k_2\gamma^\mu]k^\alpha k^\beta = s[(k_1\cdot k)(k_2\cdot k)(16 - 8d) \\
 	&+ k^2(8 - 4d)(k_2\cdot k - k_1\cdot k) - k^4(4 - 2d)].
 	\end{split}
 	\end{equation}
@@ -425,13 +528,15 @@
 	quadratic in $d$ and combining the two trace terms we arrive at:
 
 	\begin{equation}
-	\overline{\mathcal{A}_0^*\mathcal{A}_v} = -4s\left(\frac{d}{2}-1\right)\frac{g_s^2e^2Q^2}{2}\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_3(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2}.
+	\overline{\mathcal{A}_0^*\mathcal{A}_v} = -4s\left(\frac{d}{2}-1\right)\frac{g_s^2e^2Q^2}{2}
+	\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_3(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2}.
 	\end{equation}
 
 	Where:
 
 	\begin{equation}
-	\mathcal{N}_3(k_1, k_2, k) = -2s + \frac{8k\cdot k_1k\cdot k_2}{s} + (6+2\xi)(k\cdot k_1 - k\cdot k_2) + k^2(d-4) - 4(1-\xi)\frac{k\cdot k_1 k\cdot k_2}{k^2} - (1-\xi)k^2.
+	\mathcal{N}_3(k_1, k_2, k) = -2s + \frac{8k\cdot k_1k\cdot k_2}{s} + (6+2\xi)(k\cdot k_1 -
+	k\cdot k_2) + k^2(d-4) - 4(1-\xi)\frac{k\cdot k_1 k\cdot k_2}{k^2} - (1-\xi)k^2.
 	\end{equation}
 
 	Combining this with the particle flux and the two particle phase space we can write an expression
@@ -440,13 +545,16 @@
 
 	\begin{subequations}
 	\begin{equation}
-	\sigma_v = -4s\left(\frac{d}{2}-1\right)\frac{g_d^2\mu^{2-\frac{d}{2}}e^2Q^2}{4s}2^{1-d}\pi^{\frac{d}{2}-1}\frac{\Gamma(\frac{d}{2}-1)}{\Gamma(d-2)}s^\frac{d-4}{2}\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_3(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-	k)^2},
+	\sigma_v = -4s\left(\frac{d}{2}-1\right)\frac{g_d^2\mu^{2-\frac{d}{2}}e^2Q^2}{4s}2^{1-d}\pi^{\frac{d}{2}-1}
+	\frac{\Gamma(\frac{d}{2}-1)}{\Gamma(d-2)}s^\frac{d-4}{2}\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_3(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2},
 	\end{equation}
 	\begin{equation}
-	\Rightarrow\sigma_v = -g_d^2\mu^{2-\frac{d}{2}}Q^2 4\pi\alpha\mu^{4-d}2^{1-d}\pi^{\frac{d}{2}-1}\frac{\Gamma(\frac{d}{2})}{\Gamma(d-2)}s^\frac{d-4}{2}\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_3(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2},
+	\Rightarrow\sigma_v = -g_d^2\mu^{2-\frac{d}{2}}Q^2 4\pi\alpha\mu^{4-d}2^{1-d}\pi^{\frac{d}{2}-1}\frac{\Gamma(
+	\frac{d}{2})}{\Gamma(d-2)}s^\frac{d-4}{2}\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_3(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2},
 	\end{equation}
 	\begin{equation}
-	\Rightarrow\sigma_v = -\frac{4\sigma_0}{3}g_d^2\mu^{2-\frac{d}{2}}\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_3(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2}.
+	\Rightarrow\sigma_v = -\frac{4\sigma_0}{3}g_d^2\mu^{2-\frac{d}{2}}\int\frac{d^{d}k}{(2\pi)^{d}}
+	\frac{\mathcal{N}_3(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2}.
 	\end{equation}
 	\end{subequations}
 
@@ -461,21 +569,25 @@
 	We have that:
 
 	\begin{equation}
-	\sigma_v = -\frac{4\sigma_0}{3}g_d^2\mu^{2-\frac{d}{2}}\int\frac{d^{d}k}{(2\pi)^d}\int_0^1dy\frac{\mathcal{N}_3(k_1, k_2, k)}{(k^2-2k\cdot k_y)^2k^2}.
+	\sigma_v = -\frac{4\sigma_0}{3}g_d^2\mu^{2-\frac{d}{2}}\int\frac{d^{d}k}{(2\pi)^d}
+	\int_0^1dy\frac{\mathcal{N}_3(k_1, k_2, k)}{(k^2-2k\cdot k_y)^2k^2}.
 	\end{equation}
 
 	Where $k_y = yk_1 -(1-y)k_2$.  Examining now the integrand we see there are two
 	different $k$ dependences and so we partition the terms as follows:
 
 	\begin{equation}
-	\sigma_v = -\frac{4\sigma_0}{3}g_d^2\mu^{2-\frac{d}{2}}\int\frac{d^{d}k}{(2\pi)^d}\int_0^1dy\left(\frac{\mathcal{N}'_3(k_1, k_2, k)}{(k^2-2k\cdot k_y)^2k^2} + \frac{\mathcal{N}''_3(k_1, k_2, k)}{(k^2-2k\cdot k_y)^2k^4}\right).
+	\sigma_v = -\frac{4\sigma_0}{3}g_d^2\mu^{2-\frac{d}{2}}\int\frac{d^{d}k}{(2\pi)^d}\int_0^1dy
+	\left(\frac{\mathcal{N}'_3(k_1, k_2, k)}{(k^2-2k\cdot k_y)^2k^2} +
+	\frac{\mathcal{N}''_3(k_1, k_2, k)}{(k^2-2k\cdot k_y)^2k^4}\right).
 	\end{equation}
 
 	Where:
 
 	\begin{subequations}
 	\begin{equation}
-	\mathcal{N}'_3(k_1, k_2, k) = -2s + \frac{8k\cdot k_1k\cdot k_2}{s} + (6+2\xi)(k\cdot k_1 - k\cdot k_2) + k^2(d-4) - (1-\xi)k^2.
+	\mathcal{N}'_3(k_1, k_2, k) = -2s + \frac{8k\cdot k_1k\cdot k_2}{s} +
+	(6+2\xi)(k\cdot k_1 - k\cdot k_2) + k^2(d-4) - (1-\xi)k^2.
 	\end{equation}
 	\begin{equation}
 	\mathcal{N}''_3(k_1, k_2, k) = - 4(1-\xi)k\cdot k_1 k\cdot k_2.
@@ -496,7 +608,9 @@
 	and taking $c = k^2-2k\cdot k_y$ and $d = k^2$, simplifying the denominators and performing a change of variables $K=k-xp_y$ yields:
 
 	\begin{equation}
-	\sigma_v = -\frac{4\sigma_0}{3}g_d^2\mu^{2-\frac{d}{2}}\int\frac{d^{d}K}{(2\pi)^d}\int_0^1dy\int_0^1dx\left(\frac{2x\mathcal{N}'_3(k_1, k_2, K+xk_y)}{(K^2-C)^3} + \frac{6x(1-x)\mathcal{N}''_3(k_1, k_2, K+xk_y)}{(K^2-C)^4}\right).
+	\sigma_v = -\frac{4\sigma_0}{3}g_d^2\mu^{2-\frac{d}{2}}\int\frac{d^{d}K}{(2\pi)^d}\int_0^1dy\int_0^1dx
+	\left(\frac{2x\mathcal{N}'_3(k_1, k_2, K+xk_y)}{(K^2-C)^3} + \frac{6x(1-x)
+	\mathcal{N}''_3(k_1, k_2, K+xk_y)}{(K^2-C)^4}\right).
 	\end{equation}
 
 	Where $C = x^2p_y^2$.  The change of variables modifies the numerator terms to:
@@ -512,7 +626,8 @@
 	We can now perform the integrations over $K$ with the aid of equation (54):
 
 	\begin{equation}
-	\int\frac{d^{d}K}{(2\pi)^d}\frac{(K^2)^m}{(K^2-C)^n} = \frac{i(-1)^{m-n}}{(4\pi)^\frac{d}{2}}C^{m-n+\frac{d}{2}}\frac{\Gamma(m+\frac{d}{2})\Gamma(n-m-\frac{d}{2})}{\Gamma(\frac{d}{2})\Gamma(n)}.
+	\int\frac{d^{d}K}{(2\pi)^d}\frac{(K^2)^m}{(K^2-C)^n} = \frac{i(-1)^{m-n}}{(4\pi)^\frac{d}{2}}
+	C^{m-n+\frac{d}{2}}\frac{\Gamma(m+\frac{d}{2})\Gamma(n-m-\frac{d}{2})}{\Gamma(\frac{d}{2})\Gamma(n)}.
 	\end{equation}
 
 	Looking at the $K$ structure of equation (53) we can see that there are going to be 4 forms
@@ -520,13 +635,15 @@
 	but will show one as an example of how the calculations can proceed.  Consider the contribution of the first term of (53a):
 
 	\begin{equation}
-	-4s\int_0^1dy\int_0^1dxx\int\frac{d^{d}K}{(2\pi)^d}\frac{1}{(K^2-C)^3} = 4si\int_0^1dy\int_0^1dxx(4\pi)^{-\frac{d}{2}}C^{-3+\frac{d}{2}}\frac{\Gamma(\frac{d}{2})\Gamma(3-\frac{d}{2})}{\Gamma(\frac{d}{2})\Gamma(3)}.
+	-4s\int_0^1dy\int_0^1dxx\int\frac{d^{d}K}{(2\pi)^d}\frac{1}{(K^2-C)^3} = 4si\int_0^1dy\int_0^1dxx(4\pi)^{-\frac{d}{2}}
+	C^{-3+\frac{d}{2}}\frac{\Gamma(\frac{d}{2})\Gamma(3-\frac{d}{2})}{\Gamma(\frac{d}{2})\Gamma(3)}.
 	\end{equation}
 
 	From above we see that $C=x^2k_y=-x^2y(1-y)s$ and so:
 
 	\begin{equation}
-	\Rightarrow=4si(4\pi)^{-\frac{d}{2}}\Gamma(3-\frac{d}{2})(-s)^{-3+\frac{d}{2}}\int_0^1dy\int_0^1dxx^{-5+d}y^{\left(-2+\frac{d}{2}\right)-1}(1-y)^{\left(-2+\frac{d}{2}\right)-1}.
+	\Rightarrow=4si(4\pi)^{-\frac{d}{2}}\Gamma(3-\frac{d}{2})(-s)^{-3+\frac{d}{2}}\int_0^1dy\int_0^1dxx^{-5+d}
+	y^{\left(-2+\frac{d}{2}\right)-1}(1-y)^{\left(-2+\frac{d}{2}\right)-1}.
 	\end{equation}
 
 	Where we have written the $y$ exponents in such a way that we can use the following ~\cite{field}:
@@ -538,38 +655,46 @@
 	Therefore:
 
 	\begin{equation}
-	\Rightarrow=4si(4\pi)^{-\frac{d}{2}}\Gamma\left(3-\frac{d}{2}\right)(-s)^{-3+\frac{d}{2}}\frac{1}{d-4}\frac{\Gamma^2(\frac{d}{2}-2)}{\Gamma(d-4)}.
+	\Rightarrow=4si(4\pi)^{-\frac{d}{2}}\Gamma\left(3-\frac{d}{2}\right)(-s)^{-3+\frac{d}{2}}
+	\frac{1}{d-4}\frac{\Gamma^2(\frac{d}{2}-2)}{\Gamma(d-4)}.
 	\end{equation}
 
 	Which, after choosing $d=4+\epsilon$ (with the intention of taking the limit $\epsilon\rightarrow0$
 	once it is safe to do so), and manipulating the gamma functions to expose the pole structure gives:
 
 	\begin{equation}
-	-4\int_0^1dy\int_0^1dxx\int\frac{d^{d}K}{(2\pi)^d}\frac{1}{(K^2-C)^3} = 4(-s)^{\frac{\epsilon}{2}}i(4\pi)^{-2-\frac{\epsilon}{2}}\frac{4}{\epsilon^2}\frac{\Gamma\left(1-\frac{\epsilon}{2}\right)\Gamma^2\left(1+\frac{\epsilon}{2}\right)}{\Gamma(1+\epsilon)}.
+	-4\int_0^1dy\int_0^1dxx\int\frac{d^{d}K}{(2\pi)^d}\frac{1}{(K^2-C)^3} = 4(-s)^{\frac{\epsilon}{2}}i(4\pi)^{-2-\frac{\epsilon}{2}}
+	\frac{4}{\epsilon^2}\frac{\Gamma\left(1-\frac{\epsilon}{2}\right)\Gamma^2\left(1+\frac{\epsilon}{2}\right)}{\Gamma(1+\epsilon)}.
 	\end{equation}
 
 	Which is clearly divergent in the limit $d\rightarrow4$.  The other integrals follow similarly and
 	the combined result (simplified with the aid of a computer package) can be expressed as:
 
 	\begin{equation}
-	\sigma_v = \frac{2\alpha_s}{3\pi}\sigma_0\Big(\frac{s}{4\pi\mu^2}\Big)^{\frac{\epsilon}{2}}\frac{\Gamma\Big(1-\frac{\epsilon}{2}\Big)\Gamma^2\Big(1+\frac{\epsilon}{2}\Big)}{\Gamma(1+\epsilon)}\Big(-\frac{8}{\epsilon^2} + \frac{6}{\epsilon} - \frac{8+4\epsilon}{1+\epsilon}\Big).
+	\sigma_v = \frac{2\alpha_s}{3\pi}\sigma_0\Big(\frac{s}{4\pi\mu^2}\Big)^{\frac{\epsilon}{2}}\frac{\Gamma
+	\Big(1-\frac{\epsilon}{2}\Big)\Gamma^2\Big(1+\frac{\epsilon}{2}\Big)}{\Gamma(1+\epsilon)}\Big(-\frac{8}{\epsilon^2} +
+	\frac{6}{\epsilon} - \frac{8+4\epsilon}{1+\epsilon}\Big).
 	\end{equation}
 
-	Where we have defined $\alpha_s=\frac{g_d^2}{4\pi}$ and using \texttt{Maple} to expand the product of gamma matrices for $\epsilon\rightarrow0$ gives:
+	Where we have defined $\alpha_s=\frac{g_d^2}{4\pi}$ and using \texttt{Maple} to expand the
+	product of gamma matrices for $\epsilon\rightarrow0$ gives:
 
 	\begin{subequations}
 	\begin{equation}
-	\frac{\Gamma\left(1-\frac{\epsilon}{2}\right)\Gamma^2\left(1+\frac{\epsilon}{2}\right)}{\Gamma(1+\epsilon)} = \frac{\gamma_E}{2}\epsilon + \left(\frac{\gamma_E^2}{8} - \frac{\pi^2}{48}\right)\epsilon^2 + \mathcal{O}(\epsilon^3),
+	\frac{\Gamma\left(1-\frac{\epsilon}{2}\right)\Gamma^2\left(1+\frac{\epsilon}{2}\right)}{\Gamma(1+\epsilon)} =
+	\frac{\gamma_E}{2}\epsilon + \left(\frac{\gamma_E^2}{8} - \frac{\pi^2}{48}\right)\epsilon^2 + \mathcal{O}(\epsilon^3),
 	\end{equation}
 	\begin{equation}
-	\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}} = e^{\ln{\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}}} = e^{\frac{\epsilon}{2}\ln\left(\frac{s}{4\pi\mu^2}\right)} = 1 + \frac{\epsilon}{2}\ln\left(\frac{s}{4\pi\mu^2}\right) + \mathcal{O}(\epsilon^2).
+	\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}} = e^{\ln{\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}}} =
+	e^{\frac{\epsilon}{2}\ln\left(\frac{s}{4\pi\mu^2}\right)} = 1 + \frac{\epsilon}{2}\ln\left(\frac{s}{4\pi\mu^2}\right) + \mathcal{O}(\epsilon^2).
 	\end{equation}
 	\end{subequations}
 
 	Where $\gamma_E$ is Eulers constant.  Finally then we have:
 
 	\begin{equation}
-	\sigma_v = \frac{2\alpha_s}{3\pi}\sigma_0\left[-\frac{8}{\epsilon^2} + \frac{1}{\epsilon}\left(6-4\gamma_E-4L\right)+\gamma_E(3-\gamma_E)-8+\frac{\pi^2}{6}+\pi^2-L^2-(2\gamma_E-3)L\right].
+	\sigma_v = \frac{2\alpha_s}{3\pi}\sigma_0\left[-\frac{8}{\epsilon^2} + \frac{1}{\epsilon}\left(6-4\gamma_E-4L\right) +
+	\gamma_E(3-\gamma_E)-8+\frac{\pi^2}{6}+\pi^2-L^2-(2\gamma_E-3)L\right].
 	\end{equation}
 
 	Where $L = \ln{\left(\frac{s}{4\pi\mu^2}\right)}$.  We can now see that regardless of our choice of
@@ -601,17 +726,21 @@
 	particle, $x_i = \frac{2E_i}{\sqrt{s}}$ (where $i=1$ is the external antiquark, $i=2$ is the antiquark
 	and $i=3$ is the external gluon).  In terms of these invariants the contraction of any two external
 	particles simplifies to $p_i\cdot p_j = \frac{1}{2}s(1-x_k)$ which - since we are still assuming our
-	quarks can be taken massless this gives a simple expression for the Mandelstam variables.  Evaluating the $|...|^2$ terms gives:
+	quarks can be taken massless this gives a simple expression for the Mandelstam variables.
+	Evaluating the $|...|^2$ terms gives:
 
 	\begin{subequations}
 	\begin{equation}
-	|\mathcal{A}_{left}|^2  = \frac{Q^2e^2g_s^2}{(k_1+k)^4}\Tr(T^aT^a)\Tr(\slashed k_2 \gamma^\mu (\slashed k_1 + \slashed k) \gamma^\nu \slashed k_1 \gamma_\nu (\slashed k_1 + \slashed k) \gamma_\mu),
+	|\mathcal{A}_{left}|^2  = \frac{Q^2e^2g_s^2}{(k_1+k)^4}\Tr(T^aT^a)\Tr(\slashed k_2 \gamma^\mu (\slashed k_1 + \slashed k)
+	\gamma^\nu \slashed k_1 \gamma_\nu (\slashed k_1 + \slashed k) \gamma_\mu),
 	\end{equation}
 	\begin{equation}
-	|\mathcal{A}_{right}|^2 = \frac{Q^2e^2g_s^2}{(k_2+k)^4}\Tr(T^aT^a)\Tr(\slashed k_2 \gamma^\nu (\slashed k_2 + \slashed k) \gamma^\mu \slashed k_2 \gamma_\mu (\slashed k_2 + \slashed k) \gamma_\nu),
+	|\mathcal{A}_{right}|^2 = \frac{Q^2e^2g_s^2}{(k_2+k)^4}\Tr(T^aT^a)\Tr(\slashed k_2 \gamma^\nu (\slashed k_2 + \slashed k)
+	\gamma^\mu \slashed k_2 \gamma_\mu (\slashed k_2 + \slashed k) \gamma_\nu),
 	\end{equation}
 	\begin{equation}
-	\mathcal{A}_{left}\mathcal{A}_{right}^* = \frac{Q^2e^2g_s^2}{(k_2+k)^2(k_1+k)^2}\Tr(T^aT^a)\Tr(\slashed k_2\gamma^\mu (\slashed k_1 + \slashed k) \gamma^\nu \slashed k_1 \gamma_\mu (\slashed k_2 + \slashed k) \gamma_\nu).
+	\mathcal{A}_{left}\mathcal{A}_{right}^* = \frac{Q^2e^2g_s^2}{(k_2+k)^2(k_1+k)^2}\Tr(T^aT^a)\Tr(\slashed k_2\gamma^\mu
+	(\slashed k_1 + \slashed k) \gamma^\nu \slashed k_1 \gamma_\mu (\slashed k_2 + \slashed k) \gamma_\nu).
 	\end{equation}
 	\end{subequations}
 
@@ -632,7 +761,8 @@
 	Summing these expressions according to equation (63) gives:
 
 	\begin{equation}
-	|\mathcal{A}_r|^2 = 32Q^2e^2g_s^2\left[\left(1+\frac{\epsilon}{2}\right)^2\frac{x_1^2+x_2^2}{(1-x_2)(1-x_1)} + \epsilon\left(1+\frac{\epsilon}{2}\right)\frac{2-2x_1-2x_2+x_1x_2}{(1-x_2)(1-x_1)}\right].
+	|\mathcal{A}_r|^2 = 32Q^2e^2g_s^2\left[\left(1+\frac{\epsilon}{2}\right)^2\frac{x_1^2+x_2^2}{(1-x_2)(1-x_1)} +
+	\epsilon\left(1+\frac{\epsilon}{2}\right)\frac{2-2x_1-2x_2+x_1x_2}{(1-x_2)(1-x_1)}\right].
 	\end{equation}
 
 	As with the virtual contributions we are interested in the observable cross-section and so we must
@@ -641,32 +771,37 @@
 	differential in terms of the energy fractions defined above:
 
 	\begin{equation}
-	\frac{d^2R_3}{dx_1dx_2} = \frac{s}{16(2\pi)^3}\left(\frac{s}{4\pi}\right)^\epsilon\frac{1}{\Gamma(2+\epsilon)}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
+	\frac{d^2R_3}{dx_1dx_2} = \frac{s}{16(2\pi)^3}\left(\frac{s}{4\pi}\right)^\epsilon\frac{1}{\Gamma(2+\epsilon)}
+	\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
 	\end{equation}
 
 	Where $z = 1 - 2\frac{1-x_1-x_2}{x_1x_2}$.  Combining equations (67) and (68) with a flux factor gives:
 
 	\begin{equation}
-	\frac{d^2\sigma_r}{dx_1dx_2} = \frac{2Q^2e^2g_s^2F(x_1, x_2; \epsilon)}{\pi}\left(\frac{s}{4\pi}\right)^\epsilon\frac{1}{\Gamma(2+\epsilon)}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
+	\frac{d^2\sigma_r}{dx_1dx_2} = \frac{2Q^2e^2g_s^2F(x_1, x_2; \epsilon)}{\pi}\left(\frac{s}{4\pi}\right)^\epsilon
+	\frac{1}{\Gamma(2+\epsilon)}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
 	\end{equation}
 
 	Where $F(x_1, x_2; \epsilon)$ is the algebraic factor in equation (67).  Switching to
 	a dimensionless coupling and introducing $\alpha_s$ as above:
 
 	\begin{equation}
-	\frac{d^2\sigma_r}{dx_1dx_2} = \frac{2Q^2e^2\alpha_s}{\pi}F(x_1, x_2; \epsilon)\left(\frac{s}{4\pi\mu^2}\right)^\epsilon\frac{1}{\Gamma(2+\epsilon)}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
+	\frac{d^2\sigma_r}{dx_1dx_2} = \frac{2Q^2e^2\alpha_s}{\pi}F(x_1, x_2; \epsilon)\left(\frac{s}{4\pi\mu^2}\right)^\epsilon
+	\frac{1}{\Gamma(2+\epsilon)}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
 	\end{equation}
 
 	Comparing with the Born cross-section in equation (35) this can be written as:
 
 	\begin{equation}
-	\frac{d^2\sigma_r}{dx_1dx_2} = \frac{2\alpha_s\sigma_0}{3\pi}F(x_1, x_2; \epsilon)\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}\frac{1}{\Gamma(2+\frac{\epsilon}{2})}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon	.
+	\frac{d^2\sigma_r}{dx_1dx_2} = \frac{2\alpha_s\sigma_0}{3\pi}F(x_1, x_2; \epsilon)\left(\frac{s}{4\pi\mu^2}\right)^
+	{\frac{\epsilon}{2}}\frac{1}{\Gamma(2+\frac{\epsilon}{2})}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
 	\end{equation}
 
 	Integrating over the allowed region of $x_1$ and $x_2$:
 
 	\begin{equation}
-	\sigma_r = \frac{2\alpha_s\sigma_0}{3\pi}\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}\frac{1}{\Gamma(2+\frac{\epsilon}{2})}\int_0^1dx_1x_1^\epsilon\int^1_{1-x_1}x_2^\epsilon\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}F(x_1, x_2; 	\epsilon).
+	\sigma_r = \frac{2\alpha_s\sigma_0}{3\pi}\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}\frac{1}{\Gamma(2+\frac{\epsilon}{2})}
+	\int_0^1dx_1x_1^\epsilon\int^1_{1-x_1}x_2^\epsilon\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}F(x_1, x_2;\epsilon).
 	\end{equation}
 
 	Defining $x_2=1-vx_1$ ~\cite{field} to decouple the integrals and converting the $z$ dependence in equation (73) gives:
@@ -676,20 +811,23 @@
 	\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}} = \frac{[v(1-v)(1-x_1)]^\frac{\epsilon}{2}}{x_2^\epsilon},
 	\end{equation}
 	\begin{equation}
-	\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}} = \frac{x_1^2(1+v^2)-2vx_1+1}{(1-x_1)x_1v} + \epsilon\frac{x_1^2(1-v+v^2-	x_1+1)}{(1-x_1)x_1v} + \frac{\epsilon^2}{4}\frac{x_1^2(v^2-2v+1) + 4(v-1) + 1}{(1-x_1)xv}.
+	\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}} = \frac{x_1^2(1+v^2)-2vx_1+1}{(1-x_1)x_1v} + \epsilon\frac{x_1^2(1-v+v^2-x_1+1)}
+	{(1-x_1)x_1v} + \frac{\epsilon^2}{4}\frac{x_1^2(v^2-2v+1) + 4(v-1) + 1}{(1-x_1)xv}.
 	\end{equation}
 	\end{subequations}
 
 	Inserting equations (73a) and (73b) into equation (72) and using \texttt{Maple} to perform the $x_1$ and $v$ integrations gives: ~\cite{primes}
 
 	\begin{equation}
-	\sigma_r = \frac{2\alpha_s\sigma_0}{3\pi}\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}\frac{\Gamma^2\left(1+\frac{\epsilon}{2}\right)}{\Gamma\left(1+\frac{3\epsilon}{2}\right)}\left[\frac{8}{\epsilon^2} - \frac{6}{\epsilon} + \frac{19}{2}\right].
+	\sigma_r = \frac{2\alpha_s\sigma_0}{3\pi}\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}\frac{\Gamma^2
+	\left(1+\frac{\epsilon}{2}\right)}{\Gamma\left(1+\frac{3\epsilon}{2}\right)}\left[\frac{8}{\epsilon^2} - \frac{6}{\epsilon} + \frac{19}{2}\right].
 	\end{equation}
 
 	And using the expansions applied in the virtual corrections case gives:
 
 	\begin{equation}
-	\sigma_r = \frac{2\alpha_s}{3\pi}\sigma_0\left[\frac{8}{\epsilon^2} + \frac{1}{\epsilon}\left(-6+4\gamma_E+4L\right)-\gamma_E(3-\gamma_E)-\frac{57}{6}+\frac{7\pi^2}{6}+L^2+(2\gamma_E-3)L\right].
+	\sigma_r = \frac{2\alpha_s}{3\pi}\sigma_0\left[\frac{8}{\epsilon^2} + \frac{1}{\epsilon}\left(-6+4\gamma_E+4L\right)-
+	\gamma_E(3-\gamma_E)-\frac{57}{6}+\frac{7\pi^2}{6}+L^2+(2\gamma_E-3)L\right].
 	\end{equation}
 
 	As in the case of the virtual corrections this is divergent in the limit $\epsilon\rightarrow0$ and depends on $\mu$.
@@ -705,7 +843,9 @@
 	\end{equation}
 	\begin{equation}
 	\begin{split}
-	\Rightarrow\sigma_{NLO} = \frac{2\alpha_s}{3\pi}\sigma_0\Big[\frac{8}{\epsilon^2} + \frac{1}{\epsilon}\Big(-6+4\gamma_E+4L\Big)-\gamma_E(3-\gamma_E)-\frac{57}{6}+\frac{7\pi^2}{6}+L^2+(2\gamma_E-3)L +\ldots\\ -\frac{8}{\epsilon^2} + \frac{1}{\epsilon}\Big(6-4\gamma_E-4L\Big)+\gamma_E(3-\gamma_E)-8+\frac{\pi^2}{6}+\pi^2-L^2-(2\gamma_E-3)L + \mathcal{O}(\epsilon)\Big],
+	\Rightarrow\sigma_{NLO} = \frac{2\alpha_s}{3\pi}\sigma_0\Big[\frac{8}{\epsilon^2} + \frac{1}{\epsilon}\Big(-6+4\gamma_E+4L\Big)-
+	\gamma_E(3-\gamma_E)-\frac{57}{6}+\frac{7\pi^2}{6}+L^2+(2\gamma_E-3)L +\ldots\\ -\frac{8}{\epsilon^2} + \frac{1}{\epsilon}
+	\Big(6-4\gamma_E-4L\Big)+\gamma_E(3-\gamma_E)-8+\frac{\pi^2}{6}+\pi^2-L^2-(2\gamma_E-3)L + \mathcal{O}(\epsilon)\Big],
 	\end{split}
 	\end{equation}
 	\begin{equation}
@@ -738,25 +878,30 @@
 	It is convenient to work in Helicity-Spinor notation to evaluate Feynman diagrams in the MRK limit \cite{efficiently}.  As usual we have:
 
 	\begin{equation}
-	\mid p\pm\rangle = \psi_\pm(p) \hspace{50pt} \overline{\psi_\pm(p)} = \langle p\pm\mid.
+		\mid p\pm\rangle = \psi_\pm(p) \hspace{50pt} \overline{\psi_\pm(p)} = \langle p\pm\mid.
 	\end{equation}
 
 	Often the helicity information will be suppressed, and we define the following shorthand:
 
 	\begin{equation}
-	\langle pk\rangle = \langle p-\mid k+\rangle \hspace{50pt} [pk] = \langle p+\mid k-\rangle.
+		\langle pk\rangle = \langle p-\mid k+\rangle \hspace{50pt} [pk] = \langle p+\mid k-\rangle.
 	\end{equation}
 
 	In this scheme we have the following identities:
 
 	\begin{align}
-	\langle ij\rangle[ij] &= s_{ij} & \langle i\pm\mid\gamma^\mu\mid i\pm\rangle &= 2k_i^\mu \\
-	\langle ij\rangle &= -\langle ji\rangle & [ij] &= -[ji] \\
-	\langle ii\rangle &= 0 & [ii] &= 0 \\
-	\langle i\pm\mid\gamma^\mu\mid j\pm\rangle\langle k\pm\mid\gamma_\mu\mid l\pm\rangle &= 2[ik]\langle l j\rangle & \langle k\pm\mid\gamma^\mu\mid l\pm\rangle &= \langle l\mp\mid\gamma^\mu\mid k\mp\rangle \\
-	\langle i j\rangle\langle k l\rangle &= \langle i k\rangle\langle l j\rangle + \langle i l\rangle\langle k j\rangle & [ij][kl] &= [ik][jl]+[il][kj] \\
-	\langle i+|\slashed k|j+\rangle &= [ik]\langle kj\rangle & \langle i-|\slashed k|j-\rangle &= \langle	 ik\rangle [kj]
+		\langle ij\rangle[ij] &= s_{ij} & \langle i\pm\mid\gamma^\mu\mid i\pm\rangle &= 2k_i^\mu \\
+		\langle ij\rangle &= -\langle ji\rangle & [ij] &= -[ji] \\
+		\langle ii\rangle &= 0 & [ii] &= 0 \\
+		\langle i\pm\mid\gamma^\mu\mid j\pm\rangle\langle k\pm\mid\gamma_\mu\mid l\pm\rangle &=
+		2[ik]\langle l j\rangle & \langle k\pm\mid\gamma^\mu\mid l\pm\rangle &=
+		\langle l\mp\mid\gamma^\mu\mid k\mp\rangle \\
+		\langle i j\rangle\langle k l\rangle &=
+		\langle i k\rangle\langle l j\rangle + \langle i l\rangle\langle k j\rangle & [ij][kl] &=
+		[ik][jl]+[il][kj] \\
+		\langle i+|\slashed k|j+\rangle &= [ik]\langle kj\rangle & \langle i-|\slashed k|j-\rangle &= \langle ik\rangle [kj]
 	\end{align}
+
 	Using the momentum for the partons outlined above and the on-shell condition for the external partons, $|p_i^\perp|=p_i^+p_i^-$, we have the following:
 
 	\begin{equation}
@@ -784,8 +929,10 @@
 	\subsection{Spinor-Helicity Calculations with Massive Partons}
 	\label{sub:SMMassive}
 
-	To do calculations with massive partons using the spinor-helicity formalism we must be very careful since all of our favourite identities and tricks rely on the spinor brackets, $|i\rangle$, representing massless partons with $p_i^2=0$.
-	We begin by defining `fundamental spinors' \cite{Thesis} which we can use to build more general spinors and go from there.\\For some $k_0$, $k_1$ satisfying $k_0^2=0$, $k_1^2=-1$ and $k_0\cdot k_1=0$ we can define positive and negative helicity spinors 	as follows:
+	To do calculations with massive partons using the spinor-helicity formalism we must be very careful since all of our favourite
+	identities and tricks rely on the spinor brackets, $|i\rangle$, representing massless partons with $p_i^2=0$.
+	We begin by defining `fundamental spinors' \cite{Thesis} which we can use to build more general spinors and go from there.
+	For some $k_0$, $k_1$ satisfying $k_0^2=0$, $k_1^2=-1$ and $k_0\cdot k_1=0$ we can define positive and negative helicity spinors as follows:
 
 	\begin{subequations}
 		\label{definition}
@@ -813,41 +960,43 @@
 	\begin{subequations}
 	\begin{align*}
 		u_-(k_0)\overline{u}_-(k_0) + u_+(k_0)\overline{u}_+(k_0) &= \omega_-\slashed k_0 + \slashed k_1 u_-(k_0)\overline{u}_-(k_0)\slashed k_1,\\
-	                                                                  &= \omega_-\slashed k_0 + \slashed k_1 \omega_-\slashed k_0\slashed k_1,\\
-	                                                                  &= \omega_-\slashed k_0 + \half\gu{\mu}k_{1\mu}(1-\gu{5})\gu{\nu}k_{0\nu}\gu{\sigma}k_{1\sigma},\\
-	                                                                  &= \omega_-\slashed k_0 + \half k_{1\mu}k_{0\nu}k_{1\sigma}(\gu{\mu}\gu{\nu}\gu{\sigma}-\gu{\mu}\gu{5}\gu{\nu}\gu{\sigma}),\\
-	                                                                  &= \omega_-\slashed k_0 + \half k_{1\mu}k_{0\nu}k_{1\sigma}(2\gu{\mu}g^{\nu\sigma} - \gu{\mu}\gu{\sigma}\gu{\nu}+2\gu{5}\gu{\mu}g^{\nu\sigma} - \gu{5}\gu{\mu}\gu{\sigma}\gu{\nu}),\\
-	                                                                  &= \omega_-\slashed k_0 + k_{1\mu}k_{0\nu}k_{1\sigma}\omega_+\gu{\mu}(2g^{\nu\sigma} - \gu{\sigma}\gu{\nu}),\\
-	                                                                  &= \omega_-\slashed k_0 + 2\slashed k_1 k_0\cdot k_1 - \omega_+\slashed k_1\slashed k_1 \slashed k_0,\\
-	                                                                  &= \omega_-\slashed k_0 + \omega_+\slashed k_0,
+	        &= \omega_-\slashed k_0 + \slashed k_1 \omega_-\slashed k_0\slashed k_1,\\
+	        &= \omega_-\slashed k_0 + \half\gu{\mu}k_{1\mu}(1-\gu{5})\gu{\nu}k_{0\nu}\gu{\sigma}k_{1\sigma},\\
+	        &= \omega_-\slashed k_0 + \half k_{1\mu}k_{0\nu}k_{1\sigma}(\gu{\mu}\gu{\nu}\gu{\sigma}-\gu{\mu}\gu{5}\gu{\nu}\gu{\sigma}),\\
+	        &= \omega_-\slashed k_0 + \half k_{1\mu}k_{0\nu}k_{1\sigma}(2\gu{\mu}g^{\nu\sigma} - \gu{\mu}\gu{\sigma}\gu{\nu}+2\gu{5}\gu{\mu}g^{\nu\sigma} - \gu{5}\gu{\mu}\gu{\sigma}\gu{\nu}),\\
+	        &= \omega_-\slashed k_0 + k_{1\mu}k_{0\nu}k_{1\sigma}\omega_+\gu{\mu}(2g^{\nu\sigma} - \gu{\sigma}\gu{\nu}),\\
+	        &= \omega_-\slashed k_0 + 2\slashed k_1 k_0\cdot k_1 - \omega_+\slashed k_1\slashed k_1 \slashed k_0,\\
+	        &= \omega_-\slashed k_0 + \omega_+\slashed k_0,
 	\end{align*}
 	\end{subequations}
 
-	where we have used ${\gu{\mu}, \gu{\mu}}=2g^{\mu\nu}$, ${\gu{\mu}, \gu{5}}=0$ and $\slashed k_1\slashed k_1=k_1^2=0$.  This proves the property of equation \ref{prop2} and inserting the definition of $\omega_\lambda$ gives:
+	where we have used ${\gu{\mu}, \gu{\mu}}=2g^{\mu\nu}$, ${\gu{\mu}, \gu{5}}=0$ and $\slashed k_1\slashed k_1=k_1^2=0$.
+	This proves the property of equation \ref{prop2} and inserting the definition of $\omega_\lambda$ gives:
 
 	\begin{subequations}
 	\begin{align*}
 		u_-(k_0)\overline{u}_-(k_0) + u_+(k_0)\overline{u}_+(k_0) &= \half(1-\gu{5})\slashed k_0 + (1+\gu{5})\slashed k_0,\\
-		                                                          &= \slashed k_0,
+		&= \slashed k_0,
 	\end{align*}
 	\end{subequations}
 
-	Which is equation \ref{prop1} for a massless particle.\\We can use these fundamental spinors to form spinors for any given momenta, $p$ (which has $p^2=0$), as follows:
+	Which is equation \ref{prop1} for a massless particle.\\We can use these fundamental spinors
+	to form spinors for any given momenta, $p$ (which has $p^2=0$), as follows:
 
 	\begin{equation}
 		u_\lambda(p) = \slashed p u_{-\lambda}(k_0) \frac{1}{\sqrt{2p\cdot k_0}},
 	\end{equation}
 
-	provided we dont have $p\cdot k_0=0$.  Once again it is easy to show that this spinor satisyfies the neccesary conditions, for example:
+	provided we don't have $p\cdot k_0=0$.  Once again it is easy to show that this spinor satisfies the necessary conditions, for example:
 
 	\begin{subequations}
 	\begin{align*}
 		u_\lambda(p)\overline{u}_\lambda(p) &= \frac{1}{2p\cdot k_0}\slashed p u_{-\lambda}(k_0)\overline{u}_{-\lambda}(p)\slashed p,\\
-		                                    &= \frac{1}{2p\cdot k_0}\slashed p \omega_{-\lambda}\slashed k_0\slashed p,\\
-		                                    &= \frac{1}{4p\cdot k_0}\slashed p (1-\lambda\gu{5})\slashed k_0\slashed p,\\
-		                                    &= \frac{1}{2p\cdot k_0}p_{\mu}k_{0\nu}p_{\sigma}\omega_{\lambda}\gu{\mu}(2g^{\nu\sigma} - \gu{\sigma}\gu{\nu}),\\
-		                                    &= \frac{1}{2p\cdot k_0}\omega_\lambda(2\slashed p p\cdot k_0 - \slashed p\slashed p\slashed k)),\\
-		                                    &= \omega_\lambda\slashed p.\\
+		&= \frac{1}{2p\cdot k_0}\slashed p \omega_{-\lambda}\slashed k_0\slashed p,\\
+		&= \frac{1}{4p\cdot k_0}\slashed p (1-\lambda\gu{5})\slashed k_0\slashed p,\\
+		&= \frac{1}{2p\cdot k_0}p_{\mu}k_{0\nu}p_{\sigma}\omega_{\lambda}\gu{\mu}(2g^{\nu\sigma} - \gu{\sigma}\gu{\nu}),\\
+		&= \frac{1}{2p\cdot k_0}\omega_\lambda(2\slashed p p\cdot k_0 - \slashed p\slashed p\slashed k)),\\
+		&= \omega_\lambda\slashed p.\\
 	\end{align*}
 	\end{subequations}
 
@@ -863,16 +1012,18 @@
 	\begin{subequations}
 	\begin{align*}
 		u_\lambda(p,s)\overline{u}_\lambda(p,s) &= \frac{1}{2q\cdot k_0}(\slashed q + m) u_-(k_0)\overline{u}_-(q)(\slashed q + m),\\
-		                                        &= \frac{1}{2q\cdot k_0}(\slashed q + m) \omega_-\slashed k_0 (\slashed q + m), \\
-		                                        &= \frac{1}{4q\cdot k_0}(\slashed q + m) (1-\gu{5})\slashed k_0 (\slashed q + m), \\
-		                                        &= \frac{1}{4q\cdot k_0}\big[\left(\slashed q \slashed k_0 \slashed q + m\slashed k\slashed q + m\slashed q \slashed k_0 + m^2 \slashed k\right)-\gu{5}\left(\slashed q\slashed k\slashed q - m\slashed k\	slashed q + m\slashed q\slashed k_0 - m^2\slashed k\right)\big], \\
-		                                        &= \half\left(\slashed q + m - \gu{5}\slashed q - m\gu{5} + \frac{m\gu{5}\slashed k\slashed q}{k\cdot q} + \frac{\gu{5}m^2\slashed k}{k\cdot q}\right),\\
-		                                        &= \half\left(1+\left(\frac{1}{m}\slashed q - \frac{m}{q\cdot k}\slashed k\right)\gu{5}\right)(\slashed q + m),\\
-		                                        &= \half\left(1+\slashed s\gu{5}\right)(\slashed q + m),\\
+		&= \frac{1}{2q\cdot k_0}(\slashed q + m) \omega_-\slashed k_0 (\slashed q + m), \\
+		&= \frac{1}{4q\cdot k_0}(\slashed q + m) (1-\gu{5})\slashed k_0 (\slashed q + m), \\
+		&= \frac{1}{4q\cdot k_0}\big[\left(\slashed q \slashed k_0 \slashed q + m\slashed k\slashed q + m\slashed q \slashed
+		k_0 + m^2 \slashed k\right)-\gu{5}\left(\slashed q\slashed k\slashed q - m\slashed k\slashed q + m\slashed q\slashed k_0 - m^2\slashed k\right)\big], \\
+		&= \half\left(\slashed q + m - \gu{5}\slashed q - m\gu{5} + \frac{m\gu{5}\slashed k\slashed q}{k\cdot q} + \frac{\gu{5}m^2\slashed k}{k\cdot q}\right),\\
+		&= \half\left(1+\left(\frac{1}{m}\slashed q - \frac{m}{q\cdot k}\slashed k\right)\gu{5}\right)(\slashed q + m),\\
+		&= \half\left(1+\slashed s\gu{5}\right)(\slashed q + m),\\
 	\end{align*}
 	\end{subequations}
 
-	Where the last line defines the spin vector $s = \frac{1}{m} q - \frac{m}{q\cdot k}k$.  Conjecturing a similar form for an antiquark spinor with with spin 4-vector $s$, mass $m$ and momentum $q$:
+	Where the last line defines the spin vector $s = \frac{1}{m} q - \frac{m}{q\cdot k}k$.  Conjecturing
+	a similar form for an antiquark spinor with with spin 4-vector $s$, mass $m$ and momentum $q$:
 
 	\begin{equation}
 		\label{v_def}
@@ -884,8 +1035,9 @@
 	\begin{subequations}
 	\begin{align*}
 		v_\lambda(p,s)\overline{v}_\lambda(p,s) &= \frac{1}{2q\cdot k_0}(\slashed q - m) u_-(k_0)\overline{u}_-(q)(\slashed q - m),\\
-		                                        &= \half\left(\left(\slashed q - m\right) + \left(-\slashed q + m + \frac{m^2}{q\cdot k_0}\slashed k_0 - \frac{m}{q\cdot k_0}\slashed q\slashed k_0 \right)\gu{5}\right), \\
-		                                        &= \half\left(1+\slashed s\gu{5}\right)(\slashed q - m).\\
+		&= \half\left(\left(\slashed q - m\right) + \left(-\slashed q + m + \frac{m^2}{q\cdot k_0}\slashed k_0 -
+		\frac{m}{q\cdot k_0}\slashed q\slashed k_0 \right)\gu{5}\right), \\
+		&= \half\left(1+\slashed s\gu{5}\right)(\slashed q - m).\\
 	\end{align*}
 	\end{subequations}
 
@@ -898,7 +1050,8 @@
 	\end{align*}
 	\end{subequations}
 
-	we now define some momentum $\widetilde{q}$ by the relation $q = \widetilde{q} + k_0$ such that $\widetilde{q}^2=0$ and $q\cdot k = \widetilde{q}\cdot k$.  Since $q^2=2\widetilde{q}\cdot k=m^2$ we may write
+	we now define some momentum $\widetilde{q}$ by the relation $q = \widetilde{q} + k_0$ such that $\widetilde{q}^2=0$ and
+	$q\cdot k = \widetilde{q}\cdot k$.  Since $q^2=2\widetilde{q}\cdot k=m^2$ we may write
 
 	\begin{subequations}
 	\begin{align*}
@@ -916,12 +1069,19 @@
 	\end{align*}
 	\end{subequations}
 
-	which is the Dirac equation for a quark.  The result for antiquarks follows similarly.  \\Now we have forms for massive quarks and antiquarks in terms of massless spinors we can use all of the spinor-helicity machinery to make our computations more 	efficient.  Slightly more useful forms of equations \ref{u_def} and \ref{v_def} can be found by decomposing $q$ into massless components once again: $q=\widetilde{q}+k$ (once again this acts as a definition for $\widetilde{q}$).  Then from equation \ref{u_def}:
+	which is the Dirac equation for a quark.  The result for antiquarks follows similarly.
+	Now we have forms for massive quarks and antiquarks in terms of massless spinors we can
+	use all of the spinor-helicity machinery to make our computations more efficient.  Slightly
+	more useful forms of equations \ref{u_def} and \ref{v_def} can be found by decomposing $q$
+	into massless components once again: $q=\widetilde{q}+k$ (once again this acts as a
+	definition for $\widetilde{q}$).  Then from equation \ref{u_def}:
 
 	\begin{subequations}
 	\begin{align*}
 		u(q, s) &= \frac{1}{m}(\slashed{\widetilde{q}} + \slashed{k} + m)u_-(k), \\
-		        &= \frac{1}{m}\left(\rl{\widetilde{q}^+}{\widetilde{q}^+}k^-\rangle + \rl{\widetilde{q}^-}{\widetilde{q}^-}k^-\rangle + \rl{k^-}{k^-}k^-\rangle + \rl{k^-}{k^-}k^-\rangle + m|k^-\rangle\right), \\
+		        &= \frac{1}{m}\left(\rl{\widetilde{q}^+}{\widetilde{q}^+}k^-\rangle +
+		        \rl{\widetilde{q}^-}{\widetilde{q}^-}k^-\rangle + \rl{k^-}{k^-}k^-\rangle +
+		        \rl{k^-}{k^-}k^-\rangle + m|k^-\rangle\right), \\
 		        &= \frac{[\widetilde{q}k]}{m}|\widetilde{q}^+\rangle + |k^-\rangle,
 	\end{align*}
 	\end{subequations}
@@ -1121,14 +1281,16 @@
   	of values for $p_Z^2$ we would end with a very slow rate of convergence by oversampling areas where the integrand is very small and slowly varying.
 
 	\begin{figure}[htp]
-		\includegraphics[width=\textwidth]{breitWigner}
+		\centering
+		\includegraphics[width=0.8\textwidth, height=0.6\textwidth]{breitWigner}
 		\caption{The absolute value squared of the $Z^0$ propagator for a range of values of the invariant mass squared of the
 		$Z^0$, $p_Z^2$.  We can see it is strongly peaked at the $Z^0$ mass and, as such, is an ideal candidate for using importance sampling.}
 		\label{fig:breitWigner}
   	\end{figure}
 
 	\begin{figure}[htp]
-		\includegraphics[width=\textwidth]{HERAFit}
+		\centering
+		\includegraphics[width=0.8\textwidth, height=0.6\textwidth]{HERAFit}
 		\caption{Recent parton distribution function fits from the HERA experiment.  The observed variation in $f(x_{a/b}, Q^2)$, especially at high
 		         $x_{a/b}$, can be exploited when computing the equation~\ref{eqn:pdfConvolution} by using an importance sampling approach}
 		\label{fig:heraFit}
