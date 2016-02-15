@@ -7,11 +7,11 @@
 	fermionic fields $\psi_i$ (which is well experimentally motivated) each with mass $m_f$:
 
 	\begin{equation}
-		\mathcal{L}_D = \sum_{f=1}^{6}\overline{\psi}_i^{(f)}\left(i\slashed{\partial}- m_f\right)I_{ij}\psi_j^{(f)},
+		\mathcal{L}_D = \sum_{f=1}^{6}\overline{\psi}_i^{(f)}\left(i\slashed{\partial}- m_f\right)_{ij}\psi_j^{(f)},
 		\label{eqn:QCDLagrangian}
 	\end{equation}
 
-	\noindent where $I$ is the $3\times3$ identity matrix, $\psi_i$ is itself vector of 3 fermion fields in the fundamental
+	\noindent where $\psi_i$ is itself vector of 3 fermion fields in the fundamental
 	representation of $SU(3)$ with $i=1,\ldots,3$\footnote{The choice of 3 here is, again, experimentally motivated.
 	Here we will work explicitly with the gauge group $SU(3)$ although many of the results which follow can
 	be derived with a more general special unitary group $SU(N_c)$.}. This is manifestly invariant under the \emph{global}
@@ -58,16 +58,16 @@
 	In summary then the QCD Lagrangian is given by
 
 	\begin{equation}
-		\mathcal{L}_{\text{QCD (classical)}} = -\frac{1}{4}F_{\mu\nu}^aF^{a\mu\nu} + \sum_{f=1}^{6}\overline{\psi}_i^{(f)}\left(i\slashed{\partial}- m_f\right)I_{ij}\psi_j^{(f)}.
+		\mathcal{L}_{\text{QCD (classical)}} = -\frac{1}{4}F_{\mu\nu}^aF^{a\mu\nu} + \sum_{f=1}^{6}\overline{\psi}_i^{(f)}\left(i\slashed D- m_f\right)_{ij}\psi_j^{(f)}.
 	\end{equation}
 
 	This is referred to as the `classical' QCD Lagrangian since we have not included quantum effects such as
 	loop corrections.  The full `quantum' Lagrangian is as follows ~\cite{muta}:
 
 	\begin{equation}
-		\mathcal{L}^{QCD}=\overline{\psi_0}^i\left(i\slashed D^{ij}-m\delta^{ij}\right)\psi_0^j -
-			\frac{1}{4}F^a_{0\mu\nu}F^{a\mu\nu}_0 - \frac{1}{2\xi}(\partial^\mu A_{0\mu}^a)^2 +
-			(\partial^\mu\chi_0^{a*})\mathcal{D}_{\mu}^{ab}\chi_0^b,
+		\mathcal{L}^{QCD}=\sum_{f=1}^{6}\overline{\psi_{i}}^{(f)}\left(i\slashed D^{ij}-m_f\right)_{ij}\psi_{j}^{(f)} -
+			\frac{1}{4}F^a_{\mu\nu}F^{a\mu\nu} - \frac{(\partial^\mu A_{\mu}^a)^2}{2\xi} +
+			(\partial^\mu\chi^{a*})\mathcal{D}_{\mu}^{ab}\chi^b,
 			\label{eqn:fullQCD}
 	\end{equation}
 
@@ -77,49 +77,125 @@
 		\mathcal{D}_\mu^{ab} = \delta^{ab}\partial_\mu - g_sf^{abc}A^c_\mu.
 	\end{equation}
 
-	The subscript zeros in equation \eqref{eqn:fullQCD} indicate that these are `bare'
-	quantities - the meaning of this will become clear in section X.
-	The $\chi$ fields in equation \eqref{eqn:fullQCD} are the `ghost' excitations and their origin
-	will be explained in section 3.1.\\In order to derive the Feynman rules for QCD we begin by decomposing equation
-	(12) into a free Lagrangian and an interacting Lagrangian as follows:
+	The final two terms in equation \eqref{eqn:fullQCD} are the result of a nuanced calculation to find a form
+	for the gluon propagator which is discussed in more detail in Appendix A.  Here it suffices to say that they
+	arise from the treatment of a degeneracy in the QCD path integral which is caused by the gauge symmetry we
+	enforced earlier.  The penultimate term in equation \eqref{eqn:fullQCD} acts to ``fix'' the gauge to avoid this
+	degeneracy problem while the final term is a mathematical quirk of this solution.  $\chi$ and $\overline{\chi}$
+	represent the unphysical QCD ``ghost'' and ``anti-ghost'' fields respectively.
+
+	In order to derive the Feynman rules for QCD we begin by decomposing equation \eqref{eqn:fullQCD} into a free Lagrangian:
+
+	\begin{align*}
+		\mathcal{L}_0^{QCD} =  &\overline{\psi}_i\left(i\slashed \partial-m\right)_{ij}\psi_j - \frac{1}{4}(\partial_{\mu}A_{\nu}^a - \partial_{\nu}A_{\mu}^a)(\partial^{\mu}A^{\nu a} - \partial^{\nu}A^{\mu a}) -\\
+			               &\frac{(\partial^\mu A_\mu^a)^2}{2\xi} + (\partial^\mu \chi^{a*})(\partial_\mu \chi^a),
+	\end{align*}
+
+	and an interacting Lagrangian as follows:
+
+	\begin{align*}
+		\mathcal{L}_{I}^{QCD} = &g_s\overline{\psi}^i T^a_{ij}\gamma^\mu\psi^j - \frac{g_s}{2}f^{abc}(\partial_{\mu}A^a_{\nu} - \partial_{\nu}A^a_{\mu})A^{b\mu}A^{c\nu}- \\
+		&\frac{g_s^2}{4}f^{abe}f^{cde}A^a_\mu A^b_\nu A^{c\mu}A^{d\nu} - g_sf^{abc}\partial^\mu\chi^{a*}\chi^bA^c_\mu.
+	\end{align*}
+
+	We can solve the free (non-interacting) theory exactly to get the propagators for the fermions, gluons
+	and ghosts.  By taking functional derivatives of the QCD partition function:
 
 	\begin{equation}
-		\mathcal{L}_0^{QCD} = \overline{\psi}^i\left(i\slashed \partial-m\right)\psi^i -
-			\frac{1}{4}\partial_{[\mu}A_{\nu]}^a\partial^{[\mu}A^{\nu]a} -
-			\frac{1}{2\xi}(\partial^\mu A_\mu^a)(\partial^\nu A_\nu^a) +
-			(\partial^\mu \chi^{a*})(\partial_\mu \chi^a),
+		\mathcal{Z}[J] = \int \mathcal{D}A \mathcal{D}c \mathcal{D}\overline{c}e^{i\int d^4x\mathcal{L}_{QCD}}
 	\end{equation}
 
-	\begin{equation}
-		\mathcal{L}_{I}^{QCD} = g_s\overline{\psi}^i T^a_{ij}\gamma^\mu\psi^j-\frac{g_s}{2}f^{abc}
-			\partial_{[\mu}A^a_{\nu]}A^{b\mu}A^{c\nu}-\frac{g_s^2}{4}f^{abe}f^{cde}A^a_\mu A^b_\nu
-			A^{c\mu}A^{d\nu}-g_sf^{abc}\partial^\mu\chi^{a*}\chi^bA^c_\mu.
-	\end{equation}
+	we can find the fermion, gluon and ghost propagator, respectively:
 
-	By calculating the QCD partition function and acting with the appropriate derivatives
-	we can find the fermion propagator and the ghost propagator, respectively:
+	\begin{subequations}
+		\begin{equation}
+			\langle0|A_a(x)A_b(y)|0\rangle = S_A(x-y) = \int \frac{d^4k}{(2\pi)^4}
+				e^{-ik\cdot(x-y)}\delta_{ab}\frac{i}{k^2}\left(g^{\mu\nu} - (1-\xi)\frac{k^\mu k^\nu}{k^2}\right),
+		\end{equation}
+		\begin{equation}
+			\langle0|\psi_i(x)\psi_j(y)|0\rangle = S_F(x-y) = \int \frac{d^4k}{(2\pi)^4}
+				e^{-ik\cdot(x-y)}\delta_{ij}\frac{i(\slashed k + m)}{k^2 - m^2},
+		\end{equation}
+		\begin{equation}
+			\langle0|\chi_a(x)\chi_b(y)|0\rangle = S_G(x-y) = \int \frac{d^4k}{(2\pi)^4}
+				e^{-ik\cdot(x-y)}\delta_{ab}\frac{i}{k^2}.
+		\end{equation}
+	\end{subequations}
 
-	\begin{equation}
-		\langle0|\psi_i(x)\psi_j(y)|0\rangle = S_F(x-y) = \int \frac{d^4k}{(2\pi)^4}
-			e^{-ik\cdot(x-y)}\delta_{ij}\frac{i}{\slashed k - m +i\epsilon},
-	\end{equation}
-	\begin{equation}
-		\langle0|\chi_a(x)\chi_b(y)|0\rangle = H_F(x-y) = \int \frac{d^4k}{(2\pi)^4}
-			e^{-ik\cdot(x-y)}\delta_{ab}\frac{i}{k^2+i\epsilon}.
-	\end{equation}
+	We can read off the various QCD vertex factors directly from the interaction Lagrangian.  They are summarised in table (\ref{tab:feynRules}).
 
-	and we can read off the various QCD vertex factors directly from the interaction Lagrangian.
-
-	\begin{itemize}
-		\item Talk about renormalisation
-		\item Talk a bit about ghosts and Fadeev-Popov (already written),
-	\end{itemize}
-
-\section{QCD Feynman Rules}
-
-	\begin{itemize}
-		\item From the Lagrangian to the Feynman rules
-	\end{itemize}
+	\begin{table}[bth!]
+		\caption{A graphical summary of the Feynman rules.  The solid lines indicate a fermion (anti-fermion) propagator with
+		momentum flowing parallel (anti-parallel) to the direction of the arrow.  Similarly for the dashed lines which
+		represent the ghost (anti-ghost) propagating and lastly the twisted lines depict a propagating gluon.  As in the preceding
+		equations $i$ and $j$ represent fundamental colour indices, $a$ and $b$ represent adjoint colour indices and, where present,
+		$f$ and $f'$ represent fermion flavour.  All Greek indices are Lorentz indices.}
+		\centering
+		\begin{tabular}{*{2}{m{0.4\textwidth}}}
+			\hline
+				\begin{center}\includegraphics[width=0.5\linewidth]{quarkProp}\end{center}
+				&
+				\begin{center}
+					\begin{equation*}
+						\frac{i\delta_i^j\delta_f^{f'}(\slashed k + m)}{k^2 - m^2}
+					\end{equation*}
+				\end{center} \\
+			% \hline
+				\begin{center}\includegraphics[width=0.5\linewidth]{gluonProp}\end{center}
+				&
+				\begin{center}
+					\begin{equation*}
+						-\frac{i\delta_a^b}{k^2}\left(g^{\mu\nu} - (\xi - 1)\frac{k^\mu k^\nu}{k^2}\right)
+					\end{equation*}
+				\end{center} \\
+			% \hline
+				\begin{center}\includegraphics[width=0.5\linewidth]{ghostProp}\end{center}
+				&
+				\begin{center}
+					\begin{equation*}
+						\frac{i\delta_a^b}{k^2}
+					\end{equation*}
+				\end{center} \\
+			% \hline
+				\begin{center}\includegraphics[width=0.40\linewidth]{qgVertex}\end{center}
+				&
+				\begin{center}
+					\begin{equation*}
+						-ig_s\gu{\mu}\delta_f^{f'}T^a_{ij}
+					\end{equation*}
+				\end{center} \\
+			% \hline
+				\begin{center}\includegraphics[width=0.40\linewidth]{tripleGluon}\end{center}
+				&
+				\begin{center}
+					\begin{align*}
+						-g_s f^{abc}\Big (g^{\alpha\beta}(k_{1} - k_{2})^{\gamma} + \\
+						                  g^{\beta\gamma}(k_{2} - k_{3})^{\alpha} + \\
+						                  g^{\gamma\alpha}(k_{3} - k_{1})^{\beta}\Big)
+					\end{align*}
+				\end{center} \\
+			% \hline
+				\begin{center}\includegraphics[width=0.40\linewidth]{quadGluon}\end{center}
+				&
+				\begin{center}
+					\begin{align*}
+						-ig_s^2\Big(f^{abe}f^{cde}(g^{\alpha\gamma}g^{\beta\delta} - g^{\alpha\delta}g^{\beta\gamma}) \\
+						            f^{ace}f^{bde}(g^{\alpha\beta}g^{\gamma\delta} - g^{\alpha\delta}g^{\gamma\beta})  \\
+						            f^{ade}f^{bce}(g^{\alpha\beta}g^{\delta\gamma} - g^{\alpha\gamma}g^{\delta\beta})\Big) \\
+					\end{align*}
+				\end{center} \\
+			% \hline
+				\begin{center}\includegraphics[width=0.40\linewidth]{gluonGhost}\end{center}
+				&
+				\begin{center}
+					\begin{equation*}
+						if^{abc}p'_{\mu}
+					\end{equation*}
+				\end{center} \\
+			\hline
+		\end{tabular}
+		\label{tab:feynRules}
+	\end{table}
 
 	\subsection{The Fadeev-Popov Procedure for NAGTs}
 
@@ -128,7 +204,7 @@
 	The functional integral we want to evaluate is in the form:
 
 	\begin{equation}
-	\int DAe^{-\frac{i}{4}\int d^4xF^a_{\mu\nu}F^{a\mu\nu}}.
+		\int DAe^{-\frac{i}{4}\int d^4xF^a_{\mu\nu}F^{a\mu\nu}}.
 	\end{equation}
 
 	Where $DA=\prod_x\prod_{a, \mu}dA^a_\mu$.  As briefly outlined above we would like to perform
