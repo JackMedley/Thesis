@@ -67,7 +67,7 @@
 	\begin{equation}
 		\mathcal{L}^{QCD}=\sum_{f=1}^{6}\overline{\psi_{i}}^{(f)}\left(i\slashed D^{ij}-m_f\right)_{ij}\psi_{j}^{(f)} -
 			\frac{1}{4}F^a_{\mu\nu}F^{a\mu\nu} - \frac{(\partial^\mu A_{\mu}^a)^2}{2\xi} +
-			(\partial^\mu\chi^{a*})\mathcal{D}_{\mu}^{ab}\chi^b,
+			(\partial^\mu \overline{c}^{a})\mathcal{D}_{\mu}^{ab}c^b,
 			\label{eqn:fullQCD}
 	\end{equation}
 
@@ -80,49 +80,87 @@
 	The final two terms in equation \eqref{eqn:fullQCD} are the result of a nuanced calculation to find a form
 	for the gluon propagator which is discussed in more detail in Appendix A.  Here it suffices to say that they
 	arise from the treatment of a degeneracy in the QCD path integral which is caused by the gauge symmetry we
-	enforced earlier.  The penultimate term in equation \eqref{eqn:fullQCD} acts to ``fix'' the gauge to avoid this
-	degeneracy problem while the final term is a mathematical quirk of this solution.  $\chi$ and $\overline{\chi}$
-	represent the unphysical QCD ``ghost'' and ``anti-ghost'' fields respectively.
+	enforced earlier - as a result we are only able to define a gluon propagator once we have ``fixed the gauge'' which
+	is achieved by the penultimate term in equation \eqref{eqn:fullQCD}.  The final term is a
+	mathematical quirk of this process and $c$ and $\overline{c}$ represent the QCD
+	``ghost'' and ``anti-ghost'' fields respectively.  They are unphysical since they are spin-1 anti-commuting fields.
 
 	In order to derive the Feynman rules for QCD we begin by decomposing equation \eqref{eqn:fullQCD} into a free Lagrangian:
 
 	\begin{align*}
-		\mathcal{L}_0^{QCD} =  &\overline{\psi}_i\left(i\slashed \partial-m\right)_{ij}\psi_j - \frac{1}{4}(\partial_{\mu}A_{\nu}^a - \partial_{\nu}A_{\mu}^a)(\partial^{\mu}A^{\nu a} - \partial^{\nu}A^{\mu a}) -\\
-			               &\frac{(\partial^\mu A_\mu^a)^2}{2\xi} + (\partial^\mu \chi^{a*})(\partial_\mu \chi^a),
+		\mathcal{L}_0^{QCD} =  &\overline{\psi}_i\left(i\slashed \partial-m\right)_{ij}\psi_j -
+		\frac{1}{4}(\partial_{\mu}A_{\nu}^a - \partial_{\nu}A_{\mu}^a)(\partial^{\mu}A^{\nu a} - \partial^{\nu}A^{\mu a}) -\\
+		&\frac{(\partial^\mu A_\mu^a)^2}{2\xi} + (\partial^\mu \overline{c}^{a})(\partial_\mu c^a),
 	\end{align*}
 
 	and an interacting Lagrangian as follows:
 
 	\begin{align*}
-		\mathcal{L}_{I}^{QCD} = &g_s\overline{\psi}^i T^a_{ij}\gamma^\mu\psi^j - \frac{g_s}{2}f^{abc}(\partial_{\mu}A^a_{\nu} - \partial_{\nu}A^a_{\mu})A^{b\mu}A^{c\nu}- \\
-		&\frac{g_s^2}{4}f^{abe}f^{cde}A^a_\mu A^b_\nu A^{c\mu}A^{d\nu} - g_sf^{abc}\partial^\mu\chi^{a*}\chi^bA^c_\mu.
+		\mathcal{L}_{I}^{QCD} = &g_s\overline{\psi}^i T^a_{ij}\gamma^\mu\psi^j - \frac{g_s}{2}f^{abc}(\partial_{\mu}A^a_{\nu} -
+		\partial_{\nu}A^a_{\mu})A^{b\mu}A^{c\nu}- \\ &\frac{g_s^2}{4}f^{abe}f^{cde}A^a_\mu A^b_\nu A^{c\mu}A^{d\nu} -
+		g_sf^{abc}\partial^\mu \overline{c}^{a}c^bA^c_\mu.
 	\end{align*}
 
 	We can solve the free (non-interacting) theory exactly to get the propagators for the fermions, gluons
 	and ghosts.  By taking functional derivatives of the QCD partition function:
 
 	\begin{equation}
-		\mathcal{Z}[J] = \int \mathcal{D}A \mathcal{D}c \mathcal{D}\overline{c}e^{i\int d^4x\mathcal{L}_{QCD}}
+		\mathcal{Z}[J, \eta, \overline{\eta}, \chi, \overline{\chi}] = \int\mathcal{D}A\mathcal{D}\psi\mathcal{D}\overline{\psi}
+		\mathcal{D}c\mathcal{D}\overline{c} e^{i\int d^4x(\mathcal{L}_{QCD} + AJ + \overline{\psi}\eta + \overline{\eta}\psi + \overline{c}\chi + \overline{\eta}c)},
 	\end{equation}
 
-	we can find the fermion, gluon and ghost propagator, respectively:
+	where $J$, $\eta$, $\overline{\eta}$, $\chi$ and $\overline{\chi}$ are `source' terms which we target with functional derivatives.
+	In this way we can calculate the two-point functions which we identify as the fermion, gluon and ghost propagator.  Respectively:
 
 	\begin{subequations}
 		\begin{equation}
-			\langle0|A_a(x)A_b(y)|0\rangle = S_A(x-y) = \int \frac{d^4k}{(2\pi)^4}
+			\langle0|A_a(x)A_b(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
 				e^{-ik\cdot(x-y)}\delta_{ab}\frac{i}{k^2}\left(g^{\mu\nu} - (1-\xi)\frac{k^\mu k^\nu}{k^2}\right),
 		\end{equation}
 		\begin{equation}
-			\langle0|\psi_i(x)\psi_j(y)|0\rangle = S_F(x-y) = \int \frac{d^4k}{(2\pi)^4}
+			\langle0|\psi_i(x)\psi_j(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
 				e^{-ik\cdot(x-y)}\delta_{ij}\frac{i(\slashed k + m)}{k^2 - m^2},
 		\end{equation}
 		\begin{equation}
-			\langle0|\chi_a(x)\chi_b(y)|0\rangle = S_G(x-y) = \int \frac{d^4k}{(2\pi)^4}
+			\langle0|\chi_a(x)\chi_b(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
 				e^{-ik\cdot(x-y)}\delta_{ab}\frac{i}{k^2}.
 		\end{equation}
 	\end{subequations}
 
-	We can read off the various QCD vertex factors directly from the interaction Lagrangian.  They are summarised in table (\ref{tab:feynRules}).
+	We can read off the various QCD vertex factors directly from the interaction Lagrangian.
+	They are summarised in table (\ref{tab:feynRules}).  The remaining `Feynman rules' may be summarised as:
+
+	\begin{enumerate}
+		\item Incoming external lines with spin $s$ and momentum $p$ are given a factor of $u^{(s)}_i(p)$ or $\overline{v}^{(s)}_i(p)$
+		      for quarks or anti-quarks.  Similarly outgoing external quark or anti-quark lines get a factor
+		      $\overline{u}^{(s)}_i(p)$ or $v^{(s)}_i(p)$.  If the external particles are not coloured the procedure is the same
+		      but of course the spinors will no longer be $SU(3)$ fundamental vectors.  External gluons with momentum $p$, polarisation
+		      $\epsilon$ and colour $a$ are replaced by $\epsilon^a(p)$ or $\epsilon^{a*}(p)$ depending on whether they are incoming or outgoing.
+		\item For each vertex or propagator in the Feynman diagram insert the corresponding mathematical
+		      expression (see table (\ref{tab:feynRules})).  The order of the Lorentz indices must be the same
+		      as that found by tracing the fermion lines in the diagram backwards,
+		\item A factor of $-1$ must be included for each anti-fermion line flowing from the initial state
+		      to the final state,
+		\item A factor of $-1$ must be included for each fermion, anti-fermion or ghost loop in the diagram
+		\item An integration over any unconstrained momenta in the diagram must be included with measure:
+		      \begin{equation}
+		      	\int\frac{d^4k}{(2\pi)^4},
+		      \end{equation}
+		      where $k$ is the momenta in question.
+		\item A symmetry factor should be included to avoid possible under-counting of diagrams.
+		\item Lastly, for an unpolarised calculation we must sum over initial spin and colour and average
+		      over all possible final spins and colours.
+	\end{enumerate}
+
+	The $u(p)$ and $v(p)$ are Dirac spinors which solve the free Dirac equation for a plane-wave:
+
+	\begin{equation}
+		(i\slashed p - m)u(p)=0\hspace{1cm}(i\slashed p + m)v(p)=0.
+		\label{eqn:diracPW}
+	\end{equation}
+
+	The result of following these Feynman rules is what we refer to as the Matrix Element, $\mathcal{M}$.  We will now detail how
+	we go from the matrix element of some scattering process to a useful physical observable: The ``cross-section''.
 
 	\begin{table}[bth!]
 		\caption{A graphical summary of the Feynman rules.  The solid lines indicate a fermion (anti-fermion) propagator with
@@ -132,7 +170,7 @@
 		$f$ and $f'$ represent fermion flavour.  All Greek indices are Lorentz indices.}
 		\centering
 		\begin{tabular}{*{2}{m{0.4\textwidth}}}
-			\hline
+			% \hline
 				\begin{center}\includegraphics[width=0.5\linewidth]{quarkProp}\end{center}
 				&
 				\begin{center}
@@ -197,73 +235,42 @@
 		\label{tab:feynRules}
 	\end{table}
 
-	\subsection{The Fadeev-Popov Procedure for NAGTs}
-
-	All that remains to be done is to evaluate the gluon propagator.  As in QED when trying
-	to compute the propagator of a massless gauge boson we can use the work of Fadeev and Popov.
-	The functional integral we want to evaluate is in the form:
-
-	\begin{equation}
-		\int DAe^{-\frac{i}{4}\int d^4xF^a_{\mu\nu}F^{a\mu\nu}}.
-	\end{equation}
-
-	Where $DA=\prod_x\prod_{a, \mu}dA^a_\mu$.  As briefly outlined above we would like to perform
-	a functional integration over all possible gauge choices and then pick out the subset of gauges
-	we are interested in by enforcing the gauge condition $G(A)=0$ to eliminate over-counting.
-	This constraint may be written as ~\cite{p&s}:
+	The first step towards this is the Lehman-Symanzik-Zimmerman (LSZ) reduction formula.  This gives us a relation between the probability
+	of scattering from some initial state in to some final state, $\langle f|i\rangle\equiv\langle f|S|i\rangle$ (where $S$ is the
+	scattering matrix), and a time-ordered vacuum expectation operator of a product of fields.  Here we briefly present the argument for
+	the case of $2\rightarrow2$ scattering in scalar phi-cubed theory for simplicity but this generalises to more complex theories.
+	The Lagrangian for this theory is given by:
 
 	\begin{equation}
-	\int D\alpha(x)\delta(G(A^\alpha))Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right) = 1.
+		\mathcal{L}_{\text{phi-cubed}} = \frac{1}{2}\partial^{\mu}\phi\partial_{\mu}\phi + \frac{m^2}{2}\phi^2 - \frac{g}{6}\phi^3,
+		\label{eqn:phi3}
 	\end{equation}
 
-	Where $A^\alpha_\mu = A_\mu - \frac{1}{g_s}\partial_\mu\alpha(x)$.  Making a gauge
-	transformation ($A_\mu\rightarrow A^\alpha_\mu$) and inserting equation (18):
-
-	\begin{subequations}
-	\begin{equation}
-	\int DAe^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}} = \int DA\int D\alpha(x)\delta(G(A^\alpha))
-	Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right)e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}},
-	\end{equation}
-	\begin{equation}
-	= \int D\alpha(x)\int DA\delta(G(A^\alpha))Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right)
-	e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}}.
-	\end{equation}
-	\end{subequations}
-
-	We are free to change the functional integration variable to $A_\mu^\alpha$ since everything
-	is gauge invariant leading to an integrand which \emph{only} depends on $A^\alpha_\mu$.
-	We can therefore simply relabel back to $A_\mu$:
+	% Firstly we must find the equation of motion for this scalar field and, upon using
+	% the relativistic Euler-Lagrange equation we find $(\partial^2 + m^2)\phi = \frac{g}{2}\phi^2$.
+	We can Fourier expand the field, $\phi(x)$, in terms of its annihilation and creating operators as follows:
 
 	\begin{equation}
-	= \left(\int D\alpha(x)\right)\int DA\delta(G(A))Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right)
-	e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}}.
+		\phi(x) = \int\frac{d^4k}{2E(2\pi)^3}\left(a(\vec{k})e^{ik\cdot x} + a^\dagger(\vec{k})e^{-ik\cdot x}\right).
 	\end{equation}
 
-	The functional integration can now just be factored out as a constant and we can choose the
-	function $G(A)$ as a generalisation of the Lorentz gauge: $G(A)=\partial^\mu A^a_\mu-\omega^a$.
-	This choice leads us to the correct gluon propagator - along with our free parameter, $\xi$:
+	Inverting this we find the following form for the creating operator $a^\dagger(\vec{k})$:
 
 	\begin{equation}
-	\langle0|A_a(x)A_b(y)|0\rangle = G_F^{\mu\nu}(x-y) = \int \frac{d^4x}{(2\pi)^4}e^{-ik\cdot(x-y)}
-	\delta_{ab}\frac{-i}{k^2+i\epsilon}\left(g^{\mu\nu}-(1-\xi)\frac{k^\mu k^\nu}{k^2}\right).
+		a^\dagger(\vec{k}) = i\int d^3xe^{-ix\cdot k} \overleftrightarrow{\partial_\mu}\phi(x),
+		\label{eqn:creation}
 	\end{equation}
 
-	but because the QCD gauge transformation is more involved than the
-	QED equivalent the determinant term still depends on $A_\mu$:
+	where $f\overleftrightarrow{\partial_\mu} g = f(\partial_\mu g) - g(\partial_\mu f)$.  We expect that as time flows forward to
+	$+\infty$ (or backwards to -$\infty$) the field, $\phi(x)$, become asymptotically free and therefore we can neglect and
+	interaction effects in these extremes.  From equation \eqref{eqn:creation} it is straightforward to show that:
 
 	\begin{equation}
-	Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right) = Det\left(\frac{\partial_\mu D^\mu}{g_s}\right).
+		a^\dagger(\vec{k}, t=-\infty) - a^\dagger(\vec{k}, t=\infty) = - i\int d^4x e^{-ix\cdot k}(\partial^2 + m^2)\phi(x).
 	\end{equation}
 
-	We can however simply invent another type of field and choose to write out determinant as
-
-	\begin{equation}
-		Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right) = \int D\chi D\overline{\chi}
-		e^{i\int d^4x\overline{\chi}(-\partial_\mu D_\mu)\chi}.
-	\end{equation}
-
-	These non-physical modes are called the Fadeev-Popov ghosts/anti-ghosts and are a consequence
-	of enforcing gauge invariance - they are represented by the final term in equation (12a).
+	Clearly this would be zero if we only considering the free theory where $g=0$ in equation \eqref{eqn:phi3}.  This is intuitively correct
+	since once we remove any interaction terms a state we create at $t=-\infty$ should flow to $t=\infty$ unaltered.
 
 	\subsection{Renormalising the QCD Lagrangian}
 
@@ -271,16 +278,16 @@
 	so we introduce counter terms into our Lagrangian.  Similarly to equation (4) we have the following relations:
 
 	\begin{subequations}
-	\begin{equation}
-	\psi_0 = Z_\psi^\frac{1}{2}\psi,
-	\hspace{15mm}A_0^a = Z_A^\frac{1}{2}A^a,
-	\hspace{15mm}\chi^a_0 = Z_\chi^\frac{1}{2}\chi^a,
-	\end{equation}
-	\begin{equation}
-	m_0 = Z_mm,
-	\hspace{15mm}g_{s0} = Z_sg_s,
-	\hspace{15mm}\xi_0 = Z_\xi\xi.
-	\end{equation}
+		\begin{equation}
+			\psi_0 = Z_\psi^\frac{1}{2}\psi,
+			\hspace{15mm}A_0^a = Z_A^\frac{1}{2}A^a,
+			\hspace{15mm}\chi^a_0 = Z_\chi^\frac{1}{2}\chi^a,
+		\end{equation}
+		\begin{equation}
+			m_0 = Z_mm,
+			\hspace{15mm}g_{s0} = Z_sg_s,
+			\hspace{15mm}\xi_0 = Z_\xi\xi.
+		\end{equation}
 	\end{subequations}
 
 	Inserting these into equations (13) and (14) and rearranging so that we have
