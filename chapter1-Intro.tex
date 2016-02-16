@@ -58,49 +58,64 @@
 \section{Thesis Outline}
 \label{sec:outline}
 
-	The aim of this thesis is to detail the importance of a certain class of perurbatively higher-order terms in events with QCD radiation in the final state.  In particular
-	we will consider corrections to parton-parton collisions with a $Z^0$ or $\gamma$ in association with high energy QCD radiation in the final state.
+	The aim of this thesis is to detail the importance of a certain class of perurbatively higher-order terms
+	in events with QCD radiation in the final state.  In particular we will consider corrections to parton-parton
+	collisions with a $Z^0$ or $\gamma$ in association with high energy QCD radiation in the final state.
 
-	In chapter \ref{chap:theory} I will begin by introducing quantum chromodynamics, the theory of the strong sector in the standard model, and detail how we might use this
-	to calculate physical observables (such as cross-sections and differential distributions) at hadron colliders such as the Large Hadron Collider.  I will discuss how
-	these observables fall prey to divergences in QCD-like quantum field theories with massless states and mention briefly how such divergences can be handled.  I will then
-	describe how the computationally expensive integrals derived in subsequent chapters may be efficiently evaluated using Monte-Carlo techniques.
+	In chapter \ref{chap:theory} I will begin by introducing quantum chromodynamics, the theory of the strong
+	sector in the standard model, and detail how we might use this to calculate physical observables (such as
+	cross-sections and differential distributions) at hadron colliders such as the Large Hadron Collider.  I
+	will discuss how these observables fall prey to divergences in QCD-like quantum field theories with massless
+	states and mention briefly how such divergences can be handled.  I will then describe how the computationally
+	expensive integrals derived in subsequent chapters may be efficiently evaluated using Monte-Carlo techniques.
 
-	In chapter \ref{chap:HEQCD} the details of QCD in the `High Energy' limit are discussed.  After completing a few instructive calculations we will see how,
-	in this limit, the traditional fixed-order perturbation theory view of calculating cross-sections fades as another subset of terms, namely the `Leading
-	Logarithmic' terms in $\frac{s}{t}$, become more important.  I will discuss previous work in the High Energy limit of QCD and how this can be used to factorise
-	complex parton-parton scattering amplitudes into combinations of `currents' which, when combined with gauge-invariant effective gluon emission terms can be used to
-	construct approximate high-multiplicity matrix elements.
+	In chapter \ref{chap:HEQCD} the details of QCD in the `High Energy' limit are discussed.  After completing a
+	few instructive calculations we will see how, in this limit, the traditional fixed-order perturbation theory
+	view of calculating cross-sections fades as another subset of terms, namely the `Leading Logarithmic' terms in
+	$\frac{s}{t}$, become more important.  I will discuss previous work in the High Energy limit of QCD and how
+	this can be used to factorise complex parton-parton scattering amplitudes into combinations of `currents' which,
+	when combined with gauge-invariant effective gluon emission terms can be used to construct approximate
+	high-multiplicity matrix elements.
 
-	In chapter \ref{chap:Zs} the work of the previous chapter is extended to the case where there is a massive $Z^0$ boson or an off-shell photon, $\gamma^*$,
-	in the final state.  A `current' for this process is derived and the complexities arising from two separate sources of interference are explored.
-	This new result for the matrix element is compared to the results obtained from a Leading Order (in the strong coupling, $\alpha_s$) generator
-	\texttt{MadGraph} at the level of the matrix element squared in wide regions of phase space is seen to be in exact agreement.
-	This result must then be regularised to treat the divergences discussed in chapter \ref{chap:theory} and this process is presented.
-	The procedure for matching this regularised result to Leading Order results is shown and the importance of the inclusion of these
-	non-resummation terms is discussed. Lastly three comparisons of the High Energy Jets Z+Jets Monte-Carlo generator to recent experimental
-	studies \texttt{ATLAS} and \texttt{CMS} at the LHC are shown.
+	In chapter \ref{chap:Zs} the work of the previous chapter is extended to the case where there is a massive
+	$Z^0$ boson or an off-shell photon, $\gamma^*$, in the final state.  A `current' for this process is derived
+	and the complexities arising from two separate sources of interference are explored.  This new result for the
+	matrix element is compared to the results obtained from a Leading Order (in the strong coupling, $\alpha_s$)
+	generator \texttt{MadGraph} at the level of the matrix element squared in wide regions of phase space is seen
+	to be in exact agreement. This result must then be regularised to treat the divergences discussed in chapter
+	\ref{chap:theory} and this process is presented.  The procedure for matching this regularised result to Leading
+	Order results is shown and the importance of the inclusion of these non-resummation terms is discussed. Lastly
+	three comparisons of the High Energy Jets Z+Jets Monte-Carlo generator to recent experimental studies
+	\texttt{ATLAS} and \texttt{CMS} at the LHC are shown.
 
-	From here we use the results of chapter \ref{chap:Zs}, and the resulting publicly available Monte Carlo package, to compare our description to
-	a recent experimental prediction of the ratio of the $W^\pm$+jets rate to the $\zg$+jets rate.  Our predictions are compared against
-	next-to-leading order (in $\alpha_s$) results from \texttt{NJet} and leading order results from \texttt{MadGraph}.
+	From here we use the results of chapter \ref{chap:Zs}, and the resulting publicly available Monte Carlo package,
+	to compare our description to a recent experimental prediction of the ratio of the $W^\pm$+jets rate to the
+	$\zg$+jets rate.  Our predictions are compared against next-to-leading order (in $\alpha_s$) results from
+	\texttt{NJet} and leading order results from \texttt{MadGraph}.
 
-	In chapter \ref{chap:ttbar} we apply the massive spinor-helicity to the production of a $t\overline t$ pair in hadronic collisions.  Using the
-	\texttt{PySpinor} package we calculate values for the full-mass matrix element and compare them to leading-order (in $\alpha_s$) results from
-	\texttt{MadGraph}.  This is a process in which the leading logarithmic contribution starts at one order higher than in previous work and so the effects
-	of the resummation are not as expected to be as crucial as in the case of chapter \ref{chap:Zs} - however at large values for the centre-of-mass energy
-	(such as that a future high energy circular collider) these `next-to-leading' logarithms will once again lead to the breakdown of fixed-order
-	perturbation theory.
+	In chapter \ref{chap:ttbar} we apply the massive spinor-helicity to the production of a $t\overline t$ pair
+	in hadronic collisions.  Using the \texttt{PySpinor} package we calculate values for the full-mass matrix
+	element and compare them to leading-order (in $\alpha_s$) results from \texttt{MadGraph}.  This is a process
+	in which the leading logarithmic contribution starts at one order higher than in previous work and so the effects
+	of the resummation are not as expected to be as crucial as in the case of chapter \ref{chap:Zs} - however at
+	large values for the centre-of-mass energy (such as that a future high energy circular collider) these
+	`next-to-leading' logarithms will once again lead to the breakdown of fixed-order perturbation theory.
 
-	In chapter \ref{chap:ATLAS} we discuss the results of a lengthy study of jet production from the \texttt{ATLAS} collaboration.  This analysis was a thorough
-	look at BFKL-like dynamics in proton-proton colliders and the HEJ predictions are seen to describe the data well in the regions of phase-space where
-	we know the effects of our resummation become relevant.  We compare the predictions from both standalone HEJ and HEJ interfaced with \texttt{ARIADNE}, a
-	parton shower based on a dipole-cascade model.  Although the interface to \texttt{ARIADNE} increases the computational complexity significantly; we see that
-	the Sudakov logarithms added by significantly improve the description of data.
+	In chapter \ref{chap:ATLAS} we discuss the results of a lengthy study of jet production from the \texttt{ATLAS}
+	collaboration.  This analysis was a thorough look at BFKL-like dynamics in proton-proton colliders and the HEJ
+	predictions are seen to describe the data well in the regions of phase-space where we know the effects of our
+	resummation become relevant.  We compare the predictions from both standalone HEJ and HEJ interfaced with
+	\texttt{ARIADNE}, a parton shower based on a dipole-cascade model.  Although the interface to \texttt{ARIADNE}
+	increases the computational complexity significantly; we see that the Sudakov logarithms added by significantly
+	improve the description of data.
 
-	In chapter \ref{chap:100TeV}, with a study of $\zg$+Jets at a centre-of-mass energy of 100TeV relevant for the discussion of
-	the next wave of high energy particle physics experiments (such as any Future Circular Collider) which are of great interest to the community at large.  We see....DO THE STUDY BEFORE
-	WRITING THIS!
+	In chapter \ref{chap:100TeV}, with a study of $\zg$+Jets at a centre-of-mass energy of 100TeV relevant for the
+	discussion of the next wave of high energy particle physics experiments (such as any Future Circular Collider)
+	which are of great interest to the community at large.  We see that the higher-order perturbative terms are
+	much larger at 100TeV relative to 7TeV data and predictions.  Moreover, the regions of phase-space relevant
+	for this thesis; that of high energy wide-angle QCD radiation is especially enhanced and, therefore resumming
+	these contributions will be essential for precision physics at any `Future Circular Collider'.
 
-	Finally, in chapter \ref{chap:conclusion} I summarise the results of the above chapters and provide a short outlook for future work.
+	Finally, in chapter \ref{chap:conclusion} I summarise the results of the above chapters and provide a short
+	outlook for future work.
 

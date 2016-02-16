@@ -65,7 +65,7 @@
 	loop corrections.  The full `quantum' Lagrangian is as follows ~\cite{muta}:
 
 	\begin{equation}
-		\mathcal{L}^{QCD}=\sum_{f=1}^{6}\overline{\psi_{i}}^{(f)}\left(i\slashed D^{ij}-m_f\right)_{ij}\psi_{j}^{(f)} -
+		\mathcal{L}_{\text{QCD}}=\sum_{f=1}^{6}\overline{\psi_{i}}^{(f)}\left(i\slashed D^{ij}-m_f\right)_{ij}\psi_{j}^{(f)} -
 			\frac{1}{4}F^a_{\mu\nu}F^{a\mu\nu} - \frac{(\partial^\mu A_{\mu}^a)^2}{2\xi} +
 			(\partial^\mu \overline{c}^{a})\mathcal{D}_{\mu}^{ab}c^b,
 			\label{eqn:fullQCD}
@@ -85,10 +85,10 @@
 	mathematical quirk of this process and $c$ and $\overline{c}$ represent the QCD
 	``ghost'' and ``anti-ghost'' fields respectively.  They are unphysical since they are spin-1 anti-commuting fields.
 
-	In order to derive the Feynman rules for QCD we begin by decomposing equation \eqref{eqn:fullQCD} into a free Lagrangian:
+	In order to derive the Feynman rules for QCD we begin by decomposing equation \eqref{eqn:fullQCD} into a free Lagrangian
 
 	\begin{align*}
-		\mathcal{L}_0^{QCD} =  &\overline{\psi}_i\left(i\slashed \partial-m\right)_{ij}\psi_j -
+		\mathcal{L}_{\text{QCD}, 0} =  &\overline{\psi}_i\left(i\slashed \partial-m\right)_{ij}\psi_j -
 		\frac{1}{4}(\partial_{\mu}A_{\nu}^a - \partial_{\nu}A_{\mu}^a)(\partial^{\mu}A^{\nu a} - \partial^{\nu}A^{\mu a}) -\\
 		&\frac{(\partial^\mu A_\mu^a)^2}{2\xi} + (\partial^\mu \overline{c}^{a})(\partial_\mu c^a),
 	\end{align*}
@@ -96,7 +96,7 @@
 	and an interacting Lagrangian as follows:
 
 	\begin{align*}
-		\mathcal{L}_{I}^{QCD} = &g_s\overline{\psi}^i T^a_{ij}\gamma^\mu\psi^j - \frac{g_s}{2}f^{abc}(\partial_{\mu}A^a_{\nu} -
+		\mathcal{L}_{\text{QCD}, I} = &g_s\overline{\psi}^i T^a_{ij}\gamma^\mu\psi^j - \frac{g_s}{2}f^{abc}(\partial_{\mu}A^a_{\nu} -
 		\partial_{\nu}A^a_{\mu})A^{b\mu}A^{c\nu}- \\ &\frac{g_s^2}{4}f^{abe}f^{cde}A^a_\mu A^b_\nu A^{c\mu}A^{d\nu} -
 		g_sf^{abc}\partial^\mu \overline{c}^{a}c^bA^c_\mu.
 	\end{align*}
@@ -147,7 +147,7 @@
 		      	\int\frac{d^4k}{(2\pi)^4},
 		      \end{equation}
 		      where $k$ is the momenta in question.
-		\item A symmetry factor should be included to avoid possible under-counting of diagrams.
+		\item A diagram dependent symmetry factor must be included,
 		\item Lastly, for an unpolarised calculation we must sum over initial spin and colour and average
 		      over all possible final spins and colours.
 	\end{enumerate}
@@ -170,7 +170,7 @@
 		$f$ and $f'$ represent fermion flavour.  All Greek indices are Lorentz indices.}
 		\centering
 		\begin{tabular}{*{2}{m{0.4\textwidth}}}
-			% \hline
+
 				\begin{center}\includegraphics[width=0.5\linewidth]{quarkProp}\end{center}
 				&
 				\begin{center}
@@ -178,7 +178,7 @@
 						\frac{i\delta_i^j\delta_f^{f'}(\slashed k + m)}{k^2 - m^2}
 					\end{equation*}
 				\end{center} \\
-			% \hline
+
 				\begin{center}\includegraphics[width=0.5\linewidth]{gluonProp}\end{center}
 				&
 				\begin{center}
@@ -186,7 +186,7 @@
 						-\frac{i\delta_a^b}{k^2}\left(g^{\mu\nu} - (\xi - 1)\frac{k^\mu k^\nu}{k^2}\right)
 					\end{equation*}
 				\end{center} \\
-			% \hline
+
 				\begin{center}\includegraphics[width=0.5\linewidth]{ghostProp}\end{center}
 				&
 				\begin{center}
@@ -194,7 +194,7 @@
 						\frac{i\delta_a^b}{k^2}
 					\end{equation*}
 				\end{center} \\
-			% \hline
+
 				\begin{center}\includegraphics[width=0.40\linewidth]{qgVertex}\end{center}
 				&
 				\begin{center}
@@ -202,7 +202,7 @@
 						-ig_s\gu{\mu}\delta_f^{f'}T^a_{ij}
 					\end{equation*}
 				\end{center} \\
-			% \hline
+
 				\begin{center}\includegraphics[width=0.40\linewidth]{tripleGluon}\end{center}
 				&
 				\begin{center}
@@ -212,7 +212,7 @@
 						                  g^{\gamma\alpha}(k_{3} - k_{1})^{\beta}\Big)
 					\end{align*}
 				\end{center} \\
-			% \hline
+
 				\begin{center}\includegraphics[width=0.40\linewidth]{quadGluon}\end{center}
 				&
 				\begin{center}
@@ -222,7 +222,7 @@
 						            f^{ade}f^{bce}(g^{\alpha\beta}g^{\delta\gamma} - g^{\alpha\gamma}g^{\delta\beta})\Big) \\
 					\end{align*}
 				\end{center} \\
-			% \hline
+
 				\begin{center}\includegraphics[width=0.40\linewidth]{gluonGhost}\end{center}
 				&
 				\begin{center}
@@ -246,8 +246,6 @@
 		\label{eqn:phi3}
 	\end{equation}
 
-	% Firstly we must find the equation of motion for this scalar field and, upon using
-	% the relativistic Euler-Lagrange equation we find $(\partial^2 + m^2)\phi = \frac{g}{2}\phi^2$.
 	We can Fourier expand the field, $\phi(x)$, in terms of its annihilation and creating operators as follows:
 
 	\begin{equation}
@@ -266,16 +264,82 @@
 	interaction effects in these extremes.  From equation \eqref{eqn:creation} it is straightforward to show that:
 
 	\begin{equation}
-		a^\dagger(\vec{k}, t=-\infty) - a^\dagger(\vec{k}, t=\infty) = - i\int d^4x e^{-ix\cdot k}(\partial^2 + m^2)\phi(x).
+		a^\dagger(\vec{k}, t=\infty) - a^\dagger(\vec{k}, t=-\infty) = i\int d^4x e^{-ix\cdot k}(\partial^2 + m^2)\phi(x).
+		\label{eqn:realtion1}
 	\end{equation}
 
-	Clearly this would be zero if we only considering the free theory where $g=0$ in equation \eqref{eqn:phi3}.  This is intuitively correct
-	since once we remove any interaction terms a state we create at $t=-\infty$ should flow to $t=\infty$ unaltered.
+	Clearly this would be zero if we only considering the free theory where $g=0$ in equation \eqref{eqn:phi3} - intuitively this
+	is correct since once we remove any interaction terms a state we create at $t=-\infty$ should flow to $t=\infty$ unaltered.
+	However, more generally for an interacting theory it will be non-zero and equation \eqref{eqn:realtion1} gives us a relationship
+	between asymptotically free initial and final states.  Using equation \eqref{eqn:realtion1} (and its hermitian conjugate) we can
+	begin to look at the scattering from a 2 particle initial state $|i\rangle$ to some 2 particle final state $|f\rangle$,
+	$k_1+k_2\rightarrow k_1'+k_2'$, this is given by:
+
+	\begin{equation}
+		\langle i|j\rangle\equiv\langle0|T\left(a(\vec{k_1}, \infty)a(\vec{k_2}, \infty)a^\dagger(\vec{k_1}, -\infty)a^\dagger(\vec{k_2}, -\infty))\right)|0\rangle,
+	\end{equation}
+
+	where $T$ denotes the time-ordered product of operators\footnote{Explain the time-ordered product business.}.  After substituting
+	for the $a$ and $a^\dagger$ operators and seeing that the time-ordering means that all of the remaining annihilation/creation
+	operators end up acting on a vacuum state which they annihilating we are left with:
+
+	\begin{align}
+		\langle i|j\rangle = i^4\int d^4x_1'd^4x_2'd^4x_1d^4x_2&e^{ik_1'\cdot x_1'}(\partial^2_{x_1'} + m^2)
+		e^{ik_2'\cdot x_2'}(\partial^2_{x_2'} + m^2)\times\\
+		&e^{ik_1 \cdot x_1 }(\partial^2_{x_1 } + m^2)e^{ik_2 \cdot x_2 }(\partial^2_{x_2 } + m^2)\times\\
+		&\langle0|T\left(\phi(x_1')\phi(x_2')\phi(x_1)\phi(x_2)\right)|0\rangle.
+	\end{align}
+
+	This is the LSZ reduction formula for $2\rightarrow2$ scattering in $\phi^3$-theory.  It reduces the problem of finding scattering
+	amplitudes to the calculation of time-ordered problem of fields under the assumption that we may treat the fields at $t=\pm\infty$
+	as free.  The next step is to see how we can calculate these time-ordered products. We can most conveniently do this by taking
+	functional derivatives of the QCD path integral given by:
+
+	\begin{equation}
+		\mathcal{Z}[J, \eta, \overline{\eta}, \chi, \overline{\chi}] = \int\mathcal{D}A\mathcal{D}\psi\mathcal{D}\overline{\psi}
+		\mathcal{D}c\mathcal{D}\overline{c} e^{i\int d^4x(\mathcal{L}_{QCD} + A^{a\mu} J_\mu^a + \overline{\psi}^a\eta^a +
+		\overline{\eta^a}\psi^a + \overline{c^a}\chi^a + \overline{\eta^a}c^a)},
+		\label{eqn:qcdPathIntegral}
+	\end{equation}
+
+	where $J$, $\eta$, $\overline{\eta}$, $\chi$ and $\overline{\chi}$ are `source' terms.  We can rewrite this as a
+	combination of functional derivatives acting on the free QCD path integral, $\mathcal{Z}_0$ as:
+
+	\begin{equation}
+		\mathcal{Z}[J, \eta, \overline{\eta}, \chi, \overline{\chi}] = \exp\left[i\int d^4x\mathcal{L}_{\text{QCD}, I}
+		\left(\frac{\delta}{i\delta J^{a\mu}},\frac{\delta}{i\delta\eta^a},\frac{\delta}{i\delta\overline{\eta^a}},
+		\frac{\delta}{i\delta\xi^a},\frac{\delta}{i\delta\overline{\xi^a}}\right)\right]
+		\mathcal{Z}_0[J, \eta, \overline{\eta}, \chi, \overline{\chi}],
+	\end{equation}
+
+	where $\mathcal{Z}_0$ is identical to equation \eqref{eqn:qcdPathIntegral} but with the free Lagrangian,
+	$\mathcal{L}_{\text{QCD}, 0}$ in place of the full interacting theory $\mathcal{L}_{\text{QCD}}$.
+	We can solve $\mathcal{Z}_0$ exactly which gives us the propagators for the gluons, quarks and ghosts.
+	Respectively:
+
+	\begin{subequations}
+		\begin{equation}
+			\langle0|A^{\mu}_a(x)A^{\nu}_b(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
+				e^{-ik\cdot(x-y)}\delta_{ab}\frac{i}{k^2}\left(g^{\mu\nu} - (1-\xi)\frac{k^\mu k^\nu}{k^2}\right),
+		\end{equation}
+		\begin{equation}
+			\langle0|\psi_i(x)\psi_j(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
+				e^{-ik\cdot(x-y)}\delta_{ij}\frac{i(\slashed k + m)}{k^2 - m^2},
+		\end{equation}
+		\begin{equation}
+			\langle0|c_a(x)c_b(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
+				e^{-ik\cdot(x-y)}\delta_{ab}\frac{i}{k^2}.
+		\end{equation}
+	\end{subequations}
 
 	\subsection{Renormalising the QCD Lagrangian}
 
-	Similarly to QED we anticipate divergent quantities in our calculations above tree level and
-	so we introduce counter terms into our Lagrangian.  Similarly to equation (4) we have the following relations:
+	\begin{itemize}
+		\item Is this section needed?
+	\end{itemize}
+
+	Similarly to QED we anticipate divergent quantities in our calculations above tree level and so we introduce
+	counter terms into our Lagrangian.  Similarly to equation (4) we have the following relations:
 
 	\begin{subequations}
 		\begin{equation}
@@ -290,9 +354,8 @@
 		\end{equation}
 	\end{subequations}
 
-	Inserting these into equations (13) and (14) and rearranging so that we have
-	$\mathcal{L^{QCD}} = \mathcal{L}_0 + \mathcal{L}_{ct}$ where $\mathcal{L}_0$
-	is as defined in equation (13) and the counter-term Lagrangian is:
+	Inserting these into equations (13) and (14) and rearranging so that we have $\mathcal{L_{QCD}} = \mathcal{L}_0 +
+	\mathcal{L}_{ct}$ where $\mathcal{L}_0$ is as defined in equation (13) and the counter-term Lagrangian is:
 
 	\begin{equation}
 	\begin{split}
@@ -311,7 +374,6 @@
 	\begin{itemize}
 		\item Collinear factorisation which lets us pull out the PDFs as a convolution.
 		\item What is a PDF? *Roughly* how are they calculated?
-		\item
 	\end{itemize}
 
 \section{Divergences and Regularisation}
@@ -944,15 +1006,6 @@
 		\item Talk about the idea of expanding the partonic cross-section etc.
 		\item A successful prediction followed by a couple of examples where fixed
 		      order is misguided: $n_{njets}\rightarrow3$, $d\phi$ of hardest two jets
-	\end{itemize}
-
-\section{From Partons to Jets}
-	\label{sec:clustering}
-
-	\begin{itemize}
-		\item Why jets and not partons?
-		\item Jet clustering algorithms and their basic differences
-		\item FastJet
 	\end{itemize}
 
 \section{Spinor-Helicity Notation}
