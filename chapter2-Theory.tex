@@ -205,8 +205,8 @@
 
 	We can read off the remaining QCD vertex factors directly from the interaction Lagrangian (or - more rigorously derive
 	them by Taylor expanding equation \eqref{eqn:fnDerviatesOfLagrangian} and disregarding any irrelevant diagrams such
-	as those where no scattering occurs or those with bubble contributions).\\
-	The full set of rules for the vertices and propagators are summarised in table (\ref{tab:feynRules}).  The remaining `Feynman rules' may be summarised as:
+	as those where no scattering occurs or those with bubble contributions).\\The full set of rules for the vertices and
+	propagators are summarised in table (\ref{tab:feynRules}).  The remaining \emph{Feynman rules} may be summarised as:
 
 	\begin{enumerate}
 		\item Incoming external lines with spin $s$ and momentum $p$ are given a factor of $u^{(s)}_i(p)$ or $\overline{v}^{(s)}_i(p)$
@@ -238,19 +238,21 @@
 	\end{equation}
 
 	The result of following these Feynman rules is what we refer to as the matrix element, $\mathcal{M}$.  We will now detail how
-	we go from the matrix element of some scattering process to a useful physical observable: The ``cross-section'', $\sigma$.  The matrix element
-	is related to the fully-differential cross-section by `Fermi's golden rule' which, for a scattering process
-	$p_{a} + p_{b}\rightarrow p_{1} + \ldots + p_{m}$ is given by
+	we go from the matrix element of some scattering process to a useful physical observable: The \emph{partonic cross-section},
+	$\hat{\sigma}$.  The matrix element is related to the fully-differential cross-section by `Fermi's golden rule' which, for
+	a scattering process $p_{a} + p_{b}\rightarrow p_{1} + \ldots + p_{m}$ is given by
 
 	\begin{align}
 	\begin{split}
-		d\sigma = &\frac{|\mathcal{M}(p_{a} + p_{b}\rightarrow p_{1}^{(f)}, \ldots, p_{m}^{(f)})|^2}{F}\\
-		    \times&(2\pi)^2\delta^{(4)}(p_{a} + p_{b} - p_{1} - \ldots - p_{m}) \\
-		    \times&\frac{d^3\vec{p}_1}{2E_1(2\pi)^2}\cdots\frac{d^3\vec{p}_m}{2E_m(2\pi)^2},
+		d\hat{\sigma} = &\frac{|\mathcal{M}(p_{a} + p_{b}\rightarrow p_{1}^{(f)}, \ldots, p_{m}^{(f)})|^2}{F}\\
+		\times&(2\pi)^2\delta^{(4)}(p_{a} + p_{b} - p_{1} - \ldots - p_{m}) \\
+		\times&\frac{d^3\vec{p}_1}{2E_1(2\pi)^2}\cdots\frac{d^3\vec{p}_m}{2E_m(2\pi)^2},
 	\end{split}
 	\end{align}
 
-	where $F=4\sqrt{(p_ap_b)^2 - m_a^2m_b^2}$ is the flux of the incoming particles given by
+	where $F=4\sqrt{(p_ap_b)^2 - m_a^2m_b^2}$ is the flux of the incoming particles and the delta function acts to
+	enforce momentum conservation for the process.\\We now have a procedure for going from a scattering process
+	we wish to calculate to the differential cross-section for that process.
 
 	\begin{table}[bth!]
 		\caption{A graphical summary of the Feynman rules.  The solid lines indicate a fermion (anti-fermion) propagator with
@@ -325,57 +327,52 @@
 		\label{tab:feynRules}
 	\end{table}
 
-	{\color{red}
-	\begin{itemize}
-		\item Details of going from LSZ to the cross-section
-	\end{itemize}
-	}
-
 	\subsection{Renormalising the QCD Lagrangian}
 
 	{\color{red}
 	\begin{itemize}
-		\item Is this section really necessary?
+		\item Is this section really necessary?  We don't actually use counter-terms/dressed vertices anywhere etc.
 	\end{itemize}
 	}
 
-	Similarly to QED we anticipate divergent quantities in our calculations above tree level and so we introduce
-	counter terms into our Lagrangian.  Similarly to equation (4) we have the following relations:
+	\subsection{The QCD Beta function}
 
-	\begin{subequations}
-		\begin{equation}
-			\psi_0 = Z_\psi^\frac{1}{2}\psi,
-			\hspace{15mm}A_0^a = Z_A^\frac{1}{2}A^a,
-			\hspace{15mm}\chi^a_0 = Z_\chi^\frac{1}{2}\chi^a,
-		\end{equation}
-		\begin{equation}
-			m_0 = Z_mm,
-			\hspace{15mm}g_{s0} = Z_sg_s,
-			\hspace{15mm}\xi_0 = Z_\xi\xi.
-		\end{equation}
-	\end{subequations}
+	{\color{red}
+	\begin{itemize}
+		\item How does QCD look at different scales?
+		\item What is the beta function?
+		\item Why is it important?
+		\item Shows that QCD CAN be treated perturbatively!
+	\end{itemize}
+	}
 
-	Inserting these into equations (13) and (14) and rearranging so that we have $\mathcal{L_{QCD}} = \mathcal{L}_0 +
-	\mathcal{L}_{ct}$ where $\mathcal{L}_0$ is as defined in equation (13) and the counter-term Lagrangian is:
-
-	\begin{equation}
-	\begin{split}
-		\mathcal{L}_{ct} = &-(Z_A - 1)\frac{1}{4}(F^a_{\mu\nu})^2 + (Z_\chi - 1)
-		i(\partial^\mu\chi^a)(\partial_\mu\chi^a) + (Z_\psi - 1)\overline{\psi^i}
-		(i\slashed \partial - m)\psi^i - Z_\psi(Z_m - 1)m\overline{\psi^i}\psi^i + \ldots \\
-		&-(Z_sZ_A^\frac{3}{2}-1)\frac{1}{2}g_sf^{abc}\partial_{[\mu]}A^a_{\nu]}A^{b\mu}A^{c\nu} -
-		(Z_s^2Z^2_A - 1)\frac{1}{4}g_s^2f^{abe}f^{cde}A^a_\mu A^b_\nu A^{c\mu}A^{d\nu} - \ldots \\
-		&-(Z_sZ_\chi Z_A^\frac{1}{2} - 1)ig_sf^{abc}(\partial^\mu\chi^a)\chi^bA^c_\mu +
-		(Z_sZ_\psi Z_A^\frac{1}{2} - 1)g_s\overline{\psi}^iT^a_{ij}\gamma^\mu\psi^jA^a_\mu.
-	\end{split}
-	\end{equation}
-
-\section{Factorisation at Hadronic Colliders}
+\section{QCD Factorisation at Hadronic Colliders}
 
 	{\color{red}
 	\begin{itemize}
 		\item Collinear factorisation which lets us pull out the PDFs as a convolution.
 		\item What is a PDF? *Roughly* how are they calculated?
+	\end{itemize}
+	}
+
+	So far we have only talked about the idea of two particles interacting and scattering off one another in to
+	some final state which we are interested in.  This is too simple a picture when we are considering hadronic
+	colliders such as the Large Hadron Collider (proton-proton), the Tevatron (proton-antiproton), HERA (proton-lepton) and, potentially,
+	a Future Circular Collider (FCC).\\At experiments we collide QCD bound states with one another but in practise when calculating
+	cross-sections we perform a sum over the possible combinations of initial states we may encounter in the two incoming hadrons.
+	In order to do this we must have some understanding of the dynamics of partons inside the onrushing hadrons; this is where
+	Parton Distribution Functions (PDFs) come in.  A PDF, $f_i(x, Q^2)$ is a probabilistic functions which tells us how
+	likely we are to find a parton of type $i$ carrying a fraction $x$ of the total hadrons momentum in a hadron during a
+	collision with an energy scale $Q$.
+
+\section{From Partons to Jets}
+
+	{\color{red}
+	\begin{itemize}
+		\item QCD confinement (briefly),
+		\item Hadronisation,
+		\item How to model jets from partons ($k=0, \pm1$),
+		\item Anti-$k_T$ and the parameters involved
 	\end{itemize}
 	}
 
@@ -416,9 +413,7 @@
 	\end{itemize}
 
 	If we are to extract any useful information above tree-level we will have to find
-	ways to control these infinities.  We call these methods `regularisation schemes'
-
-	\subsection{Regularisation Schemes}
+	ways to control these infinities.  We call these methods `regularisation schemes'.
 
 	The general plan with all regularisation schemes is to introduce a new parameter to the calculation which
 	is used to get a handle on exactly \emph{how} the integral diverges.  Once we have performed the integration
@@ -455,24 +450,13 @@
 		easily be generalised to arbitrary dimensions.
 	\end{itemize}
 
-	\subsection{The QCD Beta function}
-
-	{\color{red}
-	\begin{itemize}
-		\item How does QCD look at different scales?
-		\item What is the beta function?
-		\item Why is it important?
-		\item Shows that QCD CAN be treated perturbatively!
-	\end{itemize}
-	}
-
 \section{Perturbative QCD and Resummation}
 
-	\subsection{Expansions in the strong coupling constant}
-
 	{\color{red}
 	\begin{itemize}
-		\item Talk about the idea of expanding the partonic cross-section etc.
+		\item Talk about the idea of expanding the partonic cross-section in the strong coupling constant,
+		\item What is the difference between fixed-order and resummation,
+		\item Examples of both ideas and implementations.
 	\end{itemize}
 	}
 
@@ -480,7 +464,7 @@
 
 	{\color{red}
 	\begin{itemize}
-		\item Nail down why we don't need counter-term diagrams and ghost diagrams.
+		\item Nail down why we don't need counter-term diagrams and ghost diagrams...
 	\end{itemize}
 	}
 
