@@ -175,6 +175,7 @@
 		\left(\frac{\delta}{i\delta J^{a\mu}},\frac{\delta}{i\delta\eta^a},\frac{\delta}{i\delta\overline{\eta^a}},
 		\frac{\delta}{i\delta\xi^a},\frac{\delta}{i\delta\overline{\xi^a}}\right)\right]
 		\mathcal{Z}_0[J, \eta, \overline{\eta}, \chi, \overline{\chi}],
+		\label{eqn:fnDerviatesOfLagrangian}
 	\end{equation}
 
 	where $\mathcal{Z}_0$ is identical to equation \eqref{eqn:qcdPathIntegral} but with the free Lagrangian,
@@ -198,12 +199,14 @@
 
 	{\color{red}
 	\begin{itemize}
-		\item Do one of the functional derivatives for the 3g vertex or something
+		\item Do one of the functional derivatives for the 3g vertex or something?
 	\end{itemize}
 	}
 
-	We can read off the remaining QCD vertex factors directly from the interaction Lagrangian.
-	They are summarised in table (\ref{tab:feynRules}).  The remaining `Feynman rules' may be summarised as:
+	We can read off the remaining QCD vertex factors directly from the interaction Lagrangian (or - more rigorously derive
+	them by Taylor expanding equation \eqref{eqn:fnDerviatesOfLagrangian} and disregarding any irrelevant diagrams such
+	as those where no scattering occurs or those with bubble contributions).\\
+	The full set of rules for the vertices and propagators are summarised in table (\ref{tab:feynRules}).  The remaining `Feynman rules' may be summarised as:
 
 	\begin{enumerate}
 		\item Incoming external lines with spin $s$ and momentum $p$ are given a factor of $u^{(s)}_i(p)$ or $\overline{v}^{(s)}_i(p)$
@@ -234,8 +237,20 @@
 		\label{eqn:diracPW}
 	\end{equation}
 
-	The result of following these Feynman rules is what we refer to as the Matrix Element, $\mathcal{M}$.  We will now detail how
-	we go from the matrix element of some scattering process to a useful physical observable: The ``cross-section''.
+	The result of following these Feynman rules is what we refer to as the matrix element, $\mathcal{M}$.  We will now detail how
+	we go from the matrix element of some scattering process to a useful physical observable: The ``cross-section'', $\sigma$.  The matrix element
+	is related to the fully-differential cross-section by `Fermi's golden rule' which, for a scattering process
+	$p_{a} + p_{b}\rightarrow p_{1} + \ldots + p_{m}$ is given by
+
+	\begin{align}
+	\begin{split}
+		d\sigma = &\frac{|\mathcal{M}(p_{a} + p_{b}\rightarrow p_{1}^{(f)}, \ldots, p_{m}^{(f)})|^2}{F}\\
+		    \times&(2\pi)^2\delta^{(4)}(p_{a} + p_{b} - p_{1} - \ldots - p_{m}) \\
+		    \times&\frac{d^3\vec{p}_1}{2E_1(2\pi)^2}\cdots\frac{d^3\vec{p}_m}{2E_m(2\pi)^2},
+	\end{split}
+	\end{align}
+
+	where $F=4\sqrt{(p_ap_b)^2 - m_a^2m_b^2}$ is the flux of the incoming particles given by
 
 	\begin{table}[bth!]
 		\caption{A graphical summary of the Feynman rules.  The solid lines indicate a fermion (anti-fermion) propagator with
