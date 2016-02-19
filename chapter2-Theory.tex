@@ -85,49 +85,124 @@
 	mathematical quirk of this process and $c$ and $\overline{c}$ represent the QCD
 	``ghost'' and ``anti-ghost'' fields respectively.  They are unphysical since they are spin-1 anti-commuting fields.
 
-	In order to derive the Feynman rules for QCD we begin by decomposing equation \eqref{eqn:fullQCD} into a free Lagrangian
+	Now we have a complete Lagrangian for QCD we can begin to move towards something physical.  The first step forwards
+	is the Lehman-Symanzik-Zimmerman (LSZ) reduction formula.  This gives us a relation between the scattering amplitude
+	from some initial state in to some final state, $\langle f|i\rangle\equiv\langle f|S|i\rangle$ where $S$ is the
+	scattering matrix, and a time-ordered vacuum expectation operator of a product of fields.  Here we briefly present
+	the argument behind the LSZ for the case of $2\rightarrow2$ scattering using the scalar phi-cubed theory for simplicity
+	(but this generalises to more complex theories). The Lagrangian for this theory is given by:
+
+	\begin{equation}
+		\mathcal{L}_{\text{phi-cubed}} = \frac{1}{2}\partial^{\mu}\phi\partial_{\mu}\phi + \frac{m^2}{2}\phi^2 - \frac{g}{6}\phi^3,
+		\label{eqn:phi3}
+	\end{equation}
+
+	We can Fourier expand the field, $\phi(x)$, in terms of its annihilation and creating operators as follows:
+
+	\begin{equation}
+		\phi(x) = \int\frac{d^4k}{2E(2\pi)^3}\left(a(\vec{k})e^{ik\cdot x} + a^\dagger(\vec{k})e^{-ik\cdot x}\right),
+	\end{equation}
+
+	and inverting this we find the following form for the creation operator $a^\dagger(\vec{k})$:
+
+	\begin{equation}
+		a^\dagger(\vec{k}) = i\int d^3xe^{-ix\cdot k}(\partial_0 - E)\phi(x),
+		\label{eqn:creation}
+	\end{equation}
+
+	We expect that as time flows forward to $+\infty$ (or backwards to -$\infty$) the field, $\phi(x)$, become asymptotically
+	free and therefore we can neglect and interaction effects in these extremes.  From equation \eqref{eqn:creation} it is
+	straightforward to show that:
+
+	\begin{equation}
+		a^\dagger(\vec{k}, t=\infty) - a^\dagger(\vec{k}, t=-\infty) = i\int d^4x e^{-ix\cdot k}(\partial^2 + m^2)\phi(x).
+		\label{eqn:realtion1}
+	\end{equation}
+
+	Clearly this would be zero if we only considering the free theory where $g=0$ in equation \eqref{eqn:phi3} - intuitively this
+	is correct since once we remove any interaction terms a state we create at $t=-\infty$ should flow to $t=\infty$ unaltered.
+	However, more generally for an interacting theory it will be non-zero and equation \eqref{eqn:realtion1} gives us a relationship
+	between asymptotically free initial and final states.  Using equation \eqref{eqn:realtion1} (and its hermitian conjugate) we can
+	begin to look at the scattering from a 2 particle initial state $|i\rangle$ to some 2 particle final state $|f\rangle$,
+	$k_1+k_2\rightarrow k_1'+k_2'$, this is given by:
+
+	\begin{equation}
+		\langle i|j\rangle\equiv\langle0|T\left(a(\vec{k_1}, \infty)a(\vec{k_2}, \infty)a^\dagger(\vec{k_1}, -\infty)a^\dagger(\vec{k_2}, -\infty))\right)|0\rangle,
+	\end{equation}
+
+	where $T$ denotes the time-ordered product of operators\footnote{Explain the time-ordered product business.}.  After substituting
+	for the $a$ and $a^\dagger$ operators and seeing that the time-ordering means that all of the remaining annihilation/creation
+	operators end up acting on a vacuum state which they annihilating we are left with:
 
 	\begin{align*}
-		\mathcal{L}_{\text{QCD}, 0} =  &\overline{\psi}_i\left(i\slashed \partial-m\right)_{ij}\psi_j -
-		\frac{1}{4}(\partial_{\mu}A_{\nu}^a - \partial_{\nu}A_{\mu}^a)(\partial^{\mu}A^{\nu a} - \partial^{\nu}A^{\mu a}) -\\
-		&\frac{(\partial^\mu A_\mu^a)^2}{2\xi} + (\partial^\mu \overline{c}^{a})(\partial_\mu c^a),
+		\langle i|j\rangle = i^4\int d^4x_1'd^4x_2'd^4x_1d^4x_2&e^{ik_1'\cdot x_1'}(\partial^2_{x_1'} + m^2)
+		e^{ik_2'\cdot x_2'}(\partial^2_{x_2'} + m^2)\times\\
+		&e^{ik_1 \cdot x_1 }(\partial^2_{x_1 } + m^2)e^{ik_2 \cdot x_2 }(\partial^2_{x_2 } + m^2)\times\\
+		&\langle0|T\left(\phi(x_1')\phi(x_2')\phi(x_1)\phi(x_2)\right)|0\rangle.
 	\end{align*}
 
-	and an interacting Lagrangian as follows:
-
-	\begin{align*}
-		\mathcal{L}_{\text{QCD}, I} = &g_s\overline{\psi}^i T^a_{ij}\gamma^\mu\psi^j - \frac{g_s}{2}f^{abc}(\partial_{\mu}A^a_{\nu} -
-		\partial_{\nu}A^a_{\mu})A^{b\mu}A^{c\nu}- \\ &\frac{g_s^2}{4}f^{abe}f^{cde}A^a_\mu A^b_\nu A^{c\mu}A^{d\nu} -
-		g_sf^{abc}\partial^\mu \overline{c}^{a}c^bA^c_\mu.
-	\end{align*}
-
-	We can solve the free (non-interacting) theory exactly to get the propagators for the fermions, gluons
-	and ghosts.  By taking functional derivatives of the QCD partition function:
+	This is the LSZ reduction formula for $2\rightarrow2$ scattering in a phi-cubed theory.  It reduces the problem of finding scattering
+	amplitudes to the calculation of time-ordered problem of fields under the assumption that we may treat the fields at $t=\pm\infty$
+	as free.\\The next step is to see how we can calculate these time-ordered products. This is most conveniently done by taking
+	functional derivatives of the QCD path integral given by:
 
 	\begin{equation}
 		\mathcal{Z}[J, \eta, \overline{\eta}, \chi, \overline{\chi}] = \int\mathcal{D}A\mathcal{D}\psi\mathcal{D}\overline{\psi}
-		\mathcal{D}c\mathcal{D}\overline{c} e^{i\int d^4x(\mathcal{L}_{QCD} + AJ + \overline{\psi}\eta + \overline{\eta}\psi + \overline{c}\chi + \overline{\eta}c)},
+		\mathcal{D}c\mathcal{D}\overline{c} e^{i\int d^4x(\mathcal{L}_{QCD} + A^{a\mu} J_\mu^a + \overline{\psi}^a\eta^a +
+		\overline{\eta^a}\psi^a + \overline{c^a}\chi^a + \overline{\eta^a}c^a)},
+		\label{eqn:qcdPathIntegral}
 	\end{equation}
 
-	where $J$, $\eta$, $\overline{\eta}$, $\chi$ and $\overline{\chi}$ are `source' terms which we target with functional derivatives.
-	In this way we can calculate the two-point functions which we identify as the fermion, gluon and ghost propagator.  Respectively:
+	where $J^{a\mu}$, $\eta^a$, $\overline{\eta^a}$, $\chi^a$ and $\overline{\chi^a}$ are `source' terms which we target with functional
+	derivatives and we have left the sum over quark flavours implicit.  In order to proceed we break down equation \eqref{eqn:QCDLagrangian}
+	into a free Lagrangian, $\mathcal{L}_{\text{QCD}, 0}$, and an interacting Lagrangian, $\mathcal{L}_{\text{QCD}, I}$ as follows:
+
+	\begin{align*}
+		\mathcal{L}_{\text{QCD}}    &= \mathcal{L}_{\text{QCD}, 0} + \mathcal{L}_{\text{QCD}, I},\\
+		\mathcal{L}_{\text{QCD}, 0} &=  \overline{\psi}_i\left(i\slashed \partial-m\right)_{ij}\psi_j -
+		\frac{1}{4}(\partial_{\mu}A_{\nu}^a - \partial_{\nu}A_{\mu}^a)(\partial^{\mu}A^{\nu a} - \partial^{\nu}A^{\mu a}) \\
+		&-\frac{(\partial^\mu A_\mu^a)^2}{2\xi} + (\partial^\mu \overline{c}^{a})(\partial_\mu c^a),\\
+		\mathcal{L}_{\text{QCD}, I} &= g_s\overline{\psi}^i T^a_{ij}\gamma^\mu\psi^j - \frac{g_s}{2}f^{abc}(\partial_{\mu}A^a_{\nu} -
+		\partial_{\nu}A^a_{\mu})A^{b\mu}A^{c\nu} \\ &-\frac{g_s^2}{4}f^{abe}f^{cde}A^a_\mu A^b_\nu A^{c\mu}A^{d\nu} -
+		g_sf^{abc}\partial^\mu \overline{c}^{a}c^bA^c_\mu.
+	\end{align*}
+
+	We can then rewrite equation \eqref{eqn:qcdPathIntegral} as a combination of functional derivatives acting on the free QCD path integral,
+	$\mathcal{Z}_0$ as:
+
+	\begin{equation}
+		\mathcal{Z}[J, \eta, \overline{\eta}, \chi, \overline{\chi}] = \exp\left[i\int d^4x\mathcal{L}_{\text{QCD}, I}
+		\left(\frac{\delta}{i\delta J^{a\mu}},\frac{\delta}{i\delta\eta^a},\frac{\delta}{i\delta\overline{\eta^a}},
+		\frac{\delta}{i\delta\xi^a},\frac{\delta}{i\delta\overline{\xi^a}}\right)\right]
+		\mathcal{Z}_0[J, \eta, \overline{\eta}, \chi, \overline{\chi}],
+	\end{equation}
+
+	where $\mathcal{Z}_0$ is identical to equation \eqref{eqn:qcdPathIntegral} but with the free Lagrangian,
+	in place of the full Lagrangian. We can solve $\mathcal{Z}_0$ exactly which yields us the propagators for
+	the gluons, quarks and ghosts.  Respectively:
 
 	\begin{subequations}
 		\begin{equation}
-			\langle0|A_a(x)A_b(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
+			\langle0|A^{\mu}_a(x)A^{\nu}_b(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
 				e^{-ik\cdot(x-y)}\delta_{ab}\frac{i}{k^2}\left(g^{\mu\nu} - (1-\xi)\frac{k^\mu k^\nu}{k^2}\right),
 		\end{equation}
 		\begin{equation}
-			\langle0|\psi_i(x)\psi_j(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
-				e^{-ik\cdot(x-y)}\delta_{ij}\frac{i(\slashed k + m)}{k^2 - m^2},
+			\langle0|\overline{\psi_i}^{(f)}(x)\psi_j^{(f')}(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
+				e^{-ik\cdot(x-y)}\delta_{ij}\delta_{ff'}\frac{i(\slashed k + m)}{k^2 - m^2},
 		\end{equation}
 		\begin{equation}
-			\langle0|\chi_a(x)\chi_b(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
+			\langle0|\overline{c_a}(x)c_b(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
 				e^{-ik\cdot(x-y)}\delta_{ab}\frac{i}{k^2}.
 		\end{equation}
 	\end{subequations}
 
-	We can read off the various QCD vertex factors directly from the interaction Lagrangian.
+	{\color{red}
+	\begin{itemize}
+		\item Do one of the functional derivatives for the 3g vertex or something
+	\end{itemize}
+	}
+
+	We can read off the remaining QCD vertex factors directly from the interaction Lagrangian.
 	They are summarised in table (\ref{tab:feynRules}).  The remaining `Feynman rules' may be summarised as:
 
 	\begin{enumerate}
@@ -235,102 +310,11 @@
 		\label{tab:feynRules}
 	\end{table}
 
-	The first step towards this is the Lehman-Symanzik-Zimmerman (LSZ) reduction formula.  This gives us a relation between the probability
-	of scattering from some initial state in to some final state, $\langle f|i\rangle\equiv\langle f|S|i\rangle$ (where $S$ is the
-	scattering matrix), and a time-ordered vacuum expectation operator of a product of fields.  Here we briefly present the argument for
-	the case of $2\rightarrow2$ scattering in scalar phi-cubed theory for simplicity but this generalises to more complex theories.
-	The Lagrangian for this theory is given by:
-
-	\begin{equation}
-		\mathcal{L}_{\text{phi-cubed}} = \frac{1}{2}\partial^{\mu}\phi\partial_{\mu}\phi + \frac{m^2}{2}\phi^2 - \frac{g}{6}\phi^3,
-		\label{eqn:phi3}
-	\end{equation}
-
-	We can Fourier expand the field, $\phi(x)$, in terms of its annihilation and creating operators as follows:
-
-	\begin{equation}
-		\phi(x) = \int\frac{d^4k}{2E(2\pi)^3}\left(a(\vec{k})e^{ik\cdot x} + a^\dagger(\vec{k})e^{-ik\cdot x}\right).
-	\end{equation}
-
-	Inverting this we find the following form for the creating operator $a^\dagger(\vec{k})$:
-
-	\begin{equation}
-		a^\dagger(\vec{k}) = i\int d^3xe^{-ix\cdot k} \overleftrightarrow{\partial_\mu}\phi(x),
-		\label{eqn:creation}
-	\end{equation}
-
-	where $f\overleftrightarrow{\partial_\mu} g = f(\partial_\mu g) - g(\partial_\mu f)$.  We expect that as time flows forward to
-	$+\infty$ (or backwards to -$\infty$) the field, $\phi(x)$, become asymptotically free and therefore we can neglect and
-	interaction effects in these extremes.  From equation \eqref{eqn:creation} it is straightforward to show that:
-
-	\begin{equation}
-		a^\dagger(\vec{k}, t=\infty) - a^\dagger(\vec{k}, t=-\infty) = i\int d^4x e^{-ix\cdot k}(\partial^2 + m^2)\phi(x).
-		\label{eqn:realtion1}
-	\end{equation}
-
-	Clearly this would be zero if we only considering the free theory where $g=0$ in equation \eqref{eqn:phi3} - intuitively this
-	is correct since once we remove any interaction terms a state we create at $t=-\infty$ should flow to $t=\infty$ unaltered.
-	However, more generally for an interacting theory it will be non-zero and equation \eqref{eqn:realtion1} gives us a relationship
-	between asymptotically free initial and final states.  Using equation \eqref{eqn:realtion1} (and its hermitian conjugate) we can
-	begin to look at the scattering from a 2 particle initial state $|i\rangle$ to some 2 particle final state $|f\rangle$,
-	$k_1+k_2\rightarrow k_1'+k_2'$, this is given by:
-
-	\begin{equation}
-		\langle i|j\rangle\equiv\langle0|T\left(a(\vec{k_1}, \infty)a(\vec{k_2}, \infty)a^\dagger(\vec{k_1}, -\infty)a^\dagger(\vec{k_2}, -\infty))\right)|0\rangle,
-	\end{equation}
-
-	where $T$ denotes the time-ordered product of operators\footnote{Explain the time-ordered product business.}.  After substituting
-	for the $a$ and $a^\dagger$ operators and seeing that the time-ordering means that all of the remaining annihilation/creation
-	operators end up acting on a vacuum state which they annihilating we are left with:
-
-	\begin{align}
-		\langle i|j\rangle = i^4\int d^4x_1'd^4x_2'd^4x_1d^4x_2&e^{ik_1'\cdot x_1'}(\partial^2_{x_1'} + m^2)
-		e^{ik_2'\cdot x_2'}(\partial^2_{x_2'} + m^2)\times\\
-		&e^{ik_1 \cdot x_1 }(\partial^2_{x_1 } + m^2)e^{ik_2 \cdot x_2 }(\partial^2_{x_2 } + m^2)\times\\
-		&\langle0|T\left(\phi(x_1')\phi(x_2')\phi(x_1)\phi(x_2)\right)|0\rangle.
-	\end{align}
-
-	This is the LSZ reduction formula for $2\rightarrow2$ scattering in $\phi^3$-theory.  It reduces the problem of finding scattering
-	amplitudes to the calculation of time-ordered problem of fields under the assumption that we may treat the fields at $t=\pm\infty$
-	as free.  The next step is to see how we can calculate these time-ordered products. We can most conveniently do this by taking
-	functional derivatives of the QCD path integral given by:
-
-	\begin{equation}
-		\mathcal{Z}[J, \eta, \overline{\eta}, \chi, \overline{\chi}] = \int\mathcal{D}A\mathcal{D}\psi\mathcal{D}\overline{\psi}
-		\mathcal{D}c\mathcal{D}\overline{c} e^{i\int d^4x(\mathcal{L}_{QCD} + A^{a\mu} J_\mu^a + \overline{\psi}^a\eta^a +
-		\overline{\eta^a}\psi^a + \overline{c^a}\chi^a + \overline{\eta^a}c^a)},
-		\label{eqn:qcdPathIntegral}
-	\end{equation}
-
-	where $J$, $\eta$, $\overline{\eta}$, $\chi$ and $\overline{\chi}$ are `source' terms.  We can rewrite this as a
-	combination of functional derivatives acting on the free QCD path integral, $\mathcal{Z}_0$ as:
-
-	\begin{equation}
-		\mathcal{Z}[J, \eta, \overline{\eta}, \chi, \overline{\chi}] = \exp\left[i\int d^4x\mathcal{L}_{\text{QCD}, I}
-		\left(\frac{\delta}{i\delta J^{a\mu}},\frac{\delta}{i\delta\eta^a},\frac{\delta}{i\delta\overline{\eta^a}},
-		\frac{\delta}{i\delta\xi^a},\frac{\delta}{i\delta\overline{\xi^a}}\right)\right]
-		\mathcal{Z}_0[J, \eta, \overline{\eta}, \chi, \overline{\chi}],
-	\end{equation}
-
-	where $\mathcal{Z}_0$ is identical to equation \eqref{eqn:qcdPathIntegral} but with the free Lagrangian,
-	$\mathcal{L}_{\text{QCD}, 0}$ in place of the full interacting theory $\mathcal{L}_{\text{QCD}}$.
-	We can solve $\mathcal{Z}_0$ exactly which gives us the propagators for the gluons, quarks and ghosts.
-	Respectively:
-
-	\begin{subequations}
-		\begin{equation}
-			\langle0|A^{\mu}_a(x)A^{\nu}_b(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
-				e^{-ik\cdot(x-y)}\delta_{ab}\frac{i}{k^2}\left(g^{\mu\nu} - (1-\xi)\frac{k^\mu k^\nu}{k^2}\right),
-		\end{equation}
-		\begin{equation}
-			\langle0|\psi_i(x)\psi_j(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
-				e^{-ik\cdot(x-y)}\delta_{ij}\frac{i(\slashed k + m)}{k^2 - m^2},
-		\end{equation}
-		\begin{equation}
-			\langle0|c_a(x)c_b(y)|0\rangle = \int \frac{d^4k}{(2\pi)^4}
-				e^{-ik\cdot(x-y)}\delta_{ab}\frac{i}{k^2}.
-		\end{equation}
-	\end{subequations}
+	{\color{red}
+	\begin{itemize}
+		\item Details of going from LSZ to the cross-section
+	\end{itemize}
+	}
 
 	\subsection{Renormalising the QCD Lagrangian}
 
@@ -462,9 +446,8 @@
 	\begin{itemize}
 		\item How does QCD look at different scales?
 		\item What is the beta function?
-		\item Why is it important? How is the Beta function defined?
-		\item What are the 5 diagrams needed to calculate the QCD beta function?
-		\item Calculate a couple of these as an example - importance of result? Show that QCD CAN be treated perturbatively! Yaaay
+		\item Why is it important?
+		\item Shows that QCD CAN be treated perturbatively!
 	\end{itemize}
 	}
 
@@ -480,47 +463,60 @@
 
 	\subsection{An Example Fixed-Order Calculation}
 
+	{\color{red}
+	\begin{itemize}
+		\item Nail down why we don't need counter-term diagrams and ghost diagrams.
+	\end{itemize}
+	}
+
 	\begin{figure}[tpb]
 		\centering
 			\begin{minipage}{0.4\linewidth}
 				\centering
 				\includegraphics[width=0.98\linewidth]{TreeLevel}
 				\caption{Tree level}
+				\label{fig:NLOfig_1}
 			\end{minipage}
 			\begin{minipage}{0.4\linewidth}
 				\centering
 				\includegraphics[width=0.98\linewidth]{NLOVirtual}
 				\caption{Virtual Emission, $\mathcal{A}_v$}
+				\label{fig:NLOfig_2}
 			\end{minipage}
 			\begin{minipage}{0.4\linewidth}
 				\centering
 				\includegraphics[width=0.98\linewidth]{NLOSelfEnergyLeft}
 				\caption{Self Energy, $\mathcal{A}_{se1}$}
+				\label{fig:NLOfig_3}
 			\end{minipage}
 			\begin{minipage}{0.4\linewidth}
 				\centering
 				\includegraphics[width=0.98\linewidth]{NLOSelfEnergyRight}
 				\caption{Self Energy, $\mathcal{A}_{se2}$}
+				\label{fig:NLOfig_4}
 			\end{minipage}
 			\begin{minipage}{0.4\linewidth}
 				\centering
 				\includegraphics[width=0.98\linewidth]{NLORealLeft}
 				\caption{Real Emission, $\mathcal{A}_{r1}$}
+				\label{fig:NLOfig_5}
 			\end{minipage}
 			\begin{minipage}{0.4\linewidth}
 				\centering
 				\includegraphics[width=0.98\linewidth]{NLORealRight}
 				\caption{Real Emission, $\mathcal{A}_{r2}$}
+				\label{fig:NLOfig_6}
 			\end{minipage}
 		\caption{Feynman diagrams for the $O(\alpha_s)$ correction to $\gamma^*\rightarrow q\overline{q}$
 		process (a-d) and the two real emission diagrams (e-f)}\label{fig:NLOContributions}
 	\end{figure}
 
 	The Feynman diagrams which need to be included for the and $\mathcal{O}(1)$ and $\mathcal{O}(\alpha_s)$ corrections to the
-	$\gamma^*\rightarrow q\overline{q}$ process are shown in figure (2).  We refer to figures (2a) as the tree level diagram,
-	figure (2b) as the vertex correction and figures (2c) and (2d) as the self-energy corrections.  Figures (2e) and (2f) are
-	the `real correction'.  Since the virtual corrections all have the same final state they must be summed and squared together.
-	To make the order of each term in the perturbative expansion clear extract the $\alpha_s$ factors from the $\mathcal{A}_i$ here.  Therefore:
+	$\gamma^*\rightarrow q\overline{q}$ process are shown in figure (\ref{fig:NLOContributions}).  We refer to figure (\ref{fig:NLOfig_1}) as the tree level diagram,
+	figure (\ref{fig:NLOfig_2}) as the vertex correction and figures (\ref{fig:NLOfig_3}) and (\ref{fig:NLOfig_4}) as the self-energy corrections.
+	Figures (\ref{fig:NLOfig_5}) and (\ref{fig:NLOfig_6}) are the `real correction'.  Since the virtual corrections all have the same final state
+	they must be summed and squared together.  To make the order of each term in the perturbative expansion clear extract the $\alpha_s$
+	factors from the $\mathcal{A}_i$ here.  Therefore:
 
 	\begin{equation}
 	\begin{split}
@@ -532,12 +528,12 @@
 	Where the bar on the LHS means there is an implicit sum over spins and polarisations on the RHS.  We can see then that to
 	$\mathcal{O}(\alpha_s)$ we have four contributions to consider, but the two self-energy contributions will have the same
 	functional form so in would seem that practise we only need to perform three calculations - it turns out this is not the case;
-	We will find that the divergence associated with exchanging a soft gluon in figure (2b) can only be cancelled if we also
-	include the soft divergences that arise figures (2e) to (2f).  At first glance this seems very peculiar since these diagrams
+	We will find that the divergence associated with exchanging a soft gluon in figure (\ref{fig:NLOfig_2}) can only be cancelled if we also
+	include the soft divergences that arise figures (\ref{fig:NLOfig_5}) to (\ref{fig:NLOfig_6}).  At first glance this seems very peculiar since these diagrams
 	have different final states and therefore should have no business contributing to this calculation.  However, since the gluon
 	can be emitted with vanishingly small momentum it would be experimentally impossible to detect and therefore the final states
 	would look the same to an imperfect observer.\\It is the cancellation of these divergences that will be shown in detail
-	in the next two sections.  Figures (2a), (2b) and (2e) will be calculated in detail while the result for the self energy
+	in the next two sections.  Figures (2a), (\ref{fig:NLOfig_2}) and (\ref{fig:NLOfig_5}) will be calculated in detail while the result for the self energy
 	expressions will only be omitted since it can be cancelled by a particular choice of gauge ~\cite{field}.  Since we
 	expect both UV and IR divergences we choose to work in the dimensional regularisation scheme.
 
@@ -600,22 +596,23 @@
 
 	\subsubsection{The Virtual $\mathcal{O}(\alpha_s)$ Corrections}
 
-	The virtual correction graphs are shown in figures (2b), (2c) and (2d).  We will begin by calculating
+	The virtual correction graphs are shown in figures (\ref{fig:NLOfig_2}), (\ref{fig:NLOfig_3}) and (\ref{fig:NLOfig_4}).  We will begin by calculating
 	the second term in equation (30).  Using the Feynman rules we have:
 
 	\small
 		\begin{subequations}
-		\begin{equation}
+		\begin{align*}
 			\mathcal{A}_v = \int\frac{d^{d}k}{(2\pi)^{d}} \overline{u}^{\lambda_2}(k_2)
 			(-ig_s\mu^\epsilon\gamma^\alpha T^a_{ij})\frac{i(\slashed k_1 + \slashed k)}{(k_1+k)^2}
-			(-ieQ\gamma^\mu)\frac{i(\slashed k_2 - \slashed k)}{(k_2 - k)^2}(-g_s\mu^\epsilon\gamma^\beta T^a_{ij})
+			(-ieQ\gamma^\mu)\frac{i(\slashed k_2 - \slashed k)}{(k_2 - k)^2}\\
+			(-g_s\mu^\epsilon\gamma^\beta T^a_{ij})
 			\epsilon^r_\mu(p)\frac{-i}{k^2}\left(g_{\alpha\beta} +
 			(1-\xi)\frac{k^\alpha k^\beta}{k^2}\right)v^{\lambda_1}(k_1).
-		\end{equation}
-		\begin{equation}
+		\end{align*}
+		\begin{align*}
 			\mathcal{A}_v = -ig_s^2eQ\mu^{2\epsilon}\Tr(T^aT^a)\overline{u}^{\lambda_2}
 			(k_2)\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_1(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2}v^{\lambda_2}(k_2).
-		\end{equation}
+		\end{align*}
 		\end{subequations}
 	\normalsize
 
@@ -628,11 +625,11 @@
 
 	From equation (30) we see we need $\mathcal{A}_0^*\mathcal{A}_v$:
 
-	\begin{equation}
-		\mathcal{A}_0^*\mathcal{A}_v = g_s^2e^2Q^2\Tr(T^aT^a)[\overline{v}^{\lambda_1}(k_1)\gamma^\nu u(k_2)]
-		\left[\overline{u}^{\lambda_2}(k_2)\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_1(k_1, k_2, k)}
+	\begin{align}
+		\mathcal{A}_0^*\mathcal{A}_v = &g_s^2e^2Q^2\Tr(T^aT^a)[\overline{v}^{\lambda_1}(k_1)\gamma^\nu u(k_2)]\\
+		&\left[\overline{u}^{\lambda_2}(k_2)\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_1(k_1, k_2, k)}
 		{k^2(k_1+k)^2(k_2-k)^2}v^{\lambda_1}(k_1)\right]\epsilon^r_{\mu}(p)\epsilon^r_{*\nu}(p).
-	\end{equation}
+	\end{align}
 
 	And now performing the spin/polarisation/colour sum and average gives:
 
@@ -689,28 +686,28 @@
 
 	Where:
 
-	\begin{equation}
+	\begin{align}
 	\mathcal{N}_3(k_1, k_2, k) = -2s + \frac{8k\cdot k_1k\cdot k_2}{s} + (6+2\xi)(k\cdot k_1 -
-	k\cdot k_2) + k^2(d-4) - 4(1-\xi)\frac{k\cdot k_1 k\cdot k_2}{k^2} - (1-\xi)k^2.
-	\end{equation}
+	k\cdot k_2) + k^2(d-4) \\- 4(1-\xi)\frac{k\cdot k_1 k\cdot k_2}{k^2} - (1-\xi)k^2.
+	\end{align}
 
 	Combining this with the particle flux and the two particle phase space we can write an expression
 	for the vertex corrected cross-section.  Once again we scale the couplings such that they remain
 	dimensionless by defining $g_d^2=g_s^2\mu^{2-\frac{d}{2}}$:
 
 	\begin{subequations}
-	\begin{equation}
+	\begin{equation*}
 	\sigma_v = -4s\left(\frac{d}{2}-1\right)\frac{g_d^2\mu^{2-\frac{d}{2}}e^2Q^2}{4s}2^{1-d}\pi^{\frac{d}{2}-1}
 	\frac{\Gamma(\frac{d}{2}-1)}{\Gamma(d-2)}s^\frac{d-4}{2}\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_3(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2},
-	\end{equation}
-	\begin{equation}
+	\end{equation*}
+	\begin{equation*}
 	\Rightarrow\sigma_v = -g_d^2\mu^{2-\frac{d}{2}}Q^2 4\pi\alpha\mu^{4-d}2^{1-d}\pi^{\frac{d}{2}-1}\frac{\Gamma(
 	\frac{d}{2})}{\Gamma(d-2)}s^\frac{d-4}{2}\int\frac{d^{d}k}{(2\pi)^{d}}\frac{\mathcal{N}_3(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2},
-	\end{equation}
-	\begin{equation}
+	\end{equation*}
+	\begin{equation*}
 	\Rightarrow\sigma_v = -\frac{4\sigma_0}{3}g_d^2\mu^{2-\frac{d}{2}}\int\frac{d^{d}k}{(2\pi)^{d}}
 	\frac{\mathcal{N}_3(k_1, k_2, k)}{k^2(k_1+k)^2(k_2-k)^2}.
-	\end{equation}
+	\end{equation*}
 	\end{subequations}
 
 	Where we have expressed the virtual rate as a multiplicative correction to the Born level rate
@@ -762,20 +759,21 @@
 
 	and taking $c = k^2-2k\cdot k_y$ and $d = k^2$, simplifying the denominators and performing a change of variables $K=k-xp_y$ yields:
 
-	\begin{equation}
+	\begin{align}
 	\sigma_v = -\frac{4\sigma_0}{3}g_d^2\mu^{2-\frac{d}{2}}\int\frac{d^{d}K}{(2\pi)^d}\int_0^1dy\int_0^1dx
-	\left(\frac{2x\mathcal{N}'_3(k_1, k_2, K+xk_y)}{(K^2-C)^3} + \frac{6x(1-x)
-	\mathcal{N}''_3(k_1, k_2, K+xk_y)}{(K^2-C)^4}\right).
-	\end{equation}
+	\Bigg(&\frac{2x\mathcal{N}'_3(k_1, k_2, K+xk_y)}{(K^2-C)^3} + \\&\frac{6x(1-x)
+	\mathcal{N}''_3(k_1, k_2, K+xk_y)}{(K^2-C)^4}\Bigg).
+	\end{align}
 
 	Where $C = x^2p_y^2$.  The change of variables modifies the numerator terms to:
 
 	\begin{subequations}
-	\begin{equation}
+	\begin{equation*}
 	\mathcal{N}'_3(k_1, k_2, K+xk_y) = -2s + K^2\left(\frac{4}{d} + d - 5 + \xi\right) - (3 + \xi)xs + x^2ys(1-y)(3-d-\xi),
-	\end{equation}\begin{equation}
+	\end{equation*}
+	\begin{equation*}
 	\mathcal{N}''_3(k_1, k_2, K+xk_y) = (1-\xi)\left(x^2ys^2(1-y)-\frac{2s}{d}K^2\right).
-	\end{equation}
+	\end{equation*}
 	\end{subequations}
 
 	We can now perform the integrations over $K$ with the aid of equation (54):
@@ -789,68 +787,68 @@
 	of equation (54) needed in this calculation.  I will not show the calculation for every integral
 	but will show one as an example of how the calculations can proceed.  Consider the contribution of the first term of (53a):
 
-	\begin{equation}
+	\begin{equation*}
 	-4s\int_0^1dy\int_0^1dxx\int\frac{d^{d}K}{(2\pi)^d}\frac{1}{(K^2-C)^3} = 4si\int_0^1dy\int_0^1dxx(4\pi)^{-\frac{d}{2}}
 	C^{-3+\frac{d}{2}}\frac{\Gamma(\frac{d}{2})\Gamma(3-\frac{d}{2})}{\Gamma(\frac{d}{2})\Gamma(3)}.
-	\end{equation}
+	\end{equation*}
 
 	From above we see that $C=x^2k_y=-x^2y(1-y)s$ and so:
 
 	\begin{equation}
-	\Rightarrow=4si(4\pi)^{-\frac{d}{2}}\Gamma(3-\frac{d}{2})(-s)^{-3+\frac{d}{2}}\int_0^1dy\int_0^1dxx^{-5+d}
-	y^{\left(-2+\frac{d}{2}\right)-1}(1-y)^{\left(-2+\frac{d}{2}\right)-1}.
+		\Rightarrow=4si(4\pi)^{-\frac{d}{2}}\Gamma(3-\frac{d}{2})(-s)^{-3+\frac{d}{2}}\int_0^1dy\int_0^1dxx^{-5+d}
+		y^{\left(-2+\frac{d}{2}\right)-1}(1-y)^{\left(-2+\frac{d}{2}\right)-1}.
 	\end{equation}
 
 	Where we have written the $y$ exponents in such a way that we can use the following ~\cite{field}:
 
 	\begin{equation}
-	\int_0^1dxx^{a-1}(1-x)^{b-1}=\frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}.
+		\int_0^1dxx^{a-1}(1-x)^{b-1}=\frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}.
 	\end{equation}
 
 	Therefore:
 
 	\begin{equation}
-	\Rightarrow=4si(4\pi)^{-\frac{d}{2}}\Gamma\left(3-\frac{d}{2}\right)(-s)^{-3+\frac{d}{2}}
-	\frac{1}{d-4}\frac{\Gamma^2(\frac{d}{2}-2)}{\Gamma(d-4)}.
+		\Rightarrow=4si(4\pi)^{-\frac{d}{2}}\Gamma\left(3-\frac{d}{2}\right)(-s)^{-3+\frac{d}{2}}
+		\frac{1}{d-4}\frac{\Gamma^2(\frac{d}{2}-2)}{\Gamma(d-4)}.
 	\end{equation}
 
 	Which, after choosing $d=4+\epsilon$ (with the intention of taking the limit $\epsilon\rightarrow0$
 	once it is safe to do so), and manipulating the gamma functions to expose the pole structure gives:
 
 	\begin{equation}
-	-4\int_0^1dy\int_0^1dxx\int\frac{d^{d}K}{(2\pi)^d}\frac{1}{(K^2-C)^3} = 4(-s)^{\frac{\epsilon}{2}}i(4\pi)^{-2-\frac{\epsilon}{2}}
-	\frac{4}{\epsilon^2}\frac{\Gamma\left(1-\frac{\epsilon}{2}\right)\Gamma^2\left(1+\frac{\epsilon}{2}\right)}{\Gamma(1+\epsilon)}.
+		-4\int_0^1dy\int_0^1dxx\int\frac{d^{d}K}{(2\pi)^d}\frac{1}{(K^2-C)^3} = 4(-s)^{\frac{\epsilon}{2}}i(4\pi)^{-2-\frac{\epsilon}{2}}
+		\frac{4}{\epsilon^2}\frac{\Gamma\left(1-\frac{\epsilon}{2}\right)\Gamma^2\left(1+\frac{\epsilon}{2}\right)}{\Gamma(1+\epsilon)}.
 	\end{equation}
 
 	Which is clearly divergent in the limit $d\rightarrow4$.  The other integrals follow similarly and
 	the combined result (simplified with the aid of a computer package) can be expressed as:
 
 	\begin{equation}
-	\sigma_v = \frac{2\alpha_s}{3\pi}\sigma_0\Big(\frac{s}{4\pi\mu^2}\Big)^{\frac{\epsilon}{2}}\frac{\Gamma
-	\Big(1-\frac{\epsilon}{2}\Big)\Gamma^2\Big(1+\frac{\epsilon}{2}\Big)}{\Gamma(1+\epsilon)}\Big(-\frac{8}{\epsilon^2} +
-	\frac{6}{\epsilon} - \frac{8+4\epsilon}{1+\epsilon}\Big).
+		\sigma_v = \frac{2\alpha_s}{3\pi}\sigma_0\Big(\frac{s}{4\pi\mu^2}\Big)^{\frac{\epsilon}{2}}\frac{\Gamma
+		\Big(1-\frac{\epsilon}{2}\Big)\Gamma^2\Big(1+\frac{\epsilon}{2}\Big)}{\Gamma(1+\epsilon)}\Big(-\frac{8}{\epsilon^2} +
+		\frac{6}{\epsilon} - \frac{8+4\epsilon}{1+\epsilon}\Big).
 	\end{equation}
 
 	Where we have defined $\alpha_s=\frac{g_d^2}{4\pi}$ and using \texttt{Maple} to expand the
 	product of gamma matrices for $\epsilon\rightarrow0$ gives:
 
 	\begin{subequations}
-	\begin{equation}
-	\frac{\Gamma\left(1-\frac{\epsilon}{2}\right)\Gamma^2\left(1+\frac{\epsilon}{2}\right)}{\Gamma(1+\epsilon)} =
-	\frac{\gamma_E}{2}\epsilon + \left(\frac{\gamma_E^2}{8} - \frac{\pi^2}{48}\right)\epsilon^2 + \mathcal{O}(\epsilon^3),
-	\end{equation}
-	\begin{equation}
-	\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}} = e^{\ln{\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}}} =
-	e^{\frac{\epsilon}{2}\ln\left(\frac{s}{4\pi\mu^2}\right)} = 1 + \frac{\epsilon}{2}\ln\left(\frac{s}{4\pi\mu^2}\right) + \mathcal{O}(\epsilon^2).
-	\end{equation}
+		\begin{equation}
+		\frac{\Gamma\left(1-\frac{\epsilon}{2}\right)\Gamma^2\left(1+\frac{\epsilon}{2}\right)}{\Gamma(1+\epsilon)} =
+		\frac{\gamma_E}{2}\epsilon + \left(\frac{\gamma_E^2}{8} - \frac{\pi^2}{48}\right)\epsilon^2 + \mathcal{O}(\epsilon^3),
+		\end{equation}
+		\begin{equation}
+		\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}} = e^{\ln{\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}}} =
+		e^{\frac{\epsilon}{2}\ln\left(\frac{s}{4\pi\mu^2}\right)} = 1 + \frac{\epsilon}{2}\ln\left(\frac{s}{4\pi\mu^2}\right) + \mathcal{O}(\epsilon^2).
+		\end{equation}
 	\end{subequations}
 
-	Where $\gamma_E$ is Eulers constant.  Finally then we have:
+	Where $\gamma_E$ is Euler's constant.  Finally then we have:
 
-	\begin{equation}
-	\sigma_v = \frac{2\alpha_s}{3\pi}\sigma_0\left[-\frac{8}{\epsilon^2} + \frac{1}{\epsilon}\left(6-4\gamma_E-4L\right) +
-	\gamma_E(3-\gamma_E)-8+\frac{\pi^2}{6}+\pi^2-L^2-(2\gamma_E-3)L\right].
-	\end{equation}
+	\begin{align}
+		\sigma_v = \frac{2\alpha_s}{3\pi}\sigma_0\Big[&-\frac{8}{\epsilon^2} + \frac{1}{\epsilon}\left(6-4\gamma_E-4L\right) +
+		\gamma_E(3-\gamma_E)\\&-8+\frac{\pi^2}{6}+\pi^2-L^2-(2\gamma_E-3)L\Big].
+	\end{align}
 
 	Where $L = \ln{\left(\frac{s}{4\pi\mu^2}\right)}$.  We can now see that regardless of our choice of
 	gauge parameter, $\xi$, the result for the vertex correction is gauge independent.  We also see that
@@ -863,18 +861,18 @@
 	figures 1e and 1f.  These diagrams have an indistinguishable final state and so the real contribution will be of the form:
 
 	\begin{equation}
-	|\mathcal{A}_r|^2 = |\mathcal{A}_{left} + \mathcal{A}_{right}|^2 = |\mathcal{A}_{left}|^2 + |\mathcal{A}_{right}|^2 + 2\mathcal{A}_{left}\mathcal{A}_{right}^*.
+		|\mathcal{A}_r|^2 = |\mathcal{A}_{left} + \mathcal{A}_{right}|^2 = |\mathcal{A}_{left}|^2 + |\mathcal{A}_{right}|^2 + 2\mathcal{A}_{left}\mathcal{A}_{right}^*.
 	\end{equation}
 
 	Where $\mathcal{A}_{left}$ and $\mathcal{A}_{right}$ refer to figures 1e and 1f (resp.) and are given by:
 
 	\begin{subequations}
-	\begin{equation}
-	\mathcal{A}_{left} = -Qeig_sT^a_{ij}\overline{u}(k_2)\gamma^\mu\frac{\slashed k_1 + \slashed k}{(k_1 + k)^2}\gamma^\nu v(k_1)\epsilon_\nu\eta_\mu.
-	\end{equation}
-	\begin{equation}
-	\mathcal{A}_{right} = -Qeig_sT^a_{ij}\overline{u}(k_2)\gamma^\nu\frac{\slashed k_2 + \slashed k}{(k_2 + k)^2}\gamma^\mu v(k_1)\epsilon_\nu\eta_\mu.
-	\end{equation}
+		\begin{equation}
+		\mathcal{A}_{left} = -Qeig_sT^a_{ij}\overline{u}(k_2)\gamma^\mu\frac{\slashed k_1 + \slashed k}{(k_1 + k)^2}\gamma^\nu v(k_1)\epsilon_\nu\eta_\mu.
+		\end{equation}
+		\begin{equation}
+		\mathcal{A}_{right} = -Qeig_sT^a_{ij}\overline{u}(k_2)\gamma^\nu\frac{\slashed k_2 + \slashed k}{(k_2 + k)^2}\gamma^\mu v(k_1)\epsilon_\nu\eta_\mu.
+		\end{equation}
 	\end{subequations}
 
 	In the calculation of the terms of equation (64) it will be useful to the energy fractions for each
@@ -885,40 +883,40 @@
 	Evaluating the $|...|^2$ terms gives:
 
 	\begin{subequations}
-	\begin{equation}
-	|\mathcal{A}_{left}|^2  = \frac{Q^2e^2g_s^2}{(k_1+k)^4}\Tr(T^aT^a)\Tr(\slashed k_2 \gamma^\mu (\slashed k_1 + \slashed k)
-	\gamma^\nu \slashed k_1 \gamma_\nu (\slashed k_1 + \slashed k) \gamma_\mu),
-	\end{equation}
-	\begin{equation}
-	|\mathcal{A}_{right}|^2 = \frac{Q^2e^2g_s^2}{(k_2+k)^4}\Tr(T^aT^a)\Tr(\slashed k_2 \gamma^\nu (\slashed k_2 + \slashed k)
-	\gamma^\mu \slashed k_2 \gamma_\mu (\slashed k_2 + \slashed k) \gamma_\nu),
-	\end{equation}
-	\begin{equation}
-	\mathcal{A}_{left}\mathcal{A}_{right}^* = \frac{Q^2e^2g_s^2}{(k_2+k)^2(k_1+k)^2}\Tr(T^aT^a)\Tr(\slashed k_2\gamma^\mu
-	(\slashed k_1 + \slashed k) \gamma^\nu \slashed k_1 \gamma_\mu (\slashed k_2 + \slashed k) \gamma_\nu).
-	\end{equation}
+		\begin{equation}
+		|\mathcal{A}_{left}|^2  = \frac{Q^2e^2g_s^2}{(k_1+k)^4}\Tr(T^aT^a)\Tr(\slashed k_2 \gamma^\mu (\slashed k_1 + \slashed k)
+		\gamma^\nu \slashed k_1 \gamma_\nu (\slashed k_1 + \slashed k) \gamma_\mu),
+		\end{equation}
+		\begin{equation}
+		|\mathcal{A}_{right}|^2 = \frac{Q^2e^2g_s^2}{(k_2+k)^4}\Tr(T^aT^a)\Tr(\slashed k_2 \gamma^\nu (\slashed k_2 + \slashed k)
+		\gamma^\mu \slashed k_2 \gamma_\mu (\slashed k_2 + \slashed k) \gamma_\nu),
+		\end{equation}
+		\begin{equation}
+		\mathcal{A}_{left}\mathcal{A}_{right}^* = \frac{Q^2e^2g_s^2}{(k_2+k)^2(k_1+k)^2}\Tr(T^aT^a)\Tr(\slashed k_2\gamma^\mu
+		(\slashed k_1 + \slashed k) \gamma^\nu \slashed k_1 \gamma_\mu (\slashed k_2 + \slashed k) \gamma_\nu).
+		\end{equation}
 	\end{subequations}
 
-	Evaluating the trace terms using \texttt{FORM} ~\cite{form} in $d$-dimensions and rearranging in terms of the energy fractions gives:
+	Evaluating the trace terms in $d$-dimensions and rearranging in terms of the energy fractions gives:
 
 	\begin{subequations}
-	\begin{equation}
-	|\mathcal{A}_{left}|^2  = 32Q^2e^2g_s^2\left(1+\frac{\epsilon}{2}\right)^2\frac{1-x_1}{1-x_2},
-	\end{equation}
-	\begin{equation}
-	|\mathcal{A}_{right}|^2 = 32Q^2e^2g_s^2\left(1+\frac{\epsilon}{2}\right)^2\frac{1-x_2}{1-x_1},
-	\end{equation}
-	\begin{equation}
-	\mathcal{A}_{left}\mathcal{A}_{right}^* = 32Q^2e^2g_s^2\left(1+\frac{\epsilon}{2}\right)\left(-\frac{\epsilon}{2}-2\frac{1-x_3}{(1-x_1)(1-x_2)}\right).
-	\end{equation}
+		\begin{equation}
+		|\mathcal{A}_{left}|^2  = 32Q^2e^2g_s^2\left(1+\frac{\epsilon}{2}\right)^2\frac{1-x_1}{1-x_2},
+		\end{equation}
+		\begin{equation}
+		|\mathcal{A}_{right}|^2 = 32Q^2e^2g_s^2\left(1+\frac{\epsilon}{2}\right)^2\frac{1-x_2}{1-x_1},
+		\end{equation}
+		\begin{equation}
+		\mathcal{A}_{left}\mathcal{A}_{right}^* = 32Q^2e^2g_s^2\left(1+\frac{\epsilon}{2}\right)\left(-\frac{\epsilon}{2}-2\frac{1-x_3}{(1-x_1)(1-x_2)}\right).
+		\end{equation}
 	\end{subequations}
 
 	Summing these expressions according to equation (63) gives:
 
-	\begin{equation}
-	|\mathcal{A}_r|^2 = 32Q^2e^2g_s^2\left[\left(1+\frac{\epsilon}{2}\right)^2\frac{x_1^2+x_2^2}{(1-x_2)(1-x_1)} +
-	\epsilon\left(1+\frac{\epsilon}{2}\right)\frac{2-2x_1-2x_2+x_1x_2}{(1-x_2)(1-x_1)}\right].
-	\end{equation}
+	\begin{equation*}
+		|\mathcal{A}_r|^2 = 32Q^2e^2g_s^2\left[\left(1+\frac{\epsilon}{2}\right)^2\frac{x_1^2+x_2^2}{(1-x_2)(1-x_1)} +
+		\epsilon\left(1+\frac{\epsilon}{2}\right)\frac{2-2x_1-2x_2+x_1x_2}{(1-x_2)(1-x_1)}\right].
+	\end{equation*}
 
 	As with the virtual contributions we are interested in the observable cross-section and so we must
 	include the phase space factor for a three particle final state.  Unlike the two particle phase space
@@ -926,64 +924,60 @@
 	differential in terms of the energy fractions defined above:
 
 	\begin{equation}
-	\frac{d^2R_3}{dx_1dx_2} = \frac{s}{16(2\pi)^3}\left(\frac{s}{4\pi}\right)^\epsilon\frac{1}{\Gamma(2+\epsilon)}
-	\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
+		\frac{d^2R_3}{dx_1dx_2} = \frac{s}{16(2\pi)^3}\left(\frac{s}{4\pi}\right)^\epsilon\frac{1}{\Gamma(2+\epsilon)}
+		\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
 	\end{equation}
 
 	Where $z = 1 - 2\frac{1-x_1-x_2}{x_1x_2}$.  Combining equations (67) and (68) with a flux factor gives:
 
 	\begin{equation}
-	\frac{d^2\sigma_r}{dx_1dx_2} = \frac{2Q^2e^2g_s^2F(x_1, x_2; \epsilon)}{\pi}\left(\frac{s}{4\pi}\right)^\epsilon
-	\frac{1}{\Gamma(2+\epsilon)}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
+		\frac{d^2\sigma_r}{dx_1dx_2} = \frac{2Q^2e^2g_s^2F(x_1, x_2; \epsilon)}{\pi}\left(\frac{s}{4\pi}\right)^\epsilon
+		\frac{1}{\Gamma(2+\epsilon)}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
 	\end{equation}
 
 	Where $F(x_1, x_2; \epsilon)$ is the algebraic factor in equation (67).  Switching to
 	a dimensionless coupling and introducing $\alpha_s$ as above:
 
 	\begin{equation}
-	\frac{d^2\sigma_r}{dx_1dx_2} = \frac{2Q^2e^2\alpha_s}{\pi}F(x_1, x_2; \epsilon)\left(\frac{s}{4\pi\mu^2}\right)^\epsilon
-	\frac{1}{\Gamma(2+\epsilon)}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
+		\frac{d^2\sigma_r}{dx_1dx_2} = \frac{2Q^2e^2\alpha_s}{\pi}F(x_1, x_2; \epsilon)\left(\frac{s}{4\pi\mu^2}\right)^\epsilon
+		\frac{1}{\Gamma(2+\epsilon)}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
 	\end{equation}
 
 	Comparing with the Born cross-section in equation (35) this can be written as:
 
 	\begin{equation}
-	\frac{d^2\sigma_r}{dx_1dx_2} = \frac{2\alpha_s\sigma_0}{3\pi}F(x_1, x_2; \epsilon)\left(\frac{s}{4\pi\mu^2}\right)^
-	{\frac{\epsilon}{2}}\frac{1}{\Gamma(2+\frac{\epsilon}{2})}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
+		\frac{d^2\sigma_r}{dx_1dx_2} = \frac{2\alpha_s\sigma_0}{3\pi}F(x_1, x_2; \epsilon)\left(\frac{s}{4\pi\mu^2}\right)^
+		{\frac{\epsilon}{2}}\frac{1}{\Gamma(2+\frac{\epsilon}{2})}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
 	\end{equation}
 
 	Integrating over the allowed region of $x_1$ and $x_2$:
 
 	\begin{equation}
-	\sigma_r = \frac{2\alpha_s\sigma_0}{3\pi}\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}\frac{1}{\Gamma(2+\frac{\epsilon}{2})}
-	\int_0^1dx_1x_1^\epsilon\int^1_{1-x_1}x_2^\epsilon\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}F(x_1, x_2;\epsilon).
+		\sigma_r = \frac{2\alpha_s\sigma_0}{3\pi}\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}\frac{1}{\Gamma(2+\frac{\epsilon}{2})}
+		\int_0^1dx_1x_1^\epsilon\int^1_{1-x_1}x_2^\epsilon\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}F(x_1, x_2;\epsilon).
 	\end{equation}
 
 	Defining $x_2=1-vx_1$ ~\cite{field} to decouple the integrals and converting the $z$ dependence in equation (73) gives:
 
-	\begin{subequations}
-	\begin{equation}
-	\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}} = \frac{[v(1-v)(1-x_1)]^\frac{\epsilon}{2}}{x_2^\epsilon},
-	\end{equation}
-	\begin{equation}
-	\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}} = \frac{x_1^2(1+v^2)-2vx_1+1}{(1-x_1)x_1v} + \epsilon\frac{x_1^2(1-v+v^2-x_1+1)}
-	{(1-x_1)x_1v} + \frac{\epsilon^2}{4}\frac{x_1^2(v^2-2v+1) + 4(v-1) + 1}{(1-x_1)xv}.
-	\end{equation}
-	\end{subequations}
+	\begin{align}
+		\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}} = &\frac{[v(1-v)(1-x_1)]^\frac{\epsilon}{2}}{x_2^\epsilon},\\
+		= &\frac{x_1^2(1+v^2)-2vx_1+1}{(1-x_1)x_1v} + \epsilon\frac{x_1^2(1-v+v^2-x_1+1)}
+		{(1-x_1)x_1v} \\&+\frac{\epsilon^2}{4}\frac{x_1^2(v^2-2v+1) + 4(v-1) + 1}{(1-x_1)xv}.
+	\end{align}
 
 	Inserting equations (73a) and (73b) into equation (72) and using \texttt{Maple} to perform the $x_1$ and $v$ integrations gives: ~\cite{primes}
 
 	\begin{equation}
-	\sigma_r = \frac{2\alpha_s\sigma_0}{3\pi}\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}\frac{\Gamma^2
-	\left(1+\frac{\epsilon}{2}\right)}{\Gamma\left(1+\frac{3\epsilon}{2}\right)}\left[\frac{8}{\epsilon^2} - \frac{6}{\epsilon} + \frac{19}{2}\right].
+		\sigma_r = \frac{2\alpha_s\sigma_0}{3\pi}\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}\frac{\Gamma^2
+		\left(1+\frac{\epsilon}{2}\right)}{\Gamma\left(1+\frac{3\epsilon}{2}\right)}\left[\frac{8}{\epsilon^2} - \frac{6}{\epsilon} + \frac{19}{2}\right].
 	\end{equation}
 
 	And using the expansions applied in the virtual corrections case gives:
 
-	\begin{equation}
-	\sigma_r = \frac{2\alpha_s}{3\pi}\sigma_0\left[\frac{8}{\epsilon^2} + \frac{1}{\epsilon}\left(-6+4\gamma_E+4L\right)-
-	\gamma_E(3-\gamma_E)-\frac{57}{6}+\frac{7\pi^2}{6}+L^2+(2\gamma_E-3)L\right].
-	\end{equation}
+	\begin{equation*}
+		\sigma_r = \frac{2\alpha_s}{3\pi}\sigma_0\left[\frac{8}{\epsilon^2} + \frac{1}{\epsilon}\left(-6+4\gamma_E+4L\right)-
+		\gamma_E(3-\gamma_E)-\frac{57}{6}+\frac{7\pi^2}{6}+L^2+(2\gamma_E-3)L\right].
+	\end{equation*}
 
 	As in the case of the virtual corrections this is divergent in the limit $\epsilon\rightarrow0$ and depends on $\mu$.
 
@@ -992,22 +986,9 @@
 	Having now found the vertex corrections and the real corrections up to $\mathcal{O}(\epsilon^2)$
 	we can calculate the next-to-leading order cross-section by simply summing the two:
 
-	\begin{subequations}
-	\begin{equation}
-	\sigma_{NLO} = \sigma_r + \sigma_v,
-	\end{equation}
-	\begin{equation}
-	\begin{split}
-	\Rightarrow\sigma_{NLO} = \frac{2\alpha_s}{3\pi}\sigma_0\Big[\frac{8}{\epsilon^2} + \frac{1}{\epsilon}\Big(-6+4\gamma_E+4L\Big)-
-	\gamma_E(3-\gamma_E)-\frac{57}{6}+\frac{7\pi^2}{6}+L^2+(2\gamma_E-3)L +\ldots\\ -\frac{8}{\epsilon^2} + \frac{1}{\epsilon}
-	\Big(6-4\gamma_E-4L\Big)+\gamma_E(3-\gamma_E)-8+\frac{\pi^2}{6}+\pi^2-L^2-(2\gamma_E-3)L + \mathcal{O}(\epsilon)\Big],
-	\end{split}
-	\end{equation}
-	\begin{equation}
-	\Rightarrow\sigma_{NLO} = \frac{2\alpha_s}{3\pi}\sigma_0\Big(\frac{3}{2}\Big) = \frac{\alpha_s}{\pi}\sigma_0.
-	\end{equation}
-	\end{subequations}
-
+	\begin{align}
+		\sigma_{NLO} &= \sigma_r + \sigma_v = \frac{\alpha_s}{\pi}\sigma_0.
+	\end{align}
 
 	\subsection{Resumming Higher-Order Corrections}
 
