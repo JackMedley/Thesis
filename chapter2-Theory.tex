@@ -85,6 +85,9 @@
 	mathematical quirk of this process and $c$ and $\overline{c}$ represent the QCD
 	``ghost'' and ``anti-ghost'' fields respectively.  They are unphysical since they are spin-1 anti-commuting fields.
 
+\section{The Partonic Cross-Section}
+	\label{sec:partonicCrossSection}
+
 	Now we have a complete Lagrangian for QCD we can begin to move towards something physical.  The first step forwards
 	is the Lehman-Symanzik-Zimmerman (LSZ) reduction formula.  This gives us a relation between the scattering amplitude
 	from some initial state in to some final state, $\langle f|i\rangle\equiv\langle f|S|i\rangle$ where $S$ is the
@@ -309,8 +312,8 @@
 				&
 				\begin{center}
 					\begin{align*}
-						-ig_s^2\Big(f^{abe}f^{cde}(g^{\alpha\gamma}g^{\beta\delta} - g^{\alpha\delta}g^{\beta\gamma}) \\
-						            f^{ace}f^{bde}(g^{\alpha\beta}g^{\gamma\delta} - g^{\alpha\delta}g^{\gamma\beta})  \\
+						-ig_s^2\Big(f^{abe}f^{cde}(g^{\alpha\gamma}g^{\beta\delta} - g^{\alpha\delta}g^{\beta\gamma}) + \\
+						            f^{ace}f^{bde}(g^{\alpha\beta}g^{\gamma\delta} - g^{\alpha\delta}g^{\gamma\beta}) +  \\
 						            f^{ade}f^{bce}(g^{\alpha\beta}g^{\delta\gamma} - g^{\alpha\gamma}g^{\delta\beta})\Big) \\
 					\end{align*}
 				\end{center} \\
@@ -327,7 +330,8 @@
 		\label{tab:feynRules}
 	\end{table}
 
-	\subsection{Renormalising the QCD Lagrangian}
+\section{Renormalising the QCD Lagrangian}
+	\label{sec:renormalisation}
 
 	{\color{red}
 	\begin{itemize}
@@ -335,35 +339,98 @@
 	\end{itemize}
 	}
 
-	\subsection{The QCD Beta function}
+\section{The QCD Beta function}
 
-	{\color{red}
-	\begin{itemize}
-		\item How does QCD look at different scales?
-		\item What is the beta function?
-		\item Why is it important?
-		\item Shows that QCD CAN be treated perturbatively!
-	\end{itemize}
-	}
+	QCD has two striking features which are not apparent from the Lagrangian derived above.  The first is asymptotic freedom.
+	This is the fact that at \emph{high} energies the QCD coupling strength becomes increasingly weak and it is this which allows us to
+	perform a perturbative expansion of physical observables such as cross-sections.  The second feature is confinement.  Confinement
+	is the reason we do not observe bare quarks and gluons in nature, instead we only see bound states of these fundamental QCD partons.
+	This is because at very \emph{low} energies the coupling strength becomes increasingly strong.\\It turns out that when
+	renormalise QCD to remove the ultraviolet singularities we introduce a scale dependence in the coupling strength:
+
+	\begin{equation}
+		\alpha_s = \alpha_s(\mu_r).
+	\end{equation}
+
+	This scale, $\mu_r$, is the renormalisation scale discussed in section (\ref{sec:renormalisation}).  It can be interpreted as a measure of our ignorance of the
+	true high-scale theory which governs nature, that is to say, we believe QCD is the right theory \emph{only up to} some
+	scale $\mu_r$.  The evolution of $\alpha_s$ with $\mu_r$ is given by the renormalisation group equation:
+
+	\begin{equation}
+		Q^2\frac{\partial\alpha_s}{\partial Q^2} = \beta(\alpha_s),
+		\label{eqn:RSFlow}
+	\end{equation}
+
+	where the $\beta(\alpha_s)$ is the beta function.  It can expanded perturbatively as a series in $\alpha_s$
+	as follows:
+
+	\begin{equation}
+		\beta(\alpha_s) = -\beta_0\alpha_s\left(1 + \beta_1\alpha_s + \beta_2\alpha_s^2 + \ldots \right)
+		\label{eqn:betaFunction}
+	\end{equation}
+
+	Where the perturbative coefficients, $\beta_i$, can be calculated using the methods of section (\ref{sec:partonicCrossSection}).
+	For example the leading order contribution, $\beta_0$, is given by:
+
+	\begin{equation}
+		\beta_0 = 11 - \frac{2n_f}{3}.
+	\end{equation}
+
+	If we truncate equation \eqref{eqn:betaFunction} at leading-order in $\alpha_s$ then we can solve equation \eqref{eqn:RSFlow}
+	and we see that the coupling, $\alpha_s(\mu_r)$, `runs' with the following form:
+
+	\begin{equation}
+		\alpha_s(Q^2) = \frac{\alpha_s(\mu_r^2)}{1 + \alpha(\mu_r^2)\frac{\beta_0}{4\pi}\ln\frac{Q^2}{\mu_r^2}}.
+		\label{eqn:runningAS}
+	\end{equation}
+
+	It is clear from this (since in the standard model we have $n_f=6$ and therefore $\beta_0>0$) that as $Q^2$ tends to
+	zero the coupling strength becomes very large and at high values for $Q^2$ we see that $\alpha_s(Q^2)\rightarrow0$.
+	This later limit is exactly the asymptotic freedom property of QCD and it holds even when we include the higher order
+	terms we neglected in the leading-order approximation used to arrive at equation \eqref{eqn:runningAS} \cite{Beringer:1900zz}.
+	It is an essential result in that it allows us to perform perturbative expansions of observables and without this none of the
+	following work would be possible.  The evolution of the strong coupling with $Q^2$ is shown in figure (\ref{fig:runningAS}),
+	it shows several extracted values of $\alpha_s$ based on six various types of experiment.  For example, the hadronic
+	collider predictions include studies of the ratio of the 3-jet inclusive cross-section to the 2-jet inclusive
+	cross-section as a means of finding the strong coupling \cite{Chatrchyan:2013txa}.
+
+	\begin{figure}[htp]
+		\centering
+		\includegraphics[width=0.9\textwidth]{Figures/runningAlphaS}
+		\caption{The evolution of $\alpha_s$ over several orders of magnitude in the scale of the process $Q^2$.  The data
+		         points fitted are of varying degrees of formal accuracy ranging from next-to-leading order in $\alpha_s$
+		         (NLO) to next-to-next-to-next-to-leading order in $\alpha_s$ (N\textsuperscript{3}LO).
+		         Figure from \cite{Beringer:1900zz}.}
+		\label{fig:runningAS}
+  	\end{figure}
 
 \section{QCD Factorisation at Hadronic Colliders}
 
-	{\color{red}
-	\begin{itemize}
-		\item Collinear factorisation which lets us pull out the PDFs as a convolution.
-		\item What is a PDF? *Roughly* how are they calculated?
-	\end{itemize}
-	}
+	So far we have only talked about the very general idea of two particles interacting and scattering off one another in to
+	some final state which we are interested in.  This is too simple a picture when we are considering hadronic colliders
+	such as the Large Hadron Collider (proton-proton), the Tevatron (proton-antiproton), HERA (proton-lepton) and, potentially,
+	a Future Circular Collider (FCC) with a hadronic initial state.\\At experiments we collide QCD bound states with one another
+	but in practise when calculating cross-sections we perform a sum over the possible combinations of initial states we may
+	encounter in the two incoming hadrons.  In order to do this we must have a good understanding of the dynamics of the partons
+	inside the onrushing hadrons; this understanding is encoded in the Parton Distribution Functions (PDFs).  A PDF,
+	$f_{i/H}(x, Q^2)$ is a function which tells us how likely we are to find a parton of type $i$ carrying a fraction $x$ of the
+	total hadrons momentum in a hadron, of type $H$, during a collision occurring at an energy scale $Q$.  Because the PDFs contain
+	non-perturbative information we cannot compute their properties in the same way as we calculate cross-sections, instead they
+	are determined by fitting to data from a range of experiments (such as those mentioned above).  Once we have the
+	PDFs we can compute the physical hadronic cross-sections, $\sigma$, by convoluting two of them (one for each hadron) with
+	the partonic cross-section for the scattering of partons of type $i$ and $j$, $\hat{\sigma}_{ij}$, discussed in section
+	(\ref{sec:partonicCrossSection}) and summing over the possible initial partons as follows:
 
-	So far we have only talked about the idea of two particles interacting and scattering off one another in to
-	some final state which we are interested in.  This is too simple a picture when we are considering hadronic
-	colliders such as the Large Hadron Collider (proton-proton), the Tevatron (proton-antiproton), HERA (proton-lepton) and, potentially,
-	a Future Circular Collider (FCC).\\At experiments we collide QCD bound states with one another but in practise when calculating
-	cross-sections we perform a sum over the possible combinations of initial states we may encounter in the two incoming hadrons.
-	In order to do this we must have some understanding of the dynamics of partons inside the onrushing hadrons; this is where
-	Parton Distribution Functions (PDFs) come in.  A PDF, $f_i(x, Q^2)$ is a probabilistic functions which tells us how
-	likely we are to find a parton of type $i$ carrying a fraction $x$ of the total hadrons momentum in a hadron during a
-	collision with an energy scale $Q$.
+	\begin{equation}
+		\sigma(Q^2) = \sum_{f_a,f_b}\int_0^1dx_adx_bf_{a/H_a}(x_a, Q^2)\hat{\sigma}_{ij}(\alpha_s(\mu_r), \mu_r^2, \mu_f^2)f_{b/H_b}(x_b, Q^2).
+		\label{eqn:factorisation}
+	\end{equation}
+
+	Equation \eqref{eqn:factorisation} can be intuitively understood as a separation of scales; the long distance physics of the PDFs is
+	manifestly distinct from the short distance hard scatter contained in the partonic cross-section.  The scale at which we separate the
+	long and short range physics is called the \emph{factorisation scale}, $\mu_f$.  As with the renormalisation scale it is not
+	\emph{a priori} clear what is the correct factorisation scale and results of perturbative calculations are often quoted with
+	a `scale uncertainty' band.
 
 \section{From Partons to Jets}
 
