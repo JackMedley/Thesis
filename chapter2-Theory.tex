@@ -90,7 +90,7 @@
 
 	Now we have a complete Lagrangian for QCD we can begin to move towards something physical.  The first step forwards
 	is the Lehman-Symanzik-Zimmerman (LSZ) reduction formula.  This gives us a relation between the scattering amplitude
-	from some initial state in to some final state, $\langle f|i\rangle\equiv\langle f|S|i\rangle$ where $S$ is the
+	from some initial state into some final state, $\langle f|i\rangle\equiv\langle f|S|i\rangle$ where $S$ is the
 	scattering matrix, and a time-ordered vacuum expectation operator of a product of fields.  Here we briefly present
 	the argument behind the LSZ for the case of $2\rightarrow2$ scattering using the scalar phi-cubed theory for simplicity
 	(but this generalises to more complex theories). The Lagrangian for this theory is given by:
@@ -330,6 +330,133 @@
 		\label{tab:feynRules}
 	\end{table}
 
+\section{Divergences and Regularisation}
+
+	In the preceding section we saw that any unconstrained momenta in a Feynman diagram must be integrated over to account
+	for all possible ways the momenta in the process may flow.  We refer to these contributions as loop-level or
+	higher-order corrections.  When calculating these corrections we encounter divergences of various kinds which can be
+	divided up into three classes based on how they arise.
+
+	\subsection{Ultraviolet divergences}
+
+		Ultraviolet divergences (UV) occur when all the components of a loop momenta grow large,
+		$k^\alpha\rightarrow\infty$, such that $k^2$ becomes the dominant term in propagator.
+		Since these extremely high momentum modes corresponding to physics at very short distance scales
+		we choose to interpret these divergences as an indication that our theory is only an effective
+		theory and we shouldn't attempt to apply it to all scales.  We can quickly spot diagrams with these
+		pathologies with a naive power counting argument.  For example given a diagram which results in a
+		term such as the following:
+
+		\begin{equation}
+			\int \frac{d^4k}{k^2(k^2-m^2)},
+		\end{equation}
+
+		where the integral is understood to run over all four momentum components form zero up to infinity
+		and $m$ is some finite mass. In the UV region where $k\rightarrow\infty$ this is asymptotically equal
+		to:
+
+		\begin{equation}
+			\sim\int\frac{d^4k}{k^4},
+		\end{equation}
+
+		which is clearly logarithmically divergent.
+
+	\subsection{Infrared and collinear divergences}
+
+		Infrared and collinear divergences (IRC) occur in theories with massless gauge bosons, such as
+		QED and QCD, since a particle may emit any number of arbitrarily such bosons with infinitesimal
+		energy and we would never be able to detect their emission.  In contrast to the UV divergences
+		the IR becomes important in the region of phase space where $k^2\rightarrow0$.  A similar power
+		counting analysis to that above can be applied here.  For example if we consider the one-loop
+		correction to the the vertex diagram in massless phi-cubed from section (\ref{sec:partonicCrossSection})
+		we would find an integral of the form \cite{Sterman:1995fz}:
+
+		\begin{equation}
+			I = \int\frac{d^4k}{(2\pi)^4}\frac{1}{k^2(p_1-k)^2(p_2+k)^2},
+		\end{equation}
+
+		where $k$ is the loop momentum, $q=p_1+p_2$ is the incoming momentum and $p_i$ the outgoing
+		momenta.  Expanding each momentum into light-cone coordinates with $p_1$ in the plus-direction,
+		$p_2$ in the minus-direction:
+
+		\begin{align}
+			p_1 \sim (p_1^+, 0, \vec{0}) \hspace{0.75cm} p_2 \sim (0, p_2^-, \vec{0}).
+		\end{align}
+
+		Then take the Eikonal approximation then we have:
+
+		\begin{align}
+			I &= \int\frac{dk^+k^-k^2_T}{(2\pi)^4}\frac{1}{(2k^+k^- - k_T^2)(-2p_1^+k^-)(2p_2^-k^+)},\\
+			  &= \frac{1}{2q^2}\int\frac{dk^+k^-k^2_T}{(2\pi)^4}\frac{1}{(2k^+k^- - k_T^2)(-k^-)(k^+)},
+			  \label{eqn:IRCscaling}
+		\end{align}
+
+		where $q^2=2p_1\cdot p_2$ since $p_i$ are massless.  Here we can further subdivide the divergences
+		contained here into a `soft' sector and a collinear one.\\Considering first the soft regime if we
+		let all the components of our integration variable, $k_\mu$ become small at the same rate, that is,
+		$k^\mu\sim\lambda\sqrt{q^2}$ where $\lambda\rightarrow0$ then after a change of variables equation
+		\eqref{eqn:IRCscaling} becomes:
+
+		\begin{equation}
+			I \sim\int\frac{d^4\lambda}{\lambda^4},
+			\label{eqn:IRdivergent}
+		\end{equation}
+
+		which diverges logarithmically for small lambda.  The collinear sector follows similarly, if we now
+		look at the following scaling:
+
+		\begin{align}
+			k^\pm\sim\sqrt{q^2}\hspace{0.75cm}k^\mp\sim\lambda^2\sqrt{q^2}\hspace{0.75cm}k_T^2\sim\lambda\sqrt{q^2}.
+		\end{align}
+
+		I.e. as we decrease $\lambda$ we make $k_\mu$ increasingly collinear to either $p_1$ or $p_2$.  Using
+		this scaling exactly reproduces equation \eqref{eqn:IRdivergent} and therefore is also divergent.
+
+	\subsection{Regularising divergences}
+
+		If we are to extract any useful information from diagrams contributing above leading-order we must find
+		ways to control these these divergences.  These methods are called `regularisation schemes'.  The
+		general plan with all regularisation schemes is to introduce a new parameter to the calculation which
+		is used to get a handle on exactly \emph{how} the integral diverges.  Once we have performed the integration
+		we take the limiting case where the effect of the regulator vanishes we will see that the divergence now
+		presents itself as some singular function of the regulator when $\Lambda^2\rightarrow\infty$.  There are
+		many ways to regularise divergences each with their own advantages and disadvantages.  Here we briefly describe
+		three common approaches.
+
+		Given that the integrands seen so far only diverge in certain regions (very large or very small momenta)
+		perhaps the most obvious thing to do is to manually introduced alter the limits of our integration. This
+		is the momentum cut-off scheme. we simply replace the upper (lower) bound with some finite large (small)
+		value, $\Lambda^2$.  This will regulate any UV (soft) divergences and allow us to complete the calculation
+		provided there are no collinear singularities which this approach cannot hope to regulate.  While this
+		method has the advantage of being very conceptually simple it also has the serious disadvantages of
+		breaking translational and gauge invariance.  Worse still is that simply limiting the integration to
+		avoid the extremities has not effect on the collinear sector.
+
+		An alternative which \emph{does} keep both gauge and translational invariance is the Pauli-Villars
+		regularisation scheme.  In this picture we replace the introduce and extra field (or many extra fields
+		\cite{FROLOV1993344}) which has the opposite spin-statistics and therefore has the effect of suppressing
+		the very high mass region in the integrand as follows
+
+		\begin{equation}
+			\int\frac{d^4k}{(2\pi)^4}\frac{1}{p^2-m^2}\rightarrow\int\frac{d^4k}{(2\pi)^4}\left(\frac{1}{p^2-m^2} - \frac{1}{p^2-M^2}\right).
+		\end{equation}
+
+		where $M$ is the mass of the Pauli-Villars field with $m\ll M$.  However, once again this does not treat any
+		problems in the IRC sectors.  Lastly we have dimensional regularisation.  Here we analytically continue the
+		number of dimensions in our integral away from $d=4$.  We still want to be able to return to our physical four
+		dimensional theory and so we choose
+
+		\begin{equation}
+			d=4-2\epsilon
+		\end{equation}
+
+		where $\epsilon$ is the regulator by which we control the divergence. Clearly then the limit
+		$\epsilon\rightarrow 0$ would recover our original theory.  It is worth noting that there are many
+		conventions for defining epsilons but up to signs and factors of 2 they are equivalent. Dimensional
+		regularisation treats both the UV and the IRC divergences and translational and gauge invariance are
+		preserved.  The disadvantage is that this modification changes the Dirac algebra relations which
+		typically makes computing the integrals more involved.
+
 \section{Renormalising the QCD Lagrangian}
 	\label{sec:renormalisation}
 
@@ -465,7 +592,7 @@
 		\item We then recompute all the generalised distances and repeat steps 1 and 2 until no further partons remain.
 	\end{enumerate}
 
-	The generalised distances can be defined generally as
+	Where the generalised distances are defined as
 
 	\begin{align}
 	\begin{split}
@@ -489,81 +616,12 @@
 	Any algorithm which satisfies this is said to be infra-red and collinear (IRC) safe.  We also want an algorithm which
 	is insensitive to the hadronisation model used, or any possible extra multiple-parton or experimental pile-up emissions
 	since these things are, at present, poorly understood.  It is also worth mentioning that since jet clustering algorithms
-	are used in experimental triggers to quickly catagorise events they should be computational cheap.
-
-\section{Divergences and Regularisation}
-
-	{\color{red}
-	\begin{itemize}
-		\item How do divergences arise in QCD?  How can we deal with them?
-	\end{itemize}
-	}
-
-	In calculations above tree level we encounter divergences of various kinds which can be divided up into three classes:
-
-	\begin{itemize}
-		\item Ultraviolet (UV) divergences:  These occur when all the components of a loop momenta tend to
-		infinity, $k^\alpha\rightarrow\infty$, such that $k^2$ becomes the dominant term in propagator.
-		Since these extremely high momentum modes corresponding to physics at very short distance scales
-		we choose to interpret these divergences as an indication that our theory is only an
-		effective theory and we shouldn't attempt to apply it to all scales.
-
-		\item Infrared (IR) divergences:  These occur in theories with massless gauge bosons, such as
-		QED and QCD, since a particle may emit any number of arbitrarily such bosons with infinitesimal
-		energy and we would never be able to detect their emission.  In contrast to the UV divergences
-		the IR becomes important in the region of phase space where $k^2\rightarrow0$.
-
-		\item Collinear (mass) divergences: These occur when we have massless bosons \emph{and} have
-		massless on-shell particles in our calculation.  This can happen when we have, for example,
-		a photon/gluon in the final state or the energy scale of the interaction is far higher than
-		the mass of an emitted particle which admits taking that particles mass to be zero.
-		We can see this by considering a typical propagator factor:
-
-		\begin{equation}
-			\frac{1}{(p+k)^2-m^2}\sim\frac{1}{(p+k)^2} = \frac{1}{2p\cdot k} = \frac{1}{2E_pE_k(1-\cos\theta_{pk})}.
-		\end{equation}
-
-		Where we have used the on-shell relations $p^2=0$ and $k^2=0$.  Clearly as the angle of
-		emission, $\theta_{pk}$, tends to zero (the collinear limit) this term will diverge.
-	\end{itemize}
-
-	If we are to extract any useful information above tree-level we will have to find
-	ways to control these infinities.  We call these methods `regularisation schemes'.
-
-	The general plan with all regularisation schemes is to introduce a new parameter to the calculation which
-	is used to get a handle on exactly \emph{how} the integral diverges.  Once we have performed the integration
-	we take the limiting case where the effect of the regulator vanishes we will see that the divergence now
-	presents itself as some singular function of the regulator when $\Lambda^2\rightarrow\infty$.  There are
-	many ways to regularise divergences each with their own advantages and disadvantages.  We will describe a few here:
-
-	\begin{itemize}
-		\item Hard momentum cut-off: In the hard momentum cut-off approach we simply replace the upper bound
-		with some finite large value, $\Lambda^2$.  This will regulate the UV and allow us to complete the
-		calculation provided there are no IR or mass singularities.  While this method is very conceptually
-		simple it does break both translational invariance and gauge invariance which is far from ideal.
-
-		\item Pauli-Villars regularisation: In the Pauli-Villars scheme we replace the normal propagators with propagators damped by a large mass:
-
-		      \begin{equation}
-			      \frac{1}{p^2-m^2}\rightarrow\frac{1}{p^2-m^2} - \frac{1}{p^2-M^2}.
-		      \end{equation}
-
-		      For $m\ll M$.  Once again this does not deal with any problems with the IR/mass singularities and in order to get this
-		      extra contributions we must add another field to our Lagrangian which satisfies the opposite statistics to the field we are trying to regulate.
-
-		\item Mass regularisation: When using mass regularisation we give the gauge bosons a small mass to control any
-		IR or mass divergences which might be present, we can then perform the integrals and the singularity re-emerges
-		when we take the limit of massless bosons again.  The disadvantage of this scheme is that it does not regulate
-		the UV region of phase space and massive gauge bosons are forbidden by gauge invariance unless we have a broken symmetry.
-
-		\item Dimensional regularisation:  In dimensional regularisation we analytically continue the number of space-time
-		dimensions away from the standard $d=4$.  We still want to be able to return to our usual 4D theory so we choose
-		$d=4-2\epsilon$ where $\epsilon$ is the regulator and we plan to take the limit $\epsilon\rightarrow 0$.  The
-		advantage of this is that dimensional regularisation treats both the UV and the IR divergences and both translational
-		invariance and gauge invariance are preserved.  However, this modification changes the well known Dirac algebra
-		relations which makes computing the numerator slightly more involved.  There are also some tensors which cannot
-		easily be generalised to arbitrary dimensions.
-	\end{itemize}
+	are used in experimental triggers to quickly catagorise events they should be as computational cheap as possible.\\Although
+	the Cambridge-Aachen algorithm has advantages in some experimental searches such as studies where the substructure of
+	jets is of particular interest \cite{Butterworth:2008iy, Aad:2015owa}, the most widely used sequential recombination algorithm is
+	the anti-$k_t$ algorithm ($p=-1$) and so all of the work which follows and all of the experimental comparisons made will
+	use this as the method for mapping simulated parton level results to a more useful set of jet level results.  The jet size
+	parameter $R$ varies between experiments but is typically either 0.4 for ATLAS analyses or 0.5 for CMS analyses.
 
 \section{Perturbative QCD and Resummation}
 
