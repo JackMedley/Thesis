@@ -200,23 +200,18 @@
 		\end{equation}
 	\end{subequations}
 
-	{\color{red}
-	\begin{itemize}
-		\item Do one of the functional derivatives for the 3g vertex or something?
-	\end{itemize}
-	}
-
 	We can read off the remaining QCD vertex factors directly from the interaction Lagrangian (or - more rigorously derive
 	them by Taylor expanding equation \eqref{eqn:fnDerviatesOfLagrangian} and disregarding any irrelevant diagrams such
 	as those where no scattering occurs or those with bubble contributions).\\The full set of rules for the vertices and
 	propagators are summarised in table (\ref{tab:feynRules}).  The remaining \emph{Feynman rules} may be summarised as:
 
 	\begin{enumerate}
-		\item Incoming external lines with spin $s$ and momentum $p$ are given a factor of $u^{(s)}_i(p)$ or $\overline{v}^{(s)}_i(p)$
-		      for quarks or anti-quarks.  Similarly outgoing external quark or anti-quark lines get a factor
-		      $\overline{u}^{(s)}_i(p)$ or $v^{(s)}_i(p)$.  If the external particles are not coloured the procedure is the same
-		      but of course the spinors will no longer be $SU(3)$ fundamental vectors.  External gluons with momentum $p$, polarisation
-		      $\epsilon$ and colour $a$ are replaced by $\epsilon^a(p)$ or $\epsilon^{a*}(p)$ depending on whether they are incoming or outgoing.
+		\item Incoming external lines with spin $s$ and momentum $p$ are given a factor of $u^{(s)}_i(p)$ or
+		      $\overline{v}^{(s)}_i(p)$ for quarks or anti-quarks.  Similarly outgoing external quark or
+		      anti-quark lines get a factor $\overline{u}^{(s)}_i(p)$ or $v^{(s)}_i(p)$.  If the external particles
+		      are not coloured the procedure is the same but of course the spinors will no longer be $SU(3)$
+		      fundamental vectors.  External gluons with momentum $p$, polarisation $\epsilon$ and colour $a$ are
+		      replaced by $\epsilon^a(p)$ or $\epsilon^{a*}(p)$ depending on whether they are incoming or outgoing.
 		\item For each vertex or propagator in the Feynman diagram insert the corresponding mathematical
 		      expression (see table (\ref{tab:feynRules})).  The order of the Lorentz indices must be the same
 		      as that found by tracing the fermion lines in the diagram backwards,
@@ -227,7 +222,8 @@
 		      \begin{equation}
 		      	\int\frac{d^4k}{(2\pi)^4},
 		      \end{equation}
-		      where $k$ is the momenta in question.
+		      where $k$ is the momenta in question and the integral is understood to run over all four momentum
+		      components form zero up to infinity,
 		\item A diagram dependent symmetry factor must be included,
 		\item Lastly, for an unpolarised calculation we must sum over initial spin and colour and average
 		      over all possible final spins and colours.
@@ -351,8 +347,7 @@
 			\int \frac{d^4k}{k^2(k^2-m^2)},
 		\end{equation}
 
-		where the integral is understood to run over all four momentum components form zero up to infinity
-		and $m$ is some finite mass. In the UV region where $k\rightarrow\infty$ this is asymptotically equal
+		where $m$ is some finite mass. In the UV region where $k\rightarrow\infty$ this is asymptotically equal
 		to:
 
 		\begin{equation}
