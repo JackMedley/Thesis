@@ -94,37 +94,32 @@
 
 \addcontentsline{toc}{chapter}{Abstract}
 \include{abstract}
-
-% \ \newpage		% Newpage needed if printing double sided.
+\newpage
 
 \addcontentsline{toc}{chapter}{Declaration}
 \include{declaration}
-
-%\ \newpage		% Newpage needed if printing double sided.
+\newpage
 
 \addcontentsline{toc}{chapter}{Acknowledgements}
 \include{acknowledgements}
 
 \singlespacing
-
-%\ \newpage		% Newpage needed if printing double sided.
+\newpage
 
 \addcontentsline{toc}{chapter}{Contents}
 \tableofcontents
-
-%\ \newpage		% Newpage needed if printing double sided.
+\newpage
 
 \addcontentsline{toc}{chapter}{List of figures}
 \listoffigures
-
-%\ \newpage		% Newpage needed if printing double sided.
+\newpage
 
 \addcontentsline{toc}{chapter}{List of tables}
 \listoftables
+\newpage
 
-%\ \newpage		% Newpage needed if printing double sided.
-
-\clearpage % this command stops table page becoming page 1
+% This command stops table page becoming page 1
+\clearpage
 
 \onehalfspacing
 \pagenumbering{arabic}
@@ -136,7 +131,7 @@
 \include{chapter2-Theory}	% General theory
 \include{chapter3-HEJ}		% High energy theory
 \include{chapter4-Z}		% Z+Jets
-\include{chapter5-ttbar}	% ttbar+jets
+% \include{chapter5-ttbar}	% ttbar+jets
 \include{chapter6-ExptComp}	% Experimental comparisons (Pure jets and W/Z ratios)
 \include{chapter7-Conclusions}	% Conclusions and outlook
 

@@ -336,10 +336,12 @@
 	{\color{red}
 	\begin{itemize}
 		\item Is this section really necessary?  We don't actually use counter-terms/dressed vertices anywhere etc.
+		\item Could be combined with the following section as `Renormalisation and the QCD Beta function'?
 	\end{itemize}
 	}
 
 \section{The QCD Beta function}
+	\label{fig:betaFunction}
 
 	QCD has two striking features which are not apparent from the Lagrangian derived above.  The first is asymptotic freedom.
 	This is the fact that at \emph{high} energies the QCD coupling strength becomes increasingly weak and it is this which allows us to
@@ -434,14 +436,60 @@
 
 \section{From Partons to Jets}
 
-	{\color{red}
-	\begin{itemize}
-		\item QCD confinement (briefly),
-		\item Hadronisation,
-		\item How to model jets from partons ($k=0, \pm1$),
-		\item Anti-$k_T$ and the parameters involved
-	\end{itemize}
-	}
+	As alluded to in section (\ref{fig:betaFunction}) the computations of scattering amplitudes can only take us so far
+	when comparing simulations to experiments.  In particular, the final state quarks and gluons in our perturbative
+	picture of QCD differ from the confined hadrons observed at hadronic colliders:  It is well known that final state
+	QCD partons fragment and emit showers of additional radiation before finally they becomes colourless bound states
+	in a process known as `hadronisation'.  This process is not perturbatively well-understood since it occurs at scale,
+	often called $\Lambda_{\text{QCD}}$, at which QCD becomes non-perturbative, \emph{i.e.} the coupling constant of the
+	theory has become too large for us to legitimately truncate a perturbative expansion.  There are models for both
+	the `parton shower' behaviour of the energetic final state partons, such as \texttt{Pythia} \cite{Sjostrand:2007gs},
+	\texttt{Herwig} \cite{Corcella:2000bw} and \texttt{Sherpa} \cite{Hoche:2014kca} as well as models for the hadronisation
+	such as the `Lund string model' \cite{Andersson:2002ap} implemented in various physics software packages but most
+	relevantly (for the remainder of this thesis) - in the \texttt{Ariadne} code.\\All high energy collider experiments
+	see a great deal of QCD radiation in the final state.  This radiation, produced through the mechanisms outlined above,
+	appears in columnated structures called `jets' and so it is at the jet level that we may compare our simulated results
+	to actual measurements. The question of how we best map from the parton level to the jet level is not a trivial
+	one:  A single high-energy (or `hard') parton may split and form two final state jets but equally two low energy (or
+	`soft') partons may combine into a single jet.\\There are several approaches to this problem include the \texttt{SISCone}
+	algorithm \cite{Salam:2007xv} and Pythia's own implementation \texttt{CellJet} \cite{Sjostrand:2000wi}. However the
+	most commonly user family of jet reconstruction algorithm are know as the `sequential recombination algorithms'.
+	This group of approaches include the Cambridge-Aachen, $k_T$ and anti-$k_T$ algorithms. The general algorithm, as
+	given in \cite{Cacciari:2008gp}, is:
+
+	\begin{enumerate}
+		\item Given a list of final state partons calculate some generalised distance, $d_{ij}$, between all possible
+		      combinations of jets $i$ and $j$ as well as $d_{iB}$ where $B$ is the beam-line,
+		\item We identify the smallest value of these.  If, say $d_{ab}$ is the smallest, we combine partons $a$ and $b$.
+		      If however $d_{aB}$ is the smallest then we call $a$ a jet and remove it from the list of partons,
+		\item We then recompute all the generalised distances and repeat steps 1 and 2 until no further partons remain.
+	\end{enumerate}
+
+	The generalised distances can be defined generally as
+
+	\begin{align}
+	\begin{split}
+		d_{ij} &= \text{min}(k_{Ti}^{2p}, k_{Tj}^{2p})\frac{\Delta R^2}{R^2},\\
+		d_{iB} &= k_{Ti}^{2p},
+	\end{split}
+	\end{align}
+
+	where $k_{Ti}$ is the transverse momentum of the $i^{th}$ parton, $R$ is a free parameter in the clustering which relates
+	to the size of the jets and $\Delta R^2$ is the distance in the detector metric between the two partons given
+	$\Delta R^2 = \Delta\phi^2 + \Delta y^2$ where $\Delta\phi$ and $\Delta y$ are the angular distance (about the beam line)
+	between the partons and the rapidity gap between the partons respectively.  The parameter is $p$ and it is this which
+	specifies precisely which clustering algorithm we are using; $p=0$ reduces to the Cambridge-Aachen scheme while
+	$p=\pm1$ give the $k_T$ and anti-$k_T$ respectively.  The question of which to use is outlined in detail in
+	\cite{Cacciari:2008gp} but we give a brief summary here.\\The choice of jet algorithm boils down to handful of key
+	properties the algorithm much exhibit.  Given a set of hard QCD final states we require that the result of the
+	clustering algorithm, i.e. the jets and jet shapes, are not unduly sensitive to additional soft and collinear radiation.
+	This is intuitively clear since, for example, a final state with a single high energy quark with momentum, $k_{Ti}$,
+	may radiate infinitely a multitude of infinitely soft gluons, $k_{Ts_i}$, which may (or may not) be collinear to the
+	original parton - but since $k_{Ts_i}\ll k_{Ti}$ the result must be a single jet, $j_{Ti}$, which has $j_{Ti}\sim k_{Ti}$.
+	Any algorithm which satisfies this is said to be infra-red and collinear (IRC) safe.  We also want an algorithm which
+	is insensitive to the hadronisation model used, or any possible extra multiple-parton or experimental pile-up emissions
+	since these things are, at present, poorly understood.  It is also worth mentioning that since jet clustering algorithms
+	are used in experimental triggers to quickly catagorise events they should be computational cheap.
 
 \section{Divergences and Regularisation}
 
