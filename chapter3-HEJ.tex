@@ -1,14 +1,135 @@
 \chapter{High Energy QCD}
 \label{chap:HEQCD}
 
+{\color{red}
+Stuff for this section
+\begin{itemize}
+	\item s, t, u gives log mini-calc,
+	\item HE limit of gg-> gg gives log (at LO),
+	\item Tiny bit about cuts S matrix to Optical theorem,
+	\item NLO calculation of leading part of gg->gg (explain sub-leading bits) - do this bit using cuts,
+	\item Extra real corrections and writing these as contractions of currents,
+	\item A bit on HE phase-space integrals?
+\end{itemize}
+}
+
 \section{The High Energy Limit of $2\rightarrow2$ QCD scattering}
+
+	In this chapter we look in detail at the `High Energy' limit of QCD.  We begin by defining this limit and
+	looking at how basic $2\rightarrow2$ scattering behaves at leading order and next-to-leading order in
+	$\alpha_s$.
+
+	\subsection{The `High Energy' limit}
+		\label{sub:HElimit}
+
+		The `High Energy' (HE) limit of QCD, also referred to as the Multi-Regge Kinematic (MRK) limit is
+		defined in terms of the kinematics of the final state.  We require a strong rapidity ordering
+		of all outgoing radiation as well as all the emissions having similar transverse momenta.
+		Mathematically this is:
+
+		\begin{equation}
+			y_1\gg y_2\gg\cdots\gg\\y_n \text{ and } |p_{\perp1}| \approx |p_{\perp2}| \approx\cdots\approx|p_{\perp(n-1)}|,
+			\label{eqn:MRK}
+		\end{equation}
+
+  		where we define the rapidity of a final states particle as
+
+		\begin{equation}
+			y = \half\frac{E+p_z}{E-p_z}
+			\label{eqn:rap}
+		\end{equation}
+
+		where $E$ is the energy of particle and $p_z$ it the $z$ component of its momentum. We can
+		state the of the criteria in eq. \eqref{eqn:MRK} equivalently as $s_{ij}\rightarrow\infty$ where
+		$s_{ij} = (p_i + p_j)^2$.  We sometimes instead use the pseudo-rapidity, $\eta$, which is
+		simply related to the angle of the outgoing state to the beam, $\theta$:
+
+		\begin{equation}
+			\eta = -\ln\tan\frac{\theta}{2}.
+			\label{eqn:prap}
+		\end{equation}
+
+		For massless states eqs. \eqref{eqn:rap} and \eqref{eqn:prap} are equivalent.
+
+	\subsection{Mandelstam Variables in the High Energy Limit}
+		\label{sub:MandelstamVariables}
+
+		The $2\rightarrow 2$ QCD scattering amplitudes can be expressed in terms of the well-known Mandestam
+		variables $s$, $t$ and $u$.  Which, in terms of the momenta in the process, are given by:
+
+		\begin{subequations}
+			\begin{equation}
+				s = (p_1 + p_2)^2
+			\end{equation}
+			\begin{equation}
+				t = (p_1 - p_2)^2
+			\end{equation}
+			\begin{equation}
+				u = (p_2 - p_3)^3
+			\end{equation}
+			\label{eqn:mandel}
+		\end{subequations}
+
+		When working in the high energy limit it is convenient to re-express these in terms of the
+		perpendicular momentum of the outgoing partons, $p_\perp$, and the difference in rapidity
+		between the two final state partons, $\Delta y$.  If we parametrise our outgoing states as
+
+		\begin{align}
+		\begin{split}
+			p_1 = p_{\perp1}(\cosh y_1, \cos\phi_1, \sin\phi_1, \sinh y_1),\\
+			p_2 = p_{\perp2}(\cosh y_2, \cos\phi_2, \sin\phi_2, \sinh y_2),
+		\end{split}
+		\end{align}
+
+		then we can express eqs. \eqref{eqn:mandel} as follows
+
+		\begin{subequations}
+			\begin{equation}
+				s = 4p_\perp^2 \cosh^2\frac{\Delta y}{2},
+			\end{equation}
+			\begin{equation}
+				t = -2p_\perp^2 \cosh\frac{\Delta y}{2}e^{-\frac{\Delta y}{2}},
+			\end{equation}
+			\begin{equation}
+				u = -2p_\perp^2 \cosh\frac{\Delta y}{2}e^{\frac{\Delta y}{2}}.
+			\end{equation}
+		\end{subequations}
+
+		In the limit of hard jets well separated in rapidity, i.e. $\Delta y\rightarrow\infty$,
+		these are well approximated by
+
+		\begin{subequations}
+			\begin{equation}
+				s = p_\perp^2 e^{\Delta y}
+			\end{equation}
+			\begin{equation}
+				t = -p_\perp^2
+			\end{equation}
+			\begin{equation}
+				u = -p_\perp^2 e^{\Delta y}
+			\end{equation}
+		\end{subequations}
+
+		From this it is clear that the `hard, wide-angle jet' limit is equivalent to the High Energy
+		limit since as $\Delta y$ grows large $s$ will grow exponentially while $t$ will stay fixed.
+		Rearranging for $\Delta y$ in the above equations yields:
+
+		\begin{equation}
+			\Delta y = \ln \left(\frac{s}{-t}\right).
+			\label{eqn:largeLogs}
+		\end{equation}
+
+		This is a useful result because it relates the simple kinematics of an event to a (potentially)
+		large logarithm.  It is already naively clear from eq. \eqref{eqn:largeLogs} that a final state
+		with large rapidity gaps could require a more careful inspection than the fixed-order approach
+		discussed in section \ref{sec:pqcdAndResum}.
 
 	\subsection{Quark-Gluon scattering at High Energy}
 
-		We start with the simplest case of $2\rightarrow 2$ quark-gluon scattering which consists of three
-		diagrams shown in figure \ref{fig:TwoToTwo}.  Here we only show the calculations for the helicity
-		structure where both quarklines have fixed, and opposite, helicities.  We use the following gauge
-		choice for the gluon polarisations:
+		We now with the simplest case of $2\rightarrow 2$ quark-gluon scattering.  At leading order this
+		consists of three diagrams shown in fig. \ref{fig:TwoToTwo}.  Here we only show the calculations
+		for the helicity structure where both quark lines have fixed, and opposite, helicities.  We use
+		the following gauge choice for the gluon polarisations:
 
 		\begin{align}
 		\epsilon^{+*}_{2\sigma}&=\frac{\langle b|\sigma|2\rangle}{\sqrt{2}\langle b2\rangle} & \epsilon^{-*}_{2\sigma} &= -\frac{\langle b|\sigma|2\rangle}{\sqrt{2}[b2]} \\
@@ -17,13 +138,13 @@
 
 		For simplicity we alter the notation slightly and choose to model everything as having negative helicity.  To describe positive helicities we can use the transpose property shown in equation 16.
 
-		% \begin{figure}
-		% \begin{center}
-		% \includegraphics[width=0.9\linewidth]{TwoToTwo.eps}
-		% \caption{Feynman diagrams showing the $qg\rightarrow qg$ processes at tree level.}
-		% \label{fig:TwoToTwo}
-		% \end{center}
-		% \end{figure}
+		\begin{figure}
+			\begin{center}
+			\includegraphics[width=0.9\linewidth]{2to2qg}
+			\caption{The three diagrams which contribute to $qg\rightarrow qg$ at leading order.}
+			\label{fig:TwoToTwo}
+			\end{center}
+		\end{figure}
 
 		\subsubsection{$s$-channel}
 
@@ -185,82 +306,11 @@
 			exchange of a soft $t$-channel gluon.  Although all of the other valid helicity combinations must be
 			calculated too we see they also have a $\hat t$ pole.
 
-	\subsection{Mandelstam Variables in the High Energy Limit}
-	\label{sub:Mandelstam Variables in the High Energy Limit}
-
-		The $2\rightarrow 2$ QCD scattering amplitudes can be expressed in terms of the well-known Mandestam variables $s$, $t$ and $u$.  Which, in terms of the momenta in the process, are given by:
-
-		\begin{subequations}
-			\begin{equation}
-				s = (p_1 + p_2)^2
-			\end{equation}
-			\begin{equation}
-				t = (p_1 - p_2)^2
-			\end{equation}
-			\begin{equation}
-				u = (p_2 - p_3)^3
-			\end{equation}
-		\end{subequations}
-
-		When working in the high energy limit it is convenient to re-express these in terms of the perpendicular momentum of the outgoing partons, $p_\perp$, and the difference in rapidity between the two final state partons, $\delta y$:
-
-		\begin{subequations}
-			\begin{equation}
-				s = 4p_\perp^2 \cosh^2\frac{\Delta y}{2}
-			\end{equation}
-			\begin{equation}
-				t = -2p_\perp^2 \cosh\frac{\Delta y}{2}e^{-\frac{\Delta y}{2}}
-			\end{equation}
-			\begin{equation}
-				u = -2p_\perp^2 \cosh\frac{\Delta y}{2}e^{\frac{\Delta y}{2}}
-			\end{equation}
-		\end{subequations}
-
-		In the limit of hard jets well separated in rapidity these can be approximated to give
-
-		\begin{subequations}
-			\begin{equation}
-				s \approx p_\perp^2 e^{\Delta y}
-			\end{equation}
-			\begin{equation}
-				t \approx -p_\perp^2
-			\end{equation}
-			\begin{equation}
-				u \approx -p_\perp^2 e^{\Delta y}
-			\end{equation}
-		\end{subequations}
-
-		From eq. (above) it is clear that the `hard, wide-angle jet' limit is equivalent to the High Energy limit since:
-
-		\begin{equation}
-			\Delta y \approx \ln \left(\frac{s}{-t}\right)
-		\end{equation}
-
-	\subsection{HE limit of the three-gluon vertex}
-	\label{sub:subsection_name}
-
-		The three gluon vertex shown in fig. (X) has the following Feynman rule:
-
-		\begin{equation}
-			g_s f^{abc} \left((p_1+p_3)^\nu g^{\mu_1\mu_3} + (q-p_3)^{\mu_1}g^{\mu_3\nu} - (q+p_1)^{\mu_3}g^{\mu_1\nu}\right)
-		\end{equation}
-
-		In the high energy limit the emitted gluon with momenta $q$ is much softer that the emitting gluon with momenta $p_1$ i.e. $p_1^\mu \gg q^\mu$  $\forall \mu$ and therefore $p_1\sim p_3$ - using this we can approximate the vertex by
-
-		\begin{equation}
-			\approx g_s f^{abc} \left(2p_1^\nu g^{\mu_1\mu_3} + p_3^{\mu_1}g^{\mu_3\nu} - p_3^{\mu_3}g^{\mu_1\nu}\right)
-		\end{equation}
-
-		Furthermore, since the hard gluons in a high energy process are external they must satisfy the Ward identities; $\epsilon_1\cdot p_1 = \epsilon_3\cdot p_3 = 0$.  Hence, the vertex can be expressed simply as:
-
-		\begin{equation}
-			\approx 2g_s f^{abc}p_1^\nu g^{\mu_1\mu_3}
-		\end{equation}
-
 	\subsection{At Leading Order in $\alpha_s$}
 	\label{sub:HE22_LO}
 
-		Talk through the limit of $2\rightarrow2$ scattering of gluons.  Introduce mandelstam variables, show the equivalence of large delta y and large s.
+		Talk through the limit of $2\rightarrow2$ scattering of gluons.  Introduce mandelstam
+		variables, show the equivalence of large delta y and large s.
 
 	\subsection{At Next-to-Leading Order in $\alpha_s$}
 	\label{sub:HE22_NLO}
@@ -273,6 +323,13 @@
 	\subsection{Effective Vertices For Real Emissions}
 	\label{sub:effective_vertices_for_real_emissions}
 
+{\color{red}
+Stuff for this section
+\begin{itemize}
+	\item does this need to be different from the stuff above?
+\end{itemize}
+}
+
 \section{High Energy Jets}
 \label{sec:section_name}
 
@@ -282,7 +339,8 @@
 	\subsection{Logarithms in HEJ observables}
 	\label{sub:subsection_name}
 
-		Here you should take a $2\rightarrow n$ ME, apply the HE limit to it, do a PS integration and show the logs you get.  Need the HE limit of PS integral from JA thesis and/or from VDD talk
+		Here you should take a $2\rightarrow n$ ME, apply the HE limit to it, do a PS integration and
+		show the logs you get.  Need the HE limit of PS integral from JA thesis and/or from VDD talk
 
 	\subsection{HEJ currents}
 	\label{sub:currents}
