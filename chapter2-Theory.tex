@@ -330,6 +330,7 @@
 	we wish to calculate to the differential cross-section for that process.
 
 \section{Divergences and Regularisation}
+	\label{sec:divAndReg}
 
 	In the preceding section we saw that any unconstrained momenta in a Feynman diagram must be integrated over to account
 	for all possible ways the momenta in the process may flow.  We refer to these contributions as loop-level or
@@ -455,17 +456,62 @@
 		conventions for defining epsilons but up to signs and factors of 2 they are equivalent. Dimensional
 		regularisation treats both the UV and the IRC divergences and translational and gauge invariance are
 		preserved.  The disadvantage is that this modification changes the Dirac algebra relations which
-		typically makes computing the integrals more involved.
+		typically makes computing the integrals more involved.\\When working in $d$ dimensions the QCD coupling
+		is no longer dimensionless.  We can see this since the action is dimensionless and therefore we have
 
-\section{Renormalising the QCD Lagrangian}
-	\label{sec:renormalisation}
+		\begin{equation}
+			[\mathcal{L}] = d.
+		\end{equation}
 
-	{\color{red}
-	\begin{itemize}
-		\item Is this section really necessary?  We don't actually use counter-terms/dressed vertices anywhere etc.
-		\item Could be combined with the following section as `Renormalisation and the QCD Beta function'?
-	\end{itemize}
-	}
+		By considering the kinetic terms of the gluon and quark fields we can see that we must have
+
+		\begin{equation}
+			[g] + 2[\psi] + [A_\mu] = d,
+		\end{equation}
+
+		and therefore
+
+		\begin{equation}
+			[g] = \frac{4-d}{2}.
+		\end{equation}
+
+		In order to artificially fix this and restore the coupling to its dimensionless state we
+		introduce a scale parameter, $\mu_r$, as follows:
+
+		\begin{equation}
+			g = g_0{\mu_r}^{\frac{4-d}{2}}.
+		\end{equation}
+
+		The introduction of this scale has important consequences for our theory.  Here we follow the instructive example
+		from \cite{pinkBook}.  If we have some dimensionless observable, $R$, which depends on one large scale, $Q$, which
+		is much larger than all other scales in the problem (e.g. the quark masses).  One would assume that $R$ is
+		approximately independent of this large scale but when we come to regulate and renormalise the divergences we have
+		seen in this section the problem becomes one involving two scales and $R$ develops a dependence on the ratio of
+		these scales, $\frac{Q^2}{\mu_r^2}$.  Since $\mu_r$ is completely arbitrary $R$ must be independent of it i.e if we
+		now consider $R$ as a function of both the QCD coupling strength, $\alpha_s$, and the ratio of the scales we must
+		have that
+
+		\begin{equation}
+			\mu_r^2\frac{\partial R}{\partial\mu_r^2} + \mu_r^2\frac{\partial \alpha_s}{\partial \mu_r^2}\frac{\partial R}{\partial\alpha_s} = 0,
+			\label{eqn:chainRuleOnR}
+		\end{equation}
+
+		for convenience we define $t = \ln\frac{Q^2}{\mu_r^2}$ and $\beta(\alpha_s) = \mu_r^2\frac{\partial \alpha_s}{\partial \mu_r^2}$
+		and so we can write \ref{eqn:chainRuleOnR} as
+
+		\begin{equation}
+			\frac{\partial R(e^t, \alpha_s)}{\partial t} - \beta(\alpha_s)\frac{\partial R(e^t, \alpha_s)}{\partial \alpha_s} = 0.
+		\end{equation}
+
+		This can be solved by defining the `running QCD coupling', $\alpha=\alpha(Q^2)$
+
+		\begin{equation}
+			t = \int_{\alpha_s}^{\alpha(Q^2)}\frac{dx}{\beta(x)},
+			\label{eqn:solvingRunning}
+		\end{equation}
+
+		where $\alpha=\alpha(Q^2)$ admits the boundary condition $\alpha(\mu_r^2)=\alpha_s$.  Therefore the scale dependence
+		of our observable $R$ comes about through its dependence on $\alpha_s$ only.
 
 \section{The QCD Beta function}
 	\label{sec:betaFunction}
@@ -474,16 +520,11 @@
 	This is the fact that at \emph{high} energies the QCD coupling strength becomes increasingly weak and it is this which allows us to
 	perform a perturbative expansion of physical observables such as cross-sections.  The second feature is confinement.  Confinement
 	is the reason we do not observe bare quarks and gluons in nature, instead we only see bound states of these fundamental QCD partons.
-	This is because at very \emph{low} energies the coupling strength becomes increasingly strong.\\It turns out that when
-	renormalise QCD to remove the ultraviolet singularities we introduce a scale dependence in the coupling strength:
-
-	\begin{equation}
-		\alpha_s = \alpha_s(\mu_r).
-	\end{equation}
-
-	This scale, $\mu_r$, is the renormalisation scale discussed in section (\ref{sec:renormalisation}).  It can be interpreted as a measure of our ignorance of the
-	true high-scale theory which governs nature, that is to say, we believe QCD is the right theory \emph{only up to} some
-	scale $\mu_r$.  The evolution of $\alpha_s$ with $\mu_r$ is given by the renormalisation group equation:
+	This is because at very \emph{low} energies the coupling strength becomes increasingly strong.\\As we saw in section \ref{sec:divAndReg}
+	it turns out that when renormalise QCD to remove the ultraviolet singularities we introduce a scale dependence in the coupling strength,
+	$\alpha_s = \alpha_s(\mu_r)$.  It can be interpreted as a measure of our ignorance of the true high-scale theory which governs nature,
+	that is to say, we believe QCD is the right theory \emph{only up to} some scale $\mu_r$.  The evolution of $\alpha_s$ with $\mu_r$ is
+	given by the renormalisation group equation:
 
 	\begin{equation}
 		\mu_r^2\frac{\partial\alpha_s}{\partial \mu_r^2} = \beta(\alpha_s(\mu_r^2)),
@@ -660,7 +701,7 @@
 		physics.\\It is important to note the limitations of this fixed-order scheme.  For example if we were to consider
 		NLO corrections to dijet production we would only be able to produce final states with two or three jets (since
 		we can only have one extra real emission).  Clearly this is a limitation since the external fermion lines can
-		radiate arbitrarily many extra gluons.  It is precisely this phenomenon which is shown in fig. \ref{fig:NLO3jets},
+		radiate arbitrarily many extra gluons.  It is precisely this phenomenon which is shown in fig. 9,
 		the NLO calculations (shown in green and black) are limited to $\langle jets\rangle\leq3$ which the predictions
 		from \texttt{POWHEJ+PYTHIA} and \texttt{HEJ} which include higher-order corrections and predict a higher average
 		number of jets.  Note that the higher-order corrections here are \emph{not} the same in the case of
@@ -1241,8 +1282,8 @@
 		under gauge transformations.\\ It would seem then that this is the best way to proceed: we calculate as many corrections
 		as we can and reason that all of the higher-order terms we have neglected are suppressed by powers of a small expansion
 		parameter - the strong coupling, $\alpha_s$.  If this is indeed the case we should see that each time we go to a higher-order
-		in perturbation theory our series begins to converge.  E.g. the effect of the NNLO terms should be small with respect
-		to the NLO terms etc.  It turns out that this true for all observables.  To motivate this we can give a schematic expansion
+		in perturbation theory our series begins to converge.  E.g. the effect of the NLO terms should be small with respect
+		to the LO terms etc.  It turns out that this is not true for all observables.  To motivate this we can give a schematic expansion
 		of some variable we wish to calculate, $\mathcal{O}$:
 
 		\begin{align}
@@ -1255,42 +1296,54 @@
 		\end{align}
 
 		where $L$ is some logarithm which may be large.  A fixed-order scheme aims to exactly calculate some of the rows of equation
-		\ref{eqn:schematicExpn} under the assumption that all subsequent lines are sufficiently suppressed.  The problem with this
+		\eqref{eqn:schematicExpn} under the assumption that all subsequent lines are sufficiently suppressed.  The problem with this
 		picture is that the logarithms may be large enough that $\alpha_s^nL^{2n}\sim\mathcal{O}(1)$.  In this case it would appear
 		that it would be better for us to calculate the first column of the terms (called the `leading logarithmic' or simple LL
-		approximation) that to find the the first \emph{row} of terms (the LO approximation).  Fig. \ref{fig:higgsratios} shows how
+		approximation) that to find the the first \emph{row} of terms (the LO approximation).\\Fig. (\ref{fig:higgsratios}) shows how
 		the ratio of the inclusive Higgs plus three jet cross-section to inclusive Higgs plus two jet cross-section varies as
-		a function of the rapidity gap between the two leading jets in $p_T$.  It is shown in chapter \ref{chap:HEQCD} that this
-		rapidity gap is approximately equal to the logarithm, $L$, which we claim violates the key assumptions underlying fixed-order
-		perturbation theory.  Hence, as we move to large $\Delta y(j_1, j_2)$ we increase the size of $L$ in eq. \ref{eqn:schematicExpn}
-		and the terms neglected by the fixed-order scheme (but captured by a LL calculation) grow in size.  The ratio of the inclusive
-		$(n+1)$-jets to $n$-jet cross-sections is an interesting probe of the convergence of the QCD perturbative expansion since we are
-		directly comparing the size of the NLO contributions to the LO terms.  Fig. \ref{fig:hJetsRatio1} shows that at a centre-of-mass
-		energy of $14$TeV (the energy scales soon to be achieved at the LHC) even at modest rapidity intervals of around $4.0$ we see
-		that half of all events contain extra radiation and when we pull the leading jets apart further in rapidity this increases to
-		three quarters of all events.\\ Furthermore, figs. \ref{fig:hJetsRatio2} and \ref{fig:hJetsRatio3} show that as we increase the
-		centre-of-mass energy to that of a potential hadronic future circular collider, $33$TeV and $100$TeV respectively, these enhanced
-		higher-order terms become even more important - in the extreme case of dijets with $\Delta y(j_1, j_2)\approx8.0$ at a $100$TeV
-		collider almost \emph{90\%} of the cross-section is coming from the next-to-leading term in the perturbative series: this is
-		clear evidence that is not generally sufficient to think of the expansion as being controlled by only the strong coupling constant,
-		$\alpha_s$.
+		a function of the rapidity gap between the two leading jets in $p_T$.  The \texttt{HEJ} prediction is formally leading-logarithmic
+		accurate (with leading-order matching for final states with up to three jets) while \texttt{MCFM} is formally next-to-leading order
+		accurate.  It is shown in chapter (\ref{chap:HEQCD}) that this rapidity gap is approximately equal to the logarithm, $L$, which
+		we claim violates the key assumptions underlying fixed-order perturbation theory.  Hence, as we move to large $\Delta y(j_1, j_2)$
+		we increase the size of $L$ in eq. (\ref{eqn:schematicExpn}) and the terms neglected by the fixed-order scheme (but captured by a
+		LL calculation) grow in size.  The ratio of the inclusive $(n+1)$-jets to $n$-jet cross-sections is an interesting probe of the
+		convergence of the QCD perturbative expansion since we are directly comparing the size of the NLO contributions to the LO terms.
+		Fig. (\ref{fig:hJetsRatio1}) shows that at a centre-of-mass energy of $14$TeV (the energy scales soon to be achieved at the LHC)
+		even at modest rapidity intervals of around $4.0$ we see that half of all events contain extra radiation and when we pull the leading
+		jets apart further in rapidity this increases to three quarters of all events.\\ Furthermore, figs. (\ref{fig:hJetsRatio2}) and
+		(\ref{fig:hJetsRatio3}) show that as we increase the centre-of-mass energy to that of a potential hadronic future circular
+		collider, $33$TeV and $100$TeV respectively, these enhanced higher-order terms become even more important - in the extreme case
+		of dijets with a separation of $\Delta y(j_1, j_2)\approx8.0$ at a $100$TeV collider almost \emph{90\%} of the cross-section is
+		coming from the next-to-leading term in the perturbative series: this is clear evidence that is not generally sufficient to think
+		of the expansion as being controlled by only the strong coupling constant, $\alpha_s$.  A fair criticism at this argument is that
+		it is missing one key component; data to verify that nature does actually exhibit the behaviour described here.  Fig.
+		(\ref{fig:d0wjets}) show the probability of extra jet activity in inclusive $W^\pm$ plus dijets as function of the rapidity gap
+		between the two leading jets \emph{in rapidity}, $\Delta y(j_F, j_B)$, taken from a very detailed study by the D$\oldemptyset$
+		collaboration \cite{Abazov:2013gpa} at the Tevatron experiment.  This is equivalent to the ratio of the inclusive $3j$ and
+		inclusive $2j$ cross-sections described in fig. (\ref{fig:higgsratios}).  We observe the same behaviour that as we pull apart
+		the dijets we see a marked rise in the probability of extra emissions but, more importantly, we see that the data show this
+		strongly increasing trend too.
+
+		The remaining chapters of this thesis will focus on deriving a formalism for calculating these higher-order corrections in order
+		to describe physics observed at the LHC.
 
 		\begin{figure}[tpb]
-
+			\captionsetup[subfigure]{oneside, margin={1cm, 0cm, 0cm}}
 			\centering
-
-			\begin{subfigure}[b]{0.6\textwidth}
-				\includegraphics[width=0.8\textwidth]{hJetsRatio1}
+			\hspace{-0.8cm}
+			\begin{subfigure}[b]{0.7\textwidth}
+				\includegraphics[width=1.0\textwidth]{hJetsRatio1}
 				\caption{}
 				\label{fig:hJetsRatio1}
 			\end{subfigure}
-			\begin{subfigure}[b]{0.6\textwidth}
-				\includegraphics[width=0.8\textwidth]{hJetsRatio2}
+			\captionsetup[subfigure]{oneside,margin={0cm,0cm}}
+			\begin{subfigure}[b]{0.48\textwidth}
+				\includegraphics[width=1.0\textwidth]{hJetsRatio2}
 				\caption{}
 				\label{fig:hJetsRatio2}
 			\end{subfigure}
-			\begin{subfigure}[b]{0.6\textwidth}
-				\includegraphics[width=0.8\textwidth]{hJetsRatio3}
+			\begin{subfigure}[b]{0.48\textwidth}
+				\includegraphics[width=1.0\textwidth]{hJetsRatio3}
 				\caption{}
 				\label{fig:hJetsRatio3}
 			\end{subfigure}
@@ -1302,234 +1355,242 @@
 			\label{fig:higgsratios}
 		\end{figure}
 
-		The remaining chapters of this thesis will focus on deriving a formalism for these terms in the approximation for physics at
-		the LHC and showing that they are, indeed, important.
+		\begin{figure}[hbtp]
+			\centering
+			\includegraphics[width=0.75\textwidth]{d0wjets}
+			\caption{The probability of a third jet emission in $W^\pm$ plus inclusive dijets as a function of the rapidity gap
+			         between the two leading jets in rapidity at the D$\oldemptyset$ experiment at the Tevatron experiment.
+			         The data are compared to a number of generators including the leading logarithmic accurate \texttt{HEJ}
+			         and the NLO accurate \texttt{Blackhat+Sherpa}.}
+			\label{fig:d0wjets}
+  		\end{figure}
 
-\section{Parton showers for Monte-Carlo generators}
+	% \subsection{Parton showers for Monte-Carlo generators}
+
+	% 	{\color{red}
+	% 	\begin{itemize}
+	% 		\item Should probably say a little about parton showers since most of the MC vs. data plots are showered,
+	% 		\item Could also say a bit about ARIADNE since we match to it and it justifies the ATLAS pure jets chapter to some extent...
+	% 	\end{itemize}
+	% 	}
 
 \section{Spinor-Helicity Notation}
 	\label{sec:SpinorHelicity}
 
-	It is convenient to work in Helicity-Spinor notation to evaluate Feynman diagrams in the MRK limit \cite{efficiently}.  As usual we have:
-
-	\begin{equation}
-		\mid p\pm\rangle = \psi_\pm(p) \hspace{50pt} \overline{\psi_\pm(p)} = \langle p\pm\mid.
-	\end{equation}
-
-	Often the helicity information will be suppressed, and we define the following shorthand:
-
-	\begin{equation}
-		\langle pk\rangle = \langle p-\mid k+\rangle \hspace{50pt} [pk] = \langle p+\mid k-\rangle.
-	\end{equation}
-
-	In this scheme we have the following identities:
+	We now move towards the more mechanical aspects of this thesis to discuss a technique which eases calculations.
+	In chapter \ref{chap:Zs} we choose to work in the spinor-helicity formalism \cite{Dixon:1996wi,CBO9781107706620A004}.
+	This is a very convenient choice of notation which allows us to quickly evaluate complicated strings of products of
+	Dirac spinors and Dirac matrices which would otherwise be troublesome to work with.\\We begin by looking at the case
+	of massless particles; this is relevant for high energy QCD since gluons are massless and the quark masses are often
+	negligible compared to the energy scale in a typical scattering process.  The massless Dirac equation can be solved
+	by using a plane-wave expansion with some momentum dependent coefficient functions, $u(p)$ and $v(p)$ where $p$ is the
+	momentum carried by the particle and must satisfy the on-shell condition $p^2=0$.  This expansion gives the following
+	equations:
 
 	\begin{align}
+	\begin{split}
+		(\slashed p + m)u(p) = 0, \\
+		(\slashed p - m)v(p) = 0.
+	\end{split}
+	\end{align}
+
+	Each of these equations has two independent solutions which we identify as the helicity states, $u^\pm(p)$ and $v^\pm(p)$.
+	We use the following notation for these spinors:
+
+	\begin{equation}
+		u^\pm(p) = \mid p\pm\rangle, \hspace{1cm} \overline{u^\pm(p)} = \langle p\pm\mid.
+	\end{equation}
+
+	In the massless limit we also have the following relation $u^\pm(p) = v^\mp(p)$ which allows us to use the same notation for both
+	quarks and anti-quarks.  Often the helicity information will be suppressed in the interests in being concise.  We also define the
+	following spinor-brackets:
+
+	\begin{equation}
+		\langle pk\rangle = \langle p-\mid k+\rangle, \hspace{1cm} [pk] = \langle p+\mid k-\rangle.
+	\end{equation}
+
+	In this language we have the following useful identities:
+
+	\begin{align*}
 		\langle ij\rangle[ij] &= s_{ij} & \langle i\pm\mid\gamma^\mu\mid i\pm\rangle &= 2k_i^\mu \\
 		\langle ij\rangle &= -\langle ji\rangle & [ij] &= -[ji] \\
-		\langle ii\rangle &= 0 & [ii] &= 0 \\
 		\langle i\pm\mid\gamma^\mu\mid j\pm\rangle\langle k\pm\mid\gamma_\mu\mid l\pm\rangle &=
 		2[ik]\langle l j\rangle & \langle k\pm\mid\gamma^\mu\mid l\pm\rangle &=
 		\langle l\mp\mid\gamma^\mu\mid k\mp\rangle \\
 		\langle i j\rangle\langle k l\rangle &=
-		\langle i k\rangle\langle l j\rangle + \langle i l\rangle\langle k j\rangle & [ij][kl] &=
-		[ik][jl]+[il][kj] \\
+		\langle i k\rangle\langle l j\rangle + \langle i l\rangle\langle k j\rangle & [ij][kl] &= [ik][jl]+[il][kj] \\
 		\langle i+|\slashed k|j+\rangle &= [ik]\langle kj\rangle & \langle i-|\slashed k|j-\rangle &= \langle ik\rangle [kj]
-	\end{align}
-
-	Using the momentum for the partons outlined above and the on-shell condition for the external partons, $|p_i^\perp|=p_i^+p_i^-$, we have the following:
-
-	\begin{equation}
-	\langle ij\rangle = p_i^\perp\sqrt{\frac{p_j^+}{p_i^+}} - p_j^\perp\sqrt{\frac{p_i^+}{p_j^j}},
-	\qquad
-	\langle ai\rangle = -i\sqrt{-\frac{p_a^+}{p_i^+}}p_i^\perp,
-	\qquad
-	\langle ib\rangle = i\sqrt{-p_b^-p_i^+},
-	\qquad
-	\langle ab\rangle = -\sqrt{\hat{s}},
-	\end{equation}
-
-	where $\hat{s}$ is the partonic centre of mass energy.  In the MRK limit eq. 19 simplifies to:
-
-	\begin{equation}
-	\langle ij\rangle \approx - p_j^\perp\sqrt{\frac{p_i^+}{p_j^j}},
-	\qquad
-	\langle ai\rangle \approx -i\sqrt{\frac{p_a^+}{p_i^+}}p_i^\perp,
-	\qquad
-	\langle ib\rangle \approx i\sqrt{p_i^+p_n^-},
-	\qquad
-	\langle ab\rangle \approx -\sqrt{p_1^+p_n^-}.
-	\end{equation}
+	\end{align*}
 
 	\subsection{Spinor-Helicity Calculations with Massive Partons}
-	\label{sub:SMMassive}
+		\label{sub:SMMassive}
 
-	To do calculations with massive partons using the spinor-helicity formalism we must be very careful since all of our favourite
-	identities and tricks rely on the spinor brackets, $|i\rangle$, representing massless partons with $p_i^2=0$.
-	We begin by defining `fundamental spinors' \cite{Thesis} which we can use to build more general spinors and go from there.
-	For some $k_0$, $k_1$ satisfying $k_0^2=0$, $k_1^2=-1$ and $k_0\cdot k_1=0$ we can define positive and negative helicity spinors as follows:
+		To do calculations with massive partons using the spinor-helicity formalism we must be very careful since all of our favourite
+		identities and tricks rely on the spinor brackets, $|i\rangle$, representing massless partons with $p_i^2=0$. We begin by
+		defining `fundamental spinors' \cite{Thesis} which we can use to build more general spinors and go from there.
+		For some $k_0$, $k_1$ satisfying $k_0^2=0$, $k_1^2=-1$ and $k_0\cdot k_1=0$ we can define positive and negative helicity spinors as follows:
 
-	\begin{subequations}
-		\label{definition}
+		\begin{subequations}
+			\label{definition}
+			\begin{align}
+				u_{-}(k_0)\overline{u}_-(k_0) &\equiv \omega_- \slashed k_0\\
+				u_+(k_0) &\equiv \slashed k_1 u_- (k_0),
+			\end{align}
+		\end{subequations}
+
+		where $\omega_\lambda = \half(1 + \lambda\gu{5})$ is the helicity projection operator.  In order for these to be valid spinors they must satisfy the following completeness relations:
+
+		\begin{subequations}
+			\begin{equation}
+				\label{prop1}
+				\sum_\lambda u_\lambda(p)\overline{u}_\lambda(p)=\slashed p + m
+			\end{equation}
+			\begin{equation}
+				\label{prop2}
+				u_\lambda(p)\overline{u}_\lambda (p) = \omega_\lambda\slashed p
+			\end{equation}
+		\end{subequations}
+
+		The spinors in eq. can easily be shown to satisfy these as follows:
+
+		\begin{subequations}
+		\begin{align*}
+			u_-(k_0)\overline{u}_-(k_0) + u_+(k_0)\overline{u}_+(k_0) &= \omega_-\slashed k_0 + \slashed k_1 u_-(k_0)\overline{u}_-(k_0)\slashed k_1,\\
+		        &= \omega_-\slashed k_0 + \slashed k_1 \omega_-\slashed k_0\slashed k_1,\\
+		        &= \omega_-\slashed k_0 + \half\gu{\mu}k_{1\mu}(1-\gu{5})\gu{\nu}k_{0\nu}\gu{\sigma}k_{1\sigma},\\
+		        &= \omega_-\slashed k_0 + \half k_{1\mu}k_{0\nu}k_{1\sigma}(\gu{\mu}\gu{\nu}\gu{\sigma}-\gu{\mu}\gu{5}\gu{\nu}\gu{\sigma}),\\
+		        &= \omega_-\slashed k_0 + \half k_{1\mu}k_{0\nu}k_{1\sigma}(2\gu{\mu}g^{\nu\sigma} - \gu{\mu}\gu{\sigma}\gu{\nu}+2\gu{5}\gu{\mu}g^{\nu\sigma} - \gu{5}\gu{\mu}\gu{\sigma}\gu{\nu}),\\
+		        &= \omega_-\slashed k_0 + k_{1\mu}k_{0\nu}k_{1\sigma}\omega_+\gu{\mu}(2g^{\nu\sigma} - \gu{\sigma}\gu{\nu}),\\
+		        &= \omega_-\slashed k_0 + 2\slashed k_1 k_0\cdot k_1 - \omega_+\slashed k_1\slashed k_1 \slashed k_0,\\
+		        &= \omega_-\slashed k_0 + \omega_+\slashed k_0,
+		\end{align*}
+		\end{subequations}
+
+		where we have used ${\gu{\mu}, \gu{\mu}}=2g^{\mu\nu}$, ${\gu{\mu}, \gu{5}}=0$ and $\slashed k_1\slashed k_1=k_1^2=0$.
+		This proves the property of eq. \ref{prop2} and inserting the definition of $\omega_\lambda$ gives:
+
+		\begin{subequations}
+		\begin{align*}
+			u_-(k_0)\overline{u}_-(k_0) + u_+(k_0)\overline{u}_+(k_0) &= \half(1-\gu{5})\slashed k_0 + (1+\gu{5})\slashed k_0,\\
+			&= \slashed k_0,
+		\end{align*}
+		\end{subequations}
+
+		Which is eq. \ref{prop1} for a massless particle.\\We can use these fundamental spinors
+		to form spinors for any given momenta, $p$ (which has $p^2=0$), as follows:
+
+		\begin{equation}
+			u_\lambda(p) = \slashed p u_{-\lambda}(k_0) \frac{1}{\sqrt{2p\cdot k_0}},
+		\end{equation}
+
+		provided we don't have $p\cdot k_0=0$.  Once again it is easy to show that this spinor satisfies the necessary conditions, for example:
+
+		\begin{subequations}
+		\begin{align*}
+			u_\lambda(p)\overline{u}_\lambda(p) &= \frac{1}{2p\cdot k_0}\slashed p u_{-\lambda}(k_0)\overline{u}_{-\lambda}(p)\slashed p,\\
+			&= \frac{1}{2p\cdot k_0}\slashed p \omega_{-\lambda}\slashed k_0\slashed p,\\
+			&= \frac{1}{4p\cdot k_0}\slashed p (1-\lambda\gu{5})\slashed k_0\slashed p,\\
+			&= \frac{1}{2p\cdot k_0}p_{\mu}k_{0\nu}p_{\sigma}\omega_{\lambda}\gu{\mu}(2g^{\nu\sigma} - \gu{\sigma}\gu{\nu}),\\
+			&= \frac{1}{2p\cdot k_0}\omega_\lambda(2\slashed p p\cdot k_0 - \slashed p\slashed p\slashed k)),\\
+			&= \omega_\lambda\slashed p.\\
+		\end{align*}
+		\end{subequations}
+
+		So far so good.  This can also be generalised so that we can build massive spinors from our fundamental ones.  We can use
+
+		\begin{equation}
+			\label{u_def}
+			u(q, s) = \frac{1}{\sqrt{2q\cdot k}}(\slashed q + m)u_-(k)
+		\end{equation}
+
+		to describe a quark with spin 4-vector $s$, mass $m$ and momentum $q$.  To confirm this we go through the same procedure as above:
+
+		\begin{subequations}
+		\begin{align*}
+			u_\lambda(p,s)\overline{u}_\lambda(p,s) &= \frac{1}{2q\cdot k_0}(\slashed q + m) u_-(k_0)\overline{u}_-(q)(\slashed q + m),\\
+			&= \frac{1}{2q\cdot k_0}(\slashed q + m) \omega_-\slashed k_0 (\slashed q + m), \\
+			&= \frac{1}{4q\cdot k_0}(\slashed q + m) (1-\gu{5})\slashed k_0 (\slashed q + m), \\
+			&= \frac{1}{4q\cdot k_0}\big[\left(\slashed q \slashed k_0 \slashed q + m\slashed k\slashed q + m\slashed q \slashed
+			k_0 + m^2 \slashed k\right)-\gu{5}\left(\slashed q\slashed k\slashed q - m\slashed k\slashed q + m\slashed q\slashed k_0 - m^2\slashed k\right)\big], \\
+			&= \half\left(\slashed q + m - \gu{5}\slashed q - m\gu{5} + \frac{m\gu{5}\slashed k\slashed q}{k\cdot q} + \frac{\gu{5}m^2\slashed k}{k\cdot q}\right),\\
+			&= \half\left(1+\left(\frac{1}{m}\slashed q - \frac{m}{q\cdot k}\slashed k\right)\gu{5}\right)(\slashed q + m),\\
+			&= \half\left(1+\slashed s\gu{5}\right)(\slashed q + m),\\
+		\end{align*}
+		\end{subequations}
+
+		where the last line defines the spin vector $s = \frac{1}{m} q - \frac{m}{q\cdot k}k$.  Conjecturing
+		a similar form for an antiquark spinor with with spin 4-vector $s$, mass $m$ and momentum $q$:
+
+		\begin{equation}
+			\label{v_def}
+			v(q, s) = \frac{1}{\sqrt{2q\cdot k}}(\slashed q - m)u_-(k),
+		\end{equation}
+
+		which leads to:
+
+		\begin{subequations}
+		\begin{align*}
+			v_\lambda(p,s)\overline{v}_\lambda(p,s) &= \frac{1}{2q\cdot k_0}(\slashed q - m) u_-(k_0)\overline{u}_-(q)(\slashed q - m),\\
+			&= \half\left(\left(\slashed q - m\right) + \left(-\slashed q + m + \frac{m^2}{q\cdot k_0}\slashed k_0 -
+			\frac{m}{q\cdot k_0}\slashed q\slashed k_0 \right)\gu{5}\right), \\
+			&= \half\left(1+\slashed s\gu{5}\right)(\slashed q - m).\\
+		\end{align*}
+		\end{subequations}
+
+		One last check that is worth performing is that these spinors actually satisfy the Dirac eq. for both the quark and antiquark case.  For the quark:
+
+		\begin{subequations}
+		\begin{align*}
+			\slashed q u(q, s) &= \frac{1}{2q\cdot k_0}\slashed q(\slashed q + m)u_-(k_0), \\
+			                   &= \frac{1}{2q\cdot k_0}(m^2 + m\slashed q)u_-(k_0), \\
+		\end{align*}
+		\end{subequations}
+
+		we now define some momentum $\widetilde{q}$ by the relation $q = \widetilde{q} + k_0$ such that $\widetilde{q}^2=0$ and
+		$q\cdot k = \widetilde{q}\cdot k$.  Since $q^2=2\widetilde{q}\cdot k=m^2$ we may write
+
+		\begin{subequations}
+		\begin{align*}
+			\slashed q u(q, s) &= \frac{1}{m}(m^2 + m\slashed q)u_-(k_0), \\
+			                   &= (m + \slashed q)u_-(k_0), \\
+		\end{align*}
+		\end{subequations}
+
+		we can now back substitute from the definition of $u(q, s)$ in eq. \ref{u_def} to get:
+
+		\begin{subequations}
+		\begin{align*}
+			\slashed q u(q, s) &= \sqrt{2q\cdot k}u(q, s), \\
+			                   &= mu(q,s), \\
+		\end{align*}
+		\end{subequations}
+
+		which is the Dirac eq. for a quark.  The result for antiquarks follows similarly.
+		Now we have forms for massive quarks and antiquarks in terms of massless spinors we can
+		use all of the spinor-helicity machinery to make our computations more efficient.  Slightly
+		more useful forms of equations \ref{u_def} and \ref{v_def} can be found by decomposing $q$
+		into massless components once again: $q=\widetilde{q}+k$ (once again this acts as a
+		definition for $\widetilde{q}$).  Then from eq. \ref{u_def}:
+
+		\begin{subequations}
+		\begin{align*}
+			u(q, s) &= \frac{1}{m}(\slashed{\widetilde{q}} + \slashed{k} + m)u_-(k), \\
+			        &= \frac{1}{m}\left(\rl{\widetilde{q}^+}{\widetilde{q}^+}k^-\rangle +
+			        \rl{\widetilde{q}^-}{\widetilde{q}^-}k^-\rangle + \rl{k^-}{k^-}k^-\rangle +
+			        \rl{k^-}{k^-}k^-\rangle + m|k^-\rangle\right), \\
+			        &= \frac{[\widetilde{q}k]}{m}|\widetilde{q}^+\rangle + |k^-\rangle,
+		\end{align*}
+		\end{subequations}
+
+		and similarly for the other helicities and the antiquarks:
+
+		\begin{subequations}
 		\begin{align}
-			u_{-}(k_0)\overline{u}_-(k_0) &\equiv \omega_- \slashed k_0\\
-			u_+(k_0) &\equiv \slashed k_1 u_- (k_0),
+			u(q, -s) &= \frac{\langle \widetilde{q}k\rangle}{m}|\widetilde{q}^-\rangle + |k^+\rangle, \\
+			v(q,  s) &= \frac{[\widetilde{q}k]}{m}|\widetilde{q}^+\rangle - |k^-\rangle, \\
+			v(q, -s) &= \frac{\langle \widetilde{q}k\rangle}{m}|\widetilde{q}^-\rangle - |k^+\rangle
 		\end{align}
-	\end{subequations}
-
-	where $\omega_\lambda = \half(1 + \lambda\gu{5})$ is the helicity projection operator.  In order for these to be valid spinors they must satisfy the following completeness relations:
-
-	\begin{subequations}
-		\begin{equation}
-			\label{prop1}
-			\sum_\lambda u_\lambda(p)\overline{u}_\lambda(p)=\slashed p + m
-		\end{equation}
-		\begin{equation}
-			\label{prop2}
-			u_\lambda(p)\overline{u}_\lambda (p) = \omega_\lambda\slashed p
-		\end{equation}
-	\end{subequations}
-
-	The spinors in eq. can easily be shown to satisfy these as follows:
-
-	\begin{subequations}
-	\begin{align*}
-		u_-(k_0)\overline{u}_-(k_0) + u_+(k_0)\overline{u}_+(k_0) &= \omega_-\slashed k_0 + \slashed k_1 u_-(k_0)\overline{u}_-(k_0)\slashed k_1,\\
-	        &= \omega_-\slashed k_0 + \slashed k_1 \omega_-\slashed k_0\slashed k_1,\\
-	        &= \omega_-\slashed k_0 + \half\gu{\mu}k_{1\mu}(1-\gu{5})\gu{\nu}k_{0\nu}\gu{\sigma}k_{1\sigma},\\
-	        &= \omega_-\slashed k_0 + \half k_{1\mu}k_{0\nu}k_{1\sigma}(\gu{\mu}\gu{\nu}\gu{\sigma}-\gu{\mu}\gu{5}\gu{\nu}\gu{\sigma}),\\
-	        &= \omega_-\slashed k_0 + \half k_{1\mu}k_{0\nu}k_{1\sigma}(2\gu{\mu}g^{\nu\sigma} - \gu{\mu}\gu{\sigma}\gu{\nu}+2\gu{5}\gu{\mu}g^{\nu\sigma} - \gu{5}\gu{\mu}\gu{\sigma}\gu{\nu}),\\
-	        &= \omega_-\slashed k_0 + k_{1\mu}k_{0\nu}k_{1\sigma}\omega_+\gu{\mu}(2g^{\nu\sigma} - \gu{\sigma}\gu{\nu}),\\
-	        &= \omega_-\slashed k_0 + 2\slashed k_1 k_0\cdot k_1 - \omega_+\slashed k_1\slashed k_1 \slashed k_0,\\
-	        &= \omega_-\slashed k_0 + \omega_+\slashed k_0,
-	\end{align*}
-	\end{subequations}
-
-	where we have used ${\gu{\mu}, \gu{\mu}}=2g^{\mu\nu}$, ${\gu{\mu}, \gu{5}}=0$ and $\slashed k_1\slashed k_1=k_1^2=0$.
-	This proves the property of eq. \ref{prop2} and inserting the definition of $\omega_\lambda$ gives:
-
-	\begin{subequations}
-	\begin{align*}
-		u_-(k_0)\overline{u}_-(k_0) + u_+(k_0)\overline{u}_+(k_0) &= \half(1-\gu{5})\slashed k_0 + (1+\gu{5})\slashed k_0,\\
-		&= \slashed k_0,
-	\end{align*}
-	\end{subequations}
-
-	Which is eq. \ref{prop1} for a massless particle.\\We can use these fundamental spinors
-	to form spinors for any given momenta, $p$ (which has $p^2=0$), as follows:
-
-	\begin{equation}
-		u_\lambda(p) = \slashed p u_{-\lambda}(k_0) \frac{1}{\sqrt{2p\cdot k_0}},
-	\end{equation}
-
-	provided we don't have $p\cdot k_0=0$.  Once again it is easy to show that this spinor satisfies the necessary conditions, for example:
-
-	\begin{subequations}
-	\begin{align*}
-		u_\lambda(p)\overline{u}_\lambda(p) &= \frac{1}{2p\cdot k_0}\slashed p u_{-\lambda}(k_0)\overline{u}_{-\lambda}(p)\slashed p,\\
-		&= \frac{1}{2p\cdot k_0}\slashed p \omega_{-\lambda}\slashed k_0\slashed p,\\
-		&= \frac{1}{4p\cdot k_0}\slashed p (1-\lambda\gu{5})\slashed k_0\slashed p,\\
-		&= \frac{1}{2p\cdot k_0}p_{\mu}k_{0\nu}p_{\sigma}\omega_{\lambda}\gu{\mu}(2g^{\nu\sigma} - \gu{\sigma}\gu{\nu}),\\
-		&= \frac{1}{2p\cdot k_0}\omega_\lambda(2\slashed p p\cdot k_0 - \slashed p\slashed p\slashed k)),\\
-		&= \omega_\lambda\slashed p.\\
-	\end{align*}
-	\end{subequations}
-
-	So far so good.  This can also be generalised so that we can build massive spinors from our fundamental ones.  We can use
-
-	\begin{equation}
-		\label{u_def}
-		u(q, s) = \frac{1}{\sqrt{2q\cdot k}}(\slashed q + m)u_-(k)
-	\end{equation}
-
-	to describe a quark with spin 4-vector $s$, mass $m$ and momentum $q$.  To confirm this we go through the same procedure as above:
-
-	\begin{subequations}
-	\begin{align*}
-		u_\lambda(p,s)\overline{u}_\lambda(p,s) &= \frac{1}{2q\cdot k_0}(\slashed q + m) u_-(k_0)\overline{u}_-(q)(\slashed q + m),\\
-		&= \frac{1}{2q\cdot k_0}(\slashed q + m) \omega_-\slashed k_0 (\slashed q + m), \\
-		&= \frac{1}{4q\cdot k_0}(\slashed q + m) (1-\gu{5})\slashed k_0 (\slashed q + m), \\
-		&= \frac{1}{4q\cdot k_0}\big[\left(\slashed q \slashed k_0 \slashed q + m\slashed k\slashed q + m\slashed q \slashed
-		k_0 + m^2 \slashed k\right)-\gu{5}\left(\slashed q\slashed k\slashed q - m\slashed k\slashed q + m\slashed q\slashed k_0 - m^2\slashed k\right)\big], \\
-		&= \half\left(\slashed q + m - \gu{5}\slashed q - m\gu{5} + \frac{m\gu{5}\slashed k\slashed q}{k\cdot q} + \frac{\gu{5}m^2\slashed k}{k\cdot q}\right),\\
-		&= \half\left(1+\left(\frac{1}{m}\slashed q - \frac{m}{q\cdot k}\slashed k\right)\gu{5}\right)(\slashed q + m),\\
-		&= \half\left(1+\slashed s\gu{5}\right)(\slashed q + m),\\
-	\end{align*}
-	\end{subequations}
-
-	where the last line defines the spin vector $s = \frac{1}{m} q - \frac{m}{q\cdot k}k$.  Conjecturing
-	a similar form for an antiquark spinor with with spin 4-vector $s$, mass $m$ and momentum $q$:
-
-	\begin{equation}
-		\label{v_def}
-		v(q, s) = \frac{1}{\sqrt{2q\cdot k}}(\slashed q - m)u_-(k),
-	\end{equation}
-
-	which leads to:
-
-	\begin{subequations}
-	\begin{align*}
-		v_\lambda(p,s)\overline{v}_\lambda(p,s) &= \frac{1}{2q\cdot k_0}(\slashed q - m) u_-(k_0)\overline{u}_-(q)(\slashed q - m),\\
-		&= \half\left(\left(\slashed q - m\right) + \left(-\slashed q + m + \frac{m^2}{q\cdot k_0}\slashed k_0 -
-		\frac{m}{q\cdot k_0}\slashed q\slashed k_0 \right)\gu{5}\right), \\
-		&= \half\left(1+\slashed s\gu{5}\right)(\slashed q - m).\\
-	\end{align*}
-	\end{subequations}
-
-	One last check that is worth performing is that these spinors actually satisfy the Dirac eq. for both the quark and antiquark case.  For the quark:
-
-	\begin{subequations}
-	\begin{align*}
-		\slashed q u(q, s) &= \frac{1}{2q\cdot k_0}\slashed q(\slashed q + m)u_-(k_0), \\
-		                   &= \frac{1}{2q\cdot k_0}(m^2 + m\slashed q)u_-(k_0), \\
-	\end{align*}
-	\end{subequations}
-
-	we now define some momentum $\widetilde{q}$ by the relation $q = \widetilde{q} + k_0$ such that $\widetilde{q}^2=0$ and
-	$q\cdot k = \widetilde{q}\cdot k$.  Since $q^2=2\widetilde{q}\cdot k=m^2$ we may write
-
-	\begin{subequations}
-	\begin{align*}
-		\slashed q u(q, s) &= \frac{1}{m}(m^2 + m\slashed q)u_-(k_0), \\
-		                   &= (m + \slashed q)u_-(k_0), \\
-	\end{align*}
-	\end{subequations}
-
-	we can now back substitute from the definition of $u(q, s)$ in eq. \ref{u_def} to get:
-
-	\begin{subequations}
-	\begin{align*}
-		\slashed q u(q, s) &= \sqrt{2q\cdot k}u(q, s), \\
-		                   &= mu(q,s), \\
-	\end{align*}
-	\end{subequations}
-
-	which is the Dirac eq. for a quark.  The result for antiquarks follows similarly.
-	Now we have forms for massive quarks and antiquarks in terms of massless spinors we can
-	use all of the spinor-helicity machinery to make our computations more efficient.  Slightly
-	more useful forms of equations \ref{u_def} and \ref{v_def} can be found by decomposing $q$
-	into massless components once again: $q=\widetilde{q}+k$ (once again this acts as a
-	definition for $\widetilde{q}$).  Then from eq. \ref{u_def}:
-
-	\begin{subequations}
-	\begin{align*}
-		u(q, s) &= \frac{1}{m}(\slashed{\widetilde{q}} + \slashed{k} + m)u_-(k), \\
-		        &= \frac{1}{m}\left(\rl{\widetilde{q}^+}{\widetilde{q}^+}k^-\rangle +
-		        \rl{\widetilde{q}^-}{\widetilde{q}^-}k^-\rangle + \rl{k^-}{k^-}k^-\rangle +
-		        \rl{k^-}{k^-}k^-\rangle + m|k^-\rangle\right), \\
-		        &= \frac{[\widetilde{q}k]}{m}|\widetilde{q}^+\rangle + |k^-\rangle,
-	\end{align*}
-	\end{subequations}
-
-	and similarly for the other helicities and the antiquarks:
-
-	\begin{subequations}
-	\begin{align}
-		u(q, -s) &= \frac{\langle \widetilde{q}k\rangle}{m}|\widetilde{q}^-\rangle + |k^+\rangle, \\
-		v(q,  s) &= \frac{[\widetilde{q}k]}{m}|\widetilde{q}^+\rangle - |k^-\rangle, \\
-		v(q, -s) &= \frac{\langle \widetilde{q}k\rangle}{m}|\widetilde{q}^-\rangle - |k^+\rangle
-	\end{align}
-	\end{subequations}
+		\end{subequations}
 
 \section{Monte Carlo Techniques}
 	\label{sec:MC}
@@ -1661,11 +1722,11 @@
 		\label{eqn:simpleIS}
 	\end{align}
 
-	The integrand of eq. \ref{eqn:simpleIS} is shown in fig.~\ref{fig:simpleIS} along with two potential choices of density functions.
+	The integrand of eq. \ref{eqn:simpleIS} is shown in fig.~(\ref{fig:simpleIS}) along with two potential choices of density functions.
 	The uniform distribution (shown in red) will sample the integrand equally across the domain however it is clear from looking
 	at the functional form of eq. \ref{eqn:simpleIS} that that isn't the most efficient approach since it is strongly peaked towards the
 	right hand side of the domain.  Hence that is where the largest contribution to the Monte Carlo sum will come from.  However if we sample
-	the modified integrand using pseudo-random numbers generated from a distribution proportional to $x^4$ (shown in green in fig.~\ref{fig:simpleIS})
+	the modified integrand using pseudo-random numbers generated from a distribution proportional to $x^4$ (shown in green in fig.~(\ref{fig:simpleIS}))
 	we can reduce the variance of our approximation significantly.  Tab. ~\ref{tab:simpleIS} shows how the approximation improves as we vary
 	the number of samples, $N$, for the two cases of $q\sim\mathcal{U}(0,0.5)$ and $q\sim x^4$.
 
@@ -1711,8 +1772,8 @@
   	where $p_Z$ is the momentum carried by the $Z^0$ boson, $M_Z$ is its mass, $\Gamma_Z$ is its width and $f(\text{QCD, EW})$ will
   	contain all of the coupling information and $g(\text{Kinematic})$ encodes the remainder of the matrix element.  When using a
   	Monte-Carlo approach to generate events of this kind we can use the schematic of \ref{eqn:schematicZ} to \emph{a priori} select
-  	an appropriate probability density function to sample from.  Fig.~\ref{fig:breitWigner} shows the squared $Z^0$ propagator.
-  	Obvious comparisons with fig.~\ref{fig:simpleIS} can be drawn in the sense that were we to generate events with a uniform spread
+  	an appropriate probability density function to sample from.  Fig. (~\ref{fig:breitWigner}) shows the squared $Z^0$ propagator.
+  	Obvious comparisons with fig.~(\ref{fig:simpleIS}) can be drawn in the sense that were we to generate events with a uniform spread
   	of values for $p_Z^2$ we would end with a very slow rate of convergence by oversampling areas where the integrand is very small and slowly varying.
 
 	\begin{figure}[htp]
@@ -1727,7 +1788,7 @@
 		\centering
 		\includegraphics[width=0.8\textwidth, height=0.6\textwidth]{HERAFit}
 		\caption{Recent parton distribution function fits from the HERA experiment.  The observed variation in $f(x_{a/b}, Q^2)$, especially at high
-		         $x_{a/b}$, can be exploited when computing the equation~\ref{eqn:pdfConvolution} by using an importance sampling approach}
+		         $x_{a/b}$, can be exploited when computing the equation~\ref{eqn:factorisation} by using an importance sampling approach}
 		\label{fig:heraFit}
   	\end{figure}
 
@@ -1735,9 +1796,9 @@
   	conservation considerations lead us to values for the Bjorken scaling variables of our incoming partons, $x_a$ and $x_b$, and we
   	can use these to intelligently sample the available partons.  The naive way to perform the sum over all possible incoming states
   	would be to uniformly choose a random number corresponding to one of the light quarks, one the light anti-quarks or to a
-  	gluon\footnote{By `light (anti-)quarks' we mean all except the top and anti-top.  The parton density functions for these are not available
+  	gluon\footnote{Here we mean all except the top and anti-top.  The parton density functions for these are not available
   	and, even if they were, they would be small enough that we could safely ignore their contribution to cross-sections.}.  We can,
-  	however, do better than this by using what we know about how the parton density functions vary with $x_{a/b}$ - fig.~\ref{fig:PDFdensities}
+  	however, do better than this by using what we know about how the parton density functions vary with $x_{a/b}$ - fig.~(\ref{fig:heraFit})
   	shows this behaviour as measured by the HERA experiment.  By choosing to randomly sample then incoming parton types according to the relative values
   	for the parton density functions we can, once again, reduce the variance of our numerical integrations as much as possible.
 
