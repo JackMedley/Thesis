@@ -1,30 +1,28 @@
 \chapter{High Energy QCD}
 \label{chap:HEQCD}
 
-{\color{red}
-Stuff for this section
-\begin{itemize}
-	\item s, t, u gives log mini-calc,
-	\item HE limit of gg-> gg gives log (at LO),
-	\item Tiny bit about cuts S matrix to Optical theorem,
-	\item NLO calculation of leading part of gg->gg (explain sub-leading bits) - do this bit using cuts,
-	\item Extra real corrections and writing these as contractions of currents,
-	\item A bit on HE phase-space integrals?
-\end{itemize}
-}
-
-\section{The High Energy Limit of $2\rightarrow2$ QCD scattering}
+	{\color{red}
+	Stuff for this section
+	\begin{itemize}
+		\item \st{s, t, u gives log mini-calc,}
+		\item HE limit of gg-> gg gives log (at LO),
+		\item Tiny bit about cuts S matrix to Optical theorem,
+		\item NLO calculation of leading part of gg->gg (explain sub-leading bits) - do this bit using cuts,
+		\item Extra real corrections and writing these as contractions of currents,
+		\item A bit on HE phase-space integrals?
+	\end{itemize}
+	}
 
 	In this chapter we look in detail at the `High Energy' limit of QCD.  We begin by defining this limit and
 	looking at how basic $2\rightarrow2$ scattering behaves at leading order and next-to-leading order in
 	$\alpha_s$.
 
-	\subsection{The `High Energy' limit}
+	\section{The `High Energy' limit}
 		\label{sub:HElimit}
 
-		The `High Energy' (HE) limit of QCD, also referred to as the Multi-Regge Kinematic (MRK) limit is
-		defined in terms of the kinematics of the final state.  We require a strong rapidity ordering
-		of all outgoing radiation as well as all the emissions having similar transverse momenta.
+		The `High Energy' limit of QCD, also referred to as the Multi-Regge Kinematic (MRK) limit is
+		defined in terms of the kinematics of the final state.  We require a \emph{strong rapidity ordering}
+		of all outgoing radiation as well as all the emissions having \emph{similar transverse momenta}.
 		Mathematically this is:
 
 		\begin{equation}
@@ -51,7 +49,7 @@ Stuff for this section
 
 		For massless states eqs. \eqref{eqn:rap} and \eqref{eqn:prap} are equivalent.
 
-	\subsection{Mandelstam Variables in the High Energy Limit}
+	\section{Mandelstam Variables in the High Energy Limit}
 		\label{sub:MandelstamVariables}
 
 		The $2\rightarrow 2$ QCD scattering amplitudes can be expressed in terms of the well-known Mandestam
@@ -124,10 +122,64 @@ Stuff for this section
 		with large rapidity gaps could require a more careful inspection than the fixed-order approach
 		discussed in section \ref{sec:pqcdAndResum}.
 
-	\subsection{Quark-Gluon scattering at High Energy}
+	\section{$qQ$-scattering at High Energy}
 
-		We now with the simplest case of $2\rightarrow 2$ quark-gluon scattering.  At leading order this
-		consists of three diagrams shown in fig. \ref{fig:TwoToTwo}.  Here we only show the calculations
+		Here we begin with the simplest example; the case of $qQ\rightarrow qQ$ for all negative helicity partons
+		\footnote{where the capital $Q$ implies it is a different flavour to $q$ - and hence we need not consider the crossed
+		diagrams which would contribute if they were the same flavour}. There is only one diagram which contributes shown
+		in fig. (\ref{fig:TwoToTwo}).  Using the Feynman rules detailed in section \ref{sec:partonicCrossSection} we can
+		write the matrix element as:
+
+		\begin{align}
+			i\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-} &= ig_s^2T^d_{1a}T^d_{2b}\frac{\overline{u}^-(p_1)\gamma^\mu
+			  u^-(p_a)\overline{u}^-(p_2)\gamma_\mu u^-(p_b)}{t}\\
+			  &= ig_s^2T^d_{1a}T^d_{2b}\frac{\bk{1}{\mu}{a}\cdot\bk{2}{\mu}{b}}{t},
+		\end{align}
+
+		where $t = (p_a - p_1)^2$ and we have used the shorthand $\overline{u}^-(p_i)\gamma^\mu u^-(p_j) = \bk{i}{\mu}{j}$ in the second line.
+		Writing the contraction of these two `current' terms in terms of light-cone coordinates we have:
+
+		\begin{equation}
+			i\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-} = ig_s^2T^d_{1a}T^d_{2b}\frac{2\sqrt{p_a^-p_b^+}}{t}
+			\left(\sqrt{p_1^+p_2^-}e^{i\phi_2} + \sqrt{p_1^-p_2^+}e^{i\phi_1}\right),
+			\label{eqn:qQ2qQ}
+		\end{equation}
+
+		where $e^{i\phi_i} = \frac{p_{\perp i}}{|p_{\perp i}|}$.  We now approximate the kinematics in such a way that we may write
+		eq. \eqref{eqn:qQ2qQ} in a `factorised' form once again.  Specifically we consider that the scattering can be thought
+		of as two partons glancing off one another.  That is, we assume that $p_1^+\ll p_1^-$ and $p_2^-\ll p_2^+$.  We can further
+		assume that $p_1^-\approx p_a^-$ and $p_2^-\approx p_b^-$ and with this we see that \eqref{eqn:qQ2qQ} becomes:
+
+		\begin{equation}
+			i\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-} = \frac{2s}{t}\left(g_sT^d_{1a}e^{i\phi_1}\right)\left(-ig_sT^d_{2b}\right),
+			\label{eqn:reggeTraj}
+		\end{equation}
+
+		which is `factorised' in the sense that each scalar term in brackets depends only on one quark line; either on the $p_{a/1}$
+		line or the $p_{b/2}$ line.  We see that the amplitude for $qQ\rightarrow qQ$ is dominated by the $s$ kinematic variable.
+		We can express this as:
+
+		\begin{equation}
+			\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-} \sim s^{\alpha(t)},
+		\end{equation}
+
+		which is exactly the behaviour expected when a particle exchanged in the $t$-channel has `reggeised
+		\cite{sabioThesis,DelDuca:1995hf,lipatovBook}.  $\alpha(t)$ is the Regge trajectory and is equal to
+		the intrinsic spin of the state exchanged.  In our example we have have a spin-one gluon exchanged
+		and accordingly we can see from eq. \eqref{eqn:reggeTraj} that $\alpha(t)=2$ for $qQ\rightarrow qQ$.
+
+		\begin{figure}
+			\begin{center}
+			\includegraphics[width=0.35\linewidth]{TwoToTwo}
+			\caption{The only diagram which contributes to $qQ\rightarrow qQ$ at leading order in $\alpha_s$.}
+			\label{fig:TwoToTwo}
+			\end{center}
+		\end{figure}
+
+	\section{$qg$ scattering at High Energy}
+
+		We now with explore the more involved case of $2\rightarrow 2$ quark-gluon scattering.  At leading order this
+		consists of three diagrams shown in fig. (\ref{fig:TwoToTwo}).  Here we only show the calculations
 		for the helicity structure where both quark lines have fixed, and opposite, helicities.  We use
 		the following gauge choice for the gluon polarisations:
 
@@ -136,74 +188,102 @@ Stuff for this section
 		\epsilon^{+}_{b\sigma}&=-\frac{\langle b|\sigma|2\rangle}{\sqrt{2}[2b]} & \epsilon^{-*}_{2\sigma} &= -\frac{\langle b|\sigma|2\rangle}{\sqrt{2}\langle 2b\rangle}
 		\end{align}
 
-		For simplicity we alter the notation slightly and choose to model everything as having negative helicity.  To describe positive helicities we can use the transpose property shown in equation 16.
+		For simplicity we alter the notation slightly and choose to model everything as having negative helicity.
+		To describe positive helicities we can use the transpose property shown in equation 16.
 
-		\begin{figure}
-			\begin{center}
-			\includegraphics[width=0.9\linewidth]{2to2qg}
-			\caption{The three diagrams which contribute to $qg\rightarrow qg$ at leading order.}
-			\label{fig:TwoToTwo}
-			\end{center}
+		\begin{figure}[h]
+			\centering
+			\begin{subfigure}[b]{0.3\textwidth}
+				\includegraphics[width=\textwidth]{qg2qg-s}
+				\caption{}
+				\label{fig:qg2qg-s}
+			\end{subfigure}
+
+			\begin{subfigure}[b]{0.3\textwidth}
+				\includegraphics[width=\textwidth]{qg2qg-t}
+				\caption{}
+				\label{fig:qg2qg-t}
+			\end{subfigure}
+			~
+			\begin{subfigure}[b]{0.3\textwidth}
+				\includegraphics[width=\textwidth]{qg2qg-u}
+				\caption{}
+				\label{fig:qg2qg-u}
+			\end{subfigure}
+			\caption{The $s$, $t$ and $u$ channel diagrams contributing to $qg\rightarrow qg$ at leading
+			         order in $\alpha_s$ in figures (\ref{fig:qg2qg-s}), (\ref{fig:qg2qg-t}) and (\ref{fig:qg2qg-u})
+			         respectively.}
 		\end{figure}
 
-		\subsubsection{$s$-channel}
+		\subsection{$s$-channel}
 
 			The matrix element for the $s$-diagram is:
 
 			\begin{equation}
-			-i\mathcal{A}_s=\overline{u}^-(p_1)\left(-\frac{ig_s}{2}\gamma^\mu\right)\epsilon_\mu^{*+}(p_2)\frac{i(\slashed q+mc)}{q^2-m^2c^2}\left(-\frac{ig_s}{2}\gamma^\nu\right)\epsilon^+_\nu(p_b)u^-(p_a),
+			-_a-i\mathcal{A}_s=\overline{u}^-(p_1)\left(-\frac{ig_s}{2}\gamma^\mu\right)\epsilon_\mu^{*+}(p_2)
+				\frac{i(\slashed q+mc)}{q^2-m^2c^2}\left(-\frac{ig_s}{2}\gamma^\nu\right)\epsilon^+_\nu(p_b)u^-(p_a),
 			\end{equation}
 			\begin{equation*}
-			\Rightarrow \mathcal{A}_s=-\frac{g^2_s}{4q^2}\epsilon^{*+}_{2\mu}\epsilon^+_{b\nu}\overline{u}^-_1\gamma^\mu\slashed q\gamma^\nu u^-_a,
+				\Rightarrow \mathcal{A}_s=-\frac{g^2_s}{4q^2}\epsilon^{*+}_{2\mu}\epsilon^+_{b\nu}\overline{u}^-_1\gamma^\mu\slashed q\gamma^\nu u^-_a,
 			\end{equation*}
 
 			where we have used $q\gg mc$ for the high energy case.  The propagator has momentum $q=p_a+p_b=p_1+p_2$ therefore:
 
 			\begin{equation}
-			\mathcal{A}_s=-\frac{g^2_s}{4q^2}\frac{\langle{b}|\mu|2\rangle}{\sqrt{2}\langle{b2\rangle}}\frac{\langle{b}|\nu|2\rangle}{\sqrt{2}[2b]}\overline{u}^-_1\gamma^\mu(\slashed{p}_a+\slashed{p}_b)\gamma^\nu u^-_a,
-			\end{equation}
+				\mathcal{A}_s=-\frac{g^2_s}{4q^2}\frac{\langle{b}|\mu|2\rangle}{\sqrt{2}\langle{b2\rangle}}
+				\frac{\langle{b}|\nu|2\rangle}{\sqrt{2}[2b]}\overline{u}^-_1\gamma^\mu(\slashed{p}_a+\slashed{p}_b)\gamma^\nu u^-_a,
+				\end{equation}
 			\begin{equation*}
-			\Rightarrow\mathcal{A}_s=-\frac{g^2_s}{8q^2s_{2b}}\langle{b}|\mu|2\rangle\langle{b}|\nu|2\rangle\left(\overline{u}^-_1\gamma^\mu\gamma^\sigma\gamma^\nu u^-_ap_{a\sigma}+\overline{u}^-_1\gamma^\mu\gamma^\sigma\gamma^\nu u^-_ap_{b\sigma}\right),
+				\Rightarrow\mathcal{A}_s=-\frac{g^2_s}{8q^2s_{2b}}\langle{b}|\mu|2\rangle\langle{b}|\nu|2\rangle
+				\left(\overline{u}^-_1\gamma^\mu\gamma^\sigma\gamma^\nu u^-_ap_{a\sigma}+
+				\overline{u}^-_1\gamma^\mu\gamma^\sigma\gamma^\nu u^-_ap_{b\sigma}\right),
 			\end{equation*}
 
 			where we have used equation 8.  The gamma matrices satisfy the Clifford algebra, $\{\gamma^\mu, \gamma^\nu\}=2g^{\mu\nu}$ and so we may write:
 
 			\begin{equation}
-			\overline{u}^-_1\gamma^\mu\gamma^\sigma\gamma^\nu u^-_ap_{a\sigma}=\overline{u}^-_1\gamma^\mu\gamma^\nu\gamma^\sigma u^-_ap_{a\sigma} - 2\overline{u}^-_1\gamma^\mu g^{\sigma\nu}u^-_ap_{a\sigma}
+				\overline{u}^-_1\gamma^\mu\gamma^\sigma\gamma^\nu u^-_ap_{a\sigma}=
+				\overline{u}^-_1\gamma^\mu\gamma^\nu\gamma^\sigma u^-_ap_{a\sigma} -
+				2\overline{u}^-_1\gamma^\mu g^{\sigma\nu}u^-_ap_{a\sigma}
 			\end{equation}
 
 			But in the MRK limit the Dirac equation is $\slashed{p}_au^-_a=0$:
 
 			\begin{equation}
-			\mathcal{A}_s=-\frac{g^2_s}{8q^2s_{2b}}\langle{b}|\mu|2\rangle\langle{b}|\nu|2\rangle\left(-2\overline{u}^-_1\gamma^\mu u^-_ap_{a}^\sigma+\overline{u}^-_1\gamma^\mu\gamma^\sigma\gamma^\nu u^-_ap_{b\sigma}\right)
+				\mathcal{A}_s=-\frac{g^2_s}{8q^2s_{2b}}\langle{b}|\mu|2\rangle\langle{b}|\nu|2\rangle
+				\left(-2\overline{u}^-_1\gamma^\mu u^-_ap_{a}^\sigma+\overline{u}^-_1\gamma^\mu\gamma^\sigma\gamma^\nu u^-_ap_{b\sigma}\right)
 			\end{equation}
 
 			For the second term we must use the following identity:
 
 			\begin{equation}
-			\gamma^\mu\gamma^\sigma\gamma^\mu=g^{\mu\sigma}\gamma^\nu + g^{\sigma\nu}\gamma^\mu - g^{\mu\nu}\gamma^\sigma - i\epsilon^{\rho\mu\sigma\nu}\gamma_\rho\gamma^5,
+				\gamma^\mu\gamma^\sigma\gamma^\mu=g^{\mu\sigma}\gamma^\nu + g^{\sigma\nu}\gamma^\mu
+				- g^{\mu\nu}\gamma^\sigma - i\epsilon^{\rho\mu\sigma\nu}\gamma_\rho\gamma^5,
 			\end{equation}
 
 			where $\epsilon^{\rho\mu\sigma\nu}$ is the $4D$ totally antisymmetric symbol:
 
 			\begin{equation}
-			\mathcal{A}_s=-\frac{g^2_s}{8q^2s_{2b}}\langle{b}|\mu|2\rangle\langle{b}|\nu|2\rangle
-			\left(\langle 1|\mu|a\rangle p_a^\nu + p_{b\sigma}\overline{u}^-_1(g^{\mu\sigma}\gamma^\nu + g^{\sigma\nu}\gamma^\mu - g^{\mu\nu}\gamma^\sigma - i\epsilon^{\rho\mu\sigma\nu}\gamma_\rho\gamma^5)\right)
-			\end{equation}
-			\begin{equation}
-			\Rightarrow\mathcal{A}_s=-\frac{g^2_s}{8q^2s_{2b}}\langle{b}|\mu|2\rangle\langle{b}|\nu|2\rangle
-			\left(\langle 1|\mu|a\rangle \langle a|\nu|a\rangle\!+\!\langle b|\mu|b\rangle\langle 1|\nu|a\rangle\!+\!\langle b|\sigma|b\rangle\langle1|\sigma|a\rangle
-			g^{\mu\nu}\!-\!i\langle b|\sigma|b\rangle\langle 1|\epsilon^{\rho\mu\sigma\nu}\gamma_\rho\gamma^5|a\rangle\right)
+				\mathcal{A}_s=-\frac{g^2_s}{8q^2s_{2b}}\langle{b}|\mu|2\rangle\langle{b}|\nu|2\rangle
+				\left(\langle 1|\mu|a\rangle p_a^\nu + p_{b\sigma}\overline{u}^-_1(g^{\mu\sigma}\gamma^\nu +
+				g^{\sigma\nu}\gamma^\mu - g^{\mu\nu}\gamma^\sigma - i\epsilon^{\rho\mu\sigma\nu}\gamma_\rho\gamma^5)\right)
+				\end{equation}
+				\begin{equation}
+				\Rightarrow\mathcal{A}_s=-\frac{g^2_s}{8q^2s_{2b}}\langle{b}|\mu|2\rangle\langle{b}|\nu|2\rangle
+				\left(\langle 1|\mu|a\rangle \langle a|\nu|a\rangle\!+\!\langle b|\mu|b\rangle
+				\langle 1|\nu|a\rangle\!+\!\langle b|\sigma|b\rangle\langle1|\sigma|a\rangle
+				g^{\mu\nu}\!-\!i\langle b|\sigma|b\rangle\langle 1|\epsilon^{\rho\mu\sigma\nu}\gamma_\rho\gamma^5|a\rangle\right)
 			\end{equation}
 
 			The second, third and fourth terms are zero because, for example:
 
 			\begin{equation}
-			\langle b|\mu|2\rangle\langle b|\mu|b\rangle = 2[2b]\langle b b\rangle = 0
+				\langle b|\mu|2\rangle\langle b|\mu|b\rangle = 2[2b]\langle b b\rangle = 0
 			\end{equation}
 
 			\begin{equation}
-			\Rightarrow\mathcal{A}_s=-\frac{g^2_s}{8q^2s_{2b}}\langle{b}|\mu|2\rangle\langle{b}|\nu|2\rangle\langle{1}|\mu|a\rangle\langle{a}|\nu|a\rangle
+				\Rightarrow\mathcal{A}_s=-\frac{g^2_s}{8q^2s_{2b}}
+				\langle{b}|\mu|2\rangle\langle{b}|\nu|2\rangle\langle{1}|\mu|a\rangle\langle{a}|\nu|a\rangle
 			\end{equation}
 
 			Where we have used equation 10.
@@ -215,35 +295,40 @@ Stuff for this section
 			And using $q^2=s_{ab}=\langle ab\rangle[ba]$ and $s_{2b}=\langle2b\rangle[b2]$ we have:
 
 			\begin{equation}
-			\mathcal{A}_s=-\frac{g^2_s}{4}\frac{[2a]\langle ab\rangle}{\langle ab\rangle[ba]\langle2b\rangle[b2]}\langle{b}|\mu|2\rangle\langle{1}|\mu|a\rangle.
+			\mathcal{A}_s=-\frac{g^2_s}{4}\frac{[2a]\langle ab\rangle}{\langle ab\rangle[ba]
+			\langle2b\rangle[b2]}\langle{b}|\mu|2\rangle\langle{1}|\mu|a\rangle.
 			\end{equation}
 
 			Now all that remains is to calculate the four-vector products, for example:
 
 			\begin{equation}
-			[2a]=\overline{u}^+_2u^-_a=(u^+_2)^\dagger\gamma^0u^-_a=\left(\sqrt{p^+_2}, \sqrt{p^-_2}\frac{p^{\perp}_2}{|p_2^\perp|}, 0, 0\right) \left(\begin {array}{cccc} 0&0&1&0\\ \noalign{\medskip}0&0&0&1
-			\\ \noalign{\medskip}1&0&0&0\\ \noalign{\medskip}0&1&0&0\end {array}\right)\left( \begin {array}{c} 0\\ \noalign{\medskip}0\\ \noalign{\medskip}0\\ \noalign{\medskip}-\sqrt{p^+_a}\end {array}\right)
+				[2a]=\overline{u}^+_2u^-_a=(u^+_2)^\dagger\gamma^0u^-_a=\left(\sqrt{p^+_2},
+				\sqrt{p^-_2}\frac{p^{\perp}_2}{|p_2^\perp|}, 0, 0\right)
+				\left(\begin {array}{cccc} 0&0&1&0\\ \noalign{\medskip}0&0&0&1
+				\\ \noalign{\medskip}1&0&0&0\\ \noalign{\medskip}0&1&0&0\end {array}\right)\left( \begin {array}{c} 0\\ \noalign{\medskip}0\\ \noalign{\medskip}0\\ \noalign{\medskip}-\sqrt{p^+_a}\end {array}\right)
 			\end{equation}
 			\begin{equation}
-			[2a]=\left(\sqrt{p^+_2}, \sqrt{p^-_2}\frac{p^{\perp}_2}{|p_2^\perp|}, 0, 0\right)\left( \begin {array}{c} 0\\ \noalign{\medskip}-\sqrt{p^+_a}\\
-			\noalign{\medskip}0\\ \noalign{\medskip}0\end {array}\right)=-\frac{\sqrt{p_a^+p_2^-}p_2^\perp}{|p_2^\perp|}
+				[2a]=\left(\sqrt{p^+_2}, \sqrt{p^-_2}\frac{p^{\perp}_2}{|p_2^\perp|}, 0, 0\right)\left( \begin {array}{c} 0\\ \noalign{\medskip}-\sqrt{p^+_a}\\
+				\noalign{\medskip}0\\ \noalign{\medskip}0\end {array}\right)=-\frac{\sqrt{p_a^+p_2^-}p_2^\perp}{|p_2^\perp|}
 			\end{equation}
 
 			And similarly for the others yielding:
 
 			\begin{equation}
-			\mathcal{A}_s=-\frac{g_s^2}{4}\sqrt{\frac{p_2^-}{p_b^-}}\frac{1}{p_2^+p_b^-}\frac{p_2^{\perp^*}}{|p_2^\perp|}\langle{b}|\mu|2\rangle\langle{1}|\mu|a\rangle
+				\mathcal{A}_s=-\frac{g_s^2}{4}\sqrt{\frac{p_2^-}{p_b^-}}\frac{1}{p_2^+p_b^-}
+				\frac{p_2^{\perp^*}}{|p_2^\perp|}\langle{b}|\mu|2\rangle\langle{1}|\mu|a\rangle
 			\end{equation}
 
 			Which can be simplified slightly since $\hat{t}=s_{2b}$ to give the final result:
 
 			\begin{equation}
-			\mathcal{A}_s=-\frac{g_s^2}{2\hat{t}}\sqrt{\frac{p_2^-}{p_b^-}}\frac{p_2^{\perp^*}}{|p_2^\perp|}\langle{b}|\mu|2\rangle\langle{1}|\mu|a\rangle
+				\mathcal{A}_s=-\frac{g_s^2}{2\hat{t}}\sqrt{\frac{p_2^-}{p_b^-}}\frac{p_2^{\perp^*}}
+				{|p_2^\perp|}\langle{b}|\mu|2\rangle\langle{1}|\mu|a\rangle
 			\end{equation}
 
-		\subsubsection{$t$-channel}
+		\subsection{$t$-channel}
 
-		The matrix element for the $t$-diagram is:
+			The matrix element for the $t$-diagram is:
 
 			\begin{equation}
 			\begin{split}
@@ -273,9 +358,9 @@ Stuff for this section
 			gauge that $\mathcal{A}_t$ vanishes as the gauge effectively just shuffles the contributions to the
 			sum between the channels.
 
-		\subsubsection{$u$-channel}
+		\subsection{$u$-channel}
 
-		The matrix element for the $u$-diagram is:
+			The matrix element for the $u$-diagram is:
 
 			\begin{equation}
 			\begin{split}
@@ -306,45 +391,17 @@ Stuff for this section
 			exchange of a soft $t$-channel gluon.  Although all of the other valid helicity combinations must be
 			calculated too we see they also have a $\hat t$ pole.
 
-	\subsection{At Leading Order in $\alpha_s$}
-	\label{sub:HE22_LO}
-
-		Talk through the limit of $2\rightarrow2$ scattering of gluons.  Introduce mandelstam
-		variables, show the equivalence of large delta y and large s.
-
-	\subsection{At Next-to-Leading Order in $\alpha_s$}
+	\section{At Next-to-Leading Order in $\alpha_s$}
 	\label{sub:HE22_NLO}
 
-		Calculate the NLO calcuations to the 2j ME and show that there explicitly is a delta y (large log) enhancement.
+		Calculate the NLO calculations to the 2j ME and show that there explicitly is a delta y (large log) enhancement.
 
-	\subsection{High Energy Jets `Currents'}
+	\section{High Energy Jets `Currents'}
 	\label{sub:currents}
 
-	\subsection{Effective Vertices For Real Emissions}
+	\section{Effective Vertices For Real Emissions}
 	\label{sub:effective_vertices_for_real_emissions}
 
-{\color{red}
-Stuff for this section
-\begin{itemize}
-	\item does this need to be different from the stuff above?
-\end{itemize}
-}
-
-\section{High Energy Jets}
-\label{sec:section_name}
-
-	\subsection{The Multi-Regge Kinematic limit of QCD amplitudes}
-	\label{sub:subsection_name}
-
-	\subsection{Logarithms in HEJ observables}
-	\label{sub:subsection_name}
-
-		Here you should take a $2\rightarrow n$ ME, apply the HE limit to it, do a PS integration and
-		show the logs you get.  Need the HE limit of PS integral from JA thesis and/or from VDD talk
-
-	\subsection{HEJ currents}
-	\label{sub:currents}
-
-	\subsection{High Energy Phase-space Integration}
+	\section{High Energy Phase-space Integration}
 	\label{sub:HEPhaseSpace}
 

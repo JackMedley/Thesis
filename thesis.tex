@@ -2,8 +2,8 @@
 % \documentclass[12pt,a4paper]{report} % one-sided
 
 % Packages
-\usepackage{subcaption, epsfig, amstext, Styles/floatfig, alltt,fancyhdr, setspace, lineno}
-\usepackage{amsmath, slashed, amsfonts, mathtools, epstopdf, xspace, amssymb, array, blindtext}
+\usepackage{subcaption, epsfig, amstext, Styles/floatfig, alltt,fancyhdr, setspace, lineno, url}
+\usepackage{amsmath, slashed, amsfonts, mathtools, epstopdf, xspace, amssymb, array, blindtext, soul, Styles/feynman}
 
 % Packages from paper
 \usepackage{cite,tabularx,cancel,flafter,ifpdf}
@@ -41,9 +41,6 @@
 %% In the beginning ....
 \begin{document}
 
-% Line numbers for editing purposes
-% \linenumbers
-
 \include{title}
 
 % Extra definitions
@@ -75,8 +72,6 @@
 \newcommand{\wbf}{VBF\xspace}
 \newcommand{\hej}{High Energy Jets\xspace}
 
-%-----------------------------------------------------------------------------
-
 \pagestyle{fancy}
 \fancyhead{}
 \renewcommand{\headheight}{28pt}
@@ -89,8 +84,6 @@
 \fancyhead[LE]{\small \slshape \leftmark}       % Chapter in the right on even pages
 \fancyhead[RO]{\small \slshape \rightmark}      % Section in the left on odd pages
 \renewcommand{\headrulewidth}{0.3pt}    	% Width of head rule
-
-%-----------------------------------------------------------------------------
 
 \pagenumbering{roman}
 \setcounter{page}{1}

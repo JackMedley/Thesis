@@ -341,10 +341,10 @@
 
 		Ultraviolet divergences (UV) occur when all the components of a loop momenta grow large,
 		$k^\alpha\rightarrow\infty$, such that $k^2$ becomes the dominant term in propagator.
-		Since these extremely high momentum modes corresponding to physics at very short distance scales
-		we choose to interpret these divergences as an indication that our theory is only an effective
+		Since these extremely high momentum modes correspond to physics at very short distance scales
+		we choose to interpret these divergences as an indication that our theory is only an naive
 		theory and we shouldn't attempt to apply it to all scales.  We can quickly spot diagrams with these
-		pathologies with a naive power counting argument.  For example given a diagram which results in a
+		pathologies with a naive power counting argument.  For example, given a diagram which results in a
 		term such as the following:
 
 		\begin{equation}
@@ -375,14 +375,14 @@
 		\end{equation}
 
 		where $k$ is the loop momentum, $q=p_1+p_2$ is the incoming momentum and $p_i$ the outgoing
-		momenta.  Expanding each momentum into light-cone coordinates with $p_1$ in the plus-direction,
-		$p_2$ in the minus-direction:
+		momenta.  Writing each momentum in light-cone coordinates with $p_1$ in the plus-direction,
+		$p_2$ in the minus-direction, such that:
 
 		\begin{align}
 			p_1 \sim (p_1^+, 0, \vec{0}) \hspace{0.75cm} p_2 \sim (0, p_2^-, \vec{0}).
 		\end{align}
 
-		Then take the Eikonal approximation then we have:
+		and then taking the Eikonal approximation, we have:
 
 		\begin{align}
 			I &= \int\frac{dk^+k^-k^2_T}{(2\pi)^4}\frac{1}{(2k^+k^- - k_T^2)(-2p_1^+k^-)(2p_2^-k^+)},\\
@@ -391,7 +391,7 @@
 		\end{align}
 
 		where $q^2=2p_1\cdot p_2$ since $p_i$ are massless.  Here we can further subdivide the divergences
-		contained here into a `soft' sector and a collinear one.\\Considering first the soft regime if we
+		into a `soft' sector and a collinear one.\\Considering first the soft regime if we
 		let all the components of our integration variable, $k_\mu$ become small at the same rate, that is,
 		$k^\mu\sim\lambda\sqrt{q^2}$ where $\lambda\rightarrow0$ then after a change of variables equation
 		\eqref{eqn:IRCscaling} becomes:
@@ -401,14 +401,14 @@
 			\label{eqn:IRdivergent}
 		\end{equation}
 
-		which diverges logarithmically for small lambda.  The collinear sector follows similarly, if we now
+		which diverges logarithmically for small lambda.  The collinear sector follows similarly if we now
 		look at the following scaling:
 
 		\begin{align}
 			k^\pm\sim\sqrt{q^2}\hspace{0.75cm}k^\mp\sim\lambda^2\sqrt{q^2}\hspace{0.75cm}k_T^2\sim\lambda\sqrt{q^2}.
 		\end{align}
 
-		I.e. as we decrease $\lambda$ we make $k_\mu$ increasingly collinear to either $p_1$ or $p_2$.  Using
+		As we decrease $\lambda$ we make $k_\mu$ increasingly collinear to either $p_1$ or $p_2$.  Using
 		this scaling exactly reproduces eq. \eqref{eqn:IRdivergent} and therefore is also divergent.
 
 	\subsection{Regularising divergences}
@@ -416,11 +416,11 @@
 
 
 		If we are to extract any useful information from diagrams contributing above leading-order we must find
-		ways to control these these divergences.  These methods are called `regularisation schemes'.  The
+		ways to control these divergences.  These methods are called `regularisation schemes'.  The
 		general plan with all regularisation schemes is to introduce a new parameter to the calculation which
 		is used to get a handle on exactly \emph{how} the integral diverges.  Once we have performed the integration
 		we take the limiting case where the effect of the regulator vanishes and we will see that the divergence now
-		presents itself as some singular function of the regulator when $\Lambda^2\rightarrow\infty$.  There are
+		presents itself as some singular function of the regulator.  There are
 		many ways to regularise divergences each with their own advantages and disadvantages.  Here we briefly describe
 		three common approaches.
 
@@ -431,10 +431,10 @@
 		provided there are no collinear singularities which this approach cannot hope to regulate.  While this
 		method has the advantage of being very conceptually simple it also has the serious disadvantages of
 		breaking translational and gauge invariance.  Worse still is that simply limiting the integration to
-		avoid the extremities has not effect on the collinear sector.
+		avoid the extremities has no effect on the collinear sector.
 
 		An alternative which \emph{does} keep both gauge and translational invariance is the Pauli-Villars
-		regularisation scheme \cite{RevModPhys.21.434}.  In this picture we replace the introduce and extra field (or many extra fields
+		regularisation scheme \cite{RevModPhys.21.434}.  In this picture we introduce an extra field (or many extra fields
 		\cite{FROLOV1993344}) which has the opposite spin-statistics and therefore has the effect of suppressing
 		the very high mass region in the integrand as follows
 
@@ -521,7 +521,7 @@
 	perform a perturbative expansion of physical observables such as cross-sections.  The second feature is confinement.  Confinement
 	is the reason we do not observe bare quarks and gluons in nature, instead we only see bound states of these fundamental QCD partons.
 	This is because at very \emph{low} energies the coupling strength becomes increasingly strong.\\As we saw in section \ref{sec:divAndReg}
-	it turns out that when renormalise QCD to remove the ultraviolet singularities we introduce a scale dependence in the coupling strength,
+	when we renormalise QCD to remove the ultraviolet singularities we introduce a scale dependence in the coupling strength,
 	$\alpha_s = \alpha_s(\mu_r)$.  It can be interpreted as a measure of our ignorance of the true high-scale theory which governs nature,
 	that is to say, we believe QCD is the right theory \emph{only up to} some scale $\mu_r$.  The evolution of $\alpha_s$ with $\mu_r$ is
 	given by the renormalisation group equation:
@@ -531,7 +531,7 @@
 		\label{eqn:RSFlow}
 	\end{equation}
 
-	where the $\beta(\alpha_s)$ is the beta function.  It can be expanded perturbatively as a series in $\alpha_s$
+	where $\beta(\alpha_s)$ is the beta function.  It can be expanded perturbatively as a series in $\alpha_s$
 	as follows:
 
 	\begin{equation}
@@ -578,6 +578,7 @@
   	\end{figure}
 
 \section{QCD Factorisation at Hadronic Colliders}
+	\label{sec:factorisation}
 
 	So far we have only talked about the very general idea of two particles interacting and scattering off one another into
 	some final state which we are interested in.  This is too simple a picture when we are considering hadronic colliders
@@ -587,7 +588,7 @@
 	encounter in the two incoming hadrons.  In order to do this we must have a good understanding of the dynamics of the partons
 	inside the onrushing hadrons; this understanding is encoded in the Parton Distribution Functions (PDFs).  A PDF,
 	$f_{i/H}(x, Q^2)$ is a function which tells us how likely we are to find a parton of type $i$ carrying a fraction $x$ of the
-	total hadrons momentum in a hadron, of type $H$, during a collision occurring at an energy scale $Q$.  Because the PDFs contain
+	total hadron's momentum in a hadron, of type $H$, during a collision occurring at an energy scale $Q$.  Because the PDFs contain
 	non-perturbative information we cannot compute their properties in the same way as we calculate cross-sections, instead they
 	are determined by fitting to data from a range of experiments (such as those mentioned above).  Once we have the
 	PDFs we can compute the physical hadronic cross-sections, $\sigma$, by convoluting two of them (one for each hadron) with
@@ -607,7 +608,7 @@
 
 \section{From Partons to Jets}
 
-	As alluded to in section (\ref{sec:betaFunction}) the computations of scattering amplitudes can only take us so far
+	As alluded to in section (\ref{sec:betaFunction}) the computation of scattering amplitudes can only take us so far
 	when comparing simulations to experiments.  In particular, the final state quarks and gluons in our perturbative
 	picture of QCD differ from the confined hadrons observed at hadronic colliders:  It is well known that final state
 	QCD partons fragment and emit showers of additional radiation before finally they becomes colourless bound states
@@ -617,11 +618,12 @@
 	the `parton shower' behaviour of the energetic final state partons, such as \texttt{Pythia} \cite{Sjostrand:2007gs},
 	\texttt{Herwig} \cite{Corcella:2000bw} and \texttt{Sherpa} \cite{Hoche:2014kca} as well as models for the hadronisation
 	such as the `Lund string model' \cite{Andersson:2002ap} implemented in various physics software packages but most
-	relevantly (for the remainder of this thesis) - in the \texttt{Ariadne} code.\\All high energy collider experiments
+	relevantly (for the remainder of this thesis) - in the \texttt{Ariadne} code \cite{Lonnblad:1992tz,Andersen:2011zd}.\\
+	All high energy collider experiments
 	see a great deal of QCD radiation in the final state.  This radiation, produced through the mechanisms outlined above,
 	appears in columnated structures called `jets' and so it is at the jet level that we may compare our simulated results
-	to actual measurements. The question of how we best map from the parton level to the jet level is not a trivial
-	one:  A single high-energy (or `hard') parton may split and form two final state jets but equally two low energy (or
+	to actual measurements. The question of how we best map from the two or more parton level to the jet level is not a trivial
+	one:  a single high-energy (or `hard') parton may split and form two final state jets but equally two low energy (or
 	`soft') partons may combine into a single jet.\\There are several approaches to this problem include the \texttt{SISCone}
 	algorithm \cite{Salam:2007xv} and Pythia's own implementation \texttt{CellJet} \cite{Sjostrand:2000wi}. However the
 	most commonly user family of jet reconstruction algorithm are know as the `sequential recombination algorithms'.
@@ -646,13 +648,13 @@
 	\end{align}
 
 	where $k_{Ti}$ is the transverse momentum of the $i^{th}$ parton, $R$ is a free parameter in the clustering which relates
-	to the size of the jets and $\Delta R^2$ is the distance in the detector metric between the two partons given
+	to the size of the jets and $\Delta R^2$ is the distance in the detector metric between the two partons given by
 	$\Delta R^2 = \Delta\phi^2 + \Delta y^2$ where $\Delta\phi$ and $\Delta y$ are the angular distance (about the beam line)
 	between the partons and the rapidity gap between the partons respectively.  The parameter is $p$ and it is this which
 	specifies precisely which clustering algorithm we are using; $p=0$ reduces to the Cambridge-Aachen scheme while
 	$p=\pm1$ give the $k_T$ and anti-$k_T$ respectively.  The question of which to use is outlined in detail in
-	\cite{Cacciari:2008gp} but we give a brief summary here.\\The choice of jet algorithm boils down to handful of key
-	properties the algorithm much exhibit.  Given a set of hard QCD final states we require that the result of the
+	\cite{Cacciari:2008gp} but we give a brief summary here.\\The choice of jet algorithm boils down to a handful of key
+	properties the algorithm must exhibit.  Given a set of hard QCD final states we require that the result of the
 	clustering algorithm, i.e. the jets and jet shapes, are not unduly sensitive to additional soft and collinear radiation.
 	This is intuitively clear since, for example, a final state with a single high energy quark with momentum, $k_{Ti}$,
 	may radiate infinitely a multitude of infinitely soft gluons, $k_{Ts_i}$, which may (or may not) be collinear to the
@@ -660,7 +662,7 @@
 	Any algorithm which satisfies this is said to be infra-red and collinear (IRC) safe.  We also want an algorithm which
 	is insensitive to the hadronisation model used, or any possible extra multiple-parton or experimental pile-up emissions
 	since these things are, at present, poorly understood.  It is also worth mentioning that since jet clustering algorithms
-	are used in experimental triggers to quickly catagorise events they should be as computational cheap as possible.\\Although
+	are used in experimental triggers to quickly catagorise events they should be as computationally cheap as possible.\\Although
 	the Cambridge-Aachen algorithm has advantages in some experimental searches such as studies where the substructure of
 	jets is of particular interest \cite{Butterworth:2008iy, Aad:2015owa}, the most widely used sequential recombination algorithm is
 	the anti-$k_t$ algorithm ($p=-1$) and so all of the work which follows and all of the experimental comparisons made will
@@ -681,38 +683,38 @@
 
 	\subsection{Fixed-order Perturbation}
 
-		The fixed-order perturbative operates on the assumption that since, as we saw in section \ref{sec:betaFunction},
-		the coupling strength $\alpha_s$, and hence also the coupling constant, $g$, in the expansion, becomes small at
-		large energy scales we may truncate the series at some power of $g$.  For example given a cross-section of a
-		scattering, $X\rightarrow Y$, we wish to calculate the fixed order picture of the expansion would be:
+		The fixed-order perturbative approach operates on the assumption that since, as we saw in section \ref{sec:betaFunction},
+		the coupling strength $\alpha_s$ in the expansion becomes small at large energy scales we may truncate the series at some
+		power of $\alpha_s$.  For example given a cross-section of a scattering $X\rightarrow Y$ we wish to calculate, the fixed
+		order picture of the expansion would be:
 
 		\begin{equation}
-			\sigma_{X\rightarrow Y} = \sum_{i=1}^N\alpha_s^{i}(Q^2)\mathcal{C}^{(i)}_{X\rightarrow Y}
+			\sigma_{X\rightarrow Y} = \alpha_s^{i_0}(Q^2)\sum_{i=1}^N\alpha_s^{i}(Q^2)\mathcal{C}^{(i)}_{X\rightarrow Y}
 		\end{equation}
 
-		where $\mathcal{C}^{(i)}_{X\rightarrow Y}$ are the coefficient terms which encode the kinematics of the diagrams
-		contributing at each `order' in the series.  Since we expect that the more terms we can calculate the better our
+		where $i_0$ accounts for processes which start above tree level and $\mathcal{C}^{(i)}_{X\rightarrow Y}$
+		are the coefficient terms which encode the kinematics of the diagrams contributing at each `order'
+		in the series.  Since we expect that the more terms we can calculate the better our
 		truncated series will approximate the full result we should choose $N$ as large as possible though in principal
 		it is determined by the complexity and the computational cost of the relevant calculation of the coefficient
 		functions.  Recent progress has allowed the automation of next-to-leading order QCD calculations ($N=2$) in
-		packages such in \texttt{MadGraph} (v5) \cite{Alwall:2011uj}, \texttt{BlackHat} \cite{Bern:2012my}, \texttt{MC@NLO}
+		packages such in \texttt{aMC@NLO\_MadGraph} (v5) \cite{Alwall:2011uj}, \texttt{BlackHat} \cite{Bern:2012my}, \texttt{MC@NLO}
 		\cite{Frixione:2010wd} and \texttt{Powheg} \cite{Frixione:2007vw}.  In general it is not known how to compute
 		multi-loop (i.e. $N\geq3$) calculations and while process specific calculations have been completed
 		\cite{Cacciari:2015jma, Grazzini:2015nwa, Gehrmann:2014fva}, it is still very much a hot topic in theoretical
-		physics.\\It is important to note the limitations of this fixed-order scheme.  For example if we were to consider
+		physics.\\It is important to note the limitations of this fixed-order scheme.  For example, if we were to consider
 		NLO corrections to dijet production we would only be able to produce final states with two or three jets (since
 		we can only have one extra real emission).  Clearly this is a limitation since the external fermion lines can
 		radiate arbitrarily many extra gluons.  It is precisely this phenomenon which is shown in fig. 9,
 		the NLO calculations (shown in green and black) are limited to $\langle jets\rangle\leq3$ which the predictions
-		from \texttt{POWHEJ+PYTHIA} and \texttt{HEJ} which include higher-order corrections and predict a higher average
+		from \texttt{POWHEJ+PYTHIA} and \texttt{HEJ} which include higher-order corrections predict a higher average
 		number of jets.  Note that the higher-order corrections here are \emph{not} the same in the case of
 		\texttt{POWHEJ+PYTHIA} and \texttt{HEJ}.  Also note that although the scale uncertainty band of the NLO
 		calculation \emph{does} exceed $\langle jets\rangle=3$ this is not a result of the formalism but instead comes
 		about as the result of an attempt to quantify the residual dependence of the calculation on the factorisation
 		and renormalisation scales.  This scale dependence of observables will be discussed in more detail in chapter
-		\ref{chap:Zs}.\\There are frameworks to allow the `merging' of NLO calculations of different multiplicity but
-		the details of these are beyond the scope of this thesis.  A comprehensive review of such methods may be found
-		in \cite{Alwall:2007fs}.
+		\ref{chap:Zs}.\\There are frameworks to allow the `merging' of NLO calculations of different multiplicity.  A
+		comprehensive review of such methods may be found in \cite{Alwall:2007fs}.
 
 		We now present an instructive fixed-order calculation of the next-to-leading corrections to quark-antiquark pair
 		production via an off-shell photon \cite{fieldBook}.
@@ -726,6 +728,7 @@
   		\end{figure}
 
 	\subsection{An Example Fixed-Order Calculation}
+		\label{sub:eg1loop}
 
 		\begin{figure}[tpb]
 
@@ -773,7 +776,7 @@
 		The Feynman diagrams which need to be included for the and $\mathcal{O}(1)$ and $\mathcal{O}(\alpha_s)$ corrections to the
 		$\gamma^*\rightarrow q\overline{q}$ process are shown in fig. (\ref{fig:NLOContributions}).  We refer to fig. (\ref{fig:NLOfig_1}) as the tree level diagram,
 		fig. (\ref{fig:NLOfig_2}) as the vertex correction and figs. (\ref{fig:NLOfig_3}) and (\ref{fig:NLOfig_4}) as the self-energy corrections.
-		Figs. (\ref{fig:NLOfig_5}) and (\ref{fig:NLOfig_6}) are the `real correction'.  Since the virtual corrections all have the same final state
+		Figs. (\ref{fig:NLOfig_5}) and (\ref{fig:NLOfig_6}) are the `real corrections'.  Since the virtual corrections all have the same final state
 		they must be summed and squared together.  To make the order of each term in the perturbative expansion clear we extract the $\alpha_s$
 		factors from the $\mathcal{A}_i$ here.  Therefore:
 
@@ -786,17 +789,16 @@
 		\end{split}
 		\end{equation}
 
-		where the bar on the LHS means there is an implicit sum over spins and polarisations on the RHS.  We can see then that to
-		$\mathcal{O}(\alpha_s)$ we have four contributions to consider, but the two self-energy contributions will have the same
-		functional form so it would seem that in practice we only need to perform three calculations - it turns out this is not the case;
-		we will find that the divergence associated with exchanging a soft gluon in fig. (\ref{fig:NLOfig_2}) can only be cancelled
+		We can see then that to $\mathcal{O}(\alpha_s)$ we have four contributions to consider, but the two self-energy contributions will have
+		the same functional form so it would seem that in practice we only need to perform three calculations - it turns out this is not the
+		case; we will find that the divergence associated with exchanging a soft gluon in fig. (\ref{fig:NLOfig_2}) can only be cancelled
 		if we also include the soft divergences that arise from figs. (\ref{fig:NLOfig_5}) to (\ref{fig:NLOfig_6}).  At first glance this
 		seems very peculiar since these diagrams have different final states and therefore should have no business contributing to this
 		calculation.  However, since the gluon can be emitted with vanishingly small momentum it would be experimentally impossible to
 		detect and therefore the final states would look the same to an imperfect observer.\\It is the cancellation of these divergences
 		that will be shown in detail in the next two sections.  Figs. (\ref{fig:NLOfig_1}), (\ref{fig:NLOfig_2}) and (\ref{fig:NLOfig_5})
-		will be calculated in detail while the result for the self energy expressions will only be omitted since it can be cancelled by
-		choosing the work in the Landau gauge~\cite{fieldBook}.  Since we expect both UV and IR divergences we choose to work in the dimensional
+		will be calculated in detail while the result for the self energy expressions will be omitted since it can be cancelled by
+		choosing to work in the Landau gauge~\cite{fieldBook}.  Since we expect both UV and IR divergences we choose to work in the dimensional
 		regularisation scheme.
 
 		\subsubsection{The Leading Order Process}
@@ -1272,8 +1274,8 @@
 			\end{align}
 
 
-			The fact that the infra-red divergences in both the real and virtual emission NLO diagrams cancel is an example of the
-			KLN theorem which states that the Standard Model is completely free of infra-red divergences on the whole and holds
+			The fact that the infrared divergences in both the real and virtual emission NLO diagrams cancel is an example of the
+			KLN theorem which states that the Standard Model is completely free of infrared divergences on the whole and holds
 			true at all orders.
 
 	\subsection{Resumming Higher-Order Corrections}
@@ -1283,7 +1285,7 @@
 		under gauge transformations.\\ It would seem then that this is the best way to proceed: we calculate as many corrections
 		as we can and reason that all of the higher-order terms we have neglected are suppressed by powers of a small expansion
 		parameter - the strong coupling, $\alpha_s$.  If this is indeed the case we should see that each time we go to a higher-order
-		in perturbation theory our series begins to converge.  E.g. the effect of the NLO terms should be small with respect
+		in perturbation theory our series begins to converge.  For example the effect of the NLO terms should be small with respect
 		to the LO terms etc.  It turns out that this is not true for all observables.  To motivate this we can give a schematic expansion
 		of some variable we wish to calculate, $\mathcal{O}$:
 
@@ -1299,25 +1301,24 @@
 		where $L$ is some logarithm which may be large.  A fixed-order scheme aims to exactly calculate some of the rows of equation
 		\eqref{eqn:schematicExpn} under the assumption that all subsequent lines are sufficiently suppressed.  The problem with this
 		picture is that the logarithms may be large enough that $\alpha_s^nL^{2n}\sim\mathcal{O}(1)$.  In this case it would appear
-		that it would be better for us to calculate the first column of the terms (called the `leading logarithmic' or simple LL
-		approximation) that to find the the first \emph{row} of terms (the LO approximation).\\Fig. (\ref{fig:higgsratios}) shows how
+		that it would be better for us to calculate the first column of the terms (called the `leading logarithmic' or LL
+		approximation) than to find the the first \emph{row} of terms (the LO approximation).\\Fig. (\ref{fig:higgsratios}) shows how
 		the ratio of the inclusive Higgs plus three jet cross-section to inclusive Higgs plus two jet cross-section varies as
-		a function of the rapidity gap between the two leading jets in $p_T$.  The \texttt{HEJ} prediction is formally leading-logarithmic
+		a function of the rapidity gap between the two leading jets in $p_T$ \cite{jeppeTalk}.  The \texttt{HEJ} prediction is formally leading-logarithmic
 		accurate (with leading-order matching for final states with up to three jets) while \texttt{MCFM} is formally next-to-leading order
 		accurate.  It is shown in chapter (\ref{chap:HEQCD}) that this rapidity gap is approximately equal to the logarithm, $L$, which
 		we claim violates the key assumptions underlying fixed-order perturbation theory.  Hence, as we move to large $\Delta y(j_1, j_2)$
 		we increase the size of $L$ in eq. (\ref{eqn:schematicExpn}) and the terms neglected by the fixed-order scheme (but captured by a
 		LL calculation) grow in size.  The ratio of the inclusive $(n+1)$-jets to $n$-jet cross-sections is an interesting probe of the
 		convergence of the QCD perturbative expansion since we are directly comparing the size of the NLO contributions to the LO terms.
-		Fig. (\ref{fig:hJetsRatio1}) shows that at a centre-of-mass energy of $14$TeV (the energy scales soon to be achieved at the LHC)
+		Fig. (\ref{fig:hJetsRatio1}) shows that at a centre-of-mass energy of $14$ TeV (the energy scales soon to be achieved at the LHC)
 		even at modest rapidity intervals of around $4.0$ we see that half of all events contain extra radiation and when we pull the leading
 		jets apart further in rapidity this increases to three quarters of all events.\\ Furthermore, figs. (\ref{fig:hJetsRatio2}) and
 		(\ref{fig:hJetsRatio3}) show that as we increase the centre-of-mass energy to that of a potential hadronic future circular
-		collider, $33$TeV and $100$TeV respectively, these enhanced higher-order terms become even more important - in the extreme case
-		of dijets with a separation of $\Delta y(j_1, j_2)\approx8.0$ at a $100$TeV collider almost \emph{90\%} of the cross-section is
+		collider, $33$ TeV and $100$ TeV respectively, these enhanced higher-order terms become even more important - in the extreme case
+		of dijets with a separation of $\Delta y(j_1, j_2)\approx8.0$ at a $100$ TeV collider almost \emph{90\%} of the cross-section is
 		coming from the next-to-leading term in the perturbative series: this is clear evidence that is not generally sufficient to think
-		of the expansion as being controlled by only the strong coupling constant, $\alpha_s$.  A fair criticism at this argument is that
-		it is missing one key component; data to verify that nature does actually exhibit the behaviour described here.  Fig.
+		of the expansion as being controlled by only the strong coupling constant, $\alpha_s$.  We can also test this against existing; fig.
 		(\ref{fig:d0wjets}) show the probability of extra jet activity in inclusive $W^\pm$ plus dijets as function of the rapidity gap
 		between the two leading jets \emph{in rapidity}, $\Delta y(j_F, j_B)$, taken from a very detailed study by the D$\oldemptyset$
 		collaboration \cite{Abazov:2013gpa} at the Tevatron experiment.  This is equivalent to the ratio of the inclusive $3j$ and
@@ -1365,15 +1366,6 @@
 			         and the NLO accurate \texttt{Blackhat+Sherpa}.}
 			\label{fig:d0wjets}
   		\end{figure}
-
-	% \subsection{Parton showers for Monte-Carlo generators}
-
-	% 	{\color{red}
-	% 	\begin{itemize}
-	% 		\item Should probably say a little about parton showers since most of the MC vs. data plots are showered,
-	% 		\item Could also say a bit about ARIADNE since we match to it and it justifies the ATLAS pure jets chapter to some extent...
-	% 	\end{itemize}
-	% 	}
 
 \section{Spinor-Helicity Notation}
 	\label{sec:SpinorHelicity}
@@ -1423,36 +1415,121 @@
 		\langle i+|\slashed k|j+\rangle &= [ik]\langle kj\rangle & \langle i-|\slashed k|j-\rangle &= \langle ik\rangle [kj]
 	\end{align*}
 
+	In the calculations here we use the following convention for spinors.  We express the parton momenta in terms
+	of light-cone coordinates where $p^\pm=E\pm p_z$ and $p_{\perp} = p_x + ip_y$.  For outgoing positive (negative) helicity partons,
+	$u^+(p)$ ($u^-(p)$) we have:
+
+	\begin{align}
+	    u^+(p) &= \begin{pmatrix}
+	           \sqrt{p^+} \\
+	           \sqrt{p^-}\frac{p_\perp}{|p_\perp|} \\
+	           0 \\
+	           0 \\
+	         \end{pmatrix}\hspace{0.75cm}
+	    u^+(p) &= \begin{pmatrix}
+	           0 \\
+	           0 \\
+	           \sqrt{p^-}\frac{p_\perp^*}{|p_\perp|} \\
+	           -\sqrt{p^+} \\
+	         \end{pmatrix}
+	\end{align}
+
+	respectively.  While for incoming positive (negative) helicity partons moving in the positive $z$ direction,
+	$u^+(p)$ ($u^-(p)$) we have:
+
+	\begin{align}
+	    u^+(p) = \begin{pmatrix}
+	           \sqrt{p^+} \\
+	           0 \\
+	           0 \\
+	           0 \\
+	         \end{pmatrix}\hspace{0.75cm}
+	    u^-(p) = \begin{pmatrix}
+	           0 \\
+	           0 \\
+	           0 \\
+	           -\sqrt{p^+} \\
+	         \end{pmatrix}
+	\end{align}
+
+	respectively.  Lastly for incoming positive (negative) helicity partons moving in the negative $z$ direction,
+	$u^+(p)$ ($u^-(p)$) we have:
+
+	\begin{align}
+	    u^+(p) &= \begin{pmatrix}
+	           0 \\
+	           -\sqrt{p^-} \\
+	           0 \\
+	           0 \\
+	         \end{pmatrix}\hspace{0.75cm}
+	    u^-(p) &= \begin{pmatrix}
+	           0 \\
+	           0 \\
+	           -\sqrt{p^-} \\
+	           0 \\
+	         \end{pmatrix}.
+	\end{align}
+
+	We also use following form for the Dirac matrices:
+
+	\begin{align}
+	    \gamma^0 &= \begin{pmatrix}
+	           0 & 0 & 1 & 0\\
+	           0 & 0 & 0 & 1\\
+	           1 & 0 & 0 & 0\\
+	           0 & 1 & 0 & 0\\
+	         \end{pmatrix}\hspace{1.2cm}
+	    \gamma^1 = \begin{pmatrix}
+	           0 & 0 & 0 & -1\\
+	           0 & 0 & -1 & 0\\
+	           0 & 1 & 0 & 0\\
+	           1 & 0 & 0 & 0\\
+	         \end{pmatrix}.\\
+	    \gamma^2 &= \begin{pmatrix}
+	           0 & 0 & 0 & i\\
+	           0 & 0 & -i & 0\\
+	           0 & -i & 0 & 0\\
+	           i & 0 & 0 & 0\\
+	         \end{pmatrix}\hspace{0.75cm}
+	    \gamma^3 = \begin{pmatrix}
+	           0 & 0 & -1 & 0\\
+	           0 & 0 & 0 & 1\\
+	           1 & 0 & 0 & 0\\
+	           0 & -1 & 0 & 0\\
+	         \end{pmatrix}.
+	\end{align}
+
 	\subsection{Spinor-Helicity Calculations with Massive Partons}
 		\label{sub:SMMassive}
 
 		To do calculations with massive partons using the spinor-helicity formalism we must be very careful since all of our favourite
 		identities and tricks rely on the spinor brackets, $|i\rangle$, representing massless partons with $p_i^2=0$. We begin by
-		defining `fundamental spinors' \cite{Thesis} which we can use to build more general spinors and go from there.
+		defining `fundamental spinors' \cite{spinorThesis} which we can use to build more general spinors and go from there.
 		For some $k_0$, $k_1$ satisfying $k_0^2=0$, $k_1^2=-1$ and $k_0\cdot k_1=0$ we can define positive and negative helicity spinors as follows:
 
 		\begin{subequations}
-			\label{definition}
-			\begin{align}
-				u_{-}(k_0)\overline{u}_-(k_0) &\equiv \omega_- \slashed k_0\\
-				u_+(k_0) &\equiv \slashed k_1 u_- (k_0),
-			\end{align}
+		\begin{align}
+			u_{-}(k_0)\overline{u}_-(k_0) &\equiv \omega_- \slashed k_0\\
+			u_+(k_0) &\equiv \slashed k_1 u_- (k_0),
+		\end{align}
+		\label{eqn:definition}
 		\end{subequations}
 
 		where $\omega_\lambda = \half(1 + \lambda\gu{5})$ is the helicity projection operator.  In order for these to be valid spinors they must satisfy the following completeness relations:
 
 		\begin{subequations}
 			\begin{equation}
-				\label{prop1}
+				\label{eqn:prop1}
 				\sum_\lambda u_\lambda(p)\overline{u}_\lambda(p)=\slashed p + m
 			\end{equation}
 			\begin{equation}
-				\label{prop2}
+				\label{eqn:prop2}
 				u_\lambda(p)\overline{u}_\lambda (p) = \omega_\lambda\slashed p
 			\end{equation}
+			\label{eqn:props}
 		\end{subequations}
 
-		The spinors in eq. can easily be shown to satisfy these as follows:
+		The spinors in eq. \eqref{eqn:definition} can easily be shown to satisfy these as follows:
 
 		\begin{subequations}
 		\begin{align*}
@@ -1468,7 +1545,7 @@
 		\end{subequations}
 
 		where we have used ${\gu{\mu}, \gu{\mu}}=2g^{\mu\nu}$, ${\gu{\mu}, \gu{5}}=0$ and $\slashed k_1\slashed k_1=k_1^2=0$.
-		This proves the property of eq. \ref{prop2} and inserting the definition of $\omega_\lambda$ gives:
+		This proves the property of eq. \eqref{eqn:props} and inserting the definition of $\omega_\lambda$ gives:
 
 		\begin{subequations}
 		\begin{align*}
@@ -1477,7 +1554,7 @@
 		\end{align*}
 		\end{subequations}
 
-		Which is eq. \ref{prop1} for a massless particle.\\We can use these fundamental spinors
+		which is eq. \eqref{eqn:props} for a massless particle.\\We can use these fundamental spinors
 		to form spinors for any given momenta, $p$ (which has $p^2=0$), as follows:
 
 		\begin{equation}
@@ -1524,10 +1601,10 @@
 
 		\begin{equation}
 			\label{v_def}
-			v(q, s) = \frac{1}{\sqrt{2q\cdot k}}(\slashed q - m)u_-(k),
+			v(q, s) = \frac{1}{\sqrt{2q\cdot k}}(\slashed q - m)u_-(k)
 		\end{equation}
 
-		which leads to:
+		leads to:
 
 		\begin{subequations}
 		\begin{align*}
@@ -1538,26 +1615,26 @@
 		\end{align*}
 		\end{subequations}
 
-		One last check that is worth performing is that these spinors actually satisfy the Dirac eq. for both the quark and antiquark case.  For the quark:
+		One last check that is worth performing is that these spinors actually satisfy the Dirac equation for both the quark and antiquark case.  For the quark:
 
 		\begin{subequations}
 		\begin{align*}
 			\slashed q u(q, s) &= \frac{1}{2q\cdot k_0}\slashed q(\slashed q + m)u_-(k_0), \\
-			                   &= \frac{1}{2q\cdot k_0}(m^2 + m\slashed q)u_-(k_0), \\
+			                   &= \frac{1}{2q\cdot k_0}(m^2 + m\slashed q)u_-(k_0). \\
 		\end{align*}
 		\end{subequations}
 
-		we now define some momentum $\widetilde{q}$ by the relation $q = \widetilde{q} + k_0$ such that $\widetilde{q}^2=0$ and
+		We now define some momentum $\widetilde{q}$ through the relation $q = \widetilde{q} + k_0$ such that $\widetilde{q}^2=0$ and
 		$q\cdot k = \widetilde{q}\cdot k$.  Since $q^2=2\widetilde{q}\cdot k=m^2$ we may write
 
 		\begin{subequations}
 		\begin{align*}
 			\slashed q u(q, s) &= \frac{1}{m}(m^2 + m\slashed q)u_-(k_0), \\
-			                   &= (m + \slashed q)u_-(k_0), \\
+			                   &= (m + \slashed q)u_-(k_0). \\
 		\end{align*}
 		\end{subequations}
 
-		we can now back substitute from the definition of $u(q, s)$ in eq. \ref{u_def} to get:
+		We can now back substitute from the definition of $u(q, s)$ in eq. \eqref{u_def} to get:
 
 		\begin{subequations}
 		\begin{align*}
@@ -1566,12 +1643,11 @@
 		\end{align*}
 		\end{subequations}
 
-		which is the Dirac eq. for a quark.  The result for antiquarks follows similarly.
+		which is the Dirac equation for a quark.  The result for antiquarks follows similarly.
 		Now we have forms for massive quarks and antiquarks in terms of massless spinors we can
 		use all of the spinor-helicity machinery to make our computations more efficient.  Slightly
-		more useful forms of equations \ref{u_def} and \ref{v_def} can be found by decomposing $q$
-		into massless components once again: $q=\widetilde{q}+k$ (once again this acts as a
-		definition for $\widetilde{q}$).  Then from eq. \ref{u_def}:
+		more useful forms of equations \eqref{u_def} and \eqref{v_def} can be found by decomposing $q$
+		into massless components once again: $q=\widetilde{q}+k$.  Then from eq. \eqref{u_def}:
 
 		\begin{subequations}
 		\begin{align*}
@@ -1601,7 +1677,7 @@
 
 	Integrals are ubiquitous in every field of physics and particle physics is no different.  We have already seen many examples where meaningful physical results
 	can only be obtained after computing an integral two good examples of this are the convolution of the parton distribution functions with the partonic
-	cross-section seen in section \ref{eqn:pdfFactorisation} and the more complex multi-dimensional integrals seen in section \ref{sec:oneLoop} the calculation
+	cross-section seen in section \ref{sec:factorisation} and the more complex multi-dimensional integrals seen in section \ref{sub:eg1loop} the calculation
 	of the one-loop correction to quark-antiquark production.
 
 	For some of the integrals derived here it is not always feasible (and sometimes not even possible) to calculate them analytically.  In these situations
