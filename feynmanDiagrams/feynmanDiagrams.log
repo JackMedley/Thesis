@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.12)  15 MAR 2016 14:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.12)  15 MAR 2016 17:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -360,32 +360,27 @@ e
 
 File: diagram.1 Graphic file (type mps)
 
-[MP to PDF] (./diagram.1) (./diagram.t1
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 2.
-) [1
+[MP to PDF] (./diagram.1)
+feynmf: Label file diagram.t1 not found:
+feynmf: Process diagram.mp with MetaPost and then reprocess this file.
+[1
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./feyn
-manDiagrams.aux) ) 
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./feynmanDiagrams.aux) ) 
 Here is how much of TeX's memory you used:
- 1912 strings out of 493089
- 25057 string characters out of 6134842
+ 1936 strings out of 493089
+ 25203 string characters out of 6134842
  84301 words of memory out of 5000000
- 5388 multiletter control sequences out of 15000+600000
+ 5414 multiletter control sequences out of 15000+600000
  3640 words of font info for 14 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,7n,24p,275b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr7.pfb>
-Output written on feynmanDiagrams.pdf (1 page, 31465 bytes).
+ 37i,7n,24p,275b,445s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb>
+Output written on feynmanDiagrams.pdf (1 page, 10210 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
+ 12 PDF objects out of 1000 (max. 8388607)
+ 7 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
