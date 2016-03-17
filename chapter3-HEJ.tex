@@ -1,19 +1,15 @@
-\chapter{High Energy QCD}
+ \chapter{High Energy QCD}
 \label{chap:HEQCD}
-
-	{\color{red}
-	Stuff for this section
-	\begin{itemize}
-		\item Tiny bit about cuts S matrix to Optical theorem,
-		\item NLO calculation of leading part of gg->gg (explain sub-leading bits) - do this bit using cuts,
-		\item Extra real corrections and writing these as contractions of currents,
-		\item A bit on HE phase-space integrals?
-	\end{itemize}
-	}
 
 	In this chapter we look in detail at the `High Energy' limit of QCD.  We begin by defining this limit and
 	looking at how basic $2\rightarrow2$ scattering behaves at leading order and next-to-leading order in
-	$\alpha_s$.
+	$\alpha_s$.\\Except where otherwise referenced the work in this chapter and the subsequent chapters refers to
+	work undertaken by the High Energy Jets collaboration.\\This work is the theoretical foundation for the
+	full-flexible parton level Monte Carlo generator available publicly from
+
+	\begin{center}
+	\url{http://hej.web.cern.ch/HEJ/}
+	\end{center}
 
 	\section{The `High Energy' limit}
 		\label{sub:HElimit}
@@ -422,7 +418,7 @@
 
 		where $\text{Im}(\cdot)$ denotes the imaginary part, $k$ is the loop momentum, $q$ is the momentum
 		transfer and $\dagger$ denotes Hermitian conjugation.  In the High Energy limit we can perform the
-		integration to give
+		integration to give:
 
 		\begin{equation}
 			\text{Im}\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}} = 4\alpha_s^2 s\mathcal{C}_1(T^a,T^b)
@@ -431,16 +427,19 @@
 
 		where $\mathcal{C}_1(T^a,T^b)$ is the colour factor for the diagram and $\vec{k}$ is the transverse
 		component of $k$.  We can now relate the imaginary part of the amplitude to the full amplitude by
-		conjecturing that the amplitude will be logarithmically enhanced as follows
+		conjecturing that the amplitude will be logarithmically enhanced as follows:
 
 		\begin{align}
+		\begin{split}
 			\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}} = &\text{Re}\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}} +
 			i\text{Im}\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\\
 			=&\widetilde{\mathcal{M}}_{qQ\rightarrow qQ}^{\text{NLO, II}}\ln\frac{s}{t} + \text{sub-leading}\\
 			=&\widetilde{\mathcal{M}}_{qQ\rightarrow qQ}^{\text{NLO, II}}\left(\ln\left|\frac{s}{t}\right| -i\pi\right),
+			\label{eqn:rAndI}
+		\end{split}
 		\end{align}
 
-		where we have used that $\frac{s}{t} < 0$.  Comparing real and imaginary parts we see that
+		where we have used that $\frac{s}{t} < 0$.  Comparing real and imaginary parts of eqn. \eqref{eqn:rAndI} we see that:
 
 		\begin{equation}
 			\text{Re}\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}} = -\frac{1}{\pi}\text{Im}\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}
@@ -558,7 +557,7 @@
 		As a simple example we consider the production of exclusive quad-jets in the High Energy limit.
 		Fig. \eqref{fig:quadJets} shows three diagrams which all contribute at leading order in $\alpha_s$;
 		fig. \eqref{fig:quadJets1} has three gluons exchanged in the $t$-channel and so its amplitude will
-		have a term akin to\footnote{where we have used the High Energy limit to disregard the quark mass terms.}:
+		have a term akin to:
 
 		\begin{equation}
 			\mathcal{M}_{\text{(a)}}\sim\frac{1}{(p_a - p_1)^2(p_a - p_1 - p_2)^2(p_a - p_1 - p_2 - p_3)^2},
@@ -606,10 +605,15 @@
 		and $\mathcal{M}_{\text{(c)}}$ will be suppressed with respect to $\mathcal{M}_{\text{(a)}}$.
 		Clearly this only a heuristic argument but it is sufficient to motivate the construction of
 		high multiplicity amplitudes from $t$-channel gluon exchanges with the understanding that any
-		other diagrams will be formally sub-leading.\\Here is a convenient place to define the `$t$-channel
-		factorised' form for matrix elements, $\overline{\mathcal{M}}^t_{qQ\rightarrow qQ}$, in which we
-		extract the $t$ poles from the rest of the matrix element \cite{Andersen:2009nu}.  We write
-		eqn. \eqref{eqn:similarBrackets} as:
+		other diagrams will be formally sub-leading.  We call the the configurations with a maximal
+		number of gluons exchanged in the $t$-channel an `FKL' configuration;  For example
+		fig. \eqref{fig:quadJets1} is an FKL configuration while fig. \eqref{fig:quadJets2} and fig.
+		\eqref{fig:quadJets3} are `non-FKL' configurations.
+
+		Here is a convenient place to define the `$t$-channel factorised' form for matrix elements,
+		$\overline{\mathcal{M}}^t_{qQ\rightarrow qQ}$, in which we extract the $t$ poles from the
+		rest of the matrix element \cite{Andersen:2009nu}.  We write eqn. \eqref{eqn:similarBrackets}
+		as:
 
 		\begin{equation}
 			|\overline{\mathcal{M}}^t_{qQ\rightarrow qQ}|^2 = \frac{1}{4(N_c^2-1)}
@@ -626,7 +630,7 @@
 		approximation of the full result (but a very convenient one nevertheless).
 
 	\section{Effective Vertices For Real Emissions}
-		\label{sub:effective_vertices_for_real_emissions}
+		\label{sub:effectiveVertices}
 
 		In order to generalise what we have done so far to higher multiplicity scattering events we begin
 		by considering $qQ\rightarrow qQg$ in the high energy limit.  The five diagrams which contribute at
@@ -705,7 +709,12 @@
 		\end{align}
 
 		Eqn. \eqref{eqn:effVertex} is manifestly gauge invariant which can be checked explicitly by
-		calculating $p_g\cdot V$.\\Armed with eqn. \eqref{eqn:effVertex} and the quark and gluon
+		calculating $p_g\cdot V$.  It is, however clearly divergent:  if any of $p_a$, $p_b$, $p_1$,
+		$p_2$ or $p_3$ becomes soft then the momenta contractions in the denominators of eqn.
+		\eqref{eqn:effVertex} will become zero and the whole expression will explode.  Fortunately
+		this divergence is shown to cancel in the following chapter.
+
+		Armed with eqn. \eqref{eqn:effVertex} and the quark and gluon
 		currents we can calculate high multiplicity matrix elements by generalising eqn.
 		\eqref{eqn:factorised} to include contractions of this effective vertex expression.  The
 		$2\rightarrow n$ matrix element squared for $qQ$ scattering is therefore given by:
@@ -724,8 +733,32 @@
 		corrections to render the integrated cross section finite.
 
 	\section{Virtual Corrections To All Orders}
-		\label{sub:effective_vertices_for_real_emissions}
+		\label{sub:virtuals}
 
-	\section{High Energy Phase-space Integration}
-		\label{sub:HEPhaseSpace}
+		In what follows we include the virtual corrections to all orders in $\alpha_s$ by using
+		the Lipatov ansatz \cite{Kuraev:1976ge}.  For $t$-channel gluons we replace the usual
+		gluon propagator:
 
+		\begin{equation}
+			\frac{1}{q_i^2},
+		\end{equation}
+
+		with a `dressed' version given by:
+
+		\begin{equation}
+			\frac{1}{q_i^2}e^{\hat{\alpha}(q_i)\Delta_{i,i-1}},
+		\end{equation}
+
+		where:
+
+		\begin{equation}
+			\hat{\alpha}(q_i) = \alpha_sC_Aq_i^2\int \frac{d^{2+2\epsilon}k_{\perp}}{(2\pi)^{2+2\epsilon}}
+			\frac{1}{k^2_\perp(k_\perp - q_{i\perp})^2}\mu^{-2\epsilon},
+		\end{equation}
+
+		and $\Delta_{i,i-1}$ is the rapidity gap between the external gluon legs emitted from
+		the dressed gluon.  Similarly to eq. \eqref{eqn:effVertex} in the preceding section this
+		new expression for the propagator contains divergences coming arising from the soft limit
+		of the integral in the expression for $\hat{\alpha}(q_i)$.  In the following chapter we
+		show in some detail that these divergences cancel with those mentioned in section
+		\ref{sub:effectiveVertices}.
