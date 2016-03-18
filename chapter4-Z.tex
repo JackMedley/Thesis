@@ -1,20 +1,14 @@
 \chapter{$\zg$+Jets at the LHC}
 \label{chap:Zs}
 
-{\color{red}
-\begin{itemize}
-	\item Rewrite the bits Jenni/Jeppe wrote.
-\end{itemize}
-}
-
 \section{Introducing $\zg$+Jets at the LHeqC}
 
-	The work in this chapter is based on our recently published paper [Z].
+	The work in this chapter is based on our recently published paper \cite{ZPaper}.
 	The Large Hadron Collider (LHC)
 	sheds ever more light on Standard Model processes at higher energies as it
 	continues into Run II.  One ``standard candle'' process for the validation of
 	the Standard Model description in this new energy regime is the production of
-	a dilepton pair through an intermediate $Z$ boson or photon, in
+	a di-lepton pair through an intermediate $Z$ boson or photon, in
 	association with (at least) two jets \cite{Chatrchyan:2011ne, Aad:2011qv,
 	Chatrchyan:2013tna, Aad:2013ysa, Khachatryan:2014zya, Aad:2014rta,
 	Khachatryan:2014dea}.  This final state can be entirely reconstructed from
@@ -337,7 +331,7 @@
 		important when studying a combined lepton invariant mass, $(p_{e^+} + p_{e^-})^2$,
 		far from the $Z$ Breit-Wigner mass peak. This can be seen in fig. \eqref{fig:DileptonMass},
 		where slices through phase space are shown similarly to fig. \eqref{fig:twojets}, but
-		now for an (a) lower and (b) higher value of the dilepton mass.  In both cases, the
+		now for an (a) lower and (b) higher value of the di-lepton mass.  In both cases, the
 		contribution of the virtual photon processes is above 25\%.
 
 		\begin{figure}[hbtp]
@@ -406,7 +400,7 @@
 \section{Regularising the $\zg$+Jets Matrix Element}
 	\label{sec:regularising}
 
-	\subsection{Soft Emissions}
+	\subsection{Real Soft Emissions}
 		\label{sub:softEmissions}
 
 		To calculate useful quantities such a cross sections etc. we must integrate equation
@@ -432,11 +426,11 @@
 		the cancellation of these divergences for $Z$ emission and most importantly whether the finite term
 		is of the same form for the interference term which was previously excluded.\\We start by looking
 		at a $2\rightarrow n$ process and take the limit of one final state parton momentum, $p_i$, becoming
-		small.  Because of the form of eqn. \eqref{eqn:allorderreal} this amounts to looking at the
-		effect of an external gluon becoming soft on eqn. \eqref{eqn:eqn:unsymm} (an identical - though
+		small.  Because of the form of eqn. \eqref{eq:allorderreal} this amounts to looking at the
+		effect of an external gluon becoming soft on eqn. \eqref{eqn:unsymm} (an identical - though
 		longer - calculation also holds for the symmetrised version of the effective vertex), we can
-		immediately see that for $p_i$ going soft the gluon chain momenta coming into- and coming out of
-		the $j^{th}$ emission site will coincide: $q_{j+1}\sim q_j$:
+		immediately see that for $p_i$ going soft the gluon `chain' momenta going into,
+		and coming out of, the $j^{th}$ emission site will coincide: $q_{j+1}\sim q_j$:
 
 		\begin{equation}
 			V^\rho(q_j, q_{j+1}) \rightarrow -2q_j^\rho - 2\left(\frac{s_{aj}}{s_{ab}} -
@@ -445,15 +439,16 @@
 				\label{eqn:vertexlimit}
 		\end{equation}
 
-		In eqn. \eqref{eqn:interference} we have three terms involving the effective vertex;
-		quadratic terms like $V^2(q_{tj}, q_{t(j+1)})$ and $V^2(q_{bj}, q_{b(j+1)})$ and interference terms like
-		$V(q_{tj}, q_{t(j+1)})\cdot V(q_{bj}, q_{b(j+1)})$.  The procedure for the $V^2$ terms is the same for
-		the quadratic top-line emission and bottom-line emission terms and so only the calculation for top-line
-		emission is shown here.
+		In eqn. \eqref{eq:allorderreal} we have three terms involving the effective vertex;
+		quadratic terms like $V^2(q_{tj}, q_{t(j+1)})$ and $V^2(q_{bj}, q_{b(j+1)})$ and interference terms
+		like $V(q_{tj}, q_{t(j+1)})\cdot V(q_{bj}, q_{b(j+1)})$.  The procedure for the $V^2$ terms follows
+		similarly for both the quadratic top-line emission and bottom-line emission terms and so only
+		the calculation for top-line emission is shown here.
 
 		\subsubsection{$V^2(q_{tj}, q_{t(j+1)})$ Terms}
 
-			Once we square eqn. \eqref{eqn:vertexlimit} and impose on-shell conditions for $p_a$ and $p_b$ we get:
+			Once we square eqn. \eqref{eqn:vertexlimit} and impose the on-shell conditions for
+			$p_a$ and $p_b$ we get:
 
 			\begin{align}
 				V^2(q_{tj}, q_{tj}) = &4q_j^2 + 8 q_j\cdot p_b \left(\frac{s_{aj}}{s_{ab}} - \frac{q^2_{j}}{s_{bj}}\right) -
@@ -461,29 +456,33 @@
 					\frac{q^2_{j}}{s_{bj}}\right)\left(\frac{s_{bj}}{s_{ab}} + \frac{q_j^2}{s_{aj}}\right).
 			\end{align}
 
-			Since $p_j\rightarrow0$ the terms $s_{aj}$ and $s_{bj}$ will also become small therefore:
+			Since $p_j\rightarrow0$ the dot-products $s_{aj}$ and $s_{bj}$ will also become small,
+			therefore:
 
 			\begin{equation}
 				V^2(q_{tj}, q_{tj}) = 4q_j^2 + 8 q_j\cdot p_b \frac{q^2_{j}}{s_{bj}} - 8 q_j\cdot p_a \frac{q_j^2}{s_{aj}} -
 					4s_{ab}\frac{q^4_{j}}{s_{bj}s_{aj}}.
 			\end{equation}
 
-			Clearly the final term now dominates due to its $\sim\frac{1}{p_i^2}$ behaviour:
+			Clearly the final term now dominates due to its $\sim\frac{1}{p_i^2}$ behaviour and so
+			in the soft limit we have:
 
 			\begin{equation}
 				V^2(q_{ti}, q_{ti}) = - \frac{4s_{ab}}{s_{bi}s_{ai}}q^4_{i} + \mathcal{O}\left(\frac{1}{|p_i|}\right).
 				\label{eqn:temp}
 			\end{equation}
 
-			We must now explicitly calculate the invariant mass terms.  Since we are in the high energy limit we may take:
+			We must now explicitly calculate the invariant mass terms.  Since we are in the
+			High Energy regime we may take:
 
 			\begin{align}
-				p_a\sim p_1 \sim p_+ = (\frac12 p_z, 0, 0, \frac12 p_z),\\
+				p_a\sim p_1 \sim p_+ = \Big(\frac12 p_z, 0, 0, \frac12 p_z\Big),\\
 				\intertext{and,}
-				p_b\sim p_n \sim p_- = (\frac12 p_z, 0, 0, -\frac12 p_z).
+				p_b\sim p_n \sim p_- = \Big(\frac12 p_z, 0, 0, -\frac12 p_z\Big).
 			\end{align}
 
-			We describe our soft gluon with $p_i=(E, \vec{p})$ therefore:
+			We describe our soft gluon with $p_i=(E, \vec{p})$ and therefore we may express the
+			products of momenta as follows:
 
 			\begin{align}
 				s_{ai} &= 2p_a\cdot p_i\sim2p_+\cdot p_i = \frac12p_zE - \frac12p_z^2,\\
@@ -491,7 +490,7 @@
 				s_{ab} &= \frac12p_z^2.
 			\end{align}
 
-			Then eqn. \eqref{eqn:temp} reads:
+			Using these to calculate only the leading divergence in eqn. \eqref{eqn:temp} reads:
 
 			\begin{subequations}
 				\begin{equation}
@@ -502,90 +501,87 @@
 				\end{equation}
 			\end{subequations}
 
-			but since $E^2-\vec{p}_1^2=0$:
+			but since $E^2-\vec{p}_1^2=0$ for the on-shell external parton this can be written as:
 
 			\begin{equation}
 				V^2(q_{ti}, q_{ti}) = - \frac{4}{|\vec{p}_{1\perp}|^2}q^4_{i} + \mathcal{O}\left(\frac{1}{|p_i|}\right),
 				\label{eqn:temp2}
 			\end{equation}
 
-			Now looking back to eqn. \eqref{eqn:interference} we see that each vertex is associated with factors of
-			$q^{-2}_{ti}q^{-2}_{t(i+1)}$ but once again since the emission is soft this becomes $q^{-4}_{ti}$.
-			The factor here conspires to cancel with that in eqn. \eqref{eqn:temp2}, moreover each vertex comes with a
-			factor of $-C_Ag^2_s$ (which are contained in the $\mathcal{K}_i$ terms in eqn. \eqref{eqn:interference}).
-			Including these and dropping subdominant terms the final factor remaining:
+			Now looking back to eqn. \eqref{eq:allorderreal} we see that each vertex is associated with factors of
+			$q^{-2}_{ti}q^{-2}_{t(i+1)}$ but since the emission is soft this becomes $q^{-4}_{ti}$.
+			That factor conspires to cancel with the corresponding factor in eqn. \eqref{eqn:temp2},
+			Including the addition factors of $C_A$ and $g_s$ dropping any sub-leading divergences, the finite factor remaining is given by:
 
 			\begin{equation}
 				\frac{4C_Ag_s^2}{|\vec{p}_\perp|^2},
 				\label{eqn:finalsoft}
 			\end{equation}
 
-			which is manifestly finite.
-
 		\subsubsection{$V(q_{ti}, q_{t(i+1)})\cdot V(q_{bi}, q_{b(i+1)})$ Terms}
 			\label{sub:subsection_name}
 
-			The calculation of the interference term with a soft emission follows similarly to the above section.
-			After taking $p_i\rightarrow0$ and dotting the two vertex terms together we have:
+			The calculation of the interference term with a soft emission follows similarly to
+			that in above section. After taking $p_i\rightarrow0$ and taking the dot-product of
+			the two vertex terms together we have:
 
 			\begin{equation}
 			\begin{split}
-				V(q_{ti}, q_{ti})\cdot V(q_{bi}, q_{bi}) = 4q_i^t\cdot q_i^b &- 4q_i^t\cdot p_a\left(\frac{s_{bi}}{s_{ab}} +
-					\frac{t_i^b}{s_{ai}}\right) + 4q_i^t\cdot p_b\left(\frac{s_{ai}}{s_{ab}} + \frac{t_i^b}{s_{bi}}\right)\\
-					&- 4q_i^b\cdot p_a\left(\frac{s_{bi}}{s_{ab}} + \frac{t_i^t}{s_{ai}}\right) +
-					4q_i^b\cdot p_b\left(\frac{s_{ai}}{s_{ab}} +
-					\frac{t_i^t}{s_{bi}}\right)\\
+				V(q_{ti}, q_{ti})\cdot V(q_{bi}, q_{bi}) =
+				4q_i^t\cdot q_i^b &- 4q_i^t\cdot p_a\left(\frac{s_{bi}}{s_{ab}} +
+				\frac{t_i^b}{s_{ai}}\right) + 4q_i^t\cdot p_b\left(\frac{s_{ai}}{s_{ab}} +
+				\frac{t_i^b}{s_{bi}}\right)\\
+				&- 4q_i^b\cdot p_a\left(\frac{s_{bi}}{s_{ab}} + \frac{t_i^t}{s_{ai}}\right) +
+				4q_i^b\cdot p_b\left(\frac{s_{ai}}{s_{ab}} +
+				\frac{t_i^t}{s_{bi}}\right),\\
 			\end{split}
 			\end{equation}
 
-			having use $p_a^2=0$ and $p_b^2=0$ once again.  We can drop all the terms with $s_{ai}$ or
-			$s_{bi}$ in the denominator and this time we are left with \emph{two} dominant terms which
-			combine to give:
+			having simplified the expression using $p_a^2=0$ and $p_b^2=0$ once again.  We may
+			drop all the terms with $s_{ai}$ or $s_{bi}$ in the denominator and this time we are
+			left with two terms which contribute.  They combine to give:
 
 			\begin{equation}
 				V(q_{ti}, q_{ti})\cdot V(q_{bi}, q_{bi}) = -\frac{s_{ab}}{s_{ai}s_{bi}}t_i^tt_i^b +
 					\mathcal{O}\left(\frac{1}{|p_i|}\right).
 			\end{equation}
 
-			The invariant mass terms here are identical to those we say in the $V^2$ terms and the products of
-			$t_i^tt_i^b$ also appear in the denominator of the interference term in eqn. \eqref{eqn:interference}.
+			The invariant mass terms here are identical to those we saw in the $V^2$ terms and the products of
+			$t_i^tt_i^b$ also appear in the denominator of the interference term in eqn. \eqref{eq:allorderreal}.
 			After this cancelling we are left with exactly what we had before (see eqn. \eqref{eqn:finalsoft}).
 			Since exactly the same factor comes from all three terms at the amplitude squared level we may factor
 			them out and express the amplitude squared for an $n$-parton final state with one soft emission in
-			terms of an $(n-1)$-parton final state amplitude squared multiplied by our factor:
+			terms of an $(n-1)$-parton final state amplitude squared multiplied by a common factor:
 
 			\begin{equation}
 				\lim_{p_i\rightarrow0} |\mathcal{A}_{Z/\gamma}^{2\rightarrow n}|^2 = \left(\frac{4C_Ag_s^2}{|\vec{p}_{i\perp}|^2}\right)
 					|\mathcal{A}_{Z/\gamma}^{2\rightarrow (n-1)}|^2
+				\label{eqn:apparent}
 			\end{equation}
 
-		\subsubsection{Integration of soft diverences}
+		\subsubsection{Integration of Soft Divergences}
 			\label{sub:subsection_name}
 
-			As mentioned above the divergences only become apparent after we have attempted to integrate over
-			phase space.  The Lorentz invariant phase space integral associated with $p_i$ is:
+			As mentioned above the divergences contained in eqn. \eqref{eqn:apparent} only become
+			apparent after we have attempted to integrate over phase space.  The Lorentz
+			invariant phase space integral associated with $p_i$ is given by:
 
 			\begin{equation}
 				\int\frac{d^3\vec{p_i}}{(2\pi)^32E_i}\frac{4C_Ag_s^2}{|\vec{p}_\perp|^2}.
 			\end{equation}
 
 			It is convenient to replace the integral over the $z$-component of momentum with one over rapidity,
-			$y_2$.  Rapidty and momentum are realted through:
-
-			\begin{equation}
-				y = \frac12\ln\left(\frac{E + p_z}{E - p_z}\right)
-			\end{equation}
-
-			The Jacobian of this transformation is:
+			$y_2$.  Rapidity and transverse momentum are related through the definition of rapidity given
+			in eqn. \eqref{eqn:rap}.  The Jacobian of this transformation is given by:
 
 			\begin{align}
 				\frac{dy}{dp_z} &= \frac{1}{2(E+p_z)} \frac{\partial}{\partial p_z}(E+p_z) - \frac{1}{2(E-p_z)}\frac{\partial}{\partial p_z}(E-p_z),\\
 				&= \frac{E}{E^2-p_z^2} - \frac{p_z}{E^2-p_z^2}\frac{\partial E}{\partial p_z},\\
 				&= \frac{E}{E^2-p_z^2} - \frac{p_z}{E^2-p_z^2}\frac{p_z}{E},\\
-				&= \frac{1}{E}.
+				&= \frac{1}{E},
 			\end{align}
 
-			The phase space integral then reads:
+			and therefore the rewritten phase space integral then reads:
 
 			\begin{equation}
 				\int\frac{d^{2+2\epsilon}\vec{p}_{\perp}}{(2\pi)^{2+2\epsilon}}\frac{dy}{4\pi}\frac{4C_Ag_s^2}
@@ -595,19 +591,23 @@
 
 			where we have analytically continued the integral to $2+2\epsilon$ dimensions to regulate the
 			divergence and introduced the parameter $\mu$ to keep the coupling dimensionless in the process.
-			Converting to polar cooerdinates and using the result for the volume of a unit hypersphere gives
+			Converting to polar coordinates and using the result for the volume of a unit hypersphere gives
 			to integrated soft contribution:
 
 			\begin{equation}
-				\frac{4C_Ag_s^2}{(2\pi)^{2+2\epsilon}4\pi}\Delta_{i-1, i+1}\frac{1}{\epsilon}\frac{\pi^{1+\epsilon}}
-					{\Gamma(\epsilon+1)}\left(\frac{\lambda^2}{\mu^2}\right)^\epsilon
-					\label{eqn:soft}
+				\frac{4C_Ag_s^2}{(2\pi)^{2+2\epsilon}4\pi}\Delta_{i-1, i+1}
+				\frac{1}{\epsilon}\frac{\pi^{1+\epsilon}}
+				{\Gamma(\epsilon+1)}\left(\frac{\lambda^2}{\mu^2}\right)^\epsilon.
+				\label{eqn:soft}
 			\end{equation}
+
+			As promised eqn. \eqref{eqn:soft} is clearly divergent in the limit where $\epsilon\to0$.
 
 	\subsection{Virtual Emissions}
 		\label{sub:subsection_name}
 
-		The virtual emission diagrams are included using the Lipatov ansatz for the gluon propagator:
+		As discussed in chapter \ref{chap:HEQCD} the virtual emission diagrams are included
+		using the Lipatov ansatz for the gluon propagator:
 
 		\begin{equation}
 			\frac{1}{q_i^2}\longrightarrow\frac{1}{q_i^2}e^{\hat{\alpha}(q_i)(\Delta_{i,i-1})},
@@ -618,10 +618,12 @@
 		\begin{equation}
 			\hat{\alpha}(q_i) = \alpha_sC_Aq_i^2\int \frac{d^{2+2\epsilon}k_{\perp}}{(2\pi)^{2+2\epsilon}}
 			\frac{1}{k^2_\perp(k_\perp - q_{i\perp})^2}\mu^{-2\epsilon}.
+			\label{eqn:feynmanPs}
 		\end{equation}
 
-		Once again we choose to perform the integral using dimensional regularistion.
-		Using the well known Feynman parameterisation formulae gvies:
+		To see the cancellation of the infrared $\epsilon$ poles we must perform the integral
+		explicitly using dimensional regularisation. Using Feynman parameters to re-express
+		eqn. \eqref{feynmanPs}:
 
 		\begin{align}
 			\hat{\alpha}(q_i) &= \alpha_sC_Aq_i^2\int \frac{d^{2+2\epsilon}k_{\perp}}{(2\pi)^{2+2\epsilon}}\int_0^1
@@ -630,74 +632,86 @@
 				\frac{dx}{[\hat{k}^2 _\perp + q_{i\perp}^2(1-x)]^2}\mu^{-2\epsilon},
 		\end{align}
 
-		where we have performed a change of variables to $\hat{k}_\perp = k_\perp - xq_{i\perp}$ with
-		unit Jacobian.  Changing the order of integration we can perform the $\hat{k}_\perp$ integral
+		where we have performed a change of variables to $\hat{k}_\perp = k_\perp - xq_{i\perp}$
+		Changing the order of integration we can perform the $\hat{k}_\perp$ integral
 		using the following result:
 
 		\begin{equation}
 			\int \frac{d^dk}{(2\pi)^d}\frac{1}{(k^2 - C)^\alpha} = \frac{1}{(4\pi)^{\frac{d}{2}}}
-				\frac{\Gamma(\alpha - \frac{d}{2})}{\Gamma(\alpha)}\frac{(-1)^\alpha}{C^{\alpha - \frac{d}{2}}},
+				\frac{\Gamma(\alpha - \frac{d}{2})}{\Gamma(\alpha)}
+				\frac{(-1)^\alpha}{C^{\alpha - \frac{d}{2}}},
 		\end{equation}
 
 		to give:
 
 		\begin{align}
-			\hat{\alpha}(q_i) &= \alpha_sC_Aq_i^2\frac{\Gamma(1-\epsilon)}{(4\pi)^{1+\epsilon}}(-q_{i\perp}^2)^{\epsilon-1}
-				\int_0^1 dx(1-x)^{\epsilon-1}, \\
-				&= -\frac{2g_s^2C_A}{(4\pi)^{2+\epsilon}}\frac{\Gamma(1-\epsilon)}{\epsilon}\left(\frac{q_{i\perp}^2}{\mu^2}\right)^\epsilon,
+			\hat{\alpha}(q_i) &= \alpha_sC_Aq_i^2\frac{\Gamma(1-\epsilon)}{(4\pi)^{1+\epsilon}}
+			(-q_{i\perp}^2)^{\epsilon-1}
+			\int_0^1 dx(1-x)^{\epsilon-1}, \\
+			&= -\frac{2g_s^2C_A}{(4\pi)^{2+\epsilon}}\frac{\Gamma(1-\epsilon)}{\epsilon}
+			\left(\frac{q_{i\perp}^2}{\mu^2}\right)^\epsilon,
 		\end{align}
 
-		having completed the $x$ integral and used $\alpha_s=\frac{g_s^2}{4\pi}$.
+		having completed the $x$ integral and used the definition $\alpha_s=\frac{g_s^2}{4\pi}$.
 
-	\subsection{Cancellation of Infrared Contributions}
-		\label{sub:subsection_name}
+	\subsection{Cancellation of Infrared Divergences}
+		\label{sub:cancellation}
 
-		We now show how the infrared contributions from soft real emissions and virtual emissions cancel leaving
-		our integrated matrix element finite.  The subtlety here is that we must sum two diagrams with different
+		We now have all the necessary ingredients to show how the infrared contributions from
+		soft real emissions and virtual emissions cancel leaving our integrated matrix element
+		finite.  The only subtlety being that we must sum two diagrams with different multiplicity
 		final states to see the cancellation.  This is because they are experimentally indistinguishable;
-		the $2\rightarrow (n-1)$ virtual diagram has $(n-1)$ resolvable partons in the final state (but is a
-		higher order diagram perturbatively speaking).  Because on of the emission in the real $2\rightarrow n$
-		diagram is soft it is experimentally undetectable so we detect the same final state as the virtual diagram.
-		The matrix element squared for the real soft diagram will look like:
+		the $2\rightarrow (n-1)$ virtual diagram has $(n-1)$ resolvable partons in the final state
+		and we only `see' $(n-1)$ of the final states partons from $2\rightarrow n$ process because
+		we consider one of the emissions too soft to resolve.\\
+		The matrix element squared for the real emission diagram with one soft parton
+		will look like:
 
 		\begin{align}
 			|\mathcal{A}_{Z/\gamma}^{2\rightarrow n}|^2 = \left(\frac{4g_s^2C_a}{|p_{i\perp}|^2}\right)
-				\Bigg[&\left|\mathcal{K}_a j_1^{Z/\gamma}\cdot j_2\right|^2 \frac{\prod^{n-2}_{i\neq j}V^2(q_{ti},
-				q_{t(i+1)})}{\prod^{n-1}_{i\neq j}q^2_{ti}} + \ldots \\&\left|\mathcal{K}_b j_2^{Z/\gamma}\cdot j_1\right|^2
+				\Bigg[&\left|\mathcal{K}_a j_1^{Z/\gamma}\cdot j_2\right|^2
+				\frac{\prod^{n-2}_{i\neq j}V^2(q_{ti},
+				q_{t(i+1)})}{\prod^{n-1}_{i\neq j}q^2_{ti}} + \ldots \\
+				&\left|\mathcal{K}_b j_2^{Z/\gamma}\cdot j_1\right|^2
 				\frac{\prod^{n-2}_{i\neq j}V^2(q_{bi}, q_{b(i+1)})}{\prod^{n-1}_{i\neq j}q^2_{bi}} + \ldots \\
-				&2\Re\{\mathcal{K}_a\overline{\mathcal{K}_b} \times (j_1^{Z/\gamma}\cdot j_2)(\overline{j_2^{Z/\gamma}\cdot j_1})\}
-				\frac{\prod^{n-2}_{i\neq j}V(q_{ti}, q_{t(i+1)})\cdot V(q_{bi}, q_{b(i+1)}))}{\prod^{n-1}_{i\neq j}q_{ti}q_{bi}}\Bigg],
+				&2\Re\{\mathcal{K}_a\overline{\mathcal{K}_b} \times
+				(j_1^{Z/\gamma}\cdot j_2)(\overline{j_2^{Z/\gamma}\cdot j_1})\}\\
+				&\times\frac{\prod^{n-2}_{i\neq j}V(q_{ti}, q_{t(i+1)})\cdot V(q_{bi}, q_{b(i+1)}))}
+				{\prod^{n-1}_{i\neq j}q_{ti}q_{bi}}\Bigg],
 		\end{align}
 
-		where we have taken the $i^{th}$ gluon to be soft and the result of the Lorentz invariant phase space
-		integration over the $p_i$ momentum is shown in eqn. \eqref{eqn:soft}.\\After inserting the Lipatov
-		ansatz into the $2\rightarrow (n-1)$ matrix element squared we have:
+		where we have taken the $i^{th}$ gluon to be soft.\\After including the virtual corrections
+		via the insertion of the Lipatov ansatz the $2\rightarrow (n-1)$ matrix element squared is:
 
 		\begin{align}
 			|\mathcal{A}_{Z/\gamma}^{2\rightarrow (n-1)}|^2 = &\left|\mathcal{K}_a j_1^{Z/\gamma}\cdot j_2\right|^2
 				\frac{\prod^{n-3}_{i}V^2(q_{ti}, q_{t(i+1)})}{\prod^{n-2}_{i}q^2_{ti}}e^{2\hat{\alpha}(q_{ti})\Delta_{i-1,i+1}} + \ldots \\
 				&\left|\mathcal{K}_b j_2^{Z/\gamma}\cdot j_1\right|^2 \frac{\prod^{n-3}_{i}V^2(q_{bi}, q_{b(i+1)})}
 				{\prod^{n-2}_{i}q^2_{bi}}e^{2\hat{\alpha}(q_{bi})\Delta_{i-1,i+1}} + \ldots \\
-				&2\Re\{\mathcal{K}_a\overline{\mathcal{K}_b} \times (j_1^{Z/\gamma}\cdot j_2)(\overline{j_2^{Z/\gamma}\cdot j_1})\}
-				\frac{\prod^{n-3}_{i}V(q_{ti}, q_{t(i+1)})\cdot V(q_{bi}, q_{b(i+1)}))}{\prod^{n-2}_{i}q_{ti}q_{bi}}
+				&2\Re\{\mathcal{K}_a\overline{\mathcal{K}_b} \times (j_1^{Z/\gamma}\cdot j_2)(\overline{j_2^{Z/\gamma}\cdot j_1})\}\\
+				&\times\frac{\prod^{n-3}_{i}V(q_{ti}, q_{t(i+1)})\cdot V(q_{bi}, q_{b(i+1)}))}{\prod^{n-2}_{i}q_{ti}q_{bi}}
 				e^{(\hat{\alpha}(q_{bi}) + \hat{\alpha}(q_{bi}))\Delta_{i-1,i+1}},
 		\end{align}
 
 		We can now go through term-by-term to show the divergences cancel and find the finite contribution to
-		the matrix element squared.  Similarly to when we calculated the soft terms the pure top and bottom
-		emissions follow identically so here we will only state the procedure for the top emission.  The
-		interference term is slightly different.\\For the top line emission we have the following terms:
+		the matrix element squared.\\Similarly to when we calculated the soft terms the arguments for the pure
+		top- and bottom-line emissions follow similarly and so here we will only state the procedure for
+		the top emission.\\For the top line emission we identify the following terms that will appear in the
+		sum of the $2\rightarrow (n-1)$ virtual and $2\rightarrow n$ real matrix elements.  This finite
+		contribution to the matrix element is given by:
 
 		\begin{equation}
-			\frac{4C_Ag_s^2}{(2\pi)^{2+2\epsilon}4\pi}\Delta_{i-1, i+1}\frac{1}{\epsilon}\frac{\pi^{1+\epsilon}}
-			{\Gamma(\epsilon+1)}\left(\frac{\lambda^2}{\mu^2}\right)^\epsilon + e^{2\hat{\alpha_s}(q_{ti})\Delta_{i-1,i+1}}.
+			\mathcal{F}_{\text{top}} = \frac{4C_Ag_s^2}{(2\pi)^{2+2\epsilon}4\pi}\Delta_{i-1, i+1}
+			\frac{1}{\epsilon}\frac{\pi^{1+\epsilon}}
+			{\Gamma(\epsilon+1)}\left(\frac{\lambda^2}{\mu^2}\right)^\epsilon +
+			e^{2\hat{\alpha}(q_{ti})\Delta_{i-1,i+1}}.
 		\end{equation}
 
-		We now extract the relevant term (in terms of the strong coupling order) from the
-		exponential and substitute the expression for $\hat{\alpha_s}$:
+		Extract the relevant power of the strong coupling order from the
+		exponential and substituting for $\hat{\alpha}(q_i)$ gives:
 
 		\begin{align}
-			&= \frac{4C_Ag_s^2}{(2\pi)^{2+2\epsilon}4\pi}\Delta_{i-1, i+1}\frac{1}{\epsilon}\frac{\pi^{1+\epsilon}}
+			\mathcal{F}_{\text{top}} &= \frac{4C_Ag_s^2}{(2\pi)^{2+2\epsilon}4\pi}\Delta_{i-1, i+1}\frac{1}{\epsilon}\frac{\pi^{1+\epsilon}}
 			{\Gamma(\epsilon+1)}\left(\frac{\lambda^2}{\mu^2}\right)^\epsilon - -\frac{2g_s^2C_A}{(4\pi)^{2+\epsilon}}
 			\frac{\Gamma(1-\epsilon)}{\epsilon}\left(\frac{q_{ti\perp}^2}{\mu^2}\right)^\epsilon, \\
 			&= \frac{g_s^2C_A}{4^{1+\epsilon}\pi^{2+\epsilon}}\Delta_{i-1, i+1}\left(\frac{1}{\epsilon\Gamma(1+\epsilon)}
@@ -705,66 +719,67 @@
 			\left(\frac{q_{ti\perp}^2}{\mu^2}\right)^\epsilon\right).
 		\end{align}
 
-		Expanding the terms involving $\epsilon$ yeilds:
-
-		\begin{subequations}
-		\begin{equation}
-		\frac{1}{\Gamma(1+\epsilon)} = 1 + \gamma_E\epsilon + \mathcal{O}(\epsilon^2),
-		\end{equation}
-		\begin{equation}
-		\Gamma(1-\epsilon) = 1 + \gamma_E\epsilon + \mathcal{O}(\epsilon^2),
-		\end{equation}
-		\begin{equation}
-		\left(\frac{x}{y}\right)^\epsilon = 1 + \epsilon\ln\left(\frac{x}{y}\right) + \mathcal{O}(\epsilon^2).
-		\end{equation}
-		\end{subequations}
-
-		And so the finite terms are:
-
-		\begin{subequations}
-			\begin{equation}
-				= \frac{g_s^2C_A\Delta_{i-1, i+1}}{4^{1+\epsilon}\pi^{2+\epsilon}}\left((1 + \gamma_E\epsilon +
-				\mathcal{O}(\epsilon^2))\left(\frac{1}{\epsilon} + \ln\left(\frac{\lambda^2}{\mu^2}\right) +
-				\mathcal{O}(\epsilon)\right) - (1 + \gamma_E\epsilon + \mathcal{O}(\epsilon^2))\left(\frac{1}{\epsilon} +
-				\ln\left(\frac{q_{ti\perp}^2}{\mu^2}\right) + \mathcal{O}(\epsilon)\right)\right)\\
-			\end{equation}
-				\begin{equation}
-				= \frac{g_s^2C_A\Delta_{i-1, i+1}}{4\pi^2}\ln\left(\frac{\lambda^2}{q_{ti\perp}^2}\right)\\
-				\end{equation}
-				\begin{equation}
-				= \frac{\alpha_sC_A\Delta_{i-1, i+1}}{\pi}\ln\left(\frac{\lambda^2}{q_{ti\perp}^2}\right)
-			\end{equation}
-		\end{subequations}
-
-		Likewise for the emission purely from the backward quark line we have:
+		Expanding the terms involving the regularisation parameter for small values,
+		$\epsilon\to0$, yields:
 
 		\begin{equation}
-		= \frac{\alpha_sC_A\Delta_{i-1, i+1}}{\pi}\ln\left(\frac{\lambda^2}{q_{bi\perp}^2}\right)
+			\mathcal{F}_{\text{top}} = \frac{\alpha_sC_A\Delta_{i-1, i+1}}{\pi}
+			\ln\left(\frac{\lambda^2}{q_{ti\perp}^2}\right),
 		\end{equation}
 
-		For the interference we expand the exponential with both forward emission $q$
-		momenta and backward emission $q$ momenta to get:
+		where we have used:
 
-		\begin{subequations}
-			\begin{equation}
-				= \frac{g_s^2C_A\Delta_{i-1, i+1}}{4^{1+\epsilon}\pi^{2+\epsilon}}\left(\left(\frac{1}{\epsilon} +
-				\gamma_E +  \ln\left(\frac{\lambda^2}{\mu^2}\right) + \mathcal{O}(\epsilon)\right) - \frac{1}{2}
-				\left[\frac{2}{\epsilon} + 2 \gamma_E + \ln\left(\frac{q_{ti\perp}^2}{\mu^2}\right) -
-				\ln\left(\frac{q_{bi\perp}^2}{\mu^2}\right) + \mathcal{O}(\epsilon)\right]\right) \\
-			\end{equation}
-			\begin{equation}
-				= \frac{\alpha_sC_A\Delta_{i-1, i+1}}{\pi}\ln\left(\frac{\lambda^2}{\sqrt{q_{ti\perp}^2q_{bi\perp}^2}}\right)
-			\end{equation}
-		\end{subequations}
+		\begin{align}
+		\begin{split}
+			\frac{1}{\Gamma(1+\epsilon)} = 1 + \gamma_E\epsilon + \mathcal{O}(\epsilon^2),
+			\Gamma(1-\epsilon) = 1 + \gamma_E\epsilon + \mathcal{O}(\epsilon^2),
+			\left(\frac{x}{y}\right)^\epsilon = 1 + \epsilon\ln\left(\frac{x}{y}\right) +
+			\mathcal{O}(\epsilon^2).
+		\end{split}
+		\end{align}
 
-		This is a very similar form to that found in \cite{Constructing} and \cite{JeppeHiggs}.
+		Similarly, for the terms arising from the bottom quark-line emission we have:
+
+		\begin{equation}
+		\mathcal{F}_{\text{bottom}} = \frac{\alpha_sC_A\Delta_{i-1, i+1}}{\pi}\ln\left(\frac{\lambda^2}{q_{bi\perp}^2}\right)
+		\end{equation}
+
+		Lastly, for the interference terms we expand the exponential with both top-line emission, $q_{ti}$,
+		momenta and bottom-line emission, $q_{bi}$, momenta to get a:
+
+		\begin{align}
+		\begin{split}
+			\mathcal{F}_{\text{interf.}} &= \frac{g_s^2C_A\Delta_{i-1, i+1}}{4^{1+\epsilon}\pi^{2+\epsilon}}
+			\Big(\Big(\frac{1}{\epsilon} + \gamma_E +  \ln\Big(\frac{\lambda^2}{\mu^2}\Big) +
+			\mathcal{O}(\epsilon)\Big) - \\
+			&\hspace{0.75cm}\frac{1}{2}\Big[\frac{2}{\epsilon} + 2 \gamma_E +
+			\ln\Big(\frac{q_{ti\perp}^2}{\mu^2}\Big)
+			- \ln\Big(\frac{q_{bi\perp}^2}{\mu^2}\Big) +
+			\mathcal{O}(\epsilon)\Big]\Big) \\
+			&= \frac{\alpha_sC_A\Delta_{i-1, i+1}}{\pi}\ln\Bigg(\frac{\lambda^2}{\sqrt{q_{ti\perp}^2
+			q_{bi\perp}^2}}\Bigg).
+			\label{eqn:result}
+		\end{split}
+		\end{align}
+
+		Eqn. \ref{eqn:result} is a new result which allows the inclusion of the interference terms shown
+		to be important in previous discussion.  We now have the finite remainders for all three terms in
+		equation \eqref{eq:allorderreal} and we are, at last, in an excellent position to move forward and
+		form an expression for an all-orders gauge invariant \emph{finite} matrix element for $\zg$ plus
+		jets.  Before pressing on we now discuss one final example calculation showing explicitly the
+		finite-ness of out matrix element expression.
 
 	\subsection{Example: $2\rightarrow3$ Scattering}
 
-		\begin{figure}[bth!]
+		{\color{red}
+		\begin{itemize}
+			\item This calculation feels excessive...Has the point already been made?  It's a really short
+			calculation but I'm pretty sure anyone reading by now will have got the point and/or be bored.
+		\end{itemize}
+		}
 
+		\begin{figure}[bthp]
 			\centering
-
 			\begin{subfigure}[b]{0.5\textwidth}
 				\includegraphics[width=1.0\linewidth]{RealSoftEmissionZ.pdf}
 				\caption{Soft Emission}
@@ -787,15 +802,15 @@
 			\label{fig:2to}
 		\end{figure}
 
-		As an example we show the cancellation explicitly for the case of $2\rightarrow4$ when the
-		$p_2$ momentum has gone soft.  A contributing soft diagram is shown in fig. \eqref{fig:real24} and
+		Consider the case of $2\rightarrow3$ where the
+		$p_2$ momentum has become soft.  A contributing soft diagram is shown in fig. \eqref{fig:real24} and
 		one example of a contributing virtual diagram of the same order is shown in fig. \eqref{fig:virtual23}.
-		When $p_2$ goes soft we have the following form for the $2\rightarrow4$ integrated amplitude squared
-		({N.B.}: The integration is only schematic and doesnt represent the full Lorentz invariant phase space):
+		When $p_2$ goes soft we have the following form for the $2\rightarrow3$ integrated amplitude squared
+		({N.B.}: The integration is only schematic and doesn't represent the full Lorentz invariant phase space):
 
 		\begin{align}
 		\begin{split}
-			\int|\mathcal{A}^{2\rightarrow4}_{soft}|^2 = &\frac{4C_Ag_s^2\Delta_{1,3}}{(2\pi)^{2+2\epsilon}4\pi}
+			\int|\mathcal{A}^{2\rightarrow3}_{soft}|^2 = &\frac{4C_Ag_s^2\Delta_{1,3}}{(2\pi)^{2+2\epsilon}4\pi}
 			\frac{\pi^{\epsilon+1}}{\epsilon\Gamma(\epsilon+1)}
 			\left(\frac{\lambda^2}{\mu^2}\right)^\epsilon\Bigg[|\mathcal{K}_aj_1^Z\cdot j_2|^2
 			\frac{V^2(q_{t1}, q_{t3})}{q^2_{t1}q^2_{t3}} + |\mathcal{K}_bj_1\cdot j_2^Z|^2
@@ -824,7 +839,7 @@
 
 		\begin{align}
 		\begin{split}
-			\int\left(|\mathcal{A}^{2\rightarrow4}_{soft}|^2 + |\mathcal{A}^{2\rightarrow3}_{virtual}|^2\right) =
+			\int\left(|\mathcal{A}^{2\rightarrow3}_{soft}|^2 + |\mathcal{A}^{2\rightarrow3}_{virtual}|^2\right) =
 			&|\mathcal{K}_aj_1^Z\cdot j_2|^2 \frac{V^2(q_{t1}, q_{t3})}{q_{t1}^2}
 			{\Bigg(\frac{4C_Ag_s^2\Delta_{1,3}}{(2\pi)^{2+2\epsilon}4\pi}\frac{\pi^{\epsilon+1}}
 			{\epsilon\Gamma(\epsilon+1)} - 2\hat{\alpha}(q_{t1})\Delta_{1,3}\Bigg)}+\ldots \\
@@ -842,7 +857,7 @@
 
 		\begin{align}
 		\begin{split}
-			\int\left(|\mathcal{A}^{2\rightarrow4}_{soft}|^2 + |\mathcal{A}^{2\rightarrow3}_{virtual}|^2\right) =
+			\int\left(|\mathcal{A}^{2\rightarrow3}_{soft}|^2 + |\mathcal{A}^{2\rightarrow3}_{virtual}|^2\right) =
 			\frac{\alpha_sC_A\Delta_{1,3}}{\pi}\Bigg(&|\mathcal{K}_aj_1^Z\cdot j_2|^2 \frac{V^2(q_{t1},
 			q_{t3})}{q_{t1}^2}\ln\left(\frac{\lambda^2}{|q_{1t\perp}|^2}\right)+\ldots \\
 			& |\mathcal{K}_bj_1\cdot j_2^Z|^2 \frac{V^2(q_{b1}, q_{b3})}{q_{b1}^2}\ln
