@@ -1,7 +1,19 @@
 \chapter{$\zg$+Jets at the LHC}
 \label{chap:Zs}
 
-\section{Introducing $\zg$+Jets at the LHeqC}
+\section{The \HEJ Framework}
+
+	Except where otherwise referenced the work in this chapter and the subsequent chapters refers to
+	work undertaken as part of the High Energy Jets collaboration.\\This work is the theoretical foundation for the
+	full-flexible parton level Monte Carlo generator available publicly from
+
+	\begin{center}
+	\url{http://hej.web.cern.ch/HEJ/}
+	\end{center}
+
+	In particular this chapter formed the basis for \cite{ZPaper}.
+
+\section{Introducing $\zg$+Jets at the LHC}
 
 	The work in this chapter is based on our recently published paper \cite{ZPaper}.
 	The Large Hadron Collider (LHC)
@@ -128,6 +140,10 @@
 \section{Constructing $\zg$+jets}
 	\label{sec:Zcurrents}
 
+	We now consider the construction of a current and indeed an all orders
+	inclusive cross-section for the $\zg$.  We begin by looking at just
+	the $Z^0$ emission.
+
 	\subsection{A Current for $Z^0$+Jets}
 
 		For any given initial state (excluding the case of gluon-gluon scattering which will
@@ -166,7 +182,7 @@
 			\slashed p_{i} = |i_+\rangle\langle i_+| + |i_-\rangle\langle i_-|.
 		\end{equation}
 
-		We can fix the helicity of the incoming quark, $h_{in}$, and the outgoing quark,
+		This fixes the helicity of the incoming quark, $h_{in}$, and the outgoing quark,
 		$h_{out}$, to be identical, and we are left with a current which only has four
 		possible helicity configurations depending on $h_q = h_{in} = h_{out}$ and the
 		electron helicity, $h_e$:
@@ -187,7 +203,7 @@
 		\end{align}
 
 		We can then express amplitudes for $Z^0$ plus jets in terms of contractions of
-		a Z emitting and either a quark or gluon current discussed previously.  Taking
+		a $Z$ emitting current with either a quark or gluon current discussed previously.  Taking
 		the concrete example of $qg\to Zqg$ we can write the matrix element as follows:
 
 		\begin{align}
@@ -199,7 +215,7 @@
 		\end{split}
 		\end{align}
 
-		If we investigate eqn. \eqref{eq:qgamp} for a `slice' through the final state phase-space
+		We will investigate eqn. \eqref{eq:qgamp} for a `slice' through the final state phase-space
 		where each particles momenta is parametrised by:
 
 		\begin{align}
@@ -217,12 +233,15 @@
 		\end{split}
 		\end{align}
 
-		Then we observe the behaviour shown in fig. \eqref{fig:ZatLO}: as we pull the
+		We then observe the behaviour shown in fig. \eqref{fig:ZatLO}: as we pull the
 		jets apart in rapidity (i.e. as we go to large $\Delta$) we see that the matrix element
 		approaches a constant; this is the result which would be obtained by using the BFKL
 		formalism in which all jets are taken be infinitely well separated in rapidity.\\As we
 		expect for the case of $2\to 2$ scattering we see exact agreement between our expression
 		and the leading order result obtained from \texttt{MadGraph5} \cite{Alwall:2014hca}.
+		It is clear that the BFKL limit is not obtained until relatively large values for $\Delta$,
+		therefore it would be a poor approximation were we to just take the infinite rapidity limit
+		of this as our expression for the $Z^0$ matrix element.
 
 		\begin{figure}[hbt]
 			\centering
@@ -233,8 +252,8 @@
 			\label{fig:ZatLO}
 		\end{figure}
 
-		The picture becomes more complicated when considering the $qQ\to ZqQ$ scattering since,
-		as mentioned previously, there are four possible places where the (anti-)quark may emit
+		The picture becomes more complicated when considering the $qQ\to ZqQ$ scattering since
+		there are now four possible places where the (anti-)quark may emit
 		the $Z^0$.  In previous work by the High Energy Jets collaboration the case of
 		$W^\pm$ plus multiple hard jets was treated by simply attaching the boson to an external
 		quark line probabilistically \cite{Andersen:2012gk}.  However as we will see later this
@@ -269,15 +288,15 @@
 
 		where $j_{a,b}$ are the pure quark currents defined previously.  The
 		coupling constants of the $Z$ to the relevant quarks and leptons are contained
-		within $j^{Z^0}(h_q,h_e)$, as in eqn.~(\eqref{eqn:Zcurrent}).  Fig.~\eqref{fig:twojets}
+		within $j^{Z^0}(h_q,h_e)$, as in eqn.~(\eqref{eqn:Zcurrent}).
+
+		Fig.~\eqref{fig:twojets}
 		shows the value of this matrix element squared divided by the squared partonic
 		centre-of-mass energy for increasing rapidity separation of the two jets. Once again the
 		result is compared with that obtained from the full, tree-level matrix elements from
-		\texttt{MadGraph5}.
-
-		The slice through phase space here is the same as that used in the previous
-		section given by eqn. \eqref{eq:momenta}.  Fig.~\eqref{fig:twojets} also shows
-		the separate contributions to the total matrix element squared coming from the
+		\texttt{MadGraph5}.  The slice through phase space here is the same as that used in the
+		previous section given by eqn.~\eqref{eq:momenta}.  Fig.~\eqref{fig:twojets} also
+		shows the separate contributions to the total matrix element squared coming from the
 		$\zg$ emission from the forward moving quark line (black, dashed) and emission
 		from the backward moving quark line (green, dotted).  In this phase space slice,
 		the leptons also have an increasing positive rapidity and so the forward emission
@@ -312,8 +331,9 @@
 	\subsection{Photonic Interference}
 
 		Since any virtual $Z^0$ could also have proceeded via an off-shell virtual photon,
-		$\gamma^*$, we must also include these processes and the resulting interference the
-		$Z^0$ and $\gamma^*$.\\
+		$\gamma^*$, we must also include these processes and the resulting interference
+		between the $Z^0$ and $\gamma^*$.
+
 		The $\gamma^*$ emission matrix element is similar to that of the $Z^0$-only matrix
 		element shown in equation \eqref{eq:qgamp} and the same story applies with the
 		possible emission sites causing interference.  All that needs to be changed is the
@@ -363,15 +383,17 @@
 
 	\subsection{The $2\rightarrow n$ Matrix Element}
 
-		Armed with \eqref{eq:jsum} we can extend eqn. \eqref{eq:qgamp} in the obvious way
+		Armed with eqn.~\eqref{eq:jsum} we can extend eqn.~\eqref{eq:qgamp} in the obvious way
 		to form a complete matrix element for the emission of a $\zg$ boson.  We can also
 		describe the various possibilities ($qq$, $qg$ and $gq$) simply by substituting
-		the currents which apply in any given situation.  Of course, in practise we use
+		the currents which apply in any given situation.  Of course, in practice we use
 		the importance sampling techniques discussed in chapter \ref{chap:HEQCD} to
 		randomly sample the possible incoming parton types and so all combinations of
-		currents are required.\\Following in the vein of the previous chapter we now look
-		to extend our description to higher multiplicity final states.  Based on eqn.
-		\eqref{eqn:factorised2ToN} from chapter \ref{chap:HEQCD} we can write the squared
+		currents are included.
+
+		Following in the vein of the previous chapter we now look
+		to extend our description to higher multiplicity final states.  Based on
+		eqn.~\eqref{eqn:factorised2ToN} from chapter \ref{chap:HEQCD} we can write the squared
 		matrix element for $qQ\to (\zg\to ) e^+e^- q (n-2)g Q$ is:
 
 		\begin{align}

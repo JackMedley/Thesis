@@ -11,7 +11,7 @@
 	The data compared to are 7~TeV proton-proton collisions as observed by the ATLAS
 	experiment in two distinct data sets referred to as 2010 data and 2011 data.  The
 	experimental cuts applied to these data sets differs and both are outlined in table
-	\ref{tab:atlasPcuts}.
+	\eqref{tab:atlasPcuts}.
 
 	\begin{table}[bth]
 	  \centering
@@ -38,7 +38,7 @@
 	and sub-leading jets of $50$~GeV and $60$~GeV respectively.  After tagging the two
 	leading jets in the event and considering all other jet radiation in the rapidity
 	interval bounded by the dijets as a QCD correction.  Within in the two data sets
-	defined in table \ref{tab:atlasPcuts} a further subdivision was made.  For both the
+	defined in table \eqref{tab:atlasPcuts} a further subdivision was made.  For both the
 	2010 and 2011 data a subset of events was defined by vetoing events with extra
 	QCD radiation in the rapidity interval bounded by the dijet system above some veto
 	scale $Q_0$.  It should also be noted that the 2011 data set required a minimum
@@ -68,7 +68,7 @@
 	scale variation uncertainty bands with our showered numbers.  To be clear this
 	is not a limitation of the physics since it is entirely possible to evaluate
 	each matrix element multiple times - it is a computational consideration. \footnote{
-	As seen in chapter \ref{chap:Zs}, the renormalisation scale appears in a non-trivial way
+	As seen in chapter \eqref{chap:Zs}, the renormalisation scale appears in a non-trivial way
 	in the High Energy Jets matrix element.  It is contained implicitly in the strong coupling
 	constant which is contained within the virtual corrections exponential.  As such
 	we cannot simply generate predictions at a single scale and then reweight events
@@ -139,7 +139,7 @@
 	\end{figure}
 
 	Similarly, when we study the mean number of jets in the rapidity interval shown for in
-	fig.~\ref{fig:atlasPJ2} we see that \HEJA and \texttt{POWHEG+PYTHIA} give the best
+	fig.~\eqref{fig:atlasPJ2} we see that \HEJA and \texttt{POWHEG+PYTHIA8} give the best
 	description of the data.  Once again the partonic \HEJ prediction undershoots the data
 	significantly when describing both of the dijet characteristics while \texttt{POWHEG+HERWIG}
 	overestimates the jet activity.
@@ -172,12 +172,12 @@
 	i.e. they will have $\Delta \phi=0$ and both $\langle\cos(\pi-\Delta\phi)\rangle$ and
 	$\langle\cos(2\Delta\phi)\rangle$ will simply be a flat line $1.0$.  As we allow these hard
 	dijets to radiate the moments will depart from the straight line as the constraint softens
-	and the extra radiation allows for $\Delta\phi\neq0.0$.  These moments have long been seen
+	and the extra radiation allows for $\Delta\phi<\pi$.  These moments have long been seen
 	as an excellent test of the difference between DGLAP QCD parton showers and BFKL-like
 	resummations \cite{Ducloue:2012bm}.  Indeed it is in these figures where we see the biggest
 	difference between \HEJ and the \texttt{POWHEG} plus parton shower results.
 
-	Fig.~\eqref{fig:atlasPJ3} shows the first azimuthal moment in the absence of a gap veto.
+	Fig.~\eqref{fig:atlasPJ3} shows the first azimuthal moment for the inclusive selection.
 	We see that in the 2010 study \HEJA and both \texttt{POWHEG} descriptions slightly
 	underestimate $\langle\cos(\pi-\Delta\phi)\rangle$ while the partonic \HEJ result slightly
 	overestimates.  However, the evolution of the first azimuthal moment with respect to
@@ -185,7 +185,8 @@
 	radiate sufficiently to predict the correct decorrelation at low mean transverse momentum
 	(which is understood since it does not include the parton shower effects) while both
 	\texttt{POWHEG} descriptions cause too much decorrelation at low $\overline{p_T}$.
-	The best description of the data is given by \HEJA for the reasons discussed above.
+	The best description of the data is given by \HEJA since it adds extra emissions to High
+	Energy Jets which improves our description of the decorrelation.
 
 	\begin{figure}[bth]
 		\centering
@@ -200,10 +201,17 @@
 			\caption{}
 			\label{fig:}
 		\end{subfigure}
-		\caption{The first azimuthal anglular moment, $\langle \cos(\pi-\Delta\phi)\rangle$, as a function of (a) the rapidity gap, $\Delta y$
-		         and (b) the average $p_T$, $\overline{p_T}$, of the dijet system.}
+		\caption{The first azimuthal angular moment, $\langle \cos(\pi-\Delta\phi)\rangle$,
+		as a function of (a) the rapidity gap, $\Delta y$ and (b) the average $p_T$,
+		$\overline{p_T}$, of the dijet system.}
 		\label{fig:atlasPJ3}
 	\end{figure}
+
+	Another variable thought to be a good test of DGLAP vs. BFKL physics is the ratio of
+	the second moment to the first moment.  This is shown in fig.~\eqref{fig:atlasPJ4}.  Once
+	again we do see a sizeable difference in the predictions given by the two resummations.
+	Similarly to fig.~\eqref{fig:atlasPJ3} we see that interfacing to the \ARIADNE package
+	brings the partonic \HEJ prediction in to a much better agreement of the data.
 
 	\begin{figure}[bth]
 		\begin{subfigure}[b]{0.48\textwidth}
@@ -217,11 +225,34 @@
 			\caption{}
 			\label{fig:}
 		\end{subfigure}
-		\caption{The ratio of the second azimuthal anglular moment, $\langle \cos(2\Delta\phi)\rangle$, to the first azimuthal
-		         anglular moment, $\langle \cos(\pi-\Delta\phi)\rangle$, as a function of (a) the rapidity gap, $\Delta y$, and (b) the
-		         average $p_T$, $\overline{p_T}$, of the dijet system.}
+		\caption{The ratio of the second azimuthal angular moment, $\langle \cos(2\Delta\phi)\rangle$,
+		to the first azimuthal angular moment, $\langle \cos(\pi-\Delta\phi)\rangle$, as a function of
+		(a) the rapidity gap, $\Delta y$, and (b) the average $p_T$, $\overline{p_T}$, of the dijet system.}
 		\label{fig:atlasPJ4}
 	\end{figure}
+
+	The two remaining figures are similar to figs. \eqref{fig:atlasPJ3} and \eqref{fig:atlasPJ4} but
+	with the addition of the jet veto.  Similarly to the inclusive case we see that the partonic \HEJ
+	predictions overestimates the correlation for the 2010 and the 2011 data sets while the NLO plus
+	shower predictions, once again, understood the decorrelation.  Given the statistical limited
+	data available (especially for the 2010 gap jet vetoed data set) it is more difficult to draw
+	clear conclusions here but certainly the inclusion of the \ARIADNE shower improves the High
+	Energy Jets results.
+
+	Lastly we have the ratio of the second azimuthal moment to the first azimuthal moment for the
+	events which pass the additional jet veto.  \HEJA and \texttt{POWHEG+PYTHIA8} come closest
+	to describing the data however there is some disagreement; in particular no one gives a good
+	description of the evolution of this ratio at low $\overline{p_T}$.
+
+	In summary, the best description of the data overall is given by \HEJA and \texttt{POWHEG+PYTHIA8}
+	while parton level \HEJ overestimates (underestimate) the gap fraction (the mean number of jets
+	in the rapidity gap bounded between the dijet system) and overshoots both the first azimuthal
+	moment and the ratio of the second to the first azimuthal moment.  \texttt{POWHEG+HERWIG} describes
+	the data poorly for the gap fraction, the mean number of gap jets and the azimuthal decorrelations.
+	From this it is clear that while the logarithmically enhanced resummed in the High Energy Jets
+	framework are important in regions of phase space where we have large rapidity gaps (such as the
+	analyses described here) there are equally important contributions arising from the logarithms
+	given to us by the interface with a parton shower.
 
 	\begin{figure}[bth]
 		\centering
@@ -236,9 +267,10 @@
 			\caption{}
 			\label{fig:}
 		\end{subfigure}
-		\caption{The first azimuthal anglular moment, $\langle \cos(\pi-\Delta\phi)\rangle$, for events passing the veto on gap activity
-		         above $Q_0=20\text{GeV}$ as a function of (a) the rapidity gap, $\Delta y$, and (b) the average $p_T$, $\overline{p_T}$,
-		         of the dijet system.}
+		\caption{The first azimuthal angular moment, $\langle \cos(\pi-\Delta\phi)\rangle$,
+		for events passing the veto on gap activity above $Q_0=20\text{GeV}$ as a function
+		of (a) the rapidity gap, $\Delta y$, and (b) the average $p_T$, $\overline{p_T}$,
+		of the dijet system.}
 		\label{fig:atlasPJ5}
 	\end{figure}
 
@@ -254,46 +286,14 @@
 			\caption{}
 			\label{fig:}
 		\end{subfigure}
-		\caption{The ratio of the second azimuthal anglular moment, $\langle \cos(2\Delta\phi)\rangle$, to the first azimuthal
-		         anglular moment, $\langle \cos(\pi-\Delta\phi)\rangle$, as a function of (a) the rapidity gap, $\Delta y$, and (b) the
-		         average $p_T$, $\overline{p_T}$, of the dijet system.  A veto of $Q_0=20\text{GeV}$, for (a), and $Q_0=30\text{GeV}$,
-		         for (b), is applied on activity in the rapidity gap is applied.}
+		\caption{The ratio of the second azimuthal angular moment,
+		$\langle \cos(2\Delta\phi)\rangle$, to the first azimuthal angular moment,
+		$\langle \cos(\pi-\Delta\phi)\rangle$, as a function of (a) the rapidity gap,
+		$\Delta y$, and (b) the average $p_T$, $\overline{p_T}$, of the dijet system.  A
+		veto of $Q_0=20\text{GeV}$, for (a), and $Q_0=30\text{GeV}$, for (b), is applied
+		on activity in the rapidity gap is applied.}
 		\label{fig:atlasPJ6}
 	\end{figure}
-
-	% \begin{figure}[H]
-	% 	\centering
-	% 	\begin{subfigure}[b]{0.48\textwidth}
-	% 		\includegraphics[width=\textwidth, height=1.1\textwidth]{pureJets7a}
-	% 		\caption{}
-	% 		\label{fig:}
-	% 	\end{subfigure}
-	% 	~
-	% 	\begin{subfigure}[b]{0.48\textwidth}
-	% 		\includegraphics[width=\textwidth, height=1.1\textwidth]{pureJets7b}
-	% 		\caption{}
-	% 		\label{fig:}
-	% 	\end{subfigure}
-	% 	\caption{The double-differential cross-section as a function of the azimuthal seperation, $\Delta\phi$,
-	% 	         and the rapidity gap, $\Delta y$, of the dijet system.}
-	% 	\label{fig:atlasPJ7}
-
-	% 	\begin{subfigure}[b]{0.48\textwidth}
-	% 		\includegraphics[width=\textwidth, height=1.1\textwidth]{pureJets8a}
-	% 		\caption{}
-	% 		\label{fig:}
-	% 	\end{subfigure}
-	% 	~
-	% 	\begin{subfigure}[b]{0.48\textwidth}
-	% 		\includegraphics[width=\textwidth, height=1.1\textwidth]{pureJets8b}
-	% 		\caption{}
-	% 		\label{fig:}
-	% 	\end{subfigure}
-	% 	\caption{The double-differential cross-section as a function of the azimuthal seperation, $\Delta\phi$,
-	% 	         and the rapidity gap, $\Delta y$, of the dijet system.  A veto of $Q_0=20\text{GeV}$ is applied
-	% 	         on activity in the rapidity gap is applied.}
-	% 	\label{fig:atlasPJ8}
-	% \end{figure}
 
 \chapter{$\zg$+Jets at 100TeV}
 \label{chap:100TeV}
@@ -306,15 +306,19 @@
 		\item Cons: Plots will be very busy.
 	\end{itemize}
 
+	Even as the Large Hadron Collider was beginning its first run people were thinking about the next machine
+	We now discuss the results of
+
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.8\linewidth]{ATLAS_Z_100TeV_12a}
-		\caption{The differential cross-section for $\zg$ plus inclusive dijets as a function of the azimuthal seperation of the dijet system shown for
-		         centre-of-mass energies of 7TeV (blue) and 100TeV (pink).}
+		\caption{The differential cross-section for $\zg$ plus inclusive dijets as a
+		function of the azimuthal separation of the dijet system shown for centre-of-mass
+		energies of 7TeV (blue) and 100TeV (pink).}
 		\label{fig:100tev_12a}
 	\end{figure}
 
-	Fig. (\ref{fig:100tev_12a}) notes:
+	Fig. (\eqref{fig:100tev_12a}) notes:
 
 	\begin{itemize}
 		\item dphi plot
@@ -330,7 +334,7 @@
 		\label{fig:100tev_2a}
 	\end{figure}
 
-	Fig. (\ref{fig:100tev_2a}) notes:
+	Fig. (\eqref{fig:100tev_2a}) notes:
 
 	\begin{itemize}
 		\item njets,
@@ -347,7 +351,7 @@
 		\label{fig:100tev_11a}
 	\end{figure}
 
-	Fig. (\ref{fig:100tev_11a}) notes:
+	Fig. (\eqref{fig:100tev_11a}) notes:
 
 	\begin{itemize}
 		\item dy plot,
@@ -364,13 +368,13 @@
 		\label{fig:100tev_11b}
 	\end{figure}
 
-	Fig. (\ref{fig:100tev_11b}) notes:
+	Fig. (\eqref{fig:100tev_11b}) notes:
 
 	\begin{itemize}
 		\item $dm_jj$ plot,
 		\item O(10) increase in cross-section as we go to large invariant masses,
 		\item Invariant masses again correlate with the logs we resum (show this explicitly if you havent already),
-		\item Similar to fig. (\ref{fig:100tev_11a})
+		\item Similar to fig. (\eqref{fig:100tev_11a})
 	\end{itemize}
 
 	\begin{figure}[h]
@@ -393,11 +397,11 @@
 			\label{fig:100tev_6b}
 		\end{subfigure}
 		\caption{The differential cross-section for $\zg$ plus inclusive dijets as a function of the transverse momentum
-		         of the first, second and third leading jets in $p_T$ shown in fig. \ref{fig:100tev_5b}, \ref{fig:100tev_6a}
-		         and \ref{fig:100tev_6b} respectively and for centre-of-mass energies of 7TeV (blue) and 100TeV (pink).}
+		         of the first, second and third leading jets in $p_T$ shown in fig. \eqref{fig:100tev_5b}, \eqref{fig:100tev_6a}
+		         and \eqref{fig:100tev_6b} respectively and for centre-of-mass energies of 7TeV (blue) and 100TeV (pink).}
 	\end{figure}
 
-	Fig. (\ref{fig:100tev_5b}-\ref{fig:100tev_6b}) notes:
+	Fig. (\eqref{fig:100tev_5b}-\eqref{fig:100tev_6b}) notes:
 
 	\begin{itemize}
 		\item pT distributions,
@@ -426,11 +430,11 @@
 			\label{fig:100tev_10b}
 		\end{subfigure}
 		\caption{The differential cross-section for $\zg$ plus inclusive dijets as a function of the absolute value of the rapidity
-		         of the first, second and third leading jets in rapidity shown in fig. \ref{fig:100tev_9b}, \ref{fig:100tev_10a}
-		         and \ref{fig:100tev_10b} respectively and for centre-of-mass energies of 7TeV (blue) and 100TeV (pink).}
+		         of the first, second and third leading jets in rapidity shown in fig. \eqref{fig:100tev_9b}, \eqref{fig:100tev_10a}
+		         and \eqref{fig:100tev_10b} respectively and for centre-of-mass energies of 7TeV (blue) and 100TeV (pink).}
 	\end{figure}
 
-	Fig. (\ref{fig:100tev_9b}-\ref{fig:100tev_10b}) notes:
+	Fig. (\eqref{fig:100tev_9b}-\eqref{fig:100tev_10b}) notes:
 
 	\begin{itemize}
 		\item Not much more to say about these - mostly covered in dy plots,
