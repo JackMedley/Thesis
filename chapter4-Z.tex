@@ -1022,10 +1022,12 @@
 		  may have arisen from many more partons), the full tree-level matrix element remains
 		  calculable.  In these cases, we perform the matching multiplicatively, so we
 		  multiply the integrand of eq.~(\ref{eq:sigma}) by
+
 		  \begin{align}
 		    |\mathcal{M}^{\rm full}_{qQ\to \zg q(k-2)gQ}(p_a,p_b,\{
 		    j_i'\})|^2/|\mathcal{M}^{HEJ}_{qQ\to \zg q(k-2)gQ}(p_a,p_b,\{j_i'\})|^2.
 		  \end{align}
+
 		  Here, $\{j_i'\}$ are the jet momenta after a small amount of
 		  reshuffling.  This is necessary because the evaluation of the tree-level matrix elements
 		  assumes that the jet momenta are both on-shell and have transverse momenta which
@@ -1058,13 +1060,21 @@
 
 \section{$\zg$+Jets: Computational Aspects}
 
-	\begin{itemize}
-		\item Chat about the coding that went in to it
-		\item Interference and scale variation in the Z's
-		\item Q-chains/V-chains
-		\item Complicated currents
-		\item GRID stuff?
-	\end{itemize}
+	The physics presented in the preceding sections is a significant departure from
+	work previously done by the High Energy Jets collaboration.  As such developing
+	the Monte Carlo for $\zg$ plus jets was a serious undertaking; the inclusion of
+	the aforementioned interference terms required that two $t$-channel `chains' of
+	momenta and vertices be computed.\\Furthermore to correctly calculate at the
+	amplitude level the method in which we evaluate eqn. \ref{eq:Zcurrent}.  Since
+	the virtual corrections are scale dependent it was necessary to change large
+	sections of code to work with multiple copies of $t$-chains and multiple scales.\\
+	The sections and chapters which follow contain theoretical predictions to
+	experimental analyses.  These predictions were generated using distributed
+	computing both locally in Edinburgh and using the CERN \texttt{GRID} system;
+	the former required the development of a system to distributing, executing and
+	finalising jobs across a large network of machines while the later involved
+	learning who to interact with a computationally challenging system which was...
+	{\color{red} a complete time-vampire and a real pain to use (rephrase this)}
 
 \section{$\zg$+Jets at the LHC}
 
