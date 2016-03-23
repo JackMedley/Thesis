@@ -1086,17 +1086,60 @@
 	work previously done by the High Energy Jets collaboration.  As such developing
 	the Monte Carlo for $\zg$ plus jets was a serious undertaking; the inclusion of
 	the aforementioned interference terms required that two $t$-channel `chains' of
-	momenta and vertices be computed.\\Furthermore to correctly calculate at the
+	momenta and vertices be computed.  Furthermore to correctly calculate at the
 	amplitude level the method in which we evaluate eqn. \ref{eq:Zcurrent}.  Since
 	the virtual corrections are scale dependent it was necessary to change large
-	sections of code to work with multiple copies of $t$-chains and multiple scales.\\
+	sections of code to work with multiple copies of $t$-chains and multiple scales.
+
+	In previous \HEJ releases the matching mentioned above was performed using
+	\texttt{MadGraph} version 4.  However, due to increases in speed and efficiency
+	we chose to match the $\zg$+jets \HEJ matrix elements to \texttt{MadGraph} version 5.
+	While this might seem like a trivial change the underlying computational work
+	was anything but; since the latest version of \texttt{MadGraph} outputs
+	matrix elements in C++ (rather than Fortran 90) a completely new approach
+	to incorporating matching was required.  A novel `abstract factory' design pattern
+	was employed to efficiently construct and call the relevant exact leading order
+	matrix element.  In this way we avoided the necessity of having extremely large
+	matching files containing 18,000+ lines of code which was very difficult to
+	debug and improve; instead this new structure allowed the matching code to
+	be reduced to only a few thousand lines since the abstract factory class
+	presents a uniform interface and therefore almost all of the process specific
+	lines became unnecessary (some process specific content remains due to the
+	distinction made between FKL and non-FKL configurations).
+
+	Throughout the course of this work it became apparent that the \hej
+	codebase as it was at the time needed to be restructured.  Each physics
+	process (pure jets, $W^\pm$+jets, Higgs+jets and $\zg$+jets) was structured
+	individually as a stand-alone piece of code.  This became a problem when testing
+	and modifying \HEJ since there are large sections of code which are the same
+	regardless of what electroweak boson emission (if any) we are concerned with,
+	for example the parton distribution function calls are almost entirely the same
+	no matter which code is run.  To improve upon this situation a unified \HEJ
+	package was created.  This was a complete restructure of the code in to a form
+	in which a general \texttt{HejGen} polymorphic base class could be
+	constructed abstractly and then made concrete depending on user input.
+	The unified version of the code is an improvement in that it is much more user
+	friendly, and significantly easier to test and extend.
+
+	Lastly a word about the generation of \hej predictions for comparisons to data.
 	The sections and chapters which follow contain theoretical predictions to
 	experimental analyses.  These predictions were generated using distributed
-	computing both locally in Edinburgh and using the CERN \texttt{GRID} system;
-	the former required the development of a system to distributing, executing and
-	finalising jobs across a large network of machines while the later involved
-	learning who to interact with a computationally challenging system which was...
-	{\color{red} a complete time-vampire and a real pain to use (rephrase this)}
+	computing both locally in Edinburgh and using the CERN \texttt{GRID} system.
+	The former required the development of a set-up to distribute, execute and
+	finalise jobs across a large network of machines standard desktop machines (i.e.
+	not actual computing nodes) distributed through Edinburgh University.  This was
+	a time-consuming process however without this system it would not have been
+	possible to produce the interesting results of chapter~\ref{chap:ATLAS} (see
+	chapter~\ref{chap:ATLAS} for a discussion of the computational challenges of
+	generating \HEJA predictions).\footnote{At this point I feel it is necessary
+	to apologise to those undergraduate physics students whose local computing
+	use was disrupted by my scripts accidentally converting their computing labs
+	into a server farm.}
+	The \texttt{GRID} distributed computing work was available only in the final
+	stages of this work (had it been available sooner the aforementioned local
+	distributed computing set-up could have been avoided completely).  This involved
+	a good deal of learning to work with (properly) distributed systems and working
+	with the \texttt{Ganga} batch submission system which was, again, time-consuming.
 
 \section{$\zg$+Jets at the LHC}
 
