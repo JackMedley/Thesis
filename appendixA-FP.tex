@@ -1,68 +1,68 @@
-\chapter{The Faddeev-Popov Trick}
-\label{chap:fpTrick}
+% \chapter{The Faddeev-Popov Trick}
+% \label{chap:fpTrick}
 
-All that remains to be done is to evaluate the gluon propagator.  As in QED when trying
-to compute the propagator of a massless gauge boson we can use the work of Faddeev and Popov.
-The functional integral we want to evaluate is in the form:
+% All that remains to be done is to evaluate the gluon propagator.  As in QED when trying
+% to compute the propagator of a massless gauge boson we can use the work of Faddeev and Popov.
+% The functional integral we want to evaluate is in the form:
 
-\begin{equation}
-	\int DAe^{-\frac{i}{4}\int d^4xF^a_{\mu\nu}F^{a\mu\nu}}.
-\end{equation}
+% \begin{equation}
+% 	\int DAe^{-\frac{i}{4}\int d^4xF^a_{\mu\nu}F^{a\mu\nu}}.
+% \end{equation}
 
-Where $DA=\prod_x\prod_{a, \mu}dA^a_\mu$.  As briefly outlined above we would like to perform
-a functional integration over all possible gauge choices and then pick out the subset of gauges
-we are interested in by enforcing the gauge condition $G(A)=0$ to eliminate over-counting.
-This constraint may be written as ~\cite{p&s}:
+% Where $DA=\prod_x\prod_{a, \mu}dA^a_\mu$.  As briefly outlined above we would like to perform
+% a functional integration over all possible gauge choices and then pick out the subset of gauges
+% we are interested in by enforcing the gauge condition $G(A)=0$ to eliminate over-counting.
+% This constraint may be written as ~\cite{p&s}:
 
-\begin{equation}
-\int D\alpha(x)\delta(G(A^\alpha))Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right) = 1.
-\end{equation}
+% \begin{equation}
+% \int D\alpha(x)\delta(G(A^\alpha))Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right) = 1.
+% \end{equation}
 
-Where $A^\alpha_\mu = A_\mu - \frac{1}{g_s}\partial_\mu\alpha(x)$.  Making a gauge
-transformation ($A_\mu\rightarrow A^\alpha_\mu$) and inserting equation (18):
+% Where $A^\alpha_\mu = A_\mu - \frac{1}{g_s}\partial_\mu\alpha(x)$.  Making a gauge
+% transformation ($A_\mu\rightarrow A^\alpha_\mu$) and inserting equation (18):
 
-\begin{subequations}
-\begin{equation}
-\int DAe^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}} = \int DA\int D\alpha(x)\delta(G(A^\alpha))
-Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right)e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}},
-\end{equation}
-\begin{equation}
-= \int D\alpha(x)\int DA\delta(G(A^\alpha))Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right)
-e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}}.
-\end{equation}
-\end{subequations}
+% \begin{subequations}
+% \begin{equation}
+% \int DAe^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}} = \int DA\int D\alpha(x)\delta(G(A^\alpha))
+% Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right)e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}},
+% \end{equation}
+% \begin{equation}
+% = \int D\alpha(x)\int DA\delta(G(A^\alpha))Det\left(\frac{\delta G(A^\alpha)}{\delta\alpha(x)}\right)
+% e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}}.
+% \end{equation}
+% \end{subequations}
 
-We are free to change the functional integration variable to $A_\mu^\alpha$ since everything
-is gauge invariant leading to an integrand which \emph{only} depends on $A^\alpha_\mu$.
-We can therefore simply relabel back to $A_\mu$:
+% We are free to change the functional integration variable to $A_\mu^\alpha$ since everything
+% is gauge invariant leading to an integrand which \emph{only} depends on $A^\alpha_\mu$.
+% We can therefore simply relabel back to $A_\mu$:
 
-\begin{equation}
-= \left(\int D\alpha(x)\right)\int DA\delta(G(A))Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right)
-e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}}.
-\end{equation}
+% \begin{equation}
+% = \left(\int D\alpha(x)\right)\int DA\delta(G(A))Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right)
+% e^{-\frac{i}{4}\int d^4F^a_{\mu\nu}F^{a\mu\nu}}.
+% \end{equation}
 
-The functional integration can now just be factored out as a constant and we can choose the
-function $G(A)$ as a generalisation of the Lorentz gauge: $G(A)=\partial^\mu A^a_\mu-\omega^a$.
-This choice leads us to the correct gluon propagator - along with our free parameter, $\xi$:
+% The functional integration can now just be factored out as a constant and we can choose the
+% function $G(A)$ as a generalisation of the Lorentz gauge: $G(A)=\partial^\mu A^a_\mu-\omega^a$.
+% This choice leads us to the correct gluon propagator - along with our free parameter, $\xi$:
 
-\begin{equation}
-\langle0|A_a(x)A_b(y)|0\rangle = G_F^{\mu\nu}(x-y) = \int \frac{d^4x}{(2\pi)^4}e^{-ik\cdot(x-y)}
-\delta_{ab}\frac{-i}{k^2+i\epsilon}\left(g^{\mu\nu}-(1-\xi)\frac{k^\mu k^\nu}{k^2}\right).
-\end{equation}
+% \begin{equation}
+% \langle0|A_a(x)A_b(y)|0\rangle = G_F^{\mu\nu}(x-y) = \int \frac{d^4x}{(2\pi)^4}e^{-ik\cdot(x-y)}
+% \delta_{ab}\frac{-i}{k^2+i\epsilon}\left(g^{\mu\nu}-(1-\xi)\frac{k^\mu k^\nu}{k^2}\right).
+% \end{equation}
 
-but because the QCD gauge transformation is more involved than the
-QED equivalent the determinant term still depends on $A_\mu$:
+% but because the QCD gauge transformation is more involved than the
+% QED equivalent the determinant term still depends on $A_\mu$:
 
-\begin{equation}
-Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right) = Det\left(\frac{\partial_\mu D^\mu}{g_s}\right).
-\end{equation}
+% \begin{equation}
+% Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right) = Det\left(\frac{\partial_\mu D^\mu}{g_s}\right).
+% \end{equation}
 
-We can however simply invent another type of field and choose to write out determinant as
+% We can however simply invent another type of field and choose to write out determinant as
 
-\begin{equation}
-	Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right) = \int D\chi D\overline{\chi}
-	e^{i\int d^4x\overline{\chi}(-\partial_\mu D_\mu)\chi}.
-\end{equation}
+% \begin{equation}
+% 	Det\left(\frac{\delta G(A)}{\delta\alpha(x)}\right) = \int D\chi D\overline{\chi}
+% 	e^{i\int d^4x\overline{\chi}(-\partial_\mu D_\mu)\chi}.
+% \end{equation}
 
-These non-physical modes are called the Faddeev-Popov ghosts/anti-ghosts and are a consequence
-of enforcing gauge invariance - they are represented by the final term in equation (12a).
+% These non-physical modes are called the Faddeev-Popov ghosts/anti-ghosts and are a consequence
+% of enforcing gauge invariance - they are represented by the final term in equation (12a).

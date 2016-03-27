@@ -1,141 +1,76 @@
 \chapter{$\zg$+Jets at the LHC}
 \label{chap:Zs}
 
-\section{The \HEJ Framework}
-
 	Except where otherwise referenced the work in this chapter and the subsequent chapters refers to
 	work undertaken as part of the High Energy Jets collaboration.\\This work is the theoretical foundation for the
 	full-flexible parton level Monte Carlo generator available publicly from
 
 	\begin{center}
-	\url{http://hej.web.cern.ch/HEJ/}
+		\url{http://hej.web.cern.ch/HEJ/}
 	\end{center}
 
-	In particular this chapter formed the basis for \cite{ZPaper}.
+	and is published in \cite{ZPaper}.
 
 \section{Introducing $\zg$+Jets at the LHC}
 
-	The work in this chapter is based on our recently published paper \cite{ZPaper}.
-	The Large Hadron Collider (LHC)
-	sheds ever more light on Standard Model processes at higher energies as it
-	continues into Run II.  One ``standard candle'' process for the validation of
-	the Standard Model description in this new energy regime is the production of
-	a di-lepton pair through an intermediate $Z$ boson or photon, in
-	association with (at least) two jets \cite{Chatrchyan:2011ne, Aad:2011qv,
-	Chatrchyan:2013tna, Aad:2013ysa, Khachatryan:2014zya, Aad:2014rta,
-	Khachatryan:2014dea}.  This final state can be entirely reconstructed from
-	visible particles (in contrast to $pp\to \text{dijets plus}(W\to) e\nu$) making it a particularly
-	clean channel for studying QCD radiation in the presence of a boson.
-	Experimentally this process is indistinguishable from the production of a
-	virtual photon which has decayed into the same products and we will consider
-	both throughout.
+	The Large Hadron Collider (LHC) opens up a new region of energies for hadronic
+	collisions.  It has already been a resounding success with the discovery of the
+	scalar Higgs boson completing the particle content of the Standard Model (SM).
+	Hadronic colliders, by their very nature, lead to final states with large
+	amounts of QCD radiation and being able to accurately describe this is
+	essential.  Both the SM and many `Beyond the Standard Model' (BSM) theories
+	predict events with multiple jets in the final state.
 
-	$W$ and $\zg$-production are excellent benchmark processes for investigating
-	QCD corrections, since the mass of the boson provides a perturbative scale,
-	while the event rates allow for jet selection criteria similar to those
-	applied in Higgs boson studies. $W,\zg$-production in association with dijets
-	is of particular interest, since in many respects it behaves like a dijet
-	production emitting a weak boson (i.e. electroweak corrections to a QCD
-	process rather than QCD corrections to a weak process). This observation
-	means that a study of $W,\zg$-production in association with dijets is
-	relevant for understanding Higgs-boson production in association with dijets
-	(which in the gluon-fusion channel can be viewed as a Higgs-boson correction
-	to dijet production). This process is interesting (e.g.~for $CP$-studies) in
-	the region of phase space with large dijet invariant mass, where the
-	coefficients in the perturbative series have logarithmically large
-	contributions to all orders. As an example of the increasing importance of
-	the higher orders, it is noted that the experimental measurement of the
-	$N+1/N$-jet rate in $\zg$+jets increases from 0.2 to 0.3 after application of
-	very modest \wbf-style selection cuts even at 7~TeV~\cite{Chatrchyan:2011ne,Aad:2011qv,Aad:2013ysa}.
+	The current best approach for describing QCD radiation is through the use of
+	a Monte Carlo (MC) generator using the basic principles outlined in section~\ref{sec:MC}.
+	A wide range of such MC generator are available implementing everything from
+	fixed-order perturbative schemes such as those described in~\cite{} to parton
+	shower models which resum the logarithms arising from soft and collinear logarithms~\cite{}.
+	This soft and collinear radiation is experimentally observed to cascade from outgoing
+	high energy quarks and gluons in chaotic patterns we refer to as jets.  While parton
+	showers do a good job of describing the composition of jets they do not give the correct
+	description of the $p_T$ spectrum of events with a high multiplicity of jets.
+	It is also possible, through a procedure known as `matching', to combine the
+	theoretical ideas behind fixed order and parton shower predictions.  These schemes typically
+	produce resummed results and then match to either leading order~\cite{} or next-to-leading~\cite{}
+	results giving a formal accuracy of LO+LL or NLO+LL respectively.  This approach gives a
+	better description of multi-jet states however the current state-of-the-art for the
+	fixed order component is still next-to-leading order in $\alpha_s$.
 
-	The current state-of-the-art for fixed-order calculations for this process is the
-	next-to-leading order calculation of $\zg$ plus 4 jets by the BlackHat
-	collaboration~\cite{Ita:2011wn}.
-	While it has become standard to merge next-to-leading order QCD calculations
-	with parton
-	showers~\cite{Frixione:2002ik,Nason:2004rx,Frixione:2007vw,Alioli:2010xd,Frixione:2010wd,Alwall:2014hca},
-	results for jet production in association with vector bosons have so far only appeared with up to two
-	jets~\cite{Re:2012zi,Campbell:2013vha}.  Indeed, $W/Z+0-$, $1-$ and
-	$2-$jet NLO samples have been merged with higher-order tree-level matrix
-	elements and parton
-	shower formulations~\cite{Hoeche:2012yf,Frederix:2015eii}. However, a parton shower cannot be expected to
-	accurately provide a description of multiple hard jets from its resummation of
-	the (soft and collinear) logarithms which are enhanced in the region of small
-	invariant mass.  An alternative method to describe the higher-order
-	corrections is instead to sum the logarithmic corrections which are enhanced at
-	large invariant mass between the particles.  This is the approach pioneered by
-	the High Energy Jets (HEJ) framework~\cite{Andersen:2009nu,Andersen:2009he}.
-	Here, the hard-scattering matrix elements for a given process are supplemented
-	with the leading-logarithmic corrections (in $s/t$) at all orders in
-	$\alpha_s$. This approach has been seen to give a good description of dijet and
-	$W$ plus dijet data at both the TeVatron~\cite{Abazov:2013gpa} and the
-	LHC~\cite{Aad:2011jz,Chatrchyan:2012gwa,Chatrchyan:2012pb,Aad:2014pua,Aad:2014qxa}.
-	In particular, these logarithmic corrections ensure a good description of $W$
-	plus dijet-production in the region of large invariant mass between the
-	two leading jets~\cite{Aad:2014qxa}. It is not surprising that standard
-	methods struggle in the region of large invariant mass, since the
-	perturbative coefficients receive large logarithmic corrections
-	to all orders, and perturbative stability is guaranteed only once these are systematically summed.
+	In the high energy jets framework we aim to resum the large logarithmic corrections
+	arising well separated (in rapidity), hard final state jets.  We capture these
+	important terms by shuffling the perturbative expansion and calculating only those
+	diagrams which contribute a `leading logarithm' in the limit we are interested in.
 
-	The purpose of this paper is to develop the treatment of such large QCD
-	perturbative corrections within \hej to include the process of $\zg$ plus
-	dijets. While this process has many features in
-	common with the $W$ plus dijets process, one major difference is the
-	importance of interference terms, both between different diagrams within the
-	same subprocess (e.g. $qQ\to qQ(Z\to)e^+e^-$ with emissions off either the $q$ or
-	$Q$ line) and between $Z$ and $\gamma^*$
-	processes of the same partonic configuration. For processes with two quark
-	lines, the possibility to emit the $\zg$ from both of these leads to profound
-	differences to the formalism, since the $t$-channel momentum exchanged
-	between the two quark lines obviously differs whether the boson emission is
-	off line $q$ or $Q$. Furthermore, the interference between the two resulting
-	amplitudes necessitates a treatment at the amplitude-level. \hej is
-	formulated
-	 at the amplitude-level, which, together with the matching to
-	 high-multiplicity matrix-elements, sets it apart in the field of
-	high energy
-	logarithms\cite{Kuraev:1976ge,Balitsky:1978ic,Lonnblad:1992tz,Lavesson:2005xu,Jung:2000hk,Jung:2010si,Colferai:2010wu,Caporale:2012ih,Ducloue:2012bm}. The
-	added complication over earlier \hej-formalism (and indeed in any
-	BFKL-related study) by the interfering $t$-channels introduces a new structure of divergences in both real and virtual
-	corrections, and therefore a new set of subtraction terms are needed, in
-	order to
-	organise the cancellation of these divergences. The matching to full
-	high-multiplicity matrix elements puts the final result much closer to those
-	of fixed order samples merged according to the shower
-	formalism~\cite{Re:2012zi,Campbell:2013vha,Hoeche:2012yf,Frederix:2015eii}
-	--- although of course the logarithms systematically controlled with \hej are
-	different to those controlled in the parton shower formalism. In particular,
-	\hej remains a partonic generator, i.e.~although it is an all-order
-	calculation (like a parton shower), it is not interfaced to a hadronisation
-	model. Initial steps in combining the formalism of \hej and that of a parton
-	shower (and hadronisation) were performed in Ref.\cite{Andersen:2011zd}.
+	In the remainder of this chapter we discuss how we can describe the production
+	of di-leptons plus multiple hard jets through the emission of an electroweak $Z^0$
+	boson and an off-shell photon, $\gamma^*$.  We do this by constructing a current
+	describing $\zg$ emission from one of the incoming quark or anti-quark lines and
+	then combine this with a `passive' quark or gluon current as was described in
+	section~\ref{sec:currents}.  The effective vertex derived in section~\ref{sec:effectiveVertices}
+	can then be used to generalise the resulting matrix element to give an approximate
+	description of the $(\zg\to)e^+e^- + n$ jets final state valid in the High Energy
+	limit of QCD discussed at length in chapter~\ref{chap:HEQCD}.  The interference
+	present from the possible emission sites of the $\zg$ is described exactly by a
+	generalisation of the $t$-channel picture which allows for multiple `chains' of
+	momenta flowing through the reggeised gluons in the $t$-channel.  This approach
+	requires a new regularisation procedure to carefully render the resulting
+	matrix element finite when we consider the cancellation of poles from the Lipatov
+	propagator terms and the effective vertices.
 
-	We begin the main body of this article by outlining the construction of a
-	High Energy Jets amplitude and its implementation in a fully flexible parton
-	level Monte Carlo in the next section.  In section~\eqref{sec:Constructing} we
-	derive the new subtraction terms which allows us to fully account for
-	interference between the amplitudes. The subtraction terms allow for the
-	construction of the all-order contribution to the process as an explicit
-	phase-space integral over any number of emissions. Specifically, the
-	main result for the all-order summation is formulated in
-	Eqn.~\eqref{eq:sigma}:
-	\begin{align}
-	  \nonumber
-	  \begin{split}
-	    \sigma =& \sum_{f_a,f_b} \sum_{n=2}^\infty \int \frac{d^3 p_a}{(2\pi)^3 2E_a} \int \frac{d^3
-	      p_b}{(2\pi)^3 2E_b}  \left( \prod_{i=2}^n \int_{p_{i\perp}>\lambda_{cut}} \frac{d^3 p_i}{(2\pi)^3
-	        2E_i} \right)\ (2\pi)^4 \delta^{(4)}\left(p_a+p_b - \sum_i p_i\right) \\
-	    & \ \times \ |\mathcal{M}^{HEJ-{\rm reg}}_{f_af_b\to \zg
-	      f_a(n-2)gf_b}(p_a,p_b,\{p_i\})|^2 \ \frac{ x_a f_{f_a}(x_a, Q_a) x_b
-	      f_{f_b}(x_b,Q_b)}{\hat s^2}\ \Theta_{\rm cut},
-	  \end{split}
-	\end{align}
-	where $\sigma$ is the sough-after cross
-	section, and the rest of the equation is discussed in the relevant section. Section~\eqref{sec:Constructing} also discusses the necessary
-	modifications in order to include fixed-order matching. In
-	section~\eqref{sec:Comparisons} we show and discuss the comparisons between the new
-	predictions obtained with \hej and LHC data. We conclude and present the
-	outlook in section~\eqref{Conclusions}.
+	The formal accuracy of the description given here is LO+LL.  The leading order
+	accuracy is achieved by performing a multiplicative matching to exact matrix
+	elements generated using \texttt{MadGraph5}.  As discussed in chapter~\ref{chap:HEJ}
+	this required a completely new matching set-up and this too is described later in
+	this chapter along with some of the other computational challenges encountered
+	along the way.
+
+	Finally we present a comparison of results from \hej $\zg$ plus jets to two recent
+	experimental studies at the LHC; one from the ATLAS collaboration and the other
+	from the CMS experiment.  We see that we describe the data well in all of the plots
+	picked by the experiment groups and, indeed, in the regions of phase-space with large
+	rapidity gaps and high invariant mass \hej gives a better description of the data
+	than the other fixed-order and fixed-order plus parton shower predictions included.
 
 \section{Constructing $\zg$+jets}
 	\label{sec:Zcurrents}
@@ -256,11 +191,13 @@
 		there are now four possible places where the (anti-)quark may emit
 		the $Z^0$.  In previous work by the High Energy Jets collaboration the case of
 		$W^\pm$ plus multiple hard jets was treated by simply attaching the boson to an external
-		quark line probabilistically \cite{Andersen:2012gk}.  However as we will see later this
-		leads to an approximate matrix element which differs significantly from the leading-order
-		result and so here we will include not only the contributions to the matrix element arising
-		from the $Z^0$ being emitted from both (anti-) quark legs separately but also the resulting
-		interference term.
+		quark line probabilistically \cite{Andersen:2012gk}.  In the case of $W^\pm$ the interference
+		terms are less of a factor since the emission of the boson changes the flavour of the quark
+		line and so there are less diagrams to contribute to the interference effects.  However as
+		we will see later this leads to an approximate matrix element which differs significantly from
+		the leading-order result and so here we will include not only the contributions to the matrix
+		element arising from the $Z^0$ being emitted from both (anti-) quark legs separately but also
+		the resulting interference term.
 
 	\subsection{$Z^0$ Emission Interference}
 
@@ -1434,4 +1371,8 @@
 		    predictions from HEJ and (b) the predictions from other theory descriptions.}
 		  \label{fig:CMS_3c}
 		\end{figure}
+
+\section{Conclusions}
+
+	Conclusions of $\zg$+jets.
 
