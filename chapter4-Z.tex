@@ -153,20 +153,31 @@
 		We will investigate eqn. \eqref{eq:qgamp} for a `slice' through the final state phase-space
 		where each particles momenta is parametrised by:
 
-		\begin{align}
+		\begin{align*}
 		\begin{split}
 			p_i = &k_{i\perp}\Big(\cosh (y_i); \cos (\phi_i), \sin (\phi_i), \sinh (y_i)\Big) \\
-			\intertext{and,}
+		\end{split}
+		\end{align*}
+
+		and,
+
+		\begin{align}
+		\begin{split}
 			k_{1\perp} = k_{e^+\perp} = 40\mbox{GeV}& \hspace{0.5cm} k_{e^-\perp} =
 			\frac{m_Z^2}{2k_{e^+\perp}\left(\cosh(y_{e^+} - y_{e^-}) -
 			    \cos(\varphi_{e^+} - \varphi_{e^-}))\right)}, \\
 			\varphi_{1} =& \pi \hspace{0.5cm} \varphi_{e^+} = \pi + 0.2 \hspace{0.5cm}
 			\varphi_{e^-} = -(\pi + 0.2), \\
 			y_1=\Delta& \hspace{0.5cm} y_2=-\Delta \hspace{0.5cm} y_{e^+} = \Delta
-			\hspace{0.5cm} y_{e^-} = \Delta - 1.5.
+			\hspace{0.5cm} y_{e^-} = \Delta - 1.5,
 			\label{eq:momenta}
 		\end{split}
 		\end{align}
+
+		So as $\Delta$ increases we pull the two jets apart in rapidity.  In this phase space slice
+		the lepton pair are emitted in the forward region and so the physical picture is that the
+		incoming quark with $p_a\sim p_1=p_+$ emits a $Z^0$ and then a $t$-channel gluon (or a
+		$t$-channel gluon and \emph{then} a $Z^0$).
 
 		We then observe the behaviour shown in fig. \eqref{fig:ZatLO}: as we pull the
 		jets apart in rapidity (i.e. as we go to large $\Delta$) we see that the matrix element
@@ -243,7 +254,7 @@
 		significantly overestimates the final result.  Once the destructive interference
 		effects have been taken into account, the full sum (red, solid) correctly reproduces
 		the LO matrix element (blue, thick solid).  It is therefore clear that at low
-		rapidities the inclusion of the interference effect plays an important role in
+		rapidities the inclusion of the interference effect plays an important r\^ole in
 		the accuracy of the matrix element.  This important interference effect is not
 		included in descriptions when electroweak corrections are included in a parton
 		shower~\cite{Christiansen:2014kba,Krauss:2014yaa,Christiansen:2015jpa}.
@@ -1052,7 +1063,7 @@
 	regardless of what electroweak boson emission (if any) we are concerned with,
 	for example the parton distribution function calls are almost entirely the same
 	no matter which code is run.  To improve upon this situation a unified \HEJ
-	package was created.  This was a complete restructure of the code in to a form
+	package was created.  This was a complete restructure of the code into a form
 	in which a general \texttt{HejGen} polymorphic base class could be
 	constructed abstractly and then made concrete depending on user input.
 	The unified version of the code is an improvement in that it is much more user

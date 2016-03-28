@@ -1,9 +1,12 @@
 \chapter{High Energy QCD}
 \label{chap:HEQCD}
 
-	In this section we look in detail at the `High Energy' limit of QCD.  We begin by defining this limit and
+	In this chapter we look in detail at the `High Energy' limit of QCD.  We begin by defining this limit and
 	looking at how basic $2\rightarrow2$ scattering behaves at leading order and next-to-leading order in
-	$\alpha_s$.
+	$\alpha_s$ before discussing how, in this limit, scattering amplitudes may be conveniently expressed as
+	a contraction between two vector `current' terms.  Finally, we show how we may adorn $2\to2$ matrix
+	elements with real and virtual corrections by way of an effective vertex for real emissions and the Lipatov
+	ansatz respectively.
 
 	\section{The `High Energy' limit}
 		\label{sub:HElimit}
@@ -26,16 +29,22 @@
 		\end{equation}
 
 		where $E$ is the energy of particle and $p_z$ is the $z$ component of its momentum. We can
-		state the criteria in eqn.~\eqref{eqn:MRK} equivalently as $s_{ij}\rightarrow\infty$ where
-		$s_{ij} = (p_i + p_j)^2$.  We sometimes instead use the pseudo-rapidity, $\eta$, which is
-		simply related to the angle of the outgoing state to the beam, $\theta$:
+		state the criteria in eqn.~\eqref{eqn:MRK} equivalently as:
+
+		\begin{equation}
+			s_{ij}\rightarrow\infty\text{ for all i, j,}
+		\end{equation}
+
+		where $s_{ij} = (p_i + p_j)^2$ is the invariant mass of a pair of outgoing partons.  We sometimes
+		parametrise the final states using pseudo-rapidity, $\eta$, rather than rapidity. Pseudo-rapidity
+		is simply related to the angle of the outgoing state to the beam, $\theta$:
 
 		\begin{equation}
 			\eta = -\ln\tan\frac{\theta}{2}.
 			\label{eqn:prap}
 		\end{equation}
 
-		For massless states eqs.~\eqref{eqn:rap} and~\eqref{eqn:prap} are equivalent.
+		For massless states eqn.~\eqref{eqn:rap} and eqn.~\eqref{eqn:prap} are equivalent.
 
 	\section{Mandelstam Variables in the High Energy Limit}
 		\label{sub:MandelstamVariables}
@@ -110,35 +119,40 @@
 		write the matrix element as:
 
 		\begin{align}
-			i\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\text{LO}} &= ig_s^2T^d_{1a}T^d_{2b}\frac{\overline{u}^-(p_1)\gamma^\mu
+			i\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\text{LO}} &= ig_s^2T^d_{1a}T^d_{2b}
+			\frac{\overline{u}^-(p_1)\gamma^\mu
 			  u^-(p_a)\text{ }\overline{u}^-(p_2)\gamma_\mu u^-(p_b)}{t}\\
 			  &= ig_s^2T^d_{1a}T^d_{2b}\frac{\bk{1}{\mu}{a}\cdot\bk{2}{\mu}{b}}{t},
 			  \label{eqn:similarBrackets}
 		\end{align}
 
-		where $t = (p_a - p_1)^2$ and we have used the shorthand $\overline{u}^-(p_i)\gamma^\mu u^-(p_j) = \bk{i}{\mu}{j}$ in the second line.
+		where $t = (p_a - p_1)^2$ and we have used the shorthand
+		$\overline{u}^-(p_i)\gamma^\mu u^-(p_j) = \bk{i}{\mu}{j}$ in the second line.
 		Writing the contraction of these two `current' terms in terms of light-cone coordinates we have:
 
 		\begin{equation}
-			i\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\text{LO}} = ig_s^2T^d_{1a}T^d_{2b}\frac{2\sqrt{p_a^-p_b^+}}{t}
+			i\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\text{LO}} = ig_s^2T^d_{1a}T^d_{2b}
+			\frac{2\sqrt{p_a^-p_b^+}}{t}
 			\left(\sqrt{p_1^+p_2^-}e^{i\phi_2} + \sqrt{p_1^-p_2^+}e^{i\phi_1}\right),
 			\label{eqn:qQ2qQ}
 		\end{equation}
 
-		where $e^{i\phi_i} = \frac{p_{\perp i}}{|p_{\perp i}|}$.  We now approximate the kinematics in such a way that we may write
-		eqn.~\eqref{eqn:qQ2qQ} in a `factorised' form once again.  Specifically we consider that the scattering can be thought
-		of as two partons glancing off one another.  That is, we assume that $p_1^+\ll p_1^-$, $p_2^-\ll p_2^+$ and that $p_a$ ($p_b$)
-		is moving in the backwards (forward) direction.  We can further assume that $p_1^-\approx p_a^-$ and $p_2^+\approx p_b^+$
-		and with this we see that~\eqref{eqn:qQ2qQ} becomes:
+		where $e^{i\phi_i} = \frac{p_{\perp i}}{|p_{\perp i}|}$.  We now approximate the kinematics
+		in such a way that we may write eqn.~\eqref{eqn:qQ2qQ} in a `factorised' form once again.
+		Specifically we consider that the scattering can be thought of as two partons glancing off
+		one another.  That is, we assume that $p_1^+\ll p_1^-$, $p_2^-\ll p_2^+$ and that $p_a$ ($p_b$)
+		is moving in the backwards (forward) direction.  We can further assume that $p_1^-\approx p_a^-$
+		and $p_2^+\approx p_b^+$ and with this we see that~\eqref{eqn:qQ2qQ} becomes:
 
 		\begin{equation}
-			i\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\text{LO}} = \frac{2s}{t}\left(g_sT^d_{1a}e^{i\phi_1}\right)\left(-ig_sT^d_{2b}\right),
+			i\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\text{LO}} =
+			\frac{2s}{t}\left(g_sT^d_{1a}e^{i\phi_1}\right)\left(-ig_sT^d_{2b}\right),
 			\label{eqn:reggeTraj}
 		\end{equation}
 
-		which is `factorised' in the sense that each scalar term in brackets depends only on one quark line; either on the $p_{a/1}$
-		line or the $p_{b/2}$ line.  We see that the amplitude for $qQ\rightarrow qQ$ is dominated by the $s$ kinematic variable.
-		We can express this as:
+		which is `factorised' in the sense that each scalar term in brackets depends only on one
+		quark line; either on the $p_{a/1}$ line or the $p_{b/2}$ line.  We see that the amplitude
+		for $qQ\rightarrow qQ$ is dominated by the $s$ kinematic variable.  We can express this as:
 
 		\begin{equation}
 			\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\text{LO}} \sim s^{\alpha(t)},
@@ -149,12 +163,13 @@
 		the intrinsic spin of the state exchanged.  In our example we have a spin-one gluon exchanged
 		and accordingly we can see from eqn.~\eqref{eqn:reggeTraj} that $\alpha(t)=1$ for $qQ\rightarrow qQ$.
 
-		It is interesting to consider the same process but with a helicity structure $q^-Q^+\to q^-Q^+$.
+		It is also interesting to consider the same process but with a helicity structure $q^-Q^+\to q^-Q^+$.
 		The calculation proceeds similarly to the $q^-Q^-\to q^-Q^-$ and when we write the result in
 		terms of two vector `currents' we get:
 
 		\begin{equation}
-			i\mathcal{M}_{q^-Q^+\rightarrow q^-Q^+}^{\text{LO}} = ig_s^2T^d_{1a}T^d_{2b}\frac{\bk{1}{\mu}{a}\cdot\bk{b}{\mu}{2}}{t},
+			i\mathcal{M}_{q^-Q^+\rightarrow q^-Q^+}^{\text{LO}} = ig_s^2T^d_{1a}T^d_{2b}
+			\frac{\bk{1}{\mu}{a}\cdot\bk{b}{\mu}{2}}{t},
 			\label{eqn:HEfail}
 		\end{equation}
 
@@ -172,7 +187,9 @@
 
 		So we see that since in the full High Energy limit we have that $s=-u$
 		exactly.  Whereas when we leave the amplitude in terms of currents we are able to keep
-		more of the physics by having the weaker constraint $s\sim-u$.
+		more of the physics by having the weaker constraint $s\sim-u$; at the LHC $t$ and $k_\perp^2$
+		can often differ significantly and so the over-approximating the kinematics here would
+		lead to a poor description of the data.
 
 		\begin{figure}
 			\begin{center}
@@ -356,59 +373,92 @@
 				\mathcal{M}_{qg\to qg}^{\text{LO}} = \frac{C_A}{C_f} \mathcal{M}_{qQ\to qQ}^{\text{LO}},
 			\end{equation}
 
-			in the High Energy limit.  It was not at all obvious a priori that this would be the case or that the $qg\to qg$
-			amplitude would `factorise' in the way that $qQ\to qQ$ did.
+			in the High Energy limit. In practice we actually choose \emph{not} to take the High Energy limit to obtain
+			eqn.~\eqref{eqn:fullsum2} so as to approximate as little as possible.  Even without this extra approximation
+			eqn.~\eqref{eqn:fullsum} is still exactly the form of a $t$-channel gluon exchange we saw in
+			eqn.~\eqref{eqn:similarBrackets}.
 
-			We actually choose \emph{not} to take the High Energy limit to obtain eqn.~\eqref{eqn:fullsum2} so as to approximate
-			as little as possible.  Even without this extra approximation eqn.~\eqref{eqn:fullsum} is still exactly the form of
-			a $t$-channel gluon exchange we saw in eqn.~\eqref{eqn:similarBrackets}.
-
-	\section{High Energy Jets `Currents'}
+	\section{Factorisation Into Currents}
 		\label{sec:currents}
 
-		It should not come as a surprise that the $qQ\rightarrow qQ$ and $qg\rightarrow qg$ channels closely resemble
-		each another since if we consider the sub-diagrams involved in the $t$-channel exchange namely the quark and
-		gluon `currents' in the high energy limit we see that they themselves are similar.  The gluon emission
-		current, $j_{g}^\sigma$, shown in fig. (Is this a figure worth having?) is given by
+		While one could argue that the fact that the $qQ\to qQ$ matrix element would factorise into a
+		contraction of two vector currents with a $t$-channel pole was obvious (since the only
+		contribution was from a $t$-channel diagram!), it was not at all obvious that this
+		would also be the case for the $qg\to qg$ amplitude would.  It can also be shown that
+		the same structure is found even in the case of gluon-gluon scattering\cite{Andersen:2011hs}.
+
+		It turns out that this factorisation into a form with only a $t$-channel pole holds for
+		all the helicity configurations where the helicities of the incoming-outgoing parton lines
+		remain unchanged.  For those diagrams where the helicity \emph{is} flipped we find poles
+		in $s$ and $u$ and so these contributions are heavily suppressed in the High Energy limit.
+		The fact that all of the approximate helicity averaged matrix elements squared for any combination
+		of incoming partons, $a$ and $b$, can be written as:
 
 		\begin{equation}
-			j_{g}^\sigma = \left((p_a+p_1)^\sigma g^{\mu\nu} + (q - p_1)^\mu g^{\nu\sigma} -
-			(q + p_a)^\nu g^{\mu\sigma}\right)\epsilon_{a, \mu}\epsilon_{1, \nu}^*.
+			|\bar{\mathcal{M}}_{2\to2}| \sim \sum_{h_a, h_b, h_1, h_2}
+			\left|\frac{j^\mu_a(p_a, p_1)\ j_{b, \mu}(p_b, p_2)}{t}\right|^2,
 		\end{equation}
 
-		In the High Energy limit we can take $p_a\sim p_1$ and therefore this becomes:
+		is exploited in \hej to express more general matrix elements (those with higher multiplicity or
+		more complicated final states) approximately.
+
+		By constructing a current describing, for example, a $W^\pm$ boson being emitted from an
+		incoming-outgoing quark line we can then write down the matrix element for the process
+		$q'q\to(W^\pm\to)\nu e^\pm q'Q$ as:
 
 		\begin{equation}
-			j_{g}^\sigma \sim \left(2p_a^\sigma g^{\mu\nu} - p_a^\mu g^{\nu\sigma} -
-			p_1^\nu g^{\mu\sigma}\right)\epsilon_{a, \mu}\epsilon_{1, \nu}^*.
+			|\bar{\mathcal{M}}_{2\to2}|^2 \sim \sum_{h_a, h_b, h_1, h_2, h_{e^\pm}, h_\nu}
+			\left|\frac{j^\mu_{W^\pm}(p_a, p_1, p_{e^\pm}, p_\nu)\ j_\mu(p_b, p_2)}{t}\right|^2,
+			\label{eqn:wExample}
 		\end{equation}
 
-		But the second and third terms here are zero once we take the contraction with the gluon polarisations $\epsilon_{a, \mu}$
-		and $\epsilon_{1, \nu}^*$ respectively so we are left with simply:
+		where the quark line which emitted the $W^\pm$ has changed flavour from $q$ to $Q$.  Eqn.~\eqref{eqn:wExample}
+		is an approximation which, technically, is only valid in the strict limit of infinite invariance mass between
+		the outgoing quarks however, as we will see later, this approximation does a remarkably good job at
+		describing data far away from its formal region of applicability.
 
-		\begin{equation}
-			j_{g}^\sigma \sim 2p_a^\sigma\epsilon_{a}^\mu\cdot\epsilon_{1, \mu}^*.
-			\label{eqn:gluonCurrent}
-		\end{equation}
+		% It should not come as a surprise that the $qQ\rightarrow qQ$ and $qg\rightarrow qg$ channels closely resemble
+		% each another since if we consider the sub-diagrams involved in the $t$-channel exchange namely the quark and
+		% gluon `currents' in the high energy limit we see that they themselves are similar.  The gluon emission
+		% current, $j_{g}^\sigma$, shown in fig. (Is this a figure worth having?) is given by
 
-		If we compare this to the quark current, $j_{q}^\sigma$, shown in fig. (Is this a figure worth having?),
-		which is given by:
+		% \begin{equation}
+		% 	j_{g}^\sigma = \left((p_a+p_1)^\sigma g^{\mu\nu} + (q - p_1)^\mu g^{\nu\sigma} -
+		% 	(q + p_a)^\nu g^{\mu\sigma}\right)\epsilon_{a, \mu}\epsilon_{1, \nu}^*.
+		% \end{equation}
 
-		\begin{equation}
-			j_{q}^\sigma = \bk{1}{\sigma}{a},
-		\end{equation}
+		% In the High Energy limit we can take $p_a\sim p_1$ and therefore this becomes:
 
-		and using the spinor-helicity property for spinors with the same momenta:
+		% \begin{equation}
+		% 	j_{g}^\sigma \sim \left(2p_a^\sigma g^{\mu\nu} - p_a^\mu g^{\nu\sigma} -
+		% 	p_1^\nu g^{\mu\sigma}\right)\epsilon_{a, \mu}\epsilon_{1, \nu}^*.
+		% \end{equation}
 
-		\begin{equation}
-			j_{q}^\sigma \sim 2p_a^\sigma
-		\end{equation}
+		% But the second and third terms here are zero once we take the contraction with the gluon polarisations
+		% $\epsilon_{a, \mu}$ and $\epsilon_{1, \nu}^*$ respectively so we are left with simply:
 
-		which is identical to~\eqref{eqn:gluonCurrent} aside from a scalar gauge-dependent term.
+		% \begin{equation}
+		% 	j_{g}^\sigma \sim 2p_a^\sigma\epsilon_{a}^\mu\cdot\epsilon_{1, \mu}^*.
+		% 	\label{eqn:gluonCurrent}
+		% \end{equation}
 
-		In what
-		follows we choose to construct high multiplicity matrix elements by decomposing the full result
-		into the contraction of two currents and a number of effective vertices.  This choice allows us
+		% If we compare this to the quark current, $j_{q}^\sigma$, shown in fig. (Is this a figure worth having?),
+		% which is given by:
+
+		% \begin{equation}
+		% 	j_{q}^\sigma = \bk{1}{\sigma}{a},
+		% \end{equation}
+
+		% and using the spinor-helicity property for spinors with the same momenta:
+
+		% \begin{equation}
+		% 	j_{q}^\sigma \sim 2p_a^\sigma
+		% \end{equation}
+
+		% which is identical to~\eqref{eqn:gluonCurrent} aside from a scalar gauge-dependent term.
+
+		In what follows we construct high multiplicity matrix elements by approximating the full result
+		by the contraction of two currents and a number of effective vertices.  This choice allows us
 		to construct matrix elements with a simple form which contains the leading logarithms by
 		ensuring that they have the maximal number of gluons exchanged in the $t$-channel.\\
 		As a simple example we consider the production of 4 exclusive jets in the High Energy limit.
@@ -418,10 +468,11 @@
 
 		\begin{equation}
 			\mathcal{M}_{\text{(a)}}\sim\frac{1}{(p_a - p_1)^2(p_a - p_1 - p_2)^2(p_a - p_1 - p_2 - p_3)^2},
+			\label{eqn:inPlace}
 		\end{equation}
 
 		arising from the gluon propagators.  By contrast figs.~\eqref{fig:quadJets2} and~\eqref{fig:quadJets3} will
-		have:
+		have, in place of~\eqref{eqn:inPlace}:
 
 		\begin{align}
 			\mathcal{M}_{\text{(b)}}\sim\frac{\slashed p_a - \slashed p_1}
@@ -465,10 +516,57 @@
 		and $\mathcal{M}_{\text{(c)}}$ will be suppressed with respect to $\mathcal{M}_{\text{(a)}}$.
 		Clearly this only a heuristic argument but it is sufficient to motivate the construction of
 		high multiplicity amplitudes from $t$-channel gluon exchanges with the understanding that any
-		other diagrams will be formally sub-leading.  We call the the configurations with a maximal
+		other diagrams will be formally sub-leading.  We call the configurations with a maximal
 		number of gluons exchanged in the $t$-channel an `FKL' configuration;  For example
 		fig.~\eqref{fig:quadJets1} is an FKL configuration while fig.~\eqref{fig:quadJets2} and fig.
 		\eqref{fig:quadJets3} are `non-FKL' configurations.
+
+		A more formal argument for which processes dominate in this limit was given by Fadin and Lipatov
+		\cite{Kuraev:1976ge,Balitsky:1978ic}.  They found that, in the High Energy limit, scattering
+		amplitudes scaled in the same way as was predicted by Regge theory.  This states that in the
+		large invariant mass region a $2\to n$ matrix element has a limiting behaviour determined by
+		the maximum spin of any particle which could be exchanged in the $t$-channel between final
+		state partons neighbouring in rapidity.  We can then find the scaling of a process, for example
+		$qg\to qg$, in particular regions of phase space where either $y_g\gg y_q$ or $y_q\gg y_g$ simply
+		by drawing the associated colour connection diagrams for it.  This is shown in~\eqref{fig:colorConns}.
+		Since when we have $y_g\gg y_q$ it is only possible to exchange a colour triplet (with spin one half)
+		the cross-section will be dominated by the region where $y_q\gg y_g$.  The case for $2\to n$ is similar
+		with the limiting behaviour of the matrix element given by
+
+		\begin{equation}
+			\mathcal{M}^{\text{HE}}_{2\to n}\sim s_{12}^{\omega_1}\cdots s_{(n-1)n}^{\omega_{(n-1)}}.
+			\label{eqn:reggeScaling}
+		\end{equation}
+
+		Eqn.~\eqref{eqn:reggeScaling} now makes the previous discussion regarding figs.~\eqref{fig:quadJets}
+		formally clear since fig.~\eqref{fig:quadJets1} will scale like:
+
+		\begin{equation}
+			\mathcal{M}^{\text{HE}}_{2\to 4} \sim s_{12}s_{23}s_{34},
+		\end{equation}
+
+		in the High Energy limit while figs.~\eqref{fig:quadJets2} and~\eqref{fig:quadJets3} will scale
+		like:
+
+		\begin{align}
+		\begin{split}
+			\mathcal{M}^{\text{HE}}_{2\to 4} \sim s_{12}^{\nicefrac{1}{2}}s_{23}s_{34},\\
+			\mathcal{M}^{\text{HE}}_{2\to 4} \sim s_{12}^{\nicefrac{1}{2}}s_{23}s_{34}^{\nicefrac{1}{2}},
+		\end{split}
+		\end{align}
+
+		respectively.  Since $s_{ij}$ are all large here, the processes with a (anti)quark exchanged
+		in the $t$-channel will be high suppressed.
+
+		\begin{figure}
+			\begin{center}
+			\includegraphics[width=1.0\linewidth]{ColourConns}
+			\caption{The limiting behaviour of $qg\to qg$ in the regions of phase space where
+			either $y_g\gg y_q$ or $y_q\gg y_g$.  The intermediate diagrams indicate the flow
+			of colour through the process.}
+			\label{fig:colorConns}
+			\end{center}
+		\end{figure}
 
 		Here is a convenient place to define the `$t$-channel factorised' form for matrix elements,
 		$\overline{\mathcal{M}}^t_{qQ\rightarrow qQ}$, in which we extract the $t$ poles from the
@@ -482,7 +580,7 @@
 			\label{eqn:factorised}
 		\end{equation}
 
-		where $N_c=3$ and $C_F=\frac{4}{3}$ for QCD, $S$ is the matrix element for a $2\rightarrow2$ process
+		where $N_c=3$ and $C_F=\nicefrac{4}{3}$ for QCD, $S$ is the matrix element for a $2\rightarrow2$ process
 		in the form of a contraction of two currents, and $t_i$ are the squared $t$-channel momenta - in this
 		case $t_1=(p_a-p_1)^2$ and $t_1=(p_2-p_b)^2$.  While for this example eqn.~\eqref{eqn:factorised} is
 		just an exact rewriting of a previous result we will use the form shown here to generalise to describing
@@ -535,13 +633,15 @@
 		\end{figure}
 
 		\begin{equation}
-			\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\text{LO}} = -g_s^2T^d_{1a}T^d_{2b}\frac{\bk{1}{\mu}{a}\cdot\bk{2}{\mu}{b}}{t},
+			\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\text{LO}} =
+			-g_s^2T^d_{1a}T^d_{2b}\frac{\bk{1}{\mu}{a}\cdot\bk{2}{\mu}{b}}{t},
 		\end{equation}
 
 		as follows:
 
 		\begin{align}
-			\text{Im}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big) = \frac{1}{2(2\pi)^2}\int &d^4k\text{ }\delta((p_a-k)^2)
+			\text{Im}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big) =
+			\frac{1}{2(2\pi)^2}\int &d^4k\text{ }\delta((p_a-k)^2)
 			\delta((p_b+k)^2)\\ &\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\text{LO}}(k)
 			\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\dagger\text{LO}}(k-q),
 		\end{align}
@@ -551,7 +651,8 @@
 		integration to give:
 
 		\begin{equation}
-			\text{Im}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big) = 4\alpha_s^2 s\text{ }\mathcal{C}_1(T^a,T^b)
+			\text{Im}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big) =
+			4\alpha_s^2 s\text{ }\mathcal{C}_1(T^a,T^b)
 			\int \frac{dk_{\perp}}{k_{\perp}(k_{\perp} - q_{\perp})},
 		\end{equation}
 
@@ -561,25 +662,29 @@
 
 		\begin{align}
 		\begin{split}
-			\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}} = &\text{Re}(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}) +
+			\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}} =
+			&\text{Re}(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}) +
 			i\text{Im}(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}})\\
 			:=&\widetilde{\mathcal{M}}_{qQ\rightarrow qQ}^{\text{NLO, II}}\ln\frac{s}{t} + \text{sub-leading}\\
-			=&\widetilde{\mathcal{M}}_{qQ\rightarrow qQ}^{\text{NLO, II}}\ln\left|\frac{s}{t}\right| + \text{sub-leading},
+			=&\widetilde{\mathcal{M}}_{qQ\rightarrow qQ}^{\text{NLO, II}}
+			\ln\left|\frac{s}{t}\right| + \text{sub-leading},
 			\label{eqn:rAndI}
 		\end{split}
 		\end{align}
 
-		where we have used that $\frac{s}{t} < 0$.  Comparing real and imaginary parts of eqn.~\eqref{eqn:rAndI} and assuming
-		that $\widetilde{\mathcal{M}}_{qQ\rightarrow qQ}^{\text{NLO, II}}$ is real we see that:
+		where we have used that $\frac{s}{t} < 0$.  Comparing real and imaginary parts of eqn.~\eqref{eqn:rAndI}
+		and assuming that $\widetilde{\mathcal{M}}_{qQ\rightarrow qQ}^{\text{NLO, II}}$ is real we see that:
 
 		\begin{equation}
-			\text{Re}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big) = -\frac{1}{\pi}\text{Im}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big)
+			\text{Re}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big) =
+			-\frac{1}{\pi}\text{Im}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big)
 		\end{equation}
 
 		and we can reconstruct the real part of the amplitude as:
 
 		\begin{equation}
-			\text{Re}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big) = -\frac{4\alpha_s^2u}{\pi} \mathcal{C}_1(T^a,T^b)
+			\text{Re}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big) =
+			-\frac{4\alpha_s^2u}{\pi} \mathcal{C}_1(T^a,T^b)
 			\ln\left|\frac{u}{t}\right|\int \frac{dk_{\perp}}{k_{\perp}(k_{\perp} - q_{\perp})}.
 			\label{eqn:uncrossedNLOcontrib}
 		\end{equation}
@@ -589,7 +694,8 @@
 		\eqref{eqn:uncrossedNLOcontrib} and calculate a new colour factor, $\mathcal{C}_2(T^a,T^b)$:
 
 		\begin{equation}
-			\text{Re}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, X}}\Big) = -\frac{4\alpha_s^2s}{\pi} \mathcal{C}_2(T^a,T^b)
+			\text{Re}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, X}}\Big) =
+			-\frac{4\alpha_s^2s}{\pi} \mathcal{C}_2(T^a,T^b)
 			\ln\left|\frac{s}{t}\right| \int \frac{dk_{\perp}}{k_{\perp}(k_{\perp} - q_{\perp})}.
 			\label{eqn:crossedNLOcontrib}
 		\end{equation}
@@ -828,17 +934,17 @@
 \chapter{High Energy Jets}
 \label{chap:HEJ}
 
-	\section{The \HEJ Framework}
+	{\color{red}
+	\begin{itemize}
+		\item HEJ codebase
+		\item Current predictions
+		\item What else can go here...
+		\item Combined code discussion?
+		\item J/W/H comparisons to data?
+	\end{itemize}
+	}
 
-		{\color{red}
-		\begin{itemize}
-			\item HEJ codebase?
-			\item Current predictions?
-			\item What else can go here...
-			\item Combined code discussion?
-			\item J/W/H comparisons to data?
-		\end{itemize}
-		}
+	\section{The \HEJ Framework}
 
 	\section{Comparisons to Data}
 
