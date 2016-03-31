@@ -1027,14 +1027,90 @@
 			many analyses are implemented in \texttt{Rivet} routines and it is, in principle,
 			just a matter of plugging in the right analysis name.
 
-			\item \textbf{Monte Carlo Generation}:...
+			\item \textbf{Monte Carlo Generation}: In the Monte Carlo stage of a \HEJ run we
+			proceed iteratively over a (typically very large) number of events.  For each
+			event we much generate a phase space; how many outgoing partons and with
+			what momentum they carry.  With this information we can use our knowledge of $x_a$
+			and $x_b$ and the importance sampling ideas discussed in chapter~\ref{chap:theory}
+			to randomly generate parton types for our incoming partons - there are, of course,
+			additional constraints which are process dependent to consider.  For example, we
+			will never select a gluon-gluon incoming pairing if we wish to calculate the matrix
+			element for $\zg$+jets in an FKL configuration since this would be computationally
+			wasteful.\\Once we have a definite phase space and the incoming types have been
+			specified we can calculate the matrix element using some generalisation of eqn.
+			~\eqref{eqn:factorised} - the exact matrix element used will depend on the
+			final state multiplicity and the process chosen by the user in stage (1).  Virtual
+			corrections are also included at this stage.\\Lastly we perform a
+			multiplicative matching to the exact leading order matrix element provided by
+			\texttt{MadGraph} (v5), the details of which will be discussed further in chapter
+			~\ref{chap:Zs}.
 
-			\item \textbf{Analysis}:..
-
+			\item \textbf{Analysis}: In the analysis stage the event is passed off to either
+			the \HEJ analysis framework or to \texttt{Rivet} (depending on the user input file).
+			Here we enforce kinematic constraints on our final state to study on the regions of
+			phase space we are interested in - or those regions probed by a particular
+			experimental analysis whose results we wish to compare to.  In \HEJ it is possible
+			perform a complete run `un-cut' whereby the generated events are outputted before
+			the analysis phase in to a given format (\texttt{ROOT} N-tuples, \texttt{LH} events
+			and \texttt{HepMC} (v2) records are all supported).  This is preferable when the same
+			generation can be reused multiple times however for very long runs outputting all of the
+			events becomes unfeasible and we must take the second option of performing \HEJ analyses
+			on-the-fly i.e. cutting as iterate through events.
 		\end{enumerate}
 
-
-	\subsection{Comparisons to Data}
+		While this breakdown is a good broad strokes overview of \HEJ there are hundreds of intricacies
+		which must be treated along the way.  One worth mentioning is the calculation of scale uncertainty
+		bands for predictions.  In section~\eqref{sec:divAndReg} we discussed how some given observable, $R$,
+		will depend on the renormalisation scale, $\mu_r$, or more specifically - how is must not.  Our theory
+		is, after all, meaningless if its predictions are effected by a choice of an unphysical scale.  However,
+		when we do our perturbative expansion (through a resummation or fixed-order approach) we develop a
+		dependence on this scale.  It is important to understand the size of this dependence and so when
+		generating Monte Carlo predictions we must produce not only a `central' prediction for each value but
+		also an associated `scale uncertainty' band.  For fixed-order calculations this is simple a case of
+		varying $\alpha_s$ through the value of $\mu_r$ but since the \hej matrix element contains scale
+		dependence through the QCD coupling \emph{and} the Lipatov ansatz we must evaluate entire matrix elements
+		at a variety of scales to properly understand our dependence and to provide meaningful predictions.  The
+		factorisation scale dependence must also be varied (in a tandem with varying $\mu_r$) to get a complete
+		scale uncertainty band and this is run by default as part of \HEJ.
 
 	\subsection{Matching to \ARIADNE}
+
+		The current schema for describing all-order corrections to jet rates at hadronic colliders
+		is based on the limit in which emissions are both hard and well separated.  Of course, some
+		radiation at hadronic colliders is soft or produced collinear to other radiation (or both)
+		and such emissions lead to large logarithmic enhancements similar to those discussed in this
+		work (I stress here that by similar I mean their effect on the assumptions behind fixed-order
+		perturbation theory is similar - their \emph{soft and collinear} cause is completely opposite
+		to the \emph{hard wide-angle} logarithms resummed here!).
+
+		These effects can be included by including a parton shower description.  Several schemes for
+		performing this `matching'.  The CKKW(L) and MLM schemes work by generating showered predictions
+		and then applying a correction above some merging scale above which the hard scatter is considered
+		to be the dominant force.  In this way fixed order predictions can be augmented to also contain the
+		leading logarithms from the parton shower.
+
+		\HEJ has been matched to the \ARIADNE parton shower~\cite{Andersen:2011zd}.  \ARIADNE is based on
+		the Lund colour dipole model which attempts to describe final state QCD radiation resulting from
+		a hard scatter: it considers the splitting of colour dipoles in to more colour dipoles rather than
+		partons splitting to more partons.  It calculates the probability of an emission from the splitting
+		function, $\mathcal{D}(p_\perp^2, y)$, as being approximately given by:
+
+		\begin{equation}
+			\mathcal{D}(p_\perp^2, y) \approx = \frac{z}{16\pi^2}\frac{|\mathcal{M}_{n+1}|^2}{|\mathcal{M}_{n}|^2}.
+		\end{equation}
+
+		From this we can define `no-emission' probabilities, $\Delta(p_{1\perp}^2, p_{2\perp}^2)$, which
+		give us the probability that we don't emit extra radiation as we evolve a partons transverse
+		momentum between two scales $p_{1\perp}^2$ and $p_{2\perp}^2$:
+
+		\begin{equation}
+			\Delta(p_{1\perp}^2, p_{2\perp}^2) = \exp\left(-\int_{p_{1\perp}^2}^{p_{2\perp}^2}dp_{\perp}^2
+			\int dy\mathcal{D}(p_\perp^2, y)\right).
+		\end{equation}
+
+		When it comes to matching the \hej framework to \ARIADNE the matching picture is different.
+		As we will see later on, we include radiation down to a very soft scale (this is required in
+		order to render the integrated cross-section finite) and so were we to perform a na\"ive
+		matching to a parton shower we would be double-counting all of the soft non-collinear radiation.
+		As such we....
 
