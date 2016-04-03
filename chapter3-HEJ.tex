@@ -1,3 +1,4 @@
+% !TEX root = thesis.tex
 \chapter{High Energy QCD}
 	\label{chap:HEQCD}
 
@@ -1116,10 +1117,38 @@
 
 	\subsection{Comparisons to data}
 
-		{
-		\color{red}
-		\begin{itemize}
-			\item No more plots!  Talk about and reference the papers instead...
-		\end{itemize}
-		}
+		The \hej framework has been thoroughly tested for a number of the currently available final states (jets,
+		$W^\pm$+jets and $\zg$+jets) against other theoretical descriptions and experimental data in a number of
+		papers by the ATLAS, CMS and D$\emptyset$ collaborations~\cite{Aad:2011jz,Aad:2014pua,Aad:2014qxa,Aad:2014rta,
+		Chatrchyan:2012gwa,Abazov:2013gpa,ZPaper}.
+
+		These studies probe a wide range of experimental observables with a variety of cuts and specifics.
+		\hej is seen to provide an excellent description of data in all of these studies in the regions
+		of phase space close to the High Energy limit.  Interestingly \HEJ is seen to be competitive with
+		other state-of-the-art theoretical descriptions even when we are very far from this strict limit;
+		in areas with soft radiation or limited rapidity regions in which to radiate.  Examples of comparisons
+		to experimental data are shown in fig.~\ref{fig:d0wjets} and fig.~\ref{fig:wJetsEg}.
+
+		In fig.~\ref{fig:d0wjets} we see that the probability of a third emission from a dijet system (constructed
+		from the most forward and backward jets in the event) in addition to a $W^\pm$ boson.  As we pull apart the
+		dijet system there is increasingly more phase space into which we can radiate extra emissions and so the
+		probability of emission increases.  We see that \HEJ and \texttt{BlackHat} describes the data well across
+		the full range of the dijet rapidity, $\Delta y_{j_F, j_B}$, while the other generators considerably
+		underestimate the dijet activity.
+
+		Fig.~\ref{fig:wJetsEg} describes the differential distribution fir $W^\pm$ plus dijets in terms of the
+		invariant mass of the dijet system defined by the two leading jets in $p_\perp$, $m_{jj}$.  Large values
+		of $m_{jj}$ correspond to the High Energy limit and so we expect that \hej should describe well this region.
+		In fact, \HEJ gives the best description of data across almost the entire range of $m_{jj}$ with the other
+		theoretical predictions only agreeing with data below an invariant mass of approximately $300$~GeV.
+
+		\begin{figure}
+			\begin{center}
+			\includegraphics[width=1.0\linewidth]{wJetsEg}
+			\caption{The distribution of $W^\pm$ plus inclusive dijets with at least
+			2 jets differential in the invariant mass of the leading dijets in $p_\perp$, $m_{12}$.
+			Fig. from \cite{Aad:2014qxa}}.
+			\label{fig:wJetsEg}
+			\end{center}
+		\end{figure}
 
