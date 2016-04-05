@@ -9,5 +9,5 @@
 "bibtex"    thesis
 "pdflatex"  thesis.tex
 "pdflatex"  thesis.tex
-rm *.dvi *.ps *.log *.aux *.toc *.blg *.bbl *.lof *.lot *.fdb_latexmk *.fls 2>/dev/null || true
+rm *.dvi *.ps *.log *.aux *.toc *.blg *.bbl *.lof *.out *.lot *.fdb_latexmk *.fls 2>/dev/null || true
 

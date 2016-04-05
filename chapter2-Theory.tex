@@ -569,7 +569,7 @@
 	collider predictions include studies of the ratio of the 3-jet inclusive cross-section to the 2-jet inclusive
 	cross-section as a means of finding the strong coupling \cite{Chatrchyan:2013txa}.
 
-	\begin{figure}[htp]
+	\begin{figure}[hbt]
 		\centering
 		\includegraphics[width=0.9\textwidth]{Figures/runningAlphaS}
 		\caption{The evolution of $\alpha_s$ over several orders of magnitude in the scale of the process $Q^2$.  The data
@@ -1810,7 +1810,7 @@
 	we can reduce the variance of our approximation significantly.  Tab. ~\ref{tab:simpleIS} shows how the approximation improves as we vary
 	the number of samples, $N$, for the two cases of $q\sim\mathcal{U}(0,0.5)$ and $q\sim x^4$.
 
-	\begin{table}[htp]
+	\begin{table}[hbt]
 		\begin{center}
 		\begin{tabular}{c | c | c | c | c}
 		$N$       & \multicolumn{2}{c|}{$q\sim\mathcal{U}(0.0,0.5)$} & \multicolumn{2}{c}{$q\sim x^4$} \\ \hline
@@ -1827,7 +1827,7 @@
 		\end{center}
 	\end{table}
 
-	\begin{figure}[htp]
+	\begin{figure}[hbt]
 		\includegraphics[width=\textwidth]{importanceSampling}
 		\caption{A simple importance sampling example (see equation~\eqref{eqn:simpleIS}).  The integrand, $f(x)$, is shown in blue,
 		the importance sampling distribution is shown in green and, for comparison, the uniform probability density function used
@@ -1856,7 +1856,7 @@
   	Obvious comparisons with fig.~\eqref{fig:simpleIS} can be drawn in the sense that were we to generate events with a uniform spread
   	of values for $p_Z^2$ we would end with a very slow rate of convergence by oversampling areas where the integrand is very small and slowly varying.
 
-	\begin{figure}[htp]
+	\begin{figure}[hbt]
 		\centering
 		\includegraphics[width=0.8\textwidth, height=0.6\textwidth]{breitWigner}
 		\caption{The absolute value squared of the $Z^0$ propagator for a range of values of the invariant mass squared of the
@@ -1865,7 +1865,7 @@
 		\label{fig:breitWigner}
   	\end{figure}
 
-	\begin{figure}[htp]
+	\begin{figure}[hbt]
 		\centering
 		\includegraphics[width=0.8\textwidth, height=0.6\textwidth]{HERAFit}
 		\caption{Recent parton distribution function fits from the HERA experiment.  The observed variation in $f(x_{a/b}, Q^2)$, especially at high
@@ -1890,7 +1890,7 @@
   	be explained in later sections).  In \HEJ the production of the Drell-Yan decay products via a $Z^0$ boson or an off-shell photon
   	is implemented by using exactly the importance sampling scheme shown in eqn.~\eqref{eqn:schematicZ} and fig.~\eqref{fig:breitWigner} -
   	that is we focus our matrix element evaluations predominantly around the $Z^0$ mass peak. Fig.~\eqref{fig:HEJ_CMS2} shows the
-  	comparisons to data for the three di-lepton invariant mass ranges studied.  Fig.~\eqref{fig:HEJ_CMS2_1}. shows the distribution
+  	comparisons to data for the three di-lepton invariant mass ranges studied.  Fig.~\eqref{fig:HEJ_CMS2_1} shows the distribution
   	in terms of the absolute value of the rapidity between the reconstructed di-lepton pair and the leading jet in $p_\perp$ for a di-lepton
   	invariant mass of between 60 and 120~GeV (i.e. centered on the $Z^0$ peak).  We see that both \texttt{MadGraph} and \HEJ give a good
   	description of data across the full range of rapidity gaps.  Figs.~\eqref{fig:HEJ_CMS2_2} and ~\eqref{fig:HEJ_CMS2_3} show the same
@@ -1906,35 +1906,47 @@
 
 	\begin{figure}[h]
 		\centering
-		\begin{subfigure}[b]{0.65\textwidth}
+		\begin{subfigure}[b]{0.75\textwidth}
 		  \includegraphics[width=\textwidth]{CMS2_Z_M60_120H}
 		  \caption{}
 		  \label{fig:HEJ_CMS2_1}
 		\end{subfigure}
-		\begin{subfigure}[b]{0.45\textwidth}
+	\end{figure}
+
+	\begin{figure}[h]
+		\ContinuedFloat
+
+		\begin{subfigure}[b]{0.47\textwidth}
 		  \includegraphics[width=\textwidth]{CMS2_Z_M30_60H}
 		  \caption{}
 		  \label{fig:HEJ_CMS2_2}
 		\end{subfigure}
 		~
-		\begin{subfigure}[b]{0.45\textwidth}
+		\begin{subfigure}[b]{0.47\textwidth}
 		  \includegraphics[width=\textwidth]{CMS2_F_M30_60H}
 		  \caption{}
 		  \label{fig:HEJ_CMS2_3}
 		\end{subfigure}
 
-		\begin{subfigure}[b]{0.45\textwidth}
+		\begin{subfigure}[b]{0.47\textwidth}
 		  \includegraphics[width=\textwidth]{CMS2_Z_M120_1500H}
 		  \caption{}
 		  \label{fig:HEJ_CMS2_4}
 		\end{subfigure}
 		~
-		\begin{subfigure}[b]{0.45\textwidth}
+		\begin{subfigure}[b]{0.47\textwidth}
 		  \includegraphics[width=\textwidth]{CMS2_H_M120_1500H}
 		  \caption{}
 		  \label{fig:HEJ_CMS2_5}
 		\end{subfigure}
 		\label{fig:HEJ_CMS2}
-		\caption{}
+		\caption{Comparisons of \HEJ and \texttt{MadGraph} (v5) to data from a CMS study of double-differential
+		Drell-Yan production.  Fig.~\eqref{fig:HEJ_CMS2_1} shows the mass range focussed on the $Z^0$ peak
+		(60-120~GeV), figs.~\eqref{fig:HEJ_CMS2_2} and ~\eqref{fig:HEJ_CMS2_3} show the di-lepton invariant
+		mass range from 30-60~GeV and lastly figs.~\eqref{fig:HEJ_CMS2_4} and ~\eqref{fig:HEJ_CMS2_5} show
+		the mass range from 120-1500~GeV.  For figs.~(2.9b-e) which probe regions away from the Breit-Wigner peak
+		two \HEJ lines are shown - figs.~\eqref{fig:HEJ_CMS2_2} and ~\eqref{fig:HEJ_CMS2_4} use the
+		na\"ive Breit-Wigner sampling while figs.~\eqref{fig:HEJ_CMS2_2} and ~\eqref{fig:HEJ_CMS2_4}
+		use a modified importance sampling scheme.}
 	\end{figure}
 
