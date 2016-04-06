@@ -7,10 +7,11 @@
 
 % Packages from paper
 \usepackage{cite,tabularx,cancel,flafter,ifpdf}
-\usepackage{graphicx, caption, color}
+\usepackage{graphicx, caption}
 \usepackage{amsmath, amssymb, epstopdf, slashed, nicefrac}
 \usepackage{parskip}
 \usepackage{float, hyperref}
+\usepackage[usenames, dvipsnames]{color}
 % \usepackage[left]{showlabels}
 
 \DeclareMathOperator{\Tr}{Tr}
@@ -38,6 +39,9 @@
 \renewcommand{\hoffset}{0cm}
 \renewcommand{\voffset}{0cm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 100TeV colours
+\definecolor{100TeVRed}{RGB}{104, 70, 70}
 
 %% In the beginning ....
 \begin{document}
@@ -79,9 +83,6 @@
 \newcommand{\htev}{$100$~TeV\xspace}
 \newcommand{\stev}{$7$~TeV\xspace}
 \newcommand{\Ca}{\ensuremath{C_{\!A}}\xspace}
-
-% 100TeV colours
-% \definecolor{100TeVRed}{RGB}{104, 70, 70}
 
 \pagestyle{fancy}
 \fancyhead{}
