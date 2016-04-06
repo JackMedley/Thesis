@@ -590,17 +590,17 @@
 		\centering
 
 		\begin{subfigure}[b]{0.31\textwidth}
-			\includegraphics[width=\textwidth]{quadJets1}
+			\includegraphics[width=\textwidth, height=0.7\textwidth]{quadJets1}
 			\caption{}
 			\label{fig:quadJets1}
 		\end{subfigure}
 		\begin{subfigure}[b]{0.31\textwidth}
-			\includegraphics[width=\textwidth]{quadJets2}
+			\includegraphics[width=\textwidth, height=0.7\textwidth]{quadJets2}
 			\caption{}
 			\label{fig:quadJets2}
 		\end{subfigure}
 		\begin{subfigure}[b]{0.31\textwidth}
-			\includegraphics[width=\textwidth]{quadJets3}
+			\includegraphics[width=\textwidth, height=0.7\textwidth]{quadJets3}
 			\caption{}
 			\label{fig:quadJets3}
 		\end{subfigure}
@@ -971,22 +971,12 @@
 		combination of incoming partons, $a$ and $b$, can be written as:
 
 		\begin{equation}
-			|\bar{\mathcal{M}}_{2\to2}| \sim \sum_{h_a, h_b, h_1, h_2}
+			|\bar{\mathcal{M}}_{2\to2}| \propto \sum_{h_a, h_b, h_1, h_2}
 			\left|\frac{j^\mu_a(p_a, p_1)\ j_{b, \mu}(p_b, p_2)}{t}\right|^2,
 		\end{equation}
 
 		is exploited in \hej to express more general matrix elements (those with higher multiplicity or
 		more complicated final states) approximately.
-
-		For example by constructing a current describing a $W^\pm$ boson being emitted from an
-		incoming-outgoing quark line we can then write down the matrix element for the process
-		$q'q\to(W^\pm\to)\nu e^\pm q'Q$ as:
-
-		\begin{equation}
-			|\bar{\mathcal{M}}_{2\to2}|^2 \sim \sum_{h_a, h_b, h_1, h_2, h_{e^\pm}, h_\nu}
-			\left|\frac{j^\mu_{W^\pm}(p_a, p_1, p_{e^\pm}, p_\nu)\ j_\mu(p_b, p_2)}{t}\right|^2,
-			\label{eqn:wExample}
-		\end{equation}
 
 		Here is a convenient place to define the `$t$-channel factorised' form for matrix elements,
 		$\overline{\mathcal{M}}^t_{qQ\rightarrow qQ}$, in which we extract the $t$ poles from the
@@ -1014,6 +1004,18 @@
 		framework is then done by using chains of products of effective vertices discussed in section
 		~\eqref{sec:effectiveVertices} (for the real emissions) and the Lipatov ansatz described in section
 		~\eqref{sub:virtuals} (for the virtual emissions).
+
+		Eqn.~\eqref{eqn:factorised} can also be easily generalised to describing different final states by using
+		different current expressions in the contraction in $S$.  For example by constructing a current
+		describing a $W^\pm$ boson being emitted from an incoming-outgoing quark line we can then write down
+		the matrix element for the process $q'q\to(W^\pm\to)\nu e^\pm q'Q$ using eqn.~\eqref{eqn:factorised}
+		with $S_{qQ\rightarrow qQ}^{h_ah_b\rightarrow h_1h_2}$ replaced with:
+
+		\begin{equation}
+			S_{q'q\to(W^\pm\to)e^\pm\nu_eq'Q}^{h_ah_b\to h_{e^\pm}h_{\nu_e}h_1h_2} =
+			{j^\mu_{W^\pm}(p_a, p_1, p_{e^\pm}, p_\nu)\ j_\mu(p_b, p_2)}.
+			\label{eqn:wExample}
+		\end{equation}
 
 	\subsection{The \hej Monte Carlo}
 
@@ -1099,21 +1101,21 @@
 
 		The current scheme for describing all-order corrections to jet rates at hadronic colliders
 		is based on the limit in which emissions are both hard and well separated.  Of course, some
-		radiation at hadronic colliders is soft or produced collinear to other radiation (or both)
-		and such emissions also lead to large logarithmic enhancements similar to those discussed in this
+		radiation at hadronic colliders is soft or produced collinear to other radiation (or both) and
+		such emissions also lead to large logarithmic enhancements similar to those discussed in this
 		work and so it is obviously advantageous to describe both.
 
 		These effects can be through a parton shower description.  Several schemes for performing this
 		merging.  The CKKW(L) and MLM schemes work by generating showered predictions and then applying
 		a correction above some merging scale above which the hard scatter is considered to be the
-		dominant force.  In this way fixed order predictions can be augmented to also contain the
-		leading logarithms from the parton shower.
+		dominant force.  In this way fixed order predictions can be augmented to also contain the leading
+		logarithms from the parton shower.
 
-		\HEJ has been matched to the \ARIADNE parton shower~\cite{Andersen:2011zd}.  \ARIADNE is based on
-		the Lund colour dipole model which attempts to describe final state QCD radiation resulting from
-		a hard scatter: it considers the splitting of colour dipoles into more colour dipoles rather than
-		partons splitting to more partons.  It calculates the probability of an emission from the splitting
-		function, $\mathcal{D}(p_\perp^2, y)$, as being approximately given by:
+		\HEJ has been matched to the \ARIADNE parton shower~\cite{Andersen:2011zd}.  \ARIADNE~\cite{Lonnblad:1992tz}
+		is based on the Lund colour dipole model~\cite{Gustafson:180791} which attempts to describe final state QCD
+		radiation resulting from a hard scatter: it considers the splitting of colour dipoles into more colour
+		dipoles rather than partons splitting to more partons.  It calculates the probability of an emission from
+		the splitting function, $\mathcal{D}(p_\perp^2, y)$, as being approximately given by:
 
 		\begin{equation}
 			\mathcal{D}(p_\perp^2, y) \approx = \frac{z}{16\pi^2}
@@ -1129,11 +1131,23 @@
 			\int dy\mathcal{D}(p_\perp^2, y)\right).
 		\end{equation}
 
-		When it comes to matching the \hej framework to \ARIADNE the matching picture is different.
-		As we will see later on, we include radiation down to a very soft scale (this is required in
-		order to render the integrated cross-section finite) and so were we to perform a na\"ive
-		matching to a parton shower we would be double-counting all of the soft non-collinear radiation.
-		As such we....
+		When it comes to matching the \hej framework to \ARIADNE the matching picture is different. As we
+		will see later on, \HEJ includes radiation down to a very soft scale (this is required in order
+		to render the integrated cross-section finite) and so were we to perform a na\"ive matching to a
+		parton shower we would be double-counting all of the soft non-collinear radiation. As such we
+		define a subtraction term which will account for the fact that \HEJ may have already generated
+		the emission we are considering (and therefore we don't wont \ARIADNE to also generate it); in
+		this way we can avoid double-counting these terms.
+
+		The splitting functions themselves are found by considering the probability of emitting a gluon
+		from a coloured dipole (a pair produced $q\overline{q}$ pair).  This is given by:
+
+		\begin{equation}
+			\mathcal{D}(x_1, x_2)dx_1dx_3 = \frac{\alpha_sC_F}{2\pi}\frac{x_1^2+x_3^2}{(1-x_1)(1-x_3)}dx_1dx_3,
+		\end{equation}
+
+		where $x_1$ and $x_3$ are the momentum fractions carried by the quark and antiquark after the emission
+		of the gluon with fraction $x_2$.
 
 	\subsection{Comparisons to data}
 
@@ -1143,37 +1157,35 @@
 		Chatrchyan:2012gwa,Abazov:2013gpa,ZPaper}.
 
 		These studies probe a wide range of experimental observables with a variety of cuts designed to prove
-		specific regions of phase space.
-		\hej is seen to provide an excellent description of data in all of these studies in the regions
-		of phase space close to the High Energy limit.  Interestingly \HEJ is seen to be competitive with
-		other state-of-the-art theoretical descriptions.  In some cases we do well even when we are far
-		from this strict limit; in areas with soft radiation or limited rapidity regions in which to radiate.
-		We discuss a few specific examples below.
+		specific regions of phase space. \hej is seen to provide an excellent description of data in all of these
+		studies in the regions of phase space close to the High Energy limit.  Interestingly there are cases where
+		\HEJ is seen to be competitive with other state-of-the-art theoretical descriptions even when we are far from
+		this strict limit. We now discuss a few specific examples of comparisons to data.
 
 		In fig.~\eqref{fig:d0wjets} we see that the probability of a third emission from a dijet system (constructed
 		from the most forward and backward jets in the event) in addition to a $W^\pm$ boson.  As we pull apart the
 		dijet system there is increasingly more phase space into which we can radiate extra emissions and so the
-		probability of emission increases.  We see that \HEJ and \texttt{BlackHat} describes the data well across
+		probability of emission increases.  We see that \HEJ and \texttt{BlackHat} describe the data well across
 		the full range of the dijet rapidity, $\Delta y_{j_F, j_B}$, while the other generators considerably
 		underestimate the dijet activity.
 
-		Fig.~\eqref{fig:wJetsEg} describes the differential distribution fir $W^\pm$ plus dijets in terms of the
-		invariant mass of the dijet system defined by the two leading jets in $p_\perp$, $m_{12}$.  Large values
-		of $m_{12}$ correspond to the High Energy limit and so we expect that \hej should describe well this region.
-		In fact, \HEJ gives the best description of data across almost the entire range of $m_{jj}$ with the other
-		theoretical predictions only agreeing with data below an invariant mass of approximately $300$~GeV and deviate
-		badly by $2$~TeV.  This high invariant mass region is an important region for VBF studies and so it is
-		important that we are able to describe QCD emissions.  The failure of fixed order calculations show that
-		perturbative stability already begins to breakdown in $7$~TeV LHC data.  As we will see in
-		chapter~\ref{chap:100TeV} this is a challenge we must face at a potential high energy Future Circular Collider.
+		Fig.~\eqref{fig:wJetsEg} describes the differential distribution for $W^\pm$ plus dijets in terms of the
+		invariant mass of the dijet system defined by the two leading jets in $p_\perp$, $m_{12}$.  The logarithms
+		resummed by \hej become significant for large values of $m_{12}$ and so we expect that \HEJ should
+		describe this distribution well while fixed-order scheme who cannot capture these large logarithmic
+		corrections may not. In fact, \HEJ gives the best description of data across almost the entire range of $m_{jj}$
+		with the other theoretical predictions only agreeing with data below an invariant mass of approximately $300$~GeV
+		and deviate badly by $2$~TeV.  This high invariant mass region is an important region for VBF studies and so it
+		is important that we are able to describe QCD emissions.  The failure of fixed order calculations show that
+		perturbative stability already begins to breakdown in $7$~TeV LHC data.  As we will see in chapter~\ref{chap:100TeV}
+		this is a challenge we must face at a potential high energy Future Circular Collider.
 
-		\begin{figure}
-			\begin{center}
+		\begin{figure}[hbt]
+			\centering
 			\includegraphics[width=1.0\linewidth]{wJetsEg}
 			\caption{The distribution of $W^\pm$ plus inclusive dijets with at least
 			2 jets differential in the invariant mass of the leading dijets in $p_\perp$, $m_{12}$.
 			Fig. from \cite{Aad:2014qxa}}.
 			\label{fig:wJetsEg}
-			\end{center}
 		\end{figure}
 
