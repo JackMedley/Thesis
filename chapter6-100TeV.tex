@@ -56,9 +56,9 @@
 	    Lepton Cuts & $p_{T\ell}>20$~GeV, \; $|\eta_\ell|<2.5$ \\
 	    & $\Delta R^{\ell^+\ell^-} > 0.2$, \; $66$~GeV $\leq m^{\ell^+\ell^-} \leq
 	      116$~GeV \\ \hline
-	    $7$~TeV Jet Cuts (anti-$k_T$, 0.4) & $p_{Tj}>$ {\color{Purple}$30$~GeV} \\
+	    $7$~TeV Jet Cuts (anti-$k_T$, 0.4) & $p_{Tj}>$ $30$~GeV \\
 	    &  $|y_j|<4.4$, \;$\Delta R^{j\ell} >0.5$,  \\ \hline
-	    $100$~TeV Jet Cuts (anti-$k_T$, 0.4) & $p_{Tj}>$ {\color{Red}$30$~GeV}, {\color{ForestGreen}$60$~GeV}, {\color{blue}$100$~GeV} \\
+	    $100$~TeV Jet Cuts (anti-$k_T$, 0.4) & $p_{Tj}>$ $30$~GeV, $60$~GeV, $100$~GeV \\
 	    &  $|y_j|<4.4$, \;$\Delta R^{j\ell} >0.5$,  \\ \hline
 	  \end{tabular}
 	  \caption{Cuts applied to theory simulations for the \htev
@@ -113,7 +113,15 @@
 	We can understand this by considering the effect of requiring high transverse momenta on rapidity and therefore
 	rapidity gaps; it is energetically very expensive to emit high $p_\perp$ radiation outside of the $y_j\approx0$ region
 	and therefore we can suppress the effects of the logarithmic corrections by limiting the access to phase-space
-	where they are most important.
+	where they are most important.  It should be noted that although increasing our jet cuts to 100~GeV at a future
+	machine will help suppress higher-order corrections and therefore improve the convergence of our $\alpha_s$ expansion
+	it would \emph{not} solve the problem - i.e.~although the physics of 100~GeV jets at 100~TeV would be the same as that at 7~TeV
+	(modulo an increased cross-section) that simply means we would be left with the \emph{same problems} (detailed in previous
+	chapters) as we have at our current generation of colliders.  Fig~\eqref{fig:100tev_12a} and fig~\eqref{fig:100tev_2a} stand
+	in stark contrast to one another - forgetting for a moment the added issue of the correct choice of jet cut and just focussing
+	on the comparison of 30~GeV jets at centre-of-mass energies of 7~TeV and 100~TeV - we see how important the
+	issue of the convergence of the perturbative series is at an FCC; at this energy even sophisticated fixed-order
+	schemes may not be able to describe data.
 
 	Fig~\eqref{fig:100tev_11a} shows the differential distribution in the absolute value of the
 	rapidity span between the two leading jets in $p_T$, $\Delta y^{j1, j2}$.  We see that as we go to
@@ -135,12 +143,12 @@
 	\begin{figure}[bth]
 		\centering
 		\begin{subfigure}[b]{0.49\textwidth}
-			\includegraphics[width=\textwidth]{ATLAS_Z_100TeV_12a}
+			\includegraphics[width=\textwidth]{ATLAS_Z_100TeV_11a}
 			\caption{}
 			\label{fig:100tev_11a}
 		\end{subfigure}
 		\begin{subfigure}[b]{0.49\textwidth}
-			\includegraphics[width=\textwidth]{ATLAS_Z_100TeV_2a}
+			\includegraphics[width=\textwidth]{ATLAS_Z_100TeV_11b}
 			\caption{}
 			\label{fig:100tev_11b}
 		\end{subfigure}

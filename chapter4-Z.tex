@@ -1298,6 +1298,8 @@
 	\subsection{$\zg$+Jets at the CMS Experiment}
 		\label{sub:CMS}
 
+		\subsubsection{Jet Multiplicity and Differential Distributions}
+
 		We now compare to data from a CMS analysis of events with a $\zg$ boson produced
 		in association with jets~\cite{Khachatryan:2014zya}.  We show, for comparison,
 		the plots from that analysis which contain theoretical predictions from
@@ -1412,7 +1414,102 @@
 		  \label{fig:CMS_3c}
 		\end{figure}
 
-\section{Conclusions}
+		\subsubsection{A Double Differential Study of the Drell-Yan Cross-section}
 
-	Conclusions of $\zg$+jets.
+		Throughout the course of this work many analyses were used to compare \hej to experimental
+		data.  Though we include only those studies illuminating for a discussion of higher order
+		logarithmic corrections of QCD processes at hadronic colliders we here discuss a comparison
+		of \HEJ to data collected at the CMS experiment~\cite{CMS:2014vtk}.  In particular, we consider
+		the Drell-Yan cross-section differential in both the pseudo-rapidity gap between the reconstructed
+		$\zg$ boson and the leading jet in $p_\perp$ and in the invariant mass of the di-lepton decay
+		products.  This is \emph{not} a region of phase space where resummation is expected to reign
+		supreme and we therefore anticipate that the matching of our \hej amplitudes to exact leading
+		order results obtained using \texttt{MadGraph} (v5) will be significant.
+
+		The study focussed on 0-, 1- and 2-jet events in addition to a di-muon pair though since we can
+		only describe final states with at least two jets we only consider the 2-jet section.  The
+		final state cuts applied in this analysis are shown in table~\eqref{tab:cmscuts2}.
+
+		\begin{table}[hbt]
+		  \centering
+		  \begin{tabular}{|l|c|}
+		    \hline
+		    Lepton Cuts & $p_{\mu1\perp}>20$~GeV, \; $p_{\mu2\perp}>10$~GeV, \\
+		    & \; $|\eta_\mu|<2.1$, \; $|\eta_{\zg}|<2.5$ \\ \hline
+		    Jet Cuts (anti-$k_T$, 0.5) & $p_{Tj}>30$~GeV, \; $|\eta_j|<4.5$ \\ \hline
+		  \end{tabular}
+		  \caption{Cuts applied to theory simulations in the CMS
+		   Drell-Yan analysis results shown in
+		    Figs.~\eqref{fig:HEJ_CMS2_1}--\eqref{fig:HEJ_CMS2_5}}
+		  \label{tab:cmscuts2}
+		\end{table}
+
+		The figures for this section have been discussed previously in section~\ref{sec:MC}.
+		Fig.~\eqref{fig:HEJ_CMS2_1} shows the distribution in the absolute rapidity gap
+		between the reconstructed $\zg$ and the leading jet in $p_\perp$ for a reconstructed
+		di-muon mass in the $Z^0$ peak range (defined as 60-120~GeV).  We see that both the
+		leading order exact and \HEJ give a good description of data in this range.
+		Figs.~\eqref{fig:HEJ_CMS2_3} and ~\eqref{fig:HEJ_CMS2_5} show the same distribution
+		but for a reconstructed $\zg$ mass of between 30-60~GeV and 120-1500~GeV respectively.
+		Here we see that both \texttt{MadGraph} and \HEJ give a poor description of the data but
+		agree well with one another.  This is exactly because the \HEJ predictions are being
+		driven by the leading order matching in the regions considered.  This is a good
+		consistency check of both the \hej matching scheme and the implementation of the
+		importance sampling in \HEJ.  As mentioned during the discussion of importance
+		sampling techniques in Monte Carlo it was necessary to modify the Breit-Wigner
+		sampling to a flat generation of the di-muon mass in order to generate predictions
+		for the invariant mass bins far from dominant region.
+
+\section{$\zg$+Jets Conclusions}
+
+	In this chapter we have discussed augmenting the theoretical description of
+	inclusive $\zg$-plus-dijets processes with the dominant logarithms in the High
+	Energy limit at all orders in $\alpha_s$.  In particular, the description
+	constructed here is accurate to leading logarithm in $s/t$.  This is
+	achieved within the \hej framework.  We began in
+	section~\ref{sec:HEQCD} by motivating and describing the construction of an
+	approximation to the hard-scattering matrix element for an arbitrary number of
+	gluons in the final state.  This uses factorised currents for electroweak boson
+	emission and outer jet production combined with a series of (gauge-invariant)
+	effective vertices for extra QCD real emissions.
+
+	In contrast to previous HEJ constructions (for pure jets, $W$-plus-jets and
+	Higgs boson-plus-jets), the complete description of the interference
+	contributions between $Z$ and $\gamma^*$ processes \emph{and} between forward
+	and backward emissions required a new regularisation procedure.  This is
+	described in section~\ref{sec:Constructing} where we showed explicitly the
+	cancellation of real and virtual divergences by using the Lipatov ansatz to
+	include the dominant contributions in the High Energy limit of the all-order
+	virtual contributions.  The method by which we match our matrix element to the
+	leading order matrix elements was also outlined here. In this way we
+	achieve the formal accuracy of our Monte Carlo predictions to Leading
+	Logarithmic in $(\hat{s}/\hat{t})$ and merge Leading Order predictions in $\alpha_s$ for the
+	production of two, three or four jets.
+
+	In sections~\ref{sub:ATLASZsec} and~\ref{sub:CMS} we compared the predictions of our
+	construction to $\zg$-plus-jets data collected at the ATLAS and CMS experiments
+	during Run I.  We see excellent agreement for a wide range of observables and
+	can be seen to describe regions of phase space well where some other
+	fixed-order-based predictions do not fare as well.  Discrepancies which occur
+	only do so in regions where we do not expect this description to perform as
+	well, for example where there is a large ratio between $p_{T1}$ and $p_{T2}$.
+	We also discuss properties of other available theoretical descriptions.
+
+	This all-order description of $\zg$-plus-dijets allows predictions for the ratio
+	of $W^\pm$+dijets to $\zg$+dijets at all-orders in $\alpha_s$ for the first
+	time.  This is an extremely important analysis as many theoretical and
+	experimental uncertainties cancel in this ratio and in section~\ref{sec:Ratios},
+	we show that we correctly reproduce the ratios of the total cross sections.
+
+	Just as for previous analyses of LHC data, it is found that the high-energy logarithms
+	contained in HEJ are necessary for a satisfactory description of data in key regions of phases
+	space, e.g.~at large values of jet invariant mass. Such regions of phase
+	space are crucial for the analysis of Higgs boson production in association
+	with dijets. The impact of the high-energy
+	logarithms will only be more pronounced at the larger centre-of-mass energy of
+	LHC Run II, and beyond at a possible future circular collider.  The HEJ
+	framework and Monte
+	Carlo is the unique flexible event generator to contain these corrections and
+	will provide important theoretical input for the study of important processes
+	at LHC Run II and beyond.
 

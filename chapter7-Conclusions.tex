@@ -1,5 +1,82 @@
+% !TEX root = thesis.tex
+
 \chapter{Conclusions and Outlook}
 \label{chap:conclusion}
 
-Resummation is important.
+In this thesis we have studied the perturbative description of Quantum Chromodynamics at colliders
+including the current Large Hadron Collider and a possible hadronic Future Circular Collider.  We
+have discussed how we can motivate the QCD Lagrangian from symmetry considerations and use this
+to write down expressions for amplitudes describing parton-parton interactions using the Feynman
+rules derived from the path integral formulation of Quantum Field Theory.  We discussed how we can
+interface these theoretical ideas with experiment using the factorisation theorems and jet clustering
+algorithms to connect initial and final state partons to the experimentally observed QCD bound states.
+Through the evolution of the strong coupling constant we were able to discuss possible ways in which
+one might approximate relevant observables by performing a perturbative expansion and the advantages
+and possible pit-falls of these different strategies.  In particular, the question of the validity of
+truncating this expansion was raised since the presence of large logarithm corrections could mean
+that the convergence of any such truncated series would be in doubt.  Lastly, we introduced the concepts
+involved in Monte Carlo simulations necessary for the efficient evaluation of the matrix elements
+described in later chapters.
+
+In chapter~\ref{chap:HEQCD} we specifically discussed the High Energy limit of QCD processes and
+how, in this limit, simple $2\to2$ scattering processes can be expressed as a contraction of currents
+over a pole in the momentum transfer variable, $t$.  We saw that the next-to-leading order corrections
+to these simple processes contained an unexpected enhancement in the exactly the form discussed earlier;
+a logarithm of $s/t$ which would be large in the limit in question.  The idea of $t$-channel dominance
+was generalised to more complicated processes using ideas from Regge theory.  We were able to include
+extra real and virtual corrections by way of an effective vertex term and the Lipatov ansatz respectively.
+We concluded with a discussion of the \hej framework for describing all-order corrections to dijet events
+at hadronic colliders; in particular we saw that in the High Energy limit we can describe processes in terms
+of contractions of `current' and discussed the software set-up of \hej in the form of the publicly
+available \HEJ package.
+
+In chapter~\ref{chap:Zs} we focussed on dijet events in the presence of a di-lepton pair produced by
+the decay of a $Z^0$ electroweak boson or an off-shell photon, $\gamma^*$.  We were able to derive a
+current describing the $Z^0$ emission and saw that, for the two jet case, this agreed exactly with the
+leading order result.  This was extended to include emission of a photon as well as the $\zg$ interference.
+We saw that the interference term neglected in previous work by the \hej collaboration was no long small
+and, therefore, developed the tools to be able to include all possible emission sites for a boson \emph{and}
+the interference terms.  This result was then extended to arbitrarily high multiplicity final states through
+the aforementioned effective vertex.  We saw that due to the inclusion of the interference term it was necessary
+to develop a new regularisation for the $\zg$ plus jets matrix elements - this was done and the resulting
+scheme was explicitly shown to be fine finite upon performing the phase space integration.  The resulting
+regularised matrix element was shown to be approximately independent of our phase-space regularisation
+parameter, $\lambda_cut$.  The procedure by which the \HEJ matrix elements are matched to the leading-order
+exact matrix elements (provided by \texttt{MadGraph}) was then detailed and a summary of the computational
+challenges encountered throughout this work was presented.  We concluded by comparing the \HEJ $\zg$ plus jets
+package to several recent experimental comparisons from both the ATLAS and CMS experiments.  \HEJ was seen to
+be in excellent agreement with the data in the regions where the logarithms we capture are significant.
+
+In chapter~\ref{chap:ATLAS} a study of dijet and gap events was presented.  Four separate final states
+were considered in which the \HEJ package interfaced with the parton shower \ARIADNE, \HEJA, gave an
+excellent description of data throughout.  We saw that partonic \HEJ alone was not able to correctly
+describe the data highlighting the importance of the collinear logarithms added by the parton shower
+resummation.  The fixed-order plus parton shower schemes also struggled to give good agreement with
+data indicating that, already at centre-of-mass energies of 7~TeV, it is necessary to resum the higher
+order logarithmic corrections included within the \hej framework.
+
+In chapter~\ref{chap:100TeV} we presented an analysis of inclusive dijets in association with a $\zg$
+decaying to a di-lepton pair at 100~TeV.  Three possible final state cuts were shown with a possible
+minimum transverse momentum jet cut of 30, 60 and 100~GeV studied.  We saw that at 100~TeV the
+convergence of the fixed-order QCD perturbative series could be seriously undermined by the logarithmic
+corrections discussed in this thesis; this was somewhat neutralised by enforcing a rather draconian
+100~GeV jet cut and even here we are only able to reduce the problems at 100~TeV to something comparable
+to those seen at 7~TeV.  As expected the regions of phase space where there were dijets with spanning
+large rapidity intervals and with high invariant mass were seen to be most effected by the increased
+centre-of-mass energy.
+
+To conclude, the effect of large logarithmic corrections on inclusive dijet events in association
+with a $\zg$ boson is seen to be large.  Certainly a good description of data throughout the entire
+phase-space would not be possible without an attempt to capture at least the leading logarithmic term.
+More generally correctly describing QCD events at hadronic colliders is not possible without resumming
+the logarithms significant in the High Energy limit but this, alone, is not the full picture.  We have
+seen throughout this work that, although the leading logarithmic terms are undoubtedly important, it is
+also necessary to contain as much of the terms described by current fixed-order approaches as possible;
+the matching scheme within the \hej framework must be improved to allow matching the next-to-leading
+order in $\alpha_s$ matrix elements.  Furthermore the collinear terms neglected by \hej' wide angle
+approximation must also be considered.  To that end it would be excellent to combine \HEJ with more
+of the current state-of-the-art parton showers.  Armed with next-to-leading order accuracy and a range of
+possible parton showers the description of data at 7, 8, 13 or even 100~TeV would be, I believe,
+excellent in many final states and troublesome regions of phase space currently of interest to
+experimental and theoretical physicists alike.
 
