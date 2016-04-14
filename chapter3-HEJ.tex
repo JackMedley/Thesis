@@ -8,15 +8,16 @@
 	$\alpha_s$ before discussing how, in this limit, scattering amplitudes may be conveniently expressed as
 	a contraction between two vector `current' terms.  Finally, we show how we may adorn $2\to2$ matrix
 	elements with real and virtual corrections by way of an effective vertex for real emissions and the Lipatov
-	ansatz respectively.
+	ansatz respectively.  In this way we construct an approximate description of $2\to n$ scattering in the high
+	energy limit.
 
 \section{The `High Energy' limit}
 	\label{sub:HElimit}
 
 	The `High Energy' limit of QCD, also referred to as the Multi-Regge Kinematic (MRK) limit is
-	defined in terms of the kinematics of the final state.  We require a \emph{strong rapidity ordering}
-	of all outgoing radiation as well as all the emissions having \emph{similar transverse momenta}.
-	Mathematically this is:
+	defined in terms of the kinematics of the final state.  We require a strong rapidity ordering
+	of all outgoing radiation as well as all the emissions having similar transverse momenta.
+	Mathematically:
 
 	\begin{equation}
 		y_1\gg y_2\gg\cdots\gg\\y_n \text{ and } |p_{\perp1}| \approx |p_{\perp2}| \approx\cdots\approx|p_{\perp(n-1)}|,
@@ -26,7 +27,7 @@
 		where we define the rapidity of a final state particle as
 
 	\begin{equation}
-		y = \half\ln\frac{E+p_z}{E-p_z}
+		y = \half\ln\left(\frac{E+p_z}{E-p_z}\right)
 		\label{eqn:rap}
 	\end{equation}
 
@@ -38,7 +39,7 @@
 	\end{equation}
 
 	where $s_{ij} = (p_i + p_j)^2$ is the invariant mass of a pair of outgoing partons.  We sometimes
-	parametrise the final states using pseudo-rapidity, $\eta$, rather than rapidity. Pseudo-rapidity
+	parametrise the final states instead using pseudo-rapidity, $\eta$, rather than rapidity. Pseudo-rapidity
 	is simply related to the angle of the outgoing state to the beam, $\theta$:
 
 	\begin{equation}
@@ -99,23 +100,23 @@
 
 	From  eqn.~\eqref{eqn:mandel2} it is clear that the `hard, wide-angle jet' limit, i.e. $\Delta y\to\infty$,
 	$p_{i\perp}\to\infty$, is equivalent to the High Energy limit since as $\Delta y$ grows large $s$ will
-	grow exponentially while $t$ will stay fixed.  Rearranging for $\Delta y$ in the above equations yields:
+	grow exponentially large while $t$ will stay fixed.  Rearranging for $\Delta y$ in the above equations yields:
 
 	\begin{equation}
 		\Delta y = \ln \left(\frac{s}{-t}\right).
 		\label{eqn:largeLogs}
 	\end{equation}
 
-	This is a useful result because it relates the simple kinematics of an event to a (potentially)
+	This is a useful result because it directly relates the kinematics of an event to a (potentially)
 	large logarithm.  It is already apparent from eqn.~\eqref{eqn:largeLogs} that a final state
 	with large rapidity gaps between jets will carry with it a large logarithm as seen in
-	eqn.~\eqref{eqn:schematicExpn}, $L=\ln \left(\frac{s}{-t}\right)$, and therefore we many need a
+	eqn.~\eqref{eqn:schematicExpn}, $L=\ln \left(\frac{s}{-t}\right)$, and therefore we may need a
 	more careful inspection of our perturbative expansion than the fixed-order approach.
 
 \section{$qQ$-scattering at High Energy (at LO)}
 	\label{sec:qQScat}
 
-	Here we begin with the simplest example; the case of $qQ\rightarrow qQ$ for all negative helicity partons
+	Here we consider the simplest example; the case of $qQ\rightarrow qQ$ for all negative helicity partons
 	(the capital $Q$ implies it is a different flavour to $q$).  There is only one diagram which contributes shown
 	in fig. (\ref{fig:TwoToTwo}).  Using the Feynman rules detailed in section~\ref{sec:partonicCrossSection} we can
 	write the matrix element as:
@@ -128,9 +129,8 @@
 		  \label{eqn:similarBrackets}
 	\end{align}
 
-	where $t = (p_a - p_1)^2$ and we have used the shorthand
-	$\overline{u}^-(p_i)\gamma^\mu u^-(p_j) = \bk{i}{\mu}{j}$ in the second line.
-	Writing the contraction of these two `current' terms in terms of light-cone coordinates we have:
+	where $t = (p_a - p_1)^2$.  Writing the contraction of these two `current'
+	terms in terms of light-cone coordinates we have:
 
 	\begin{equation}
 		i\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\text{LO}} = ig_s^2T^d_{1a}T^d_{2b}
@@ -141,8 +141,8 @@
 
 	where $e^{i\phi_i} = \frac{p_{\perp i}}{|p_{\perp i}|}$.  We now approximate the kinematics
 	in such a way that we may write eqn.~\eqref{eqn:qQ2qQ} in a `factorised' form once again.
-	Specifically we consider that the scattering can be thought of as two partons glancing off
-	one another.  That is, we assume that $p_1^+\ll p_1^-$, $p_2^-\ll p_2^+$ and that $p_a$ ($p_b$)
+	Specifically we consider that the scattering can be thought of as two incoming partons glancing off
+	one another.  That is, we assume that $p_1^+\ll p_1^-$, $p_2^-\ll p_2^+$ with $p_a$ ($p_b$)
 	is moving in the backwards (forward) direction.  We can further assume that $p_1^-\approx p_a^-$
 	and $p_2^+\approx p_b^+$ and with this we see that~\eqref{eqn:qQ2qQ} becomes:
 
@@ -160,12 +160,12 @@
 		\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\text{LO}} \sim s^{\alpha(t)},
 	\end{equation}
 
-	which is exactly the behaviour expected when a particle exchanged in the $t$-channel has `reggeised'
+	This is exactly the behaviour expected when a particle exchanged in the $t$-channel has `reggeised'
 	\cite{sabioThesis,DelDuca:1995hf,lipatovBook}.  $\alpha(t)$ is the Regge trajectory and is equal to
-	the intrinsic spin of the state exchanged.  In our example we have a spin-one gluon exchanged
+	the intrinsic spin of the state exchanged.  In our example we have a gluon exchanged
 	and accordingly we can see from eqn.~\eqref{eqn:reggeTraj} that $\alpha(t)=1$ for $qQ\rightarrow qQ$.
 
-	It is also interesting to consider the same process but with a helicity structure $q^-Q^+\to q^-Q^+$.
+	It is also interesting to consider the same process but with helicity structure $q^-Q^+\to q^-Q^+$.
 	The calculation proceeds similarly to the $q^-Q^-\to q^-Q^-$ and when we write the result in
 	terms of two vector `currents' we get:
 
@@ -188,8 +188,8 @@
 	\end{split}
 	\end{align}
 
-	So we see that since in the full High Energy limit we have that $s=-u$
-	exactly.  Whereas when we leave the amplitude in terms of currents we are able to keep
+	So we see that since in the strict High Energy limit we have that $s=-u$
+	exactly.  Whereas when we leave the amplitude in terms of vector currents we are able to keep
 	more of the physics by having the weaker constraint $s\sim-u$; at the LHC $t$ and $k_\perp^2$
 	can often differ significantly and so the over-approximating the kinematics here would
 	lead to a poor description of the data.
