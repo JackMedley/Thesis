@@ -1150,6 +1150,41 @@
 		where $x_1$ and $x_3$ are the momentum fractions carried by the quark and antiquark after the emission
 		of the gluon with fraction $x_2$.
 
+		Fig.~\eqref{fig:heja1} shows the comparison of the \ARIADNE splitting function versus, $\mathcal{D}/z$,
+		the equivalent expression in \HEJ for 30~GeV jets.  The extra emissions were required to be at least
+		$\Delta r=0.5$ away from the emitting parton in order to probe only the soft contributions coming from
+		the shower.  \HEJ includes soft emissions and therefore we expect to see that the majority of
+		the emissions from \ARIADNE are already being described by the partonic description.  Indeed fig.~\eqref{fig:heja1}
+		shows that, aside from extremely soft radiation, the average splitting function of \HEJ is greater than that of
+		\ARIADNE. Fig.~\eqref{fig:heja2} shows a similar comparison where the extra emissions were required to have
+		transverse momentum of 10~GeV but no cut on $\Delta r$ was applied so that we are now investigating the effect of
+		the collinearity of the extra emission on the splitting function.  This time we see a much bigger difference in
+		the splitting functions at low values of $r$, i.e.~collinear emissions.  This is expected since one of the key
+		approximations required to derive our matrix element expressions is that emissions are well separated in rapidity
+		and so cannot have small $r$.  At values of $r$ greater than the jet definition of 0.6 we see that as in the soft
+		radiation case the \HEJ splitting function is greater than the shower splitting function.  When generating showered
+		events with \HEJA we must be careful not to double count terms; it is clear from figs.~\eqref{fig:heja1} and
+		~\eqref{fig:heja2} that soft and wide-angle emissions are taken care of by \HEJ and so it would be a mistake
+		to allow \ARIADNE to also generate these.
+
+		\begin{figure}[hbt]
+			\centering
+			\includegraphics[width=0.75\linewidth]{heja1}
+			\caption{The average splitting function for \HEJ and \ARIADNE as a function of the transverse momentum, $k_\perp$.
+			Emissions are required to be well separated from the emitting parton by enforcing a cut of $\Delta r\geq0.5$
+			Figure from~\cite{Andersen:2011zd}.}
+			\label{fig:heja1}
+		\end{figure}
+
+		\begin{figure}[hbt]
+			\centering
+			\includegraphics[width=0.75\linewidth]{heja2}
+			\caption{The average splitting function for \HEJ and \ARIADNE as a function of the collinearity, $r$.
+			Emissions were kept from becoming soft by enforcing a cut on the transverse momentum of $k_\perp\geq10$~GeV.
+			Figure from~\cite{Andersen:2011zd}.}
+			\label{fig:heja2}
+		\end{figure}
+
 	\subsection{Comparisons to data}
 
 		The \hej framework has been thoroughly tested for a number of the currently available final states (jets,
@@ -1186,7 +1221,7 @@
 			\includegraphics[width=1.0\linewidth]{wJetsEg}
 			\caption{The distribution of $W^\pm$ plus inclusive dijets with at least
 			2 jets differential in the invariant mass of the leading dijets in $p_\perp$, $m_{12}$.
-			Fig. from \cite{Aad:2014qxa}}.
+			Fig. from \cite{Aad:2014qxa}.}
 			\label{fig:wJetsEg}
 		\end{figure}
 

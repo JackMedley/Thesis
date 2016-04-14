@@ -10,7 +10,7 @@
 	PYTHIA8} and \texttt{POWHEG+HERWIG} (both implemented through the \texttt{POWHEG BOX} package
 	\cite{1126-6708-2004-11-040}).
 
-	The data compared to are 7~TeV proton-proton collisions as observed by the ATLAS
+	The data are taken from 7~TeV proton-proton collisions as observed by the ATLAS
 	experiment in two distinct data sets referred to as 2010 data and 2011 data.  The
 	experimental cuts applied to these data sets differs and both are outlined in table
 	\eqref{tab:atlasPcuts}.
@@ -39,51 +39,59 @@
 	defining dijets by the most forward and most backward jets: naturally the $p_\perp$
 	choice favours high transverse momentum dijets in the central region (and hence with
 	relatively small rapidity gaps) while the forward-backward dijet system definition
-	will lead to softer systems with bigger rapidity spans since this corresponds
-	to the High Energy limit as shown in chapter \ref{chap:HEQCD}.  While both are of interest
-	\HEJ tends to describe data best when when large rapidity  These two jets are required
+	typically lead to softer systems with bigger rapidity spans ~\cite{Abazov:2013gpa}.
+	These two jets are required
 	to be significantly harder than any additional jets with extra cuts on the leading
 	and sub-leading jets of $50$~GeV and $60$~GeV respectively.  After tagging the two
 	leading jets in the event and additional jet radiation is only considered in the rapidity
-	interval bounded by the dijets as a QCD correction.  Within in the two data sets
+	interval bounded by the dijets as a QCD correction.  Within the two data sets
 	defined in table \eqref{tab:atlasPcuts} a further subdivision was made.  For both the
 	2010 and 2011 data a subset of events was defined by vetoing events with extra
 	QCD radiation in the rapidity interval bounded by the dijet system above some veto
 	scale $Q_0$.  It should also be noted that the 2011 data set required a minimum
-	rapidity gap of 1.0 between all jets (for both cases with and without the gap jet
+	rapidity gap of 1.0 between the leading jets (for both cases with and without the gap jet
 	veto) in order to encourage a rapidity span into which extra radiation may arise.
 	The full breakdown of this analysis then is into four event categories;
 	2010 data with and without a veto applied to gap jets and the 2011 data with and
 	without a veto applied to gap jets.
 
-	The predictions for these analyses I generated on behalf of the High Energy Jets
-	collaboration are given for both the partonic \HEJ calculation (shown in green in
-	this chapter) and the \HEJA calculation (shown in orange). \ARIADNE is a parton
-	shower package based on the Lund colour cascade dipole model.
-	Due to the steps in this interfaced package necessary to remove the double counting
-	(which arises from \HEJ and \ARIADNE both generating soft radiation) generating large
-	data samples which can be used to give statistically significant predictions is
-	\emph{extremely} computationally demanding.  In a standard partonic \HEJ run we
-	evaluate the matrix element for each event at 76 different scale choices (since
+	I generated the predictions for these analyses on behalf of the High Energy Jets
+	collaboration at the request of the ATLAS collaboration. Predictions for both
+	the partonic \HEJ calculation (shown in green in this chapter) and the \HEJA
+	calculation (shown in orange) were calculated. \ARIADNE is a parton shower package
+	based on the Lund colour cascade dipole model. Due to the steps necessary to remove the
+	double counting in this interfaced package (which arises from \HEJ and \ARIADNE both
+	generating soft radiation) generating large data samples which can be used to give
+	statistically significant predictions for the challenging regions of phase space considered
+	here is \emph{extremely} computationally demanding.  Since the generation of these
+	predictions was so demanding several changes were made to the \HEJ codebase; the
+	size of event files generated meant that the analysis framework for \hej required
+	rewriting so that binning to histograms could occur on-the-fly.  This analysis was
+	initially run using local computing resources however it quickly became apparent
+	that this would not be sufficient, at which point it was necessary to switch to
+	running \HEJ on the CERN grid computing cluster - the first time this was done.
+
+	As discussed in section~\ref{sec:HEJ} a standard partonic \HEJ run
+	evaluates the matrix element for each event at 76 different scale choices (since
 	we allow for four choices of `central' scale and 19 combinations of the renormalisation
 	scale, $\mu_r$, and factorisation scale, $\mu_f$ based on each central choice).
-	After we chose a central scale (this choice is done while blind to the data for
-	fairness) one set of these 19 scales combinations form an `envelope' of predictions
-	for each bin in each plot - this spread is then represented by the green bands shown
-	in the figs.~\eqref{fig:atlasPJ1}--\eqref{fig:atlasPJ6}.
-	However, because of the structure of the matrix element evaluations within \HEJA
+	A central scale was chosen based on previously agreement with data seen in a previous
+	ATLAS comparison to gap jets~\cite{Aad:2011jz}; this set of 19 scale combination
+	form an `envelope' of predictions for each bin in each plot - this spread is then
+	represented by the green bands shown in the figs.~\eqref{fig:atlasPJ1}--\eqref{fig:atlasPJ6}.
+	Due to the structure of the matrix element evaluations within \HEJA
 	we can only afford one scale choice per event and, as such, we cannot provide
 	scale variation uncertainty bands with our showered numbers.  To be clear this
 	is not a limitation of the physics since it is entirely possible to evaluate
-	each matrix element multiple times - it is a computational consideration. \footnote{
+	each matrix element multiple times - it is a computational consideration.
 	As seen in chapter \ref{chap:Zs}, the renormalisation scale appears in a non-trivial way
 	in the High Energy Jets matrix element.  It is contained implicitly in the strong coupling
 	constant which is contained within the virtual corrections exponential.  As such
 	we cannot simply generate predictions at a single scale and then re-weight events
-	at the post-analysis level.  In principle, we \emph{could} do this for our PDF
-	evaluations though in practice this is very computationally cheap and therefore we
-	chose not to.}  The orange bands shown with the \HEJA predictions throughout this
-	chapter are the statistical bands (shown, as usual, at the 68\% confidence level).
+	at the post-analysis level.  This is further complicated in \HEJA because of the additional
+	scale dependencies in the parton shower description.  The orange bands shown with
+	the \HEJA predictions throughout this chapter are the statistical bands (shown, as usual,
+	at the 68\% confidence level).
 
 	Observables were studied
 	as a function of two properties of the dijets.  The rapidity gap between the dijets,
@@ -94,7 +102,7 @@
 	we expect to see an increase in additional QCD radiation (since there is a larger
 	phase space in which to radiate).  Similarly for $\overline{p_T}$, we expect that
 	events with harder dijet systems will have higher gap activity simply because they
-	have more energy available to radiate off additional jets.
+	can cheaply add extra radiation.
 
 	Throughout the remainder of this chapter the (a) sub-figures show data and
 	predictions for the 2010 data set with respect to the rapidity span of the dijet
@@ -110,8 +118,9 @@
 
 	where $\sigma_{jj}$ is the total dijet cross section passing the cuts in
 	table~\ref{tab:atlasPcuts} and $\sigma_{jj}(Q_0)$ is the dijet cross section passing
-	the veto on additional gap scales for a scale choice $Q_0$.  Fig.~\eqref{fig:atlasPJ1}
-	shows the gap fraction with a veto scale of $20$~GeV in
+	the veto on additional gap scales for a scale choice $Q_0$.
+
+	Fig.~\eqref{fig:atlasPJ1} shows the gap fraction with a veto scale of $20$~GeV in
 	fig.~\eqref{fig:atlasPJ1a} and a veto scale of $30$~GeV in fig.~\eqref{fig:atlasPJ1b}.
 	The data are shown in black with the inner bars represent the statistical uncertainty
 	while the outer lines are the total uncertainty arising from statistical and systematic
@@ -121,10 +130,12 @@
 	bins where the predictions from \HEJA are visibly statistically limited). The partonic \HEJ
 	prediction overshoots both data sets meaning that we underestimate the jet activity in the
 	gap region while the predictions from \texttt{POWHEG} plus parton showers overestimate the
-	QCD radiation here.  From fig. \eqref{fig:atlasPJ1} it is clear that in this situation it
+	QCD radiation here.  The big difference between the partonic and showered \HEJ lines in
+	fig.~\eqref{fig:atlasPJ1} indicates clearly that in these regions of phase space it
 	is not sufficient to only describe the wide-angle logarithmically enhanced terms resummed
 	within the High Energy Jets framework and that the soft and collinear logarithms added by
-	interfacing to \ARIADNE play a very important r\^ole - equally it is clear that we cannot
+	interfacing to \ARIADNE play a very important r\^ole - equally it is clear from the
+	differences between \HEJ and the other theory descriptions that we cannot
 	completely describe data without resumming the High Energy logarithms.  It is visible from
 	fig.~\eqref{fig:atlasPJ1} that the scale variations shown in \emph{partonic} \HEJ (since the
 	\HEJA bands are statistical only) are quite significantly bigger than that shown by the other
@@ -146,7 +157,8 @@
 			\label{fig:atlasPJ1b}
 		\end{subfigure}
 		\caption{The gap fraction, $f(Q_0)$, as a function of (a) the rapidity gap,
-		$\Delta y$, and (b) the average $p_T$, $\overline{p_T}$, of the dijet system.}
+		$\Delta y$ in the 2010 data, and (b) the average $p_T$, $\overline{p_T}$, of
+		the dijet system in the 2011 data.}
 		\label{fig:atlasPJ1}
 	\end{figure}
 
@@ -182,14 +194,14 @@
 	and rewrite the second moment as $\langle\cos(2\Delta\phi)\rangle$.  Clearly for a final state
 	with two partons momentum conservation will enforce that the jets be in a back-to-back configuration
 	i.e. they will have $\Delta \phi=0$ and both $\langle\cos(\pi-\Delta\phi)\rangle$ and
-	$\langle\cos(2\Delta\phi)\rangle$ will simply be a flat line $1.0$.  As we allow additional
-	jets to be emitted the moments will depart from the straight line as the constraint softens
+	$\langle\cos(2\Delta\phi)\rangle$ will simply be a flat line $1.0$.  As additional
+	partons are emitted the moments will depart from the straight line as the constraint softens
 	and the extra radiation allows for $\Delta\phi<\pi$.  These moments have long been seen
 	as an excellent test of the difference between DGLAP QCD parton showers and BFKL-like
 	resummations \cite{Ducloue:2012bm}.  Indeed it is in these figures where we see the biggest
-	difference between \HEJ and the \texttt{POWHEG} plus parton shower results.  This large
-	difference between the high energy resummation of \HEJ and the parton shower approach clearly
-	shows that the parton shower effects is being probed in these regions of phase space.
+	difference between \HEJ and the \texttt{POWHEG} plus parton shower results.  The large
+	difference between \HEJ and \HEJA approach clearly shows that the parton shower effects
+	are again being probed in these regions of phase space.
 
 	Fig.~\eqref{fig:atlasPJ3} shows the first azimuthal moment for the inclusive selection.
 	We see that in the 2010 study \HEJA and both \texttt{POWHEG} descriptions slightly
@@ -225,7 +237,11 @@
 	the second moment to the first moment.  This is shown in fig.~\eqref{fig:atlasPJ4}.  Once
 	again we do see a sizeable difference in the predictions given by the two resummations.
 	Similarly to fig.~\eqref{fig:atlasPJ3} we see that interfacing to the \ARIADNE package
-	brings the partonic \HEJ prediction into a much better agreement of the data.
+	brings the partonic \HEJ prediction into a much better agreement of the data and that the
+	parton shower alone does not give a good description of data.  We remark on the similarity
+	of the \texttt{POWHEG} prediction that that of \HEJA here, given the stark contrast of the
+	underlying physics in these two descriptions it is not at all expected.  This similarity
+	has also been observed in previous studies and has been discussed in~\cite{Alioli:2012tp}.
 
 	\begin{figure}[bth]
 		\begin{subfigure}[b]{0.48\textwidth}
@@ -246,9 +262,9 @@
 	\end{figure}
 
 	The two remaining figures are similar to figs. \eqref{fig:atlasPJ3} and \eqref{fig:atlasPJ4} but
-	with the addition of the jet veto.  Similarly to the inclusive case we see that the partonic \HEJ
+	with the addition of the jet veto applied to events.  Similarly to the inclusive case we see that the partonic \HEJ
 	predictions overestimates the correlation for the 2010 and the 2011 data sets while the NLO plus
-	shower predictions, once again, understood the decorrelation.  Given the statistical limited
+	shower predictions, once again, undershoot the decorrelation.  Given the statistical limited
 	data available (especially for the 2010 gap jet vetoed data set) it is more difficult to draw
 	clear conclusions here but certainly the inclusion of the \ARIADNE shower improves the High
 	Energy Jets results.
@@ -268,7 +284,8 @@
 	analyses described here) there are equally important contributions arising from the logarithms
 	given to us by the interface with a parton shower.  It is clear that no one package describes all
 	of the data presented and therefore the LHC is probing challenging reasons of phase space and thus
-	more attention is needed.
+	more attention is needed.  This study also strongly motivates further development of \hej with
+	other parton shower descriptions.
 
 	\begin{figure}[bth]
 		\centering
@@ -285,7 +302,7 @@
 		\end{subfigure}
 		\caption{The first azimuthal angular moment, $\langle \cos(\pi-\Delta\phi)\rangle$,
 		for events passing the veto on gap activity above $Q_0=20\text{GeV}$ as a function
-		of (a) the rapidity gap, $\Delta y$, and (b) the average $p_T$, $\overline{p_T}$,
+		of (a) the rapidity gap, $\Delta y$, and (b) the average transverse momentum, $\overline{p_T}$,
 		of the dijet system.}
 		\label{fig:atlasPJ5}
 	\end{figure}
@@ -310,3 +327,4 @@
 		on activity in the rapidity gap is applied.}
 		\label{fig:atlasPJ6}
 	\end{figure}
+
