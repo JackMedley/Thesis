@@ -4,16 +4,11 @@
 \label{chap:conclusion}
 
 In this thesis we have studied the perturbative description of Quantum Chromodynamics at colliders
-including the current Large Hadron Collider and a possible hadronic Future Circular Collider.  We discussed how we can
-interface these theoretical ideas with experiment using the factorisation theorems and jet clustering
-algorithms to connect initial and final state partons to the experimentally observed QCD bound states.
-Through the evolution of the strong coupling constant we were able to discuss possible ways in which
-one might approximate relevant observables by performing a perturbative expansion and the advantages
-and possible pit-falls of these different strategies.  In particular, the question of the validity of
-truncating this expansion was raised since the presence of large logarithm corrections could mean
-that the convergence of any such truncated series would be in doubt.  Lastly, we introduced the concepts
-involved in Monte Carlo simulations necessary for the efficient evaluation of the matrix elements
-described in later chapters.
+including the current Large Hadron Collider and a possible hadronic Future Circular Collider.  In
+chapter~\ref{chap:theory} we gave an overview of a few key components required to perform the
+calculations seen in later sections.  In particular, the question of the validity of truncating
+this expansion was raised since the presence of large logarithm corrections could mean that the
+convergence of any such truncated series would be in doubt.
 
 In chapter~\ref{chap:HEQCD} we specifically discussed the High Energy limit of QCD processes and
 how, in this limit, simple $2\to2$ scattering processes can be expressed as a contraction of currents
@@ -69,12 +64,21 @@ phase-space would not be possible without an attempt to capture at least the lea
 More generally correctly describing QCD events at hadronic colliders is not possible without resumming
 the logarithms significant in the High Energy limit but this, alone, is not the full picture.  We have
 seen throughout this work that, although the leading logarithmic terms are undoubtedly important, it is
-also necessary to contain as much of the terms described by current fixed-order approaches as possible;
-the matching scheme within the \hej framework must be improved to allow matching the next-to-leading
-order in $\alpha_s$ matrix elements.  Furthermore the collinear terms neglected by \hej' wide angle
-approximation must also be considered.  To that end it would be excellent to combine \HEJ with more
-of the current state-of-the-art parton showers.  Armed with next-to-leading order accuracy and a range of
-possible parton showers the description of data at 7, 8, 13 or even 100~TeV would be, I believe,
-excellent in many final states and troublesome regions of phase space currently of interest to
-experimental and theoretical physicists alike.
+also necessary to contain as much of the terms described by current fixed-order approaches as possible.
+In the experimental studies of chapters~\ref{chap:Zs} and~\ref{chap:ATLAS} \HEJ's predictions have
+scale variation bands which are significantly larger than the fixed-order descriptions.  This is well
+understood to be linked to our leading order matching - therefore the highest priority for \hej is to
+modify the matching scheme within the \hej framework must be improved to allow matching the next-to-leading
+order in $\alpha_s$ matrix elements.  Unfortunately this is not as simple as just replacing our current
+\texttt{MadGraph} interface to instead call an NLO matrix element since this would cause us to double
+count contributions.  Furthermore the collinear terms neglected by \hej's wide angle approximation must
+also be considered.  We saw in chapter~\ref{chap:ATLAS} that there are regions of phase space where the
+logarithms contributed by \ARIADNE are necessary for us to describe data and that, once included, we gave
+the best description of data.  To that end it would be excellent to interface \HEJ with more of the current
+state-of-the-art parton showers such as \texttt{HERWIG} and \texttt{PYTHIA}.
+
+Armed with next-to-leading
+order accuracy and a range of possible parton showers the description of data at 7, 8, 13 or even 100~TeV
+would be, I believe, excellent in many final states and troublesome regions of phase space currently of
+interest to experimental and theoretical physicists alike.
 

@@ -1888,70 +1888,9 @@
   	gluon\footnote{Here we mean all except the top and anti-top.  The parton density functions for these are not available
   	and, even if they were, they would be small enough that we could safely ignore their contribution to cross-sections.}.  We can,
   	however, do better than this by using what we know about how the parton density functions vary with $x_{a/b}$ - fig.~\eqref{fig:heraFit}
-  	shows this behaviour as measured by the HERA experiment.  By choosing to randomly sample then incoming parton types according to the relative values
-  	for the parton density functions we can, once again, reduce the variance of our numerical integrations as much as possible.
-
-  	As a final case study of importance sampling at work we shown a comparison of data from the CMS collaboration to two Monte Carlo
-  	generators; \HEJ and \texttt{MadGraph} (v5)~\cite{CMS:2014vtk}.  The study focused on double-differential Drell-Yan production in
-  	association with 0-, 1- and 2-jet final states (though here we will only discuss the 2-jet final state for reasons which will
-  	become clear in later sections).  In \HEJ the production of the Drell-Yan decay products via a $Z^0$ boson or an off-shell photon
-  	is implemented by using exactly the importance sampling scheme shown in eqn.~\eqref{eqn:schematicZ} and fig.~\eqref{fig:breitWigner} -
-  	that is we focus our matrix element evaluations predominantly around the $Z^0$ mass peak. Fig.~(2.9) shows the
-  	comparisons to data for the three di-lepton invariant mass ranges studied.  Fig.~\eqref{fig:HEJ_CMS2_1} shows the distribution
-  	in terms of the absolute value of the rapidity between the reconstructed di-lepton pair and the leading jet in $p_\perp$ for a di-lepton
-  	invariant mass of between 60 and 120~GeV (i.e. centered on the $Z^0$ peak).  We see that both \texttt{MadGraph} and \HEJ give a good
-  	description of data across the full range of rapidity gaps.  Figs.~\eqref{fig:HEJ_CMS2_2} and ~\eqref{fig:HEJ_CMS2_3} show the same
-  	distribution but for a recombined di-muon invariant mass of between 30 and 60~GeV - fig.~\eqref{fig:HEJ_CMS2_2} was generated using the standard
-  	importance sampling (which is clearly designed for here) while fig.~\eqref{fig:HEJ_CMS2_3} was generated using a modified importance
-  	sampling approach which is more suitable for probing the low mass end of the Breit-Wigner distribution.  Clearly using an intelligently
-  	chosen importance sampling scheme makes a big difference to the results - since, although the integrals are formally equal, when we
-  	come to perform the Monte Carlo integration we must use what computational resources we have to focus on the regions which contribute
-  	most to the integral.  Figs.~\eqref{fig:HEJ_CMS2_4} and ~\eqref{fig:HEJ_CMS2_5} show the same distribution now for an invariant
-  	mass of between 120 and 1500~GeV, once again fig.~\eqref{fig:HEJ_CMS2_4} was calculated with the default importance sampling whereas
-  	fig.~\eqref{fig:HEJ_CMS2_5} used a modified scheme.  The same behaviour can be seen with the na\"ive sampling describing the data
-  	poorly.  This study will be discussed further in chapter~\ref{chap:Zs}.
-
-	\begin{figure}[h]
-		\centering
-		\begin{subfigure}[b]{0.75\textwidth}
-		  \includegraphics[width=\textwidth]{CMS2_Z_M60_120H}
-		  \caption{}
-		  \label{fig:HEJ_CMS2_1}
-		\end{subfigure}
-	\end{figure}
-	\begin{figure}[h]
-		\ContinuedFloat
-		\label{fig:HEJ_CMS2}
-		\begin{subfigure}[b]{0.47\textwidth}
-		  \includegraphics[width=\textwidth]{CMS2_Z_M30_60H}
-		  \caption{}
-		  \label{fig:HEJ_CMS2_2}
-		\end{subfigure}
-		~
-		\begin{subfigure}[b]{0.47\textwidth}
-		  \includegraphics[width=\textwidth]{CMS2_F_M30_60H}
-		  \caption{}
-		  \label{fig:HEJ_CMS2_3}
-		\end{subfigure}
-
-		\begin{subfigure}[b]{0.47\textwidth}
-		  \includegraphics[width=\textwidth]{CMS2_Z_M120_1500H}
-		  \caption{}
-		  \label{fig:HEJ_CMS2_4}
-		\end{subfigure}
-		~
-		\begin{subfigure}[b]{0.47\textwidth}
-		  \includegraphics[width=\textwidth]{CMS2_H_M120_1500H}
-		  \caption{}
-		  \label{fig:HEJ_CMS2_5}
-		\end{subfigure}
-		\caption{Comparisons of \HEJ and \texttt{MadGraph} (v5) to data from a CMS study of double-differential
-		Drell-Yan production.  Fig.~\eqref{fig:HEJ_CMS2_1} shows the mass range focussed on the $Z^0$ peak
-		(60-120~GeV), figs.~\eqref{fig:HEJ_CMS2_2} and ~\eqref{fig:HEJ_CMS2_3} show the di-lepton invariant
-		mass range from 30-60~GeV and lastly figs.~\eqref{fig:HEJ_CMS2_4} and ~\eqref{fig:HEJ_CMS2_5} show
-		the mass range from 120-1500~GeV.  For figs.~(2.9b-e) which probe regions away from the Breit-Wigner peak
-		two \HEJ lines are shown - figs.~\eqref{fig:HEJ_CMS2_2} and ~\eqref{fig:HEJ_CMS2_4} use the
-		na\"ive Breit-Wigner sampling while figs.~\eqref{fig:HEJ_CMS2_2} and ~\eqref{fig:HEJ_CMS2_4}
-		use a modified importance sampling scheme.}
-	\end{figure}
+  	shows this behaviour as measured by the HERA experiment.  By choosing to randomly sample then incoming parton types according to the
+  	relative values for the parton density functions we can, once again, reduce the variance of our numerical integrations as much as possible.
+	In chapter~\ref{chap:Zs} we will see an example of the effect of picking an importance sampling distribution which is not relevant
+  	for the problem at hand - in this case it was necessary to change the way we sampled a Breit-Wigner because of specific experimental
+  	invariant mass cuts applied to the decay products of a $\zg$ boson.
 

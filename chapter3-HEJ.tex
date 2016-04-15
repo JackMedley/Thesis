@@ -143,7 +143,7 @@
 	in such a way that we may write eqn.~\eqref{eqn:qQ2qQ} in a `factorised' form once again.
 	Specifically we consider that the scattering can be thought of as two incoming partons glancing off
 	one another.  That is, we assume that $p_1^+\ll p_1^-$, $p_2^-\ll p_2^+$ with $p_a$ ($p_b$)
-	is moving in the backwards (forward) direction.  We can further assume that $p_1^-\approx p_a^-$
+	moving in the backwards (forward) direction.  We can further assume that $p_1^-\approx p_a^-$
 	and $p_2^+\approx p_b^+$ and with this we see that~\eqref{eqn:qQ2qQ} becomes:
 
 	\begin{equation}
@@ -255,7 +255,7 @@
 			=&-\frac{g^2_s}{4q^2}\epsilon^{*+}_{2\mu}\epsilon^+_{b\nu}\overline{u}^-_1\gamma^\mu\slashed q\gamma^\nu u^-_a,
 		\end{align}
 
-		where we have used $q\gg mc$ for the high energy case (i.e. we treat the quarks as massless in the High Energy limit).
+		where we have neglected the quark mass term since we are in the High Energy limit.
 		The propagator has momentum $q=p_a+p_b=p_1+p_2$ and therefore:
 
 		\begin{align}
@@ -263,7 +263,7 @@
 			\frac{\langle{b}|\nu|2\rangle}{\sqrt{2}[2b]}\overline{u}^-_1\gamma^\mu(\slashed{p}_a+\slashed{p}_b)\gamma^\nu u^-_a.
 		\end{align}
 
-		Now we can use the completeness relations for $\slashed p_{a/b}$ and see that:
+		We use the completeness relations for $\slashed p_{a/b}$ and see that:
 
 		\begin{equation}
 			\mathcal{M}_{q^-g^+\to q^-g^+, s}^{\text{LO}}=-T^b_{ae}T^2_{e1}\frac{g^2_s}{4q^2t}[2a]\langle ab\rangle\langle{b}|\mu|2\rangle\langle{1}|\mu|a\rangle
@@ -274,16 +274,17 @@
 		\begin{equation}
 		\mathcal{M}_{q^-g^+\to q^-g^+, s}^{\text{LO}}=-T^b_{ae}T^2_{e1}\frac{g^2_s}{4}\frac{[2a]\langle ab\rangle}{\langle ab\rangle[ba]
 		\langle2b\rangle[b2]}\langle{b}|\mu|2\rangle\langle{1}|\mu|a\rangle.
+		\label{eqn:tempLabel}
 		\end{equation}
 
-		Now we must calculate the spinor products.  We use the conventions for spinors outlined in the
-		previous chapter.  For example:
+		We must now calculate explicitly the spinor product brackets using the conventions for spinors outlined in the
+		previous chapter, for example:
 
 		\begin{align}
-			[2a] = &\overline{u}^+_2u^-_a=-\frac{\sqrt{p_a^+p_2^-}p_2^\perp}{|p_2^\perp|},
+			[2a] = &\overline{u}^+_2u^-_a=-\frac{\sqrt{p_a^+p_2^-}p_2^\perp}{|p_2^\perp|}.
 		\end{align}
 
-		and after calculating the other brackets we see:
+		After calculating the other brackets in eqn.~\eqref{eqn:tempLabel} we see:
 
 		\begin{equation}
 			\mathcal{M}_{q^-g^+\to q^-g^+, s}^{\text{LO}} = -T^b_{ae}T^2_{e1}\frac{g_s^2}{4}\sqrt{\frac{p_2^-}{p_b^-}}\frac{1}{p_2^+p_b^-} \frac{p_{2\perp}^*}{|p_{2\perp}|} \bk{b}{\mu}{2} \bk{1}{\mu}{a}
@@ -330,7 +331,7 @@
 
 	\subsection{$u$-channel}
 
-		The matrix element for the $u$-diagram, shown in fig.~\eqref{fig:qg2qg-t}, is:
+		The matrix element for the $u$-diagram, shown in fig.~\eqref{fig:qg2qg-u}, is:
 
 		\begin{equation}
 			\begin{split}
@@ -352,7 +353,7 @@
 		The total total matrix element is given by the sum of eqs.~\eqref{eqn:s-channel},~\eqref{eqn:t-channel} and~\eqref{eqn:u-channel} which is:
 
 		\begin{equation}
-			\mathcal{M}_{q^-g^+\to q^-g^+}^{\text{LO}}
+			\mathcal{M}_{q^-g^+\to q^-g^+}^{\text{LO}}=
 			\frac{g_s^2}{2}\frac{p_{2\perp}^*}{|p_{2\perp}|}\left(T^2_{ae}T^b_{e1}\sqrt{\frac{p_b^-}{p_2^-}}-T^b_{ae}T^2_{e1}
 			\sqrt{\frac{p_2^-}{p_b^-}}\right)\frac{\langle{b}|\mu|2\rangle\langle{1}|\mu|a\rangle}{\hat{t}},
 			\label{eqn:fullsum}
@@ -370,7 +371,7 @@
 		\end{equation}
 
 		which is identical to the result found in the previous $qQ\rightarrow qQ$ calculation (save for a phase which cancels
-		at the amplitude squared level). Since the kinematics of which is exactly in the form of two `currents' contracted as
+		at the amplitude squared level). The kinematics of eqn.~\eqref{eqn:fullsum} are exactly in the form of two `currents' contracted as
 		seen in section~\ref{sec:qQScat}.  We have:
 
 		\begin{equation}
@@ -379,7 +380,7 @@
 
 		in the High Energy limit. In practice we actually choose \emph{not} to take the High Energy limit to obtain
 		eqn.~\eqref{eqn:fullsum2} so as to approximate as little as possible.  Even without this extra approximation
-		eqn.~\eqref{eqn:fullsum} is still exactly the form of a $t$-channel gluon exchange we saw in
+		eqn.~\eqref{eqn:fullsum} is still exactly the form of a $t$-channel gluon exchange as seen in
 		eqn.~\eqref{eqn:similarBrackets}.
 
 		In section~\ref{sec:HEJ} we will return this result and the results of section~\ref{sec:qQScat} and discuss how,
@@ -389,22 +390,22 @@
 \section{$qQ$-scattering at High Energy (at NLO)}
 	\label{sub:HE22_NLO}
 
-	Before we continue on to look at how we might add extra real and virtual emissions to high energy matrix
+	Before we continue on to look at how we might add extra real emissions to high energy matrix
 	elements we briefly look at higher order (in $\alpha_s$) corrections to the process we studied in
 	section~\ref{sec:qQScat}.  So far we have seen the leading order processes with a $t$-channel
-	exchange are logarithmically enhanced but in eqn.~\eqref{eqn:schematicExpn} we sketched out a form for
-	the perturbative expansion which also had logarithmically enhanced higher order corrections.
+	exchange are enhanced but in eqn.~\eqref{eqn:schematicExpn} we sketched out a form for
+	the perturbative expansion which also had enhanced contributions at higher order orders.
 
 	Here we continue on from section~\ref{sec:qQScat} and calculate the virtual diagrams which contribute
 	a leading logarithm for $qQ\to qQ$ at next-to-leading in $\alpha_s$~\cite{sabioThesis,DelDuca:1995hf}.
 
-	We might na\"ively expect that the next-to-leading order diagrams with the maximal number of $t$-channel exchanges
+	We might expect that the next-to-leading order diagrams with the maximal number of $t$-channel exchanges
 	will give the greatest enhancement and, indeed, this turns out to be the case.  These diagrams are shown
 	for the case of $qQ\rightarrow qQ$ in fig.~\eqref{fig:NLO-leadingContrib}.  We can rule out the other
 	virtual diagrams which contribute at this order since they will contain (anti-)quark propagators along
-	the $p_{a/1}$ or $p_{b/2}$ lines and in the high energy limit these will lead to a suppression.
+	the $p_{a/1}$ or $p_{b/2}$ lines and in the high energy limit these will be suppressed.
 
-	These diagrams in fig.~\eqref{fig:NLO-leadingContrib} can be elegantly computed by employing the `Cutkosky
+	These diagrams in fig.~\eqref{fig:NLO-leadingContrib} can be elegantly computed by using the `Cutkosky
 	rules' which are used to relate two sub-diagrams to the imaginary part of a higher order diagram through
 	the Optical theorem.  This can be seen very quickly since the scattering matrix, $S$, must be unitary i.e.
 	$S^\dagger S=1$.  If we write this instead in terms of the the transition matrix, $T$, defined by $S=1+iT$
@@ -414,8 +415,8 @@
 		-i(T - T^\dagger) = T^\dagger T.
 	\end{equation}
 
-	The left hand side of which can be written as twice the imaginary part of $T$.  If we now imagine
-	that $T$ represents the transition from some initial state $|i\rangle$ to some final state
+	The left hand side of which can be written as twice the imaginary part of $T$.  If we now let
+	$T$ represent the transition from some initial state $|i\rangle$ to some final state
 	$|f\rangle$ then we can write this as:
 
 	\begin{equation}
@@ -467,7 +468,7 @@
 	\end{align}
 
 	where $\text{Im}(\cdot)$ denotes the imaginary part, $k$ is the loop momentum, $q$ is the momentum
-	transfer and $\dagger$ denotes Hermitian conjugation.  The sum a complete of states here just
+	transfer and $\dagger$ denotes Hermitian conjugation.  The sum a complete of states here
 	corresponds to integrating over all possible momenta flowing around the loop. In the High Energy
 	limit we can perform the integration to give:
 
@@ -497,7 +498,7 @@
 	\begin{split}
 		\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}} =&\widetilde{\mathcal{M}}_{qQ\rightarrow qQ}^{\text{NLO, II}}\ln\frac{s}{t} + \text{sub-leading}\\
 		=&\widetilde{\mathcal{M}}_{qQ\rightarrow qQ}^{\text{NLO, II}}
-		\ln\left(\left|\frac{s}{t}\right| -i\pi\right)+ \text{sub-leading},
+		\left(\ln\left|\frac{s}{t}\right| -i\pi\right)+ \text{sub-leading},
 		\label{eqn:rAndI}
 	\end{split}
 	\end{align}
@@ -514,8 +515,8 @@
 
 	\begin{equation}
 		\text{Re}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big) =
-		-\frac{4\alpha_s^2u}{\pi} \mathcal{C}_1(T^a,T^b)
-		\ln\left|\frac{u}{t}\right|\int \frac{dk_{\perp}}{k_{\perp}(k_{\perp} - q_{\perp})}.
+		-\frac{4\alpha_s^2s}{\pi} \mathcal{C}_1(T^a,T^b)
+		\ln\left|\frac{s}{t}\right|\int \frac{dk_{\perp}}{k_{\perp}(k_{\perp} - q_{\perp})}.
 		\label{eqn:uncrossedNLOcontrib}
 	\end{equation}
 
@@ -525,13 +526,13 @@
 
 	\begin{equation}
 		\text{Re}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, X}}\Big) =
-		-\frac{4\alpha_s^2s}{\pi} \mathcal{C}_2(T^a,T^b)
-		\ln\left|\frac{s}{t}\right| \int \frac{dk_{\perp}}{k_{\perp}(k_{\perp} - q_{\perp})}.
+		-\frac{4\alpha_s^2u}{\pi} \mathcal{C}_2(T^a,T^b)
+		\ln\left|\frac{u}{t}\right| \int \frac{dk_{\perp}}{k_{\perp}(k_{\perp} - q_{\perp})}.
 		\label{eqn:crossedNLOcontrib}
 	\end{equation}
 
 	But in the high energy limit $s\sim -u$ (this is clear from eqn.~\eqref{eqn:mandel2}) and so we
-	can combine these terms and express the leading logarithmic NLO term in terms of the leading order
+	can combine these terms and express the leading logarithmic part of the NLO correction in terms of the leading order
 	result:
 
 	\begin{equation}
@@ -544,38 +545,38 @@
 	where:
 
 	\begin{equation}
-		\hat{\alpha}(q) = \int dk_{\perp}\frac{q_{\perp}^2}{k_{\perp}(k_{\perp} - q_{\perp})}
+		\hat{\alpha}(q) = \int dk_{\perp}\frac{q_{\perp}^2}{k_{\perp}(k_{\perp} - q_{\perp})}.
 		\label{eqn:lipDiverge}
 	\end{equation}
 
 	From eqn.~\eqref{eqn:enhancedNLO} we can see the logarithmic enhancement explicitly; there is still
 	a suppression from the inclusion of an extra factor of $\alpha_s$ with respect to the leading
 	order term but as we have seen previously the logarithm is related to the kinematics of the final
-	state - namely - the rapidity gap between the outgoing quarks $p_1$ and $p_2$ and compensate
+	state - namely - the rapidity gap between the outgoing quarks $p_1$ and $p_2$ and this can be large enough to compensate
 	for the smallness of $\alpha_s$.  Eqn.~\eqref{eqn:lipDiverge} will clearly diverge when we
 	come to integrate over the soft region (where $k_\perp$ is very small).  This divergence
-	will be treated, that is regularised and shown to cancel, in chapter~\ref{chap:Zs}.
+	will be treated, i.e. regularised and explicitly shown to cancel, in chapter~\ref{chap:Zs}.
 
 \section{$t$-channel Dominance}
 	\label{sec:tChannel}
 
 	In what follows we construct high multiplicity matrix elements by approximating the full result
 	by the contraction of two currents and a number of effective vertices.  This choice allows us
-	to construct matrix elements with a simple form which contains the leading logarithms.\\
+	to construct matrix elements which contains the leading logarithms.\\
 	As a simple example we consider the production of 4 exclusive jets in the High Energy limit.
-	Here we present a brief argument for precisely which diagrams contribute these leading logarithms.
+	We present a brief argument for precisely which diagrams contribute these leading logarithms.
 	Although heuristic it is sufficient to motivate the construction of high multiplicity amplitudes from
 	$t$-channel gluon exchanges with the understanding that any other diagrams will be formally sub-leading.
 	Fig.~\eqref{fig:quadJets} shows three diagrams which all contribute at leading order in $\alpha_s$;
 	fig.~\eqref{fig:quadJets1} has three gluons exchanged in the $t$-channel and so its amplitude will
-	have propagator terms akin to:
+	have propagator terms which goes like:
 
 	\begin{equation}
 		\mathcal{M}_{\text{(a)}}\sim\frac{1}{(p_a - p_1)^2(p_a - p_1 - p_2)^2(p_a - p_1 - p_2 - p_3)^2},
 		\label{eqn:inPlace}
 	\end{equation}
 
-	arising from the gluon propagators.  By contrast figs.~\eqref{fig:quadJets2} and~\eqref{fig:quadJets3} will
+	By contrast figs.~\eqref{fig:quadJets2} and~\eqref{fig:quadJets3} will
 	have, in place of~\eqref{eqn:inPlace}:
 
 	\begin{align}
@@ -606,12 +607,12 @@
 			\label{fig:quadJets3}
 		\end{subfigure}
 
-		\caption{Three processes contributing to exclusive quad-jet production. (a) has the
+		\caption{Three processes contributing to exclusive four jet production. (a) has the
 		maximum number of gluons exchanged in the $t$-channels (three) and will dominate in the High
 		Energy limit, (b) and (c) only have two and one gluon which can reggeise.  As such as we move
-		from left to right we will lose powers of large logarithms but maintain the same power of
+		from (a) to (c) we will lose powers of large logarithms but maintain the same power of
 		$\alpha_s$ and therefore we can reasonably approximate quad-jet production by neglecting
-		(b) and (c).}
+		(b) and (c) in the High Energy limit.}
 		\label{fig:quadJets}
 	\end{figure}
 
@@ -664,9 +665,9 @@
 	\end{align}
 
 	respectively.  Since $s_{ij}$ are all large here, the processes with a (anti)quark exchanged
-	in the $t$-channel will be highly suppressed.
+	in the $t$-channel will be highly suppressed relative to fig.~\eqref{fig:quadJets1}.
 
-	\begin{figure}
+	\begin{figure}[bth]
 		\begin{center}
 		\includegraphics[width=1.0\linewidth]{ColourConns}
 		\caption{The limiting behaviour of $qg\to qg$ in the regions of phase space where
@@ -676,17 +677,17 @@
 		\end{center}
 	\end{figure}
 
-	To further illustrate this we can look at the various processes contributing to the two
-	jet exclusive cross-section.  Table~\ref{tab:LOatHE} shows several examples of parton level
+	To further illustrate this we can look at the various processes contributing to the exclusive two
+	jet cross-section.  Table~\ref{tab:LOatHE} shows several examples of parton level
 	processes and their exact leading order matrix elements~\cite{pinkBook}.  We can see clearly
-	from this that any process which can proceed through a $t$-channel gluon exchange has a term
+	from this that any process which can proceed via a $t$-channel gluon exchange has a term
 	proportional to $s^2/t^2$ which will dominate in the High Energy limit; for
-	example $q\bar{Q}\to q\bar{Q}$ has only the diagram with such an exchange.
-	Conversely processes in which a $t$-channel gluon diagram can not contribute are
-	suppressed in this limit.  For example $q\bar{q}\to Q\bar{Q}$ may only happen via an
+	example $q\bar{Q}\to q\bar{Q}$ can only go via a $t$-channel diagram.
+	Conversely, processes in which a $t$-channel gluon diagram can not contribute are
+	suppressed in this limit.  For example $q\bar{q}\to Q\bar{Q}$ can only proceed via an
 	$s$-channel gluon and we can see that in the limit $s\to\infty$ and keeping $t$ finite it's matrix
-	element tends to $\nicefrac{8}{9}s^2/t^2$ (since $s\sim-u$ in the High Energy limit).  Processes
-	like $gg\to gg$ have diagrams with \emph{and} without the exchange we are interested in
+	element tends to $-\nicefrac{4}{9}$ (since $s\sim-u$ in the High Energy limit).  Processes
+	like $gg\to gg$ have diagrams with and without the exchange we are interested in
 	and, as such, only some of the terms from the exact leading order matrix element
 	contribute - but they do still contribute.
 
@@ -714,7 +715,7 @@
 	leading order are illustrated in fig.~\eqref{fig:2To3}.  The diagram
 	where the extra gluon is emitted from the $t$-channel gluon is given by:
 
-	\begin{figure}[hbt]
+	\begin{figure}[t]
 		\begin{center}
 		\includegraphics[width=0.7\linewidth]{2To3}
 		\caption{The 5 possible emission sites of extra QCD radiation in $qQ\rightarrow qQ$.
@@ -747,7 +748,7 @@
 	In the High Energy limit the second term in each of the lines is suppressed with respect to the
 	first and can therefore be disregarded.  This turns out to be equivalent to if considering
 	$p_2$ as a soft emission using the Eikonal approximation.  The resulting amplitude for the sum
-	of all four may be written in terms of the tree level amplitude as:
+	of all four may be written as:
 
 	\begin{align}
 	\begin{split}
@@ -760,7 +761,7 @@
 	\end{split}
 	\end{align}
 
-	We now use that $p_a\sim p_1=p_+$ and $p_b\sim p_3=p_-$ in the High Energy limit:
+	Now using that $p_a\sim p_1=p_+$ and $p_b\sim p_3=p_-$ in the High Energy limit:
 
 	\begin{align}
 	\begin{split}
@@ -770,14 +771,14 @@
 	\end{split}
 	\end{align}
 
-	Now tidying up the colour factors:
+	and tidying up the colour factors:
 
 	\begin{align}
 	\begin{split}
 		\mathcal{M}_{\text{Eik.}} = (ig_s)^3 \epsilon_{2\nu} \bk{1}{\mu}{a} \bk{3}{\mu}{b}
 		f^{2de}T^b_{3b}T^e_{1a}\frac{1}{t_{a1}t_{b3}}\Bigg(&
 		\frac{2p_+^\nu}{p_+\cdot p_2}t_{a1} - \frac{2p_-^\nu}{p_-\cdot p_2}t_{b3}\Bigg),
-		\label{eq:fulltree3}
+		\label{eqn:fulltree3}
 	\end{split}
 	\end{align}
 
@@ -820,7 +821,7 @@
 	\end{split}
 	\end{align}
 
-	Similarly as for $\mathcal{M}_{\text{Eik.}}$ we chose to include as much of the actual
+	Similarly to before with $\mathcal{M}_{\text{Eik.}}$ we choose to include as much of the actual
 	kinematic information as possible by symmetrising~\eqref{eqn:mtchannel3} to get:
 
 	\begin{align}
@@ -846,7 +847,7 @@
 		f^{2de}T^b_{3b}T^e_{1a}g_s^3\epsilon^*_\rho V_\rho(q_1, q_2),
 	\end{equation}
 
-	where
+	where:
 
 	\begin{align}
 	\begin{split}
@@ -854,12 +855,12 @@
 		&\frac{p_a^\rho}{2}\left(\frac{q^2_1}{p_a\cdot p_2} + \frac{p_2 \cdot p_b}{p_a \cdot p_b} +
 		\frac{p_2 \cdot p_3}{p_a \cdot p_3}\right) + (p_a\leftrightarrow p_1) \\
 		- &\frac{p_b^\rho}{2}\left(\frac{q^2_2}{p_b\cdot p_2} + \frac{p_2 \cdot p_a}{p_a \cdot p_b} +
-		\frac{p_2 \cdot p_1}{p_b \cdot p_1}\right) - (p_b\leftrightarrow p_3).
+		\frac{p_2 \cdot p_1}{p_b \cdot p_1}\right) - (p_b\leftrightarrow p_3),
 		\label{eqn:effVertex}
 	\end{split}
 	\end{align}
 
-	Eqn.~\eqref{eqn:effVertex} is manifestly gauge invariant which can be checked explicitly by
+	and $S_{qQ\rightarrow qQ}$ contains the current contraction.  Eqn.~\eqref{eqn:effVertex} is manifestly gauge invariant which can be checked explicitly by
 	calculating $p_g\cdot V$.  It is, however clearly divergent:  if any of $p_a$, $p_b$, $p_1$,
 	$p_2$ or $p_3$ becomes soft then the momenta contractions in the denominators of eqn.
 	\eqref{eqn:effVertex} will become zero.  We organise the cancellation of divergences in
@@ -867,7 +868,7 @@
 
 	Armed with eqn.~\eqref{eqn:effVertex} and the quark and gluon currents we can calculate
 	high multiplicity matrix elements by generalising eqn.~\eqref{eqn:factorised} to include
-	contractions of this effective vertex expression.  The $2\rightarrow3$ matrix element
+	contractions of this effective vertex expression.  For example the $2\rightarrow3$ matrix element
 	squared for $qQ$ scattering is therefore given by:
 
 	\begin{align}
@@ -894,8 +895,7 @@
 	\end{align}
 
 	Using eqn.~\eqref{eqn:factorised2ToN} we can describe the real emission high order
-	corrections but this expression is manifestly divergent.  As in section~\ref{sub:eg1loop}
-	we must calculate the virtual corrections to render the integrated cross section finite.
+	corrections but this expression is manifestly divergent.
 
 \section{Virtual Corrections To All Orders}
 	\label{sub:virtuals}
@@ -937,10 +937,10 @@
 	The keen reader will have noticed that eqn.~\eqref{eqn:lipDiverge2} is exactly what we
 	found in our next-to-leading order calculation in eqn.~\eqref{eqn:lipDiverge} expressed
 	in $2+2\epsilon$ dimensions rather than 2 (save for a few numerical factors) as we have
-	no chosen to use.  This is no coincidence and, indeed, is the source of the ansatz.  Higher
+	now chosen to use.  This is no coincidence and, indeed, is the source of the ansatz.  Higher
 	order (in $\alpha_s$) calculations~\cite{DelDuca:1995hf,9780511524387} have shown that to
-	two loops the leading logarithmic part of the full amplitude is found exactly by expanding
-	the exponential term in eqn.~\eqref{eqn:lipAns}.
+	two loops the leading logarithmic virtual part of the full $2\to2$ amplitude agrees exactly with what
+	we get when we Taylor expand the exponential term in eqn.~\eqref{eqn:lipAns}.
 
 \section{High Energy Jets}
 	\label{sec:HEJ}
@@ -959,7 +959,7 @@
 		matrix elements in the form of two vector `currents' contracted over a $t$-channel pole.  While
 		one could argue that the fact that the $qQ\to qQ$ matrix element would factorise into a contraction
 		of two vector currents with a $t$-channel pole was obvious (since the only contribution was
-		from a $t$-channel diagram!), it was not at all obvious that this would also be the case for the
+		from a $t$-channel diagram), but it was not at all obvious that this would also be the case for the
 		$qg\to qg$ amplitude.  It can also be shown that the same structure is found even in the case of
 		gluon-gluon scattering\cite{Andersen:2011hs}.
 
@@ -1020,21 +1020,21 @@
 
 	\subsection{The \hej Monte Carlo}
 
-		The \hej framework is implemented in a general purpose Monte Carlo, referred to simply as
+		The \hej framework is implemented in a general purpose Monte Carlo, referred to as
 		\texttt{HEJ}, and publicly available at \url{http://hej.web.cern.ch/HEJ/}.  This
 		\texttt{C++} package is under continual development to test and improve it and the work
 		of chapter~\ref{chap:Zs} was a major contribution of the author to it (among many other
-		tweaks and improvements).
+		changes and improvements).
 
 		Here we briefly summarise the main aspects of the software aspects of \hej.  A general
 		\HEJ run consists of three main stages.
 
 		\begin{enumerate}
-			\item \textbf{Setup}: a setup phase at which point a user defined input file is parsed
+			\item \textbf{Setup}: at which point a user defined input file is parsed
 			and, based on the specifics of the input, one of several class hierarchies is
 			initialised after which essential components for the physics stage are constructed including:
 			an interface to a PDF package (either \texttt{MSTW} or \texttt{LHAPDF} (v6)), a
-			(pseudo-)random number generator and a physics analysis.
+			(pseudo-)random number generator and a physics analysis class structure.
 
 			\HEJ comes with a stand-alone analysis class which implements many standard operations
 			and is therefore sufficient in most cases.  It may also be interfaced with the
@@ -1062,7 +1062,7 @@
 			~\ref{chap:Zs}.
 
 			\item \textbf{Analysis}: In the analysis stage the event is passed off to either
-			the \HEJ analysis framework or to \texttt{Rivet} (depending on the user input file).
+			the \HEJ analysis framework or to \texttt{Rivet}.
 			Here we enforce kinematic constraints on our final state to study the regions of
 			phase space we are interested in - or those regions probed by a particular
 			experimental analysis whose results we wish to compare to.  In \HEJ it is possible
@@ -1070,9 +1070,10 @@
 			the analysis phase into a given format (\texttt{ROOT} N-tuples, \texttt{LH} events
 			and \texttt{HepMC} (v2) records are all supported).  This is preferable when the same
 			generation can be reused multiple times however for very long runs outputting all of the
-			events becomes unfeasible due to storage requirements and we must take the second option
-			of performing \HEJ analyses on-the-fly i.e. cutting as we iterate through events, binning
-			into histograms and discarding event details.
+			events becomes unfeasible due to storage requirements (this was the case for the work
+			presented in chapter~\ref{chap:ATLAS}) and we must take the second option of performing
+			\HEJ analyses on-the-fly i.e. cutting as we iterate through events, binning into
+			histograms and discarding event details.
 		\end{enumerate}
 
 		While this breakdown is a good broad strokes overview of \HEJ there are hundreds of intricacies
@@ -1083,12 +1084,14 @@
 		when we do our perturbative expansion (through a resummation or fixed-order approach) we develop a
 		dependence on this scale.  It is important to understand the size of this dependence and so when
 		generating Monte Carlo predictions we must produce not only a `central' prediction for each value but
-		also an associated `scale uncertainty' band.  For fixed-order calculations this is simple a case of
+		also an associated `scale uncertainty' band.  For fixed-order calculations this is simply a case of
 		varying $\alpha_s$ through the value of $\mu_r$ but since the \hej matrix element contains scale
 		dependence through the QCD coupling \emph{and} the Lipatov ansatz we must evaluate entire matrix elements
 		at a variety of scales to properly understand our dependence and to provide meaningful predictions.  The
 		factorisation scale must also be varied (in tandem with varying $\mu_r$) to get a complete
-		scale uncertainty band and this is run by default as part of \HEJ.  In a standard partonic \HEJ
+		scale uncertainty band and this is run by default as part of \HEJ.
+
+		In a standard partonic \HEJ
 		run we evaluate the matrix element for each event at 76 different scale choices.  76
 		because we give four choices for the `central' scale and for each central scale we take 5
 		values for $\mu_r$ and $\mu_f$ (the central value multiplicatively scaled by $1/2$, $1/\sqrt{2}$,
@@ -1119,11 +1122,12 @@
 		the splitting function, $\mathcal{D}(p_\perp^2, y)$, as being approximately given by:
 
 		\begin{equation}
-			\mathcal{D}(p_\perp^2, y) \approx = \frac{z}{16\pi^2}
-			\frac{|\mathcal{M}_{n+1}|^2}{|\mathcal{M}_{n}|^2}.
+			\mathcal{D}(p_\perp^2, y) \approx \frac{z}{16\pi^2}
+			\frac{|\mathcal{M}_{n+1}|^2}{|\mathcal{M}_{n}|^2},
 		\end{equation}
 
-		From this one define `no-emission' probabilities, $\Delta(p_{1\perp}^2, p_{2\perp}^2)$, which
+		where $z$ is the energy fraction carried by the emission.  From this one defines `no-emission'
+		probabilities, $\Delta(p_{1\perp}^2, p_{2\perp}^2)$, which
 		give us the probability that no extra radiation is emitted as we evolve the squared transverse
 		momentum of a parton between two scales $p_{1\perp}^2$ and $p_{2\perp}^2$:
 
@@ -1132,25 +1136,10 @@
 			\int dy\mathcal{D}(p_\perp^2, y)\right).
 		\end{equation}
 
-		When it comes to matching the \hej framework to \ARIADNE the matching picture is different. As we
-		will see later on, \HEJ includes radiation down to a very soft scale (this is required in order
-		to render the integrated cross-section finite) and so were we to perform a na\"ive matching to a
-		parton shower we would be double-counting all of the soft non-collinear radiation. As such we
-		define a subtraction term which will account for the fact that \HEJ may have already generated
-		the emission we are considering (and therefore we don't wont \ARIADNE to also generate it); in
-		this way we can avoid double-counting these terms.
-
-		The splitting functions themselves are found by considering the probability of emitting a gluon
-		from a coloured dipole (a pair produced $q\overline{q}$ pair).  This is given by:
-
-		\begin{equation}
-			\mathcal{D}(x_1, x_2)dx_1dx_3 = \frac{\alpha_sC_F}{2\pi}\frac{x_1^2+x_3^2}{(1-x_1)(1-x_3)}dx_1dx_3,
-		\end{equation}
-
-		where $x_1$ and $x_3$ are the momentum fractions carried by the quark and antiquark after the emission
-		of the gluon with fraction $x_2$.
-
-		Fig.~\eqref{fig:heja1} shows the comparison of the \ARIADNE splitting function versus, $\mathcal{D}/z$,
+		Matching \HEJ to \ARIADNE is very different that the usual hard-scatter matching to a parton shower. As we
+		will see in chapter~\ref{chap:Zs}, \HEJ includes radiation down to a very soft scale and so were we to perform
+		a na\"ive matching to a parton shower we would be double-counting all of the soft non-collinear radiation.
+		Fig.~\eqref{fig:heja1} shows the average \ARIADNE splitting function, $\mathcal{D}/z$, compared to
 		the equivalent expression in \HEJ for 30~GeV jets.  The extra emissions were required to be at least
 		$\Delta r=0.5$ away from the emitting parton in order to probe only the soft contributions coming from
 		the shower.  \HEJ includes soft emissions and therefore we expect to see that the majority of
@@ -1166,6 +1155,27 @@
 		events with \HEJA we must be careful not to double count terms; it is clear from figs.~\eqref{fig:heja1} and
 		~\eqref{fig:heja2} that soft and wide-angle emissions are taken care of by \HEJ and so it would be a mistake
 		to allow \ARIADNE to also generate these.
+
+		An outline of the algorithm for matching \ARIADNE to \HEJ is as follows:
+
+		\begin{itemize}
+			\item \HEJ generates a partonic state.  The extremal partons are required to form jets while
+			the gluon emissions from the effective vertices are allowed to be soft (but still above some very soft scale, $\lambda_{cut}$.
+			\item \ARIADNE then begins it's dipole cascade.  Each additional dipole generated by \ARIADNE is checked to see
+			if it is an emission that could have been generated by \HEJ.  If it could be a \hej emission then the emission
+			is rejected with probability $r_{\text{HEJ}} / r_{\text{ARIADNE}}$, where:
+			\begin{equation}
+				r_{\text{HEJ}} = \frac{|\mathcal{M}^t_{n+1}|^2}{|\mathcal{M}^t_{n}|^2},
+			\end{equation}
+			and,
+			\begin{equation}
+				r_{\text{ARIADNE}} = \frac{|\mathcal{M}_{n+1}|^2}{|\mathcal{M}_{n}|^2}.
+			\end{equation}
+			Any emission which could not have been generated by \HEJ is automatically kept, e.g. gluons splitting
+			to quark-antiquark pairs, gluon emissions outside of the extremal partons in rapidity or emissions between
+			the \hej soft cut-off, $\lambda_{\text{cut}}$.
+			\item Upon completion of the cascade the final state is passed to \texttt{PYTHIA} to perform hadronisation.
+		\end{itemize}
 
 		\begin{figure}[hbt]
 			\centering
@@ -1188,11 +1198,11 @@
 	\subsection{Comparisons to data}
 
 		The \hej framework has been thoroughly tested for a number of the currently available final states (jets,
-		$W^\pm$+jets and $\zg$+jets) against other theoretical descriptions and experimental data in a number of
+		$W^\pm$+jets and $\zg$+jets) against other theoretical descriptions and experimental data in all of
 		papers by the ATLAS, CMS and D$\emptyset$ collaborations~\cite{Aad:2011jz,Aad:2014pua,Aad:2014qxa,Aad:2014rta,
 		Chatrchyan:2012gwa,Abazov:2013gpa,ZPaper}.
 
-		These studies probe a wide range of experimental observables with a variety of cuts designed to prove
+		These studies probe wide ranges of experimental observables with a variety of cuts designed to prove
 		specific regions of phase space. \hej is seen to provide an excellent description of data in all of these
 		studies in the regions of phase space close to the High Energy limit.  Interestingly there are cases where
 		\HEJ is seen to be competitive with other state-of-the-art theoretical descriptions even when we are far from
@@ -1208,11 +1218,11 @@
 		Fig.~\eqref{fig:wJetsEg} describes the differential distribution for $W^\pm$ plus dijets in terms of the
 		invariant mass of the dijet system defined by the two leading jets in $p_\perp$, $m_{12}$.  The logarithms
 		resummed by \hej become significant for large values of $m_{12}$ and so we expect that \HEJ should
-		describe this distribution well while fixed-order scheme who cannot capture these large logarithmic
+		describe this distribution well while fixed-order schemes who cannot capture these large logarithmic
 		corrections may not. In fact, \HEJ gives the best description of data across almost the entire range of $m_{jj}$
 		with the other theoretical predictions only agreeing with data below an invariant mass of approximately $300$~GeV
 		and deviate badly by $2$~TeV.  This high invariant mass region is an important region for VBF studies and so it
-		is important that we are able to describe QCD emissions.  The failure of fixed order calculations show that
+		is important that we are able to describe QCD emissions here.  The failure of fixed order calculations show that
 		perturbative stability already begins to breakdown in $7$~TeV LHC data.  As we will see in chapter~\ref{chap:100TeV}
 		this is a challenge we must face at a potential high energy Future Circular Collider.
 

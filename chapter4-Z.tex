@@ -1292,8 +1292,62 @@
 		  \label{fig:ATLAS_7b}
 		\end{figure}
 
-	\subsection{The $W^\pm/\zg$+Jets Ratio at the ATLAS Experiment}
+	\subsection{The $W^\pm$+Jets to $\zg$+Jets Ratio at the ATLAS Experiment}
 		\label{sub:ATLASZsec}
+
+		In this section we present predictions for the ratio of $\zg$+Jets to
+		$W^\pm$+Jets at all orders in $\alpha_s$.  We compare to the recent study undertaken
+		by the ATLAS collaboration \cite{Aad:2014rta}.  While $W^\pm$ plus jets and $\zg$ plus
+		jets are both relevant separately for Standard Model physics and beyond the ratio of
+		the two processes is particularly interesting as a precision test since many of the
+		systematic errors which limit the $V$ plus jets (where $V=W^\pm, \zg$) measurements
+		cancel in the ratio.  The cuts for both final states are summarised in table ~\ref{tab:atlasWZcuts}.
+
+		\begin{table}[h]
+		\centering
+		\begin{tabular}{|l|l|}
+			\hline
+			Lepton Cuts & $p_{T\ell}>25$~GeV, \; $|\eta_\ell|<2.5$ \\
+			&  $\Delta R^{\ell^+\ell^-} > 0.2$ \\ \hline
+			Reconstructed $Z$ Cuts &  $66$~GeV $< m^{\ell^+\ell^-} <116$~GeV \\
+			\hline
+			Reconstructed $W^\pm$ Cuts & $m_{TW} > 40$~GeV\; $\slashed E_{T} > 25$~GeV \\ \hline
+			Jet Cuts (anti-$k_T$, 0.4) & $p_{Tj}>30$~GeV, \; $|y_j|<4.4$ \\
+			& $\Delta R^{j\ell} >0.5$ \\
+			\hline
+			\end{tabular}
+			\caption{Cuts applied to theory simulations in the analysis of the ATLAS $W^\pm$+jets/$Z$+jets ratio
+		  	predictions shown in tables~\ref{tab:RJetsIncl}--\ref{tab:RJetsExcl}.}
+			\label{tab:atlasWZcuts}
+		\end{table}
+
+		\begin{table}[!h]
+			\begin{center}
+			\begin{tabular}{| c | c | c | c |}
+		        \hline
+			$N_{jets}$ & Data $(\pm \text{stat.}\pm \text{syst.})$ & HEJ $(\pm \text{stat.}\pm \text{s.v.})$ & HEJ/Data $(\pm \text{stat.}\pm \text{s.v.})$ \\ \hline
+			$\ge2$ & $8.64\pm0.04\pm0.33$ & $8.66\pm0.12^{+0.14}_{-0.16}$ & $1.00\pm0.01^{+0.02}_{-0.01}$ \\ \hline
+			$\ge3$ & $8.18\pm0.08\pm0.52$ & $7.96\pm0.25^{+0.01}_{-0.01}$ & $0.97\pm0.03^{+0.01}_{-0.00}$ \\ \hline
+			$\ge4$ & $7.62\pm0.20\pm0.95$ & $8.55\pm0.69^{+0.02}_{-0.02}$ & $1.12\pm0.09^{+0.00}_{-0.00}$ \\ \hline
+			\end{tabular}
+			\caption{The HEJ prediction for inclusive $R_{jet}$ rates at 2, 3 and 4 jets compared with ATLAS data.}
+			\label{tab:RJetsIncl}
+			\end{center}
+		\end{table}
+
+		\begin{table}[!h]
+			\begin{center}
+			\begin{tabular}{| c | c | c | c |}
+		        \hline
+			$N_{jets}$ & Data $(\pm \text{stat.}\pm \text{syst.})$ & HEJ $(\pm \text{stat.}\pm \text{s.v.})$ & HEJ/Data $(\pm \text{stat.}\pm \text{s.v.})$ \\ \hline
+			2 & $8.76\pm0.05\pm0.31$ & $8.88\pm0.135^{+0.15}_{-0.18}$ & $1.01\pm0.02^{+0.021}_{-0.02}$ \\ \hline
+			3 & $8.33\pm0.10\pm0.45$ & $7.85\pm0.265^{+0.01}_{-0.01}$ & $0.94\pm0.01^{+0.001}_{-0.03}$ \\ \hline
+			4 & $7.69\pm0.21\pm0.71$ & $8.44\pm0.684^{+0.04}_{-0.04}$ & $1.10\pm0.01^{+0.005}_{-0.09}$ \\ \hline
+			\end{tabular}
+			\caption{The HEJ prediction for exclusive $R_{jet}$ rates at 2, 3 and 4 jets compared with ATLAS data.}
+			\label{tab:RJetsExcl}
+			\end{center}
+		\end{table}
 
 	\subsection{$\zg$+Jets at the CMS Experiment}
 		\label{sub:CMS}
@@ -1445,7 +1499,6 @@
 		  \label{tab:cmscuts2}
 		\end{table}
 
-		The figures for this section have been discussed previously in section~\ref{sec:MC}.
 		Fig.~\eqref{fig:HEJ_CMS2_1} shows the distribution in the absolute rapidity gap
 		between the reconstructed $\zg$ and the leading jet in $p_\perp$ for a reconstructed
 		di-muon mass in the $Z^0$ peak range (defined as 60-120~GeV).  We see that both the
@@ -1456,10 +1509,64 @@
 		agree well with one another.  This is exactly because the \HEJ predictions are being
 		driven by the leading order matching in the regions considered.  This is a good
 		consistency check of both the \hej matching scheme and the implementation of the
-		importance sampling in \HEJ.  As mentioned during the discussion of importance
-		sampling techniques in Monte Carlo it was necessary to modify the Breit-Wigner
-		sampling to a flat generation of the di-muon mass in order to generate predictions
-		for the invariant mass bins far from dominant region.
+		importance sampling in \HEJ.
+
+		In \HEJ the production of the Drell-Yan decay products via a $Z^0$ boson or an off-shell photon
+		is implemented by using exactly the importance sampling scheme shown in chapter~\ref{chap:theory},
+		eqn.~\eqref{eqn:schematicZ} and fig.~\eqref{fig:breitWigner} - that is we focus our matrix element
+		evaluations predominantly around the $Z^0$ mass peak.  Fig.~\eqref{fig:HEJ_CMS2_2} was
+		generated using the standard importance sampling (which is \emph{not} designed for this range of invariant masses) while
+		fig.~\eqref{fig:HEJ_CMS2_3} was generated using a modified importance
+		sampling approach which was better suited for probing the low mass end of the Breit-Wigner
+		distribution.  Clearly using an intelligently chosen importance sampling scheme makes a big
+		difference to the results - since, although the integrals are formally equal, when we come to
+		perform the Monte Carlo integration we must use what computational resources we have to focus on
+		the regions which contribute most to the integral.  Figs.~\eqref{fig:HEJ_CMS2_4}
+		and~\eqref{fig:HEJ_CMS2_5} show the same distribution now for an invariant mass of between 120
+		and 1500~GeV, once again fig.~\eqref{fig:HEJ_CMS2_4} was calculated with the default importance
+		sampling whereas fig.~\eqref{fig:HEJ_CMS2_5} used a modified scheme:  the same behaviour can be
+		seen with the default sampling describing the data poorly and being statistically limited.
+
+		\begin{figure}[h]
+			\centering
+			\begin{subfigure}[b]{0.47\textwidth}
+				\includegraphics[width=\textwidth]{CMS2_Z_M60_120H}
+				\caption{}
+				\label{fig:HEJ_CMS2_1}
+			\end{subfigure}
+
+			\begin{subfigure}[b]{0.47\textwidth}
+				\includegraphics[width=\textwidth]{CMS2_Z_M30_60H}
+				\caption{}
+				\label{fig:HEJ_CMS2_2}
+			\end{subfigure}
+			~
+			\begin{subfigure}[b]{0.47\textwidth}
+				\includegraphics[width=\textwidth]{CMS2_F_M30_60H}
+				\caption{}
+				\label{fig:HEJ_CMS2_3}
+			\end{subfigure}
+
+			\begin{subfigure}[b]{0.47\textwidth}
+				\includegraphics[width=\textwidth]{CMS2_Z_M120_1500H}
+				\caption{}
+				\label{fig:HEJ_CMS2_4}
+			\end{subfigure}
+			~
+			\begin{subfigure}[b]{0.47\textwidth}
+				\includegraphics[width=\textwidth]{CMS2_H_M120_1500H}
+				\caption{}
+				\label{fig:HEJ_CMS2_5}
+			\end{subfigure}
+			\caption{Comparisons of \HEJ and \texttt{MadGraph} (v5) to data from a CMS study of double-differential
+			Drell-Yan production.  Fig.~\eqref{fig:HEJ_CMS2_1} shows the mass range focussed on the $Z^0$ peak
+			(60-120~GeV), figs.~\eqref{fig:HEJ_CMS2_2} and ~\eqref{fig:HEJ_CMS2_3} show the di-lepton invariant
+			mass range from 30-60~GeV and lastly figs.~\eqref{fig:HEJ_CMS2_4} and ~\eqref{fig:HEJ_CMS2_5} show
+			the mass range from 120-1500~GeV.  For figs.~(2.9b-e) which probe regions away from the Breit-Wigner peak
+			two \HEJ lines are shown - figs.~\eqref{fig:HEJ_CMS2_2} and ~\eqref{fig:HEJ_CMS2_4} use the
+			na\"ive Breit-Wigner sampling while figs.~\eqref{fig:HEJ_CMS2_2} and ~\eqref{fig:HEJ_CMS2_4}
+			use a modified importance sampling scheme.}
+		\end{figure}
 
 \section{$\zg$+Jets Conclusions}
 

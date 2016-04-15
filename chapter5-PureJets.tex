@@ -88,10 +88,22 @@
 	in the High Energy Jets matrix element.  It is contained implicitly in the strong coupling
 	constant which is contained within the virtual corrections exponential.  As such
 	we cannot simply generate predictions at a single scale and then re-weight events
-	at the post-analysis level.  This is further complicated in \HEJA because of the additional
-	scale dependencies in the parton shower description.  The orange bands shown with
-	the \HEJA predictions throughout this chapter are the statistical bands (shown, as usual,
-	at the 68\% confidence level).
+	at the post-analysis level.  This is further complicated in \HEJA because of the
+	additional scale dependencies in the parton shower description.
+
+	The orange bands shown with the \HEJA predictions throughout this chapter are the
+	statistical bands (shown, as usual, at the 68\% confidence level).  The calculation
+	of these statistical bands had to be completed manually - that is to say, not using
+	the out-of-the-box result provided by \texttt{ROOT} since many of the individual
+	distributions required calculating ratios of distributions for which the statistical
+	errors in the numerator and denominator are highly correlated.  It was seen that
+	na\"ive statistical uncertainty bands were not representative of the actual uncertainty.
+	The bands presented were calculated using a statistical bootstrapping approach; given
+	a Monte Carlo sample comprising $N$ events we repeatedly form `bootstrap samples'
+	each with $0.9N$ events by randomly selecting subsets of the full sample.  Once
+	a sufficient number of these have been formed we have a distribution of results for
+	each bin (in each histogram) and we can easily draw a statistical uncertainty band
+	which contains 68\% of the bootstrapped samples in each bin.
 
 	Observables were studied
 	as a function of two properties of the dijets.  The rapidity gap between the dijets,
@@ -140,8 +152,9 @@
 	fig.~\eqref{fig:atlasPJ1} that the scale variations shown in \emph{partonic} \HEJ (since the
 	\HEJA bands are statistical only) are quite significantly bigger than that shown by the other
 	predictions.  This is expected since we only include matching up to leading-order whereas
-	\texttt{POWHEG} is formally NLO accurate; it is well observed that as we include higher order
-	terms (in the fixed order sense) we gain a better control of the scale uncertainties.
+	\texttt{POWHEG} is formally NLO accurate.  In pure fixed-order calculations it is well
+	observed that as higher order terms are included a better control of the scale uncertainties
+	is achieved.
 
 	\begin{figure}[bth]
 		\centering
@@ -207,12 +220,15 @@
 	We see that in the 2010 study \HEJA and both \texttt{POWHEG} descriptions slightly
 	underestimate $\langle\cos(\pi-\Delta\phi)\rangle$ while the partonic \HEJ result slightly
 	overestimates.  However, the evolution of the first azimuthal moment with respect to
-	$\overline{p_T}$ shows a clear difference between the two formalisms.  \HEJ does not
+	$\overline{p_T}$ shows a clear difference between the two formalisms.  Partonic \HEJ does not
 	radiate sufficiently to predict the correct decorrelation at low mean transverse momentum
 	(which is understood since it does not include the parton shower effects) while both
 	\texttt{POWHEG} descriptions cause too much decorrelation at low $\overline{p_T}$.
 	The best description of the data is given by \HEJA since it adds extra emissions to High
-	Energy Jets which improves our description of the decorrelation.
+	Energy Jets which improves our description of the decorrelation.  It is clear that the low
+	$p_\perp$ region of fig.~\eqref{fig:atlasPJ3} is extremely sensitive to shower effects - not
+	only because there is a large difference between \HEJ and \HEJA but also because the two
+	\texttt{POWHEG} plus shower results differ significantly.
 
 	\begin{figure}[bth]
 		\centering
