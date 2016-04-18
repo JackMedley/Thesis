@@ -6,8 +6,7 @@
 	Here we present the results of a complex experimental study of the effects of jet vetoes and
 	azimuthal decorrelations in dijet events~\cite{Aad:2014pua}.  High Energy Jets is compared
 	to both data and state-of-the-art fixed-order perturbative QCD predictions supplemented with
-	radiation by merging with a parton shower from \texttt{POWHEG+
-	PYTHIA8} and \texttt{POWHEG+HERWIG} (both implemented through the \texttt{POWHEG BOX} package
+	radiation by merging with a parton shower from \texttt{POWHEG+PYTHIA8} and \texttt{POWHEG+HERWIG} (both implemented through the \texttt{POWHEG BOX} package
 	\cite{1126-6708-2004-11-040}).
 
 	The data are taken from 7~TeV proton-proton collisions as observed by the ATLAS
@@ -39,10 +38,10 @@
 	defining dijets by the most forward and most backward jets: naturally the $p_\perp$
 	choice favours high transverse momentum dijets in the central region (and hence with
 	relatively small rapidity gaps) while the forward-backward dijet system definition
-	typically lead to softer systems with bigger rapidity spans ~\cite{Abazov:2013gpa}.
+	typically lead to softer systems with bigger rapidity spans~\cite{Abazov:2013gpa}.
 	These two jets are required
 	to be significantly harder than any additional jets with extra cuts on the leading
-	and sub-leading jets of $50$~GeV and $60$~GeV respectively.  After tagging the two
+	and sub-leading jets of $60$~GeV and $50$~GeV respectively.  After tagging the two
 	leading jets in the event and additional jet radiation is only considered in the rapidity
 	interval bounded by the dijets as a QCD correction.  Within the two data sets
 	defined in table \eqref{tab:atlasPcuts} a further subdivision was made.  For both the
@@ -50,31 +49,31 @@
 	QCD radiation in the rapidity interval bounded by the dijet system above some veto
 	scale $Q_0$.  It should also be noted that the 2011 data set required a minimum
 	rapidity gap of 1.0 between the leading jets (for both cases with and without the gap jet
-	veto) in order to encourage a rapidity span into which extra radiation may arise.
-	The full breakdown of this analysis then is into four event categories;
+	veto) in order to encourage a large rapidity span into which extra radiation may arise.
+	In summary, the full breakdown of this analysis then is into four event categories;
 	2010 data with and without a veto applied to gap jets and the 2011 data with and
 	without a veto applied to gap jets.
 
 	I generated the predictions for these analyses on behalf of the High Energy Jets
 	collaboration at the request of the ATLAS collaboration. Predictions for both
 	the partonic \HEJ calculation (shown in green in this chapter) and the \HEJA
-	calculation (shown in orange) were calculated. \ARIADNE is a parton shower package
-	based on the Lund colour cascade dipole model. Due to the steps necessary to remove the
+	calculation (shown in orange) were calculated. As discussed in chapter~\ref{chap:HEQCD} \ARIADNE is a parton shower package
+	based on the Lund colour cascade dipole model. As per the algorithm outlined in section~\ref{sec:HEJ}, the steps necessary to remove the
 	double counting in this interfaced package (which arises from \HEJ and \ARIADNE both
-	generating soft radiation) generating large data samples which can be used to give
+	generating soft radiation) make generating large data samples which can be used to give
 	statistically significant predictions for the challenging regions of phase space considered
-	here is \emph{extremely} computationally demanding.  Since the generation of these
+	here is \emph{extremely} computationally demanding.  The generation of these
 	predictions was so demanding several changes were made to the \HEJ codebase; the
 	size of event files generated meant that the analysis framework for \hej required
-	rewriting so that binning to histograms could occur on-the-fly.  This analysis was
+	rewriting so that binning to histograms could occur on-the-fly.  As discussed in section~\ref{sec:comp}, this analysis was
 	initially run using local computing resources however it quickly became apparent
 	that this would not be sufficient, at which point it was necessary to switch to
-	running \HEJ on the CERN grid computing cluster - the first time this was done.
+	running \HEJ on the CERN grid computing cluster - this was the first time this was done.
 
-	As discussed in section~\ref{sec:HEJ} a standard partonic \HEJ run
-	evaluates the matrix element for each event at 76 different scale choices (since
-	we allow for four choices of `central' scale and 19 combinations of the renormalisation
-	scale, $\mu_r$, and factorisation scale, $\mu_f$ based on each central choice).
+	% As discussed in section~\ref{sec:HEJ} a standard partonic \HEJ run
+	% evaluates the matrix element for each event at 76 different scale choices (since
+	% we allow for four choices of `central' scale and 19 combinations of the renormalisation
+	% scale, $\mu_r$, and factorisation scale, $\mu_f$ based on each central choice).
 	A central scale was chosen based on previously agreement with data seen in a previous
 	ATLAS comparison to gap jets~\cite{Aad:2011jz}; this set of 19 scale combination
 	form an `envelope' of predictions for each bin in each plot - this spread is then
@@ -83,7 +82,7 @@
 	we can only afford one scale choice per event and, as such, we cannot provide
 	scale variation uncertainty bands with our showered numbers.  To be clear this
 	is not a limitation of the physics since it is entirely possible to evaluate
-	each matrix element multiple times - it is a computational consideration.
+	each matrix element multiple times - it is only a computational consideration.
 	As seen in chapter \ref{chap:Zs}, the renormalisation scale appears in a non-trivial way
 	in the High Energy Jets matrix element.  It is contained implicitly in the strong coupling
 	constant which is contained within the virtual corrections exponential.  As such
@@ -92,23 +91,23 @@
 	additional scale dependencies in the parton shower description.
 
 	The orange bands shown with the \HEJA predictions throughout this chapter are the
-	statistical bands (shown, as usual, at the 68\% confidence level).  The calculation
+	statistical bands shown at the 68\% confidence level.  The calculation
 	of these statistical bands had to be completed manually - that is to say, not using
 	the out-of-the-box result provided by \texttt{ROOT} since many of the individual
 	distributions required calculating ratios of distributions for which the statistical
-	errors in the numerator and denominator are highly correlated.  It was seen that
+	errors in the numerator and denominator are highly correlated.  It was seen that the
 	na\"ive statistical uncertainty bands were not representative of the actual uncertainty.
-	The bands presented were calculated using a statistical bootstrapping approach; given
+	The bands presented were calculated using a statistical bootstrapping approach: given
 	a Monte Carlo sample comprising $N$ events we repeatedly form `bootstrap samples'
 	each with $0.9N$ events by randomly selecting subsets of the full sample.  Once
-	a sufficient number of these have been formed we have a distribution of results for
-	each bin (in each histogram) and we can easily draw a statistical uncertainty band
+	a sufficient number of these have been generated we have a distribution of results for
+	each bin in each histogram and we can easily form a statistical uncertainty band
 	which contains 68\% of the bootstrapped samples in each bin.
 
-	Observables were studied
-	as a function of two properties of the dijets.  The rapidity gap between the dijets,
+	Here observables were studied
+	as a function of two properties of a dijet system.  The rapidity gap between the dijets,
 	$\Delta y$, and the mean traverse momenta of the dijet system, $\overline{p_T}$.\\
-	Na\"ively for small $\Delta y$ we expect to see fewer gap jets since there is
+	For small $\Delta y$ we expect to see fewer gap jets since there is
 	a limited region in which extra jets may be clustered before they are clustered in
 	to the dijet system itself.   Conversely, as we pull the dijets apart in rapidity
 	we expect to see an increase in additional QCD radiation (since there is a larger
@@ -116,9 +115,9 @@
 	events with harder dijet systems will have higher gap activity simply because they
 	can cheaply add extra radiation.
 
-	Throughout the remainder of this chapter the (a) sub-figures show data and
+	Throughout the remainder of this chapter the  left hand figures, (a), show data and
 	predictions for the 2010 data set with respect to the rapidity span of the dijet
-	system, $\Delta y$, while the (b) sub-figures show data and predictions from the
+	system, $\Delta y$, while the right hand figures, (b), show data and predictions from the
 	2011 data set with respect to the mean transverse momenta of the dijet system,
 	$\overline{p_T}$.
 
@@ -130,11 +129,11 @@
 
 	where $\sigma_{jj}$ is the total dijet cross section passing the cuts in
 	table~\ref{tab:atlasPcuts} and $\sigma_{jj}(Q_0)$ is the dijet cross section passing
-	the veto on additional gap scales for a scale choice $Q_0$.
+	the cuts plus the extra veto on additional gap scales for a scale choice $Q_0$.
 
 	Fig.~\eqref{fig:atlasPJ1} shows the gap fraction with a veto scale of $20$~GeV in
 	fig.~\eqref{fig:atlasPJ1a} and a veto scale of $30$~GeV in fig.~\eqref{fig:atlasPJ1b}.
-	The data are shown in black with the inner bars represent the statistical uncertainty
+	The data are shown in black with the inner bars representing the statistical uncertainty
 	while the outer lines are the total uncertainty arising from statistical and systematic
 	effects.  The behaviour observed is in line with our expectation discussed previously since the
 	gap fraction decreases at both large $\Delta y$ and large $\overline{p_T}$.  We can see the
@@ -143,7 +142,7 @@
 	prediction overshoots both data sets meaning that we underestimate the jet activity in the
 	gap region while the predictions from \texttt{POWHEG} plus parton showers overestimate the
 	QCD radiation here.  The big difference between the partonic and showered \HEJ lines in
-	fig.~\eqref{fig:atlasPJ1} indicates clearly that in these regions of phase space it
+	fig.~\eqref{fig:atlasPJ1} indicates clearly that in this region of phase space it
 	is not sufficient to only describe the wide-angle logarithmically enhanced terms resummed
 	within the High Energy Jets framework and that the soft and collinear logarithms added by
 	interfacing to \ARIADNE play a very important r\^ole - equally it is clear from the
@@ -202,19 +201,20 @@
 	\end{figure}
 
 	We now turn to look at the azimuthal decorrelations of dijet systems.  These are defined
-	as $\langle\cos(n(\pi-\Delta\phi))\rangle$ with $n=1, 2, \ldots$.  Here we only consider
+	as $\langle\cos(n(\pi-\Delta\phi))\rangle$ with $n=1, 2, \ldots$ and $\Delta\phi$ is the azimuthal separation between the leading dijets.  Here we only consider
 	the first and second moments.  We follow the notation of \cite{Aad:2014pua}
 	and rewrite the second moment as $\langle\cos(2\Delta\phi)\rangle$.  Clearly for a final state
 	with two partons momentum conservation will enforce that the jets be in a back-to-back configuration
-	i.e. they will have $\Delta \phi=0$ and both $\langle\cos(\pi-\Delta\phi)\rangle$ and
-	$\langle\cos(2\Delta\phi)\rangle$ will simply be a flat line $1.0$.  As additional
+	i.e. they will have $\Delta \phi=\pi$ and both $\langle\cos(\pi-\Delta\phi)\rangle$ and
+	$\langle\cos(2\Delta\phi)\rangle$ will simply be constant at $1.0$.  As additional
 	partons are emitted the moments will depart from the straight line as the constraint softens
 	and the extra radiation allows for $\Delta\phi<\pi$.  These moments have long been seen
 	as an excellent test of the difference between DGLAP QCD parton showers and BFKL-like
 	resummations \cite{Ducloue:2012bm}.  Indeed it is in these figures where we see the biggest
-	difference between \HEJ and the \texttt{POWHEG} plus parton shower results.  The large
-	difference between \HEJ and \HEJA approach clearly shows that the parton shower effects
-	are again being probed in these regions of phase space.
+	difference between \HEJ and the \texttt{POWHEG} plus parton shower results.
+	% The large
+	% difference between \HEJ and \HEJA approach clearly shows that the parton shower effects
+	% are again being probed in these regions of phase space.
 
 	Fig.~\eqref{fig:atlasPJ3} shows the first azimuthal moment for the inclusive selection.
 	We see that in the 2010 study \HEJA and both \texttt{POWHEG} descriptions slightly
@@ -225,7 +225,7 @@
 	(which is understood since it does not include the parton shower effects) while both
 	\texttt{POWHEG} descriptions cause too much decorrelation at low $\overline{p_T}$.
 	The best description of the data is given by \HEJA since it adds extra emissions to High
-	Energy Jets which improves our description of the decorrelation.  It is clear that the low
+	Energy Jets which improves our description of the decorrelation.  Once again it is clear that the low
 	$p_\perp$ region of fig.~\eqref{fig:atlasPJ3} is extremely sensitive to shower effects - not
 	only because there is a large difference between \HEJ and \HEJA but also because the two
 	\texttt{POWHEG} plus shower results differ significantly.
@@ -250,11 +250,11 @@
 	\end{figure}
 
 	Another variable thought to be a good test of DGLAP vs. BFKL physics is the ratio of
-	the second moment to the first moment.  This is shown in fig.~\eqref{fig:atlasPJ4}.  Once
+	the second moment to the first moment, this is shown in fig.~\eqref{fig:atlasPJ4}.  Once
 	again we do see a sizeable difference in the predictions given by the two resummations.
 	Similarly to fig.~\eqref{fig:atlasPJ3} we see that interfacing to the \ARIADNE package
-	brings the partonic \HEJ prediction into a much better agreement of the data and that the
-	parton shower alone does not give a good description of data.  We remark on the similarity
+	brings the partonic \HEJ prediction into much better agreement with the data and that the
+	parton showers alone does not give a good description of data.  We remark on the similarity
 	of the \texttt{POWHEG} prediction that that of \HEJA here, given the stark contrast of the
 	underlying physics in these two descriptions it is not at all expected.  This similarity
 	has also been observed in previous studies and has been discussed in~\cite{Alioli:2012tp}.
@@ -292,7 +292,7 @@
 
 	In summary, the best description of the data overall is given by \HEJA and \texttt{POWHEG+PYTHIA8}
 	while parton level \HEJ overestimates (underestimate) the gap fraction (the mean number of jets
-	in the rapidity gap bounded between the dijet system) and overshoots both the first azimuthal
+	in the rapidity gap) and overshoots both the first azimuthal
 	moment and the ratio of the second to the first azimuthal moment.  \texttt{POWHEG+HERWIG} describes
 	the data poorly for the gap fraction, the mean number of gap jets and the azimuthal decorrelations.
 	From this it is clear that while the logarithmically enhanced resummed in the High Energy Jets
