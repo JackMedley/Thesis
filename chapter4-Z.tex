@@ -91,8 +91,8 @@
 		not contribute an FKL configuration) there are two possible emission sites for the
 		$Z^0$ per fermion i.e. two for $qg$ and $\bar qg$ scattering and four for $qq$,
 		$\bar qq$ and $\bar q\bar q$ scattering. The emission sites on a single fermion line
-		are illustrated in fig. \eqref{fig:emissionsites}.  In the language of currents discussed
-		previously we call the left hand side of fig. \eqref{fig:emissionsites} $j_\mu^\zg$.
+		are illustrated in fig.~\eqref{fig:emissionsites}.  In the language of currents discussed
+		previously we call the left hand side of fig.~\eqref{fig:emissionsites} $j_\mu^\zg$.
 		It is given by:
 
 		\begin{align}
@@ -185,7 +185,7 @@
 		incoming quark with $p_a\sim p_1=p_+$ emits a $Z^0$ and then a $t$-channel gluon (or a
 		$t$-channel gluon and \emph{then} a $Z^0$).
 
-		We then observe the behaviour shown in fig. \eqref{fig:ZatLO}: as we pull the
+		We then observe the behaviour shown in fig.~\eqref{fig:ZatLO}: as we pull the
 		jets apart in rapidity (i.e. as we go to large $\Delta$) we see that the matrix element
 		approaches a constant; this is the result which would be obtained by using the BFKL
 		formalism in which all jets are taken be infinitely well separated in rapidity.\\As we
@@ -205,16 +205,22 @@
 		\end{figure}
 
 		The picture becomes more complicated when considering the $qQ\to ZqQ$ scattering since
-		there are now four possible places where the (anti-)quark may emit
-		the $Z^0$.  In previous work by the High Energy Jets collaboration the case of
-		$W^\pm$ plus multiple hard jets was treated by simply attaching the boson to an external
-		quark line probabilistically \cite{Andersen:2012gk}.  In the case of $W^\pm$ the interference
-		terms are less of a factor since the emission of the boson changes the flavour of the quark
-		line and so there are less diagrams to contribute to the interference effects.  However as
-		we will see later this leads to an approximate matrix element which differs significantly from
-		the leading-order result and so here we will include not only the contributions to the matrix
-		element arising from the $Z^0$ being emitted from both (anti-) quark legs separately but also
-		the resulting interference term.
+		there are now four possible places where the (anti-)quark may emit the $Z^0$.  In
+		previous work by the High Energy Jets collaboration the case of $W^\pm$ plus multiple
+		hard jets was treated by attaching the boson to a single external quark line
+		probabilistically~\cite{Andersen:2012gk}.  In the case of $W^\pm$ the interference
+		terms arising from multiple boson emission sites is small and can be neglected, the reason for this is two
+		fold. Firstly, the emission of the $W^\pm$ changes the flavour of the emitting quark line and so the
+		final state will differ in almost all diagrams depending on where you emit (and hence there is no
+		interference allowed), the exceptions to this are processes such as $uu\to(W^\pm\to)e+\nu_eud$ where
+		either line could have been the emitter and so these are PDF suppressed. Secondly, in order to have
+		interference the $W$ boson must be able to be emitted from multiple legs \emph{and} have the same charge
+		wherever you attach it - again this is because the $W^\pm$ will decay to a distinct final state and no
+		interference can occur. With these constraints in mind there are very few diagrams which contribute to the
+		interference effects in $W^\pm$-plus-jets.  However as we will see later this leads to an approximate matrix
+		element which differs significantly from the leading-order result and so here we will include not only the
+		contributions to the matrix element arising from the $Z^0$ being emitted from both (anti-)quark
+		legs separately but also the resulting interference term.
 
 	\subsection{$Z^0$ Emission Interference}
 
@@ -322,8 +328,8 @@
 		Then upon squaring eqn.~\eqref{eq:jsum} we will automatically include the interference
 		terms from the cross-terms. The inclusion of the virtual photon terms is particularly
 		important when studying a combined lepton invariant mass, $(p_{e^+} + p_{e^-})^2$,
-		far from the $Z^0$ Breit-Wigner mass peak. This can be seen in fig. \eqref{fig:DileptonMass},
-		where slices through phase space are shown similarly to fig. \eqref{fig:twojets}, but
+		far from the $Z^0$ Breit-Wigner mass peak. This can be seen in fig.~\eqref{fig:DileptonMass},
+		where slices through phase space are shown similarly to fig.~\eqref{fig:twojets}, but
 		now for an (a) lower and (b) higher value of the di-lepton mass.  In both cases, the
 		contribution of the virtual photon processes is above 25\%.
 
@@ -821,7 +827,7 @@
 			\end{subfigure}
 
 			\caption{Examples of both real and virtual diagrams contributing to
-			$2\rightarrow3$ scattering. In fig. \eqref{fig:real24} the $p_2$ has been
+			$2\rightarrow3$ scattering. In fig.~\eqref{fig:real24} the $p_2$ has been
 			drawn with a dashed line to denote it is not resolvable.  In fig.
 			\eqref{fig:virtual23} the final state momenta have been labelled in a
 			seemingly strange way - this was done to make clear the cancellation
@@ -830,8 +836,8 @@
 		\end{figure}
 
 		Consider the case of $2\rightarrow3$ scattering where on of the final state momenta, $p_2$, has become soft.  A contributing
-		soft diagram is shown in fig. \eqref{fig:real24} and one example of a contributing virtual
-		diagram of the same order is shown in fig. \eqref{fig:virtual23}. When $p_2$ goes soft we have
+		soft diagram is shown in fig.~\eqref{fig:real24} and one example of a contributing virtual
+		diagram of the same order is shown in fig.~\eqref{fig:virtual23}. When $p_2$ goes soft we have
 		the following form for the $2\rightarrow3$ integrated amplitude squared ({N.B.}: The
 		integration is only schematic and doesn't represent the full Lorentz invariant phase space):
 
@@ -1048,7 +1054,94 @@
 
 	These two matching schemes complete our description of the production of $\zg$
 	with at least two jets, including the leading high-energy logarithms at all
-	orders in $\alpha_s$.  In the next sections, we discuss the computational aspects
+	orders in $\alpha_s$.  Tables~\eqref{tab:matching1} and~\eqref{tab:matching2} show
+	the effect of the matching to leading order on the total cross sections of various FKL
+	configurations for 2 and 3-4 jet processes respectively.  We see that although the
+	resummation-only result often gives a good approximation to the exact leading order result
+	it sometimes differs but that this difference is corrected for by our matching.  Table~\eqref{tab:matching3}
+	shows the total cross sections generated by \HEJ for 2-, 3- and 4-jet processes which contain non-FKL
+	configurations.  Once again we see that after the inclusion of the extra exclusive sums we are in good
+	agreement with the leading order result.
+
+	\begin{table}[hbt]
+	\centering
+	\caption{The effect of matching on the total cross-section of the 2 jet final state FKL configurations.}
+	\label{tab:matching1}
+	\begin{tabular}{c|c|c|c}
+	Incoming & Resum. & Resum.+FKL & Leading Order \\ \hline
+	$(1,  1)$       &  $0.6550 \pm 0.0172$  &  $0.6742 \pm 0.0170$  & $0.6742 \pm 0.0170$ \\
+	$(1,  2)$       &  $1.1030 \pm 0.0581$  &  $1.1030 \pm 0.0581$  & $1.1029 \pm 0.0581$ \\
+	$(1,  3)$       &  $0.2667 \pm 0.0077$  &  $0.2667 \pm 0.0077$  & $0.2667 \pm 0.0077$ \\
+	$(1,  4)$       &  $0.1991 \pm 0.0113$  &  $0.1992 \pm 0.0113$  & $0.1992 \pm 0.0113$ \\
+	$(1,  5)$       &  $0.1085 \pm 0.0036$  &  $0.1085 \pm 0.0036$  & $0.1085 \pm 0.0036$ \\
+	$(2,  2)$       &  $1.3672 \pm 0.0980$  &  $1.3910 \pm 0.0935$  & $1.3910 \pm 0.0935$ \\
+	$(2,  3)$       &  $0.4832 \pm 0.0174$  &  $0.4832 \pm 0.0174$  & $0.4832 \pm 0.0174$ \\
+	$(2,  4)$       &  $0.2744 \pm 0.0203$  &  $0.2744 \pm 0.0203$  & $0.2744 \pm 0.0203$ \\
+	$(2,  5)$       &  $0.2033 \pm 0.0082$  &  $0.2033 \pm 0.0082$  & $0.2033 \pm 0.0082$ \\
+	$(3,  3)$       &  $0.0837 \pm 0.0021$  &  $0.0880 \pm 0.0022$  & $0.0880 \pm 0.0022$ \\
+	$(3,  4)$       &  $0.0630 \pm 0.0034$  &  $0.0630 \pm 0.0034$  & $0.0630 \pm 0.0034$ \\
+	$(3,  5)$       &  $0.0313 \pm 0.0008$  &  $0.0313 \pm 0.0008$  & $0.0313 \pm 0.0008$ \\
+	$(4,  4)$       &  $0.0310 \pm 0.0018$  &  $0.0326 \pm 0.0017$  & $0.0326 \pm 0.0017$ \\
+	$(4,  5)$       &  $0.0236 \pm 0.0016$  &  $0.0236 \pm 0.0016$  & $0.0236 \pm 0.0016$ \\
+	$(5,  5)$       &  $0.0114 \pm 0.0003$  &  $0.0121 \pm 0.0003$  & $0.0121 \pm 0.0003$ \\
+	$(1, 21)$       &  $4.3680 \pm 0.1600$  &  $2.7868 \pm 0.0909$  & $2.7868 \pm 0.0909$ \\
+	$(2, 21)$       &  $5.6100 \pm 0.3344$  &  $3.6284 \pm 0.1957$  & $3.6284 \pm 0.1957$ \\
+	$(3, 21)$       &  $1.8842 \pm 0.0732$  &  $1.1718 \pm 0.0353$  & $1.1718 \pm 0.0353$ \\
+	$(4, 21)$       &  $1.2172 \pm 0.1449$  &  $0.7136 \pm 0.0405$  & $0.7136 \pm 0.0405$ \\
+	$(5, 21)$       &  $0.7480 \pm 0.0335$  &  $0.4697 \pm 0.0153$  & $0.4697 \pm 0.0153$ \\ \hline
+	\end{tabular}
+	\end{table}
+
+	\begin{table}[hbt]
+	\centering
+	\caption{The effect of matching on the total cross-section of the 3 and 4 jet final state FKL
+	configurations.}
+	\label{tab:matching2}
+	\begin{tabular}{c|c|c}
+	Incoming & Resum.+FKL & Leading Order \\ \hline
+	\multicolumn{3}{c}{3-jet} \\ \hline
+	$(1, 1)$  & $0.3467 \pm 0.0202$ & $0.3467 \pm 0.0202$ \\
+	$(1, 2)$  & $0.6851 \pm 0.0589$ & $0.6851 \pm 0.0589$ \\
+	$(1, 3)$  & $0.1065 \pm 0.0073$ & $0.1065 \pm 0.0073$ \\
+	$(1, 4)$  & $0.0684 \pm 0.0059$ & $0.0684 \pm 0.0059$ \\
+	$(1, 5)$  & $0.0431 \pm 0.0032$ & $0.0431 \pm 0.0032$ \\ \hline
+	\multicolumn{3}{c}{4-jet} \\ \hline
+	$(3, 1)$  & $0.0011 \pm 0.0001$ & $0.0011 \pm 0.0001$ \\
+	$(3, 5)$  & $0.0097 \pm 0.0006$ & $0.0097 \pm 0.0006$ \\ \hline
+	\end{tabular}
+	\end{table}
+
+	\begin{table}[hbt]
+	\centering
+	\caption{The effect of matching on the total cross-section of the 2-, 3- and 4-jet final state non-FKL
+	configurations.}
+	\label{tab:matching3}
+	\begin{tabular}{c|c|c|c|c}
+	Incoming & Resum.+FKL & Non-FKL & Leading Order & \HEJ/Leading Order\\ \hline
+	\multicolumn{5}{c}{2-jet} \\ \hline
+	$(1, 2)$    &   $1.0985 \pm 0.1048$ &   $0.1047 \pm 0.0072$ &   $1.2260  \pm 0.0037$ &    $0.9814  \pm 0.0857$ \\
+	$(3, 4)$    &   $0.0706 \pm 0.0107$ &   $0.0086 \pm 0.0001$ &   $0.0804  \pm 0.0001$ &    $0.98587 \pm 0.1334$ \\
+	$(21, 21)$  &   $0.0000 \pm 0.0000$ &   $0.4002 \pm 0.9090$ &   $0.3612  \pm 0.0357$ &    $1.00389 \pm 0.0878$ \\
+	$(1,-1)$    &   $0.4262 \pm 0.0107$ &   $1.8962 \pm 0.0586$ &   $2.3460  \pm 0.0064$ &    $0.98991 \pm 0.0255$ \\
+	$(2,-2)$    &   $0.6151 \pm 0.0640$ &   $2.0954 \pm 0.0742$ &   $2.6770  \pm 0.0079$ &    $1.01254 \pm 0.0367$ \\
+	$(3,-3)$    &   $0.1250 \pm 0.0154$ &   $0.6116 \pm 0.0078$ &   $0.7576  \pm 0.0023$ &    $0.97232 \pm 0.0230$ \\
+	$(4,-4)$    &   $0.0733 \pm 0.0319$ &   $0.2308 \pm 0.0040$ &   $0.3096  \pm 0.0010$ &    $0.98228 \pm 0.1037$ \\
+	$(5,-5)$    &   $0.0186 \pm 0.0003$ &   $0.1211 \pm 0.0036$ &   $0.1447  \pm 0.0005$ &    $0.96592 \pm 0.0254$ \\ \hline
+	\multicolumn{5}{c}{3-jet} \\ \hline
+        $(1,-1)$    &   $0.1713 \pm 0.0026$ &   $0.4848 \pm 0.0104$ &    $0.6112  \pm 0.0031$ &   $1.0354 \pm 0.0183$ \\
+        $(21, 21)$  &   $0.0000 \pm 0.0000$ &   $6.8566 \pm 0.2022$ &    $6.7920  \pm 0.0220$ &   $1.0095 \pm 0.0299$ \\
+        $(3, 1)$    &   $0.0008 \pm 0.0000$ &   $0.1615 \pm 0.0041$ &    $0.1633  \pm 0.0005$ &   $0.9937 \pm 0.9937$ \\
+        $(2,-5)$    &   $0.0724 \pm 0.0053$ &   $0.0627 \pm 0.0046$ &    $0.1300  \pm 0.0005$ &   $1.0392 \pm 0.0544$ \\
+        $(1, 21)$   &   $0.5804 \pm 0.0930$ &   $3.4127 \pm 0.2900$ &    $4.1498  \pm 0.0149$ &   $0.9624 \pm 0.0735$ \\ \hline
+	\multicolumn{5}{c}{4-jet} \\ \hline
+	$(1, 2)$   &    $0.2308 \pm 0.0230$ &   $0.3199 \pm 0.0447$ &    $0.5491 \pm 0.0032$ &    $1.0030 \pm 0.0917$ \\
+	$(4, 21)$  &    $0.0133 \pm 0.0007$ &   $0.2728 \pm 0.0370$ &    $0.2780 \pm 0.0509$ &    $1.0292 \pm 0.1334$ \\
+	$(1,-1)$   &    $0.0545 \pm 0.0030$ &   $0.1544 \pm 0.0111$ &    $0.1965 \pm 0.0011$ &    $1.0631 \pm 0.0588$ \\
+	$(3,-3)$   &    $0.0002 \pm 0.0000$ &   $0.0366 \pm 0.0042$ &    $0.0333 \pm 0.0001$ &    $1.1059 \pm 0.1251$ \\ \hline
+	\end{tabular}
+	\end{table}
+
+	In the next sections, we discuss the computational aspects
 	of the work presented here and compare the resulting predictions from this formalism
 	to LHC data from recent ATLAS and CMS analyses.
 
