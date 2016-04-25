@@ -981,8 +981,9 @@
 	  \label{eq:sigma}
 	  \begin{split}
 	    \sigma =& \sum_{f_a,f_b} \sum_{n=2}^\infty \int \frac{d^3 p_a}{(2\pi)^3 2E_a} \int \frac{d^3
-	      p_b}{(2\pi)^3 2E_b}  \left( \prod_{i=2}^n \int \frac{d^3 p_i}{(2\pi)^3
-	        2E_i} \right)\ (2\pi)^4 \delta^{(4)}\left(p_a+p_b - \sum_i p_i\right) \\
+	      p_b}{(2\pi)^3 2E_b}  \left( \prod_{i=1}^n \int \frac{d^3 p_i}{(2\pi)^3
+	        2E_i} \right) \int \frac{d^3 p_{e^-}}{(2\pi)^3 2E_{e^-}} \int \frac{d^3 p_{e^+}}{(2\pi)^3 2E_{e^+}} \\
+	    & \ \times (2\pi)^4 \delta^{(4)}\left(p_a+p_b -\sum_i p_i - p_{e^-} -p_{e^+}\right) \\
 	    & \ \times \ |\mathcal{M}^{HEJ-{\rm reg}}_{f_af_b\to \zg
 	      f_a(n-2)gf_b}(p_a,p_b,\{p_i\})|^2 \ \frac{ x_a f_{f_a}(x_a, Q_a) x_b
 	      f_{f_b}(x_b,Q_b)}{\hat s^2}\ \Theta_{\rm cut},
@@ -1153,10 +1154,10 @@
 	the Monte Carlo for $\zg$ plus jets was a serious undertaking; the inclusion of
 	the aforementioned interference terms required that two $t$-channel `chains' of
 	momenta and vertices be computed and carried throughout the evaluation.
-	Furthermore to correctly calculate at the amplitude level the way the \hej currents are constructed
-	in the codebase needed to be modified.  Since the virtual corrections are scale
-	dependent it was necessary to change large sections of code to work with multiple
-	copies of $t$-chains and multiple scales.
+	Furthermore to correctly calculate at the amplitude level the way the \hej currents
+	are constructed in the codebase needed to be modified.  Since the virtual corrections
+	are scale dependent it was necessary to change large sections of code to work with
+	multiple copies of $t$-chains and multiple scales.
 
 	In previous \HEJ releases the matching mentioned above was performed using
 	\texttt{MadGraph} version 4.  However, due to increases in speed and efficiency
@@ -1298,15 +1299,14 @@
 		fixed-order based predictions shown in Fig.~\eqref{fig:ATLAS_2a} are all fairly
 		flat above about 0.2, but the ratio of the data differs by about 10\%.
 
-		In all of the figures presented in this section we see that \HEJ has scale uncertainty bands
+		We have seen that in all of the figures presented in this section \HEJ has scale uncertainty bands
 		significantly larger than other theoretical descriptions, including \texttt{Alpgen} who also
-		have only leading order accuracy.  We see from figure~\eqref{fig:HEJ_ATLAS_2a} that we describe
+		have only leading order accuracy.  From figure~\eqref{fig:HEJ_ATLAS_2a} we see that we describe
 		the experimentally observed inclusive two jet rate very well and, as such, do not require
-		normalisation to agree with the data.  However, applying a normalisation
-		procedure which consistently applies scale variation simultaneously in numerator
-		and denominator significantly reduces the size of the scale uncertainty bands
-		for High Energy Jets (or any theoretical prediction).  In
-		figs.~\eqref{fig:ATLAS_Z_7b_norm},~\eqref{fig:ATLAS_Z_11a_norm} and~\eqref{fig:ATLAS_Z_11b_norm}
+		normalisation to agree with the data.  However, applying a normalisation procedure which
+		consistently applies scale variation simultaneously in numerator and denominator significantly
+		reduces the size of the scale uncertainty bands for High Energy Jets (or any theoretical prediction).
+		In figs.~\eqref{fig:ATLAS_Z_7b_norm},~\eqref{fig:ATLAS_Z_11a_norm} and~\eqref{fig:ATLAS_Z_11b_norm}
 		we show the results from figures~\eqref{fig:HEJ_ATLAS_7b},~\eqref{fig:HEJ_ATLAS_11a} and~\eqref{fig:HEJ_ATLAS_11b}.
 		We see that, as expected, the central value of HEJ still describes the data well in the
 		regions discussed above and now the size of the theoretical uncertainty band is significantly
