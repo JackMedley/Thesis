@@ -213,7 +213,7 @@
 		\label{eqn:diracPW}
 	\end{equation}
 
-	The full set of rules for the vertices and propagators are summarised in table~\eqref{tab:feynRules}
+	The full set of rules for the vertices and propagators are summarised in tab.~\eqref{tab:feynRules}
 	and the remaining \emph{Feynman rules} may be summarised as:
 
 	\begin{table}[bth!]
@@ -372,8 +372,8 @@
 		energy and we would never be able to resolve them.  In contrast to the UV divergences
 		the IR becomes important in the region of phase space where $k^2\rightarrow0$.  A similar power
 		counting analysis to that above can be applied here.  For example if we consider the one-loop
-		correction to the vertex diagram in massless phi-cubed from section \eqref{sec:partonicCrossSection}
-		we would find an integral of the form \cite{Sterman:1995fz}:
+		correction to the vertex diagram in massless phi-cubed from section~\eqref{sec:partonicCrossSection}
+		we would find an integral of the form~\cite{Sterman:1995fz}:
 
 		\begin{equation}
 			I = \int\frac{d^4k}{(2\pi)^4}\frac{1}{k^2(p_1-k)^2(p_2+k)^2},
@@ -443,7 +443,7 @@
 		avoid the extremities has no effect on the collinear sector.
 
 		An alternative which \emph{does} keep both gauge and translational invariance is the Pauli-Villars
-		regularisation scheme \cite{RevModPhys.21.434}.  In this picture we introduce an extra field which has
+		regularisation scheme~\cite{RevModPhys.21.434}.  In this picture we introduce an extra field which has
 		the opposite spin-statistics and therefore has the effect of suppressing the very high mass region in
 		the integrand as follows
 
@@ -494,7 +494,7 @@
 		\end{equation}
 
 		The introduction of this scale has important consequences for our theory.  Here we follow the instructive example
-		from \cite{pinkBook}.  Say we have some dimensionless observable, $R$, which depends on one large scale, $Q$, which
+		from~\cite{pinkBook}.  Say we have some dimensionless observable, $R$, which depends on one large scale, $Q$, which
 		is much larger than all other scales in the problem (e.g. the quark masses).  One would assume that $R$ is
 		approximately independent of this large scale but when we come to regulate and renormalise the divergences we have
 		seen in this section the problem becomes one involving two scales and $R$ develops a dependence on the ratio of
@@ -531,7 +531,7 @@
 	This is the fact that at \emph{high} energies the QCD coupling strength becomes increasingly weak and it is this which allows us to
 	perform a perturbative expansion of physical observables such as cross-sections.  The second feature is confinement.  Confinement
 	is the reason we do not observe bare quarks and gluons in nature, instead we only see colourless bound states of these fundamental QCD partons.
-	This is because at very \emph{low} energies the coupling strength becomes increasingly strong.\\As we saw in section \ref{sec:divAndReg}
+	This is because at very \emph{low} energies the coupling strength becomes increasingly strong.\\As we saw in section~\ref{sec:divAndReg}
 	when we renormalise QCD to remove the ultraviolet singularities we introduce a scale dependence in the coupling strength,
 	$\alpha_s = \alpha_s(\mu_r)$.  This can be interpreted as a measure of our ignorance of the true high-scale theory which governs nature,
 	that is to say, we believe QCD is the right theory \emph{only up to} some scale $\mu_r$.  The evolution of $\alpha_s$ with $\mu_r$ is
@@ -571,20 +571,20 @@
 	$e^+e^-\rightarrow \text{hadrons}$ cross-section to the $e^+e^-\rightarrow\mu^+\mu^-$ cross-section was investigated}
 	that as $Q^2$ tends to zero the coupling strength becomes very large and at high values for $Q^2$ we see that $\alpha_s(Q^2)\rightarrow0$.
 	This later limit is exactly the asymptotic freedom property of QCD and it holds even when we include the higher order
-	terms we neglected in the leading-order approximation used to arrive at eqn.~\eqref{eqn:runningAS} \cite{Beringer:1900zz}.
+	terms we neglected in the leading-order approximation used to arrive at eqn.~\eqref{eqn:runningAS}~\cite{Beringer:1900zz}.
 	It is an essential result in that it allows us to perform perturbative expansions of observables and without this none of the
 	following work would be possible.  The evolution of the strong coupling with $Q^2$ is shown in fig.~\eqref{fig:runningAS},
 	it shows several extracted values of $\alpha_s$ based on six various types of experiment.  For example, the hadronic
 	collider predictions include studies of the ratio of the 3-jet inclusive cross-section to the 2-jet inclusive
-	cross-section as a means of finding the strong coupling \cite{Chatrchyan:2013txa}.
+	cross-section as a means of finding the strong coupling~\cite{Chatrchyan:2013txa}.
 
-	\begin{figure}[hbt]
+	\begin{figure}[bth]
 		\centering
 		\includegraphics[width=0.9\textwidth]{Figures/runningAlphaS}
 		\caption{The evolution of $\alpha_s$ over several orders of magnitude in the scale of the process $Q^2$.  The data
 		         points fitted are of varying degrees of formal accuracy ranging from next-to-leading order in $\alpha_s$
 		         (NLO) to next-to-next-to-next-to-leading order in $\alpha_s$ (N\textsuperscript{3}LO).
-		         Fig. from \cite{Beringer:1900zz}.}
+		         Fig. from~\cite{Beringer:1900zz}.}
 		\label{fig:runningAS}
   	\end{figure}
 
@@ -626,20 +626,20 @@
 	in a process known as `hadronisation'.  This process is not perturbatively well-understood since it occurs below a scale,
 	$\Lambda_{\text{QCD}}$, at which QCD becomes non-perturbative, i.e. the coupling constant of the
 	theory has become too large for us to legitimately truncate a perturbative expansion.  There are models for both
-	the `parton shower' behaviour of the energetic final state partons, such as \texttt{Pythia} \cite{Sjostrand:2007gs},
-	\texttt{Herwig} \cite{Corcella:2000bw} and \texttt{Sherpa} \cite{Hoche:2014kca} as well as models for the hadronisation
-	such as the `Lund string model' \cite{Andersson:2002ap} implemented in various physics software packages but most
-	relevantly (for the remainder of this thesis) - in the \texttt{Ariadne} code \cite{Lonnblad:1992tz,Andersen:2011zd}.\\
+	the `parton shower' behaviour of the energetic final state partons, such as \texttt{Pythia}~\cite{Sjostrand:2007gs},
+	\texttt{Herwig}~\cite{Corcella:2000bw} and \texttt{Sherpa}~\cite{Hoche:2014kca} as well as models for the hadronisation
+	such as the `Lund string model'~\cite{Andersson:2002ap} implemented in various physics software packages but most
+	relevantly (for the remainder of this thesis) - in the \texttt{Ariadne} code~\cite{Lonnblad:1992tz,Andersen:2011zd}.\\
 	All high energy collider experiments
 	see a great deal of QCD radiation in the final state.  This radiation, produced through the mechanisms outlined above,
 	appears in columnated structures called `jets' and so it is at the jet level that we may compare our simulated results
 	to actual measurements. The question of how we best map from the two or more parton level to the jet level is not a trivial
 	one:  a single high-energy (or `hard') parton may split and form two final state jets but equally two low energy (or
 	`soft') partons may combine into a single jet.\\There are several approaches to this problem include the \texttt{SISCone}
-	algorithm \cite{Salam:2007xv} and Pythia's own implementation \texttt{CellJet} \cite{Sjostrand:2000wi}. However the
+	algorithm~\cite{Salam:2007xv} and Pythia's own implementation \texttt{CellJet}~\cite{Sjostrand:2000wi}. However the
 	most commonly used family of jet reconstruction algorithm are know as the `sequential recombination algorithms'.
 	This group of approaches include the Cambridge-Aachen, $k_T$ and anti-$k_T$ algorithms. The general algorithm, as
-	given in \cite{Cacciari:2008gp}, is:
+	given in~\cite{Cacciari:2008gp}, is:
 
 	\begin{enumerate}
 		\item Given a list of final state partons calculate some generalised distance, $d_{ij}$, between all possible
@@ -664,8 +664,7 @@
 	$\Delta R^2 = \Delta\phi^2 + \Delta y^2$ where $\Delta\phi$ and $\Delta y$ are the angular distance (about the beam line)
 	between the partons and the rapidity gap between the partons respectively.  The parameter, $p$,
 	specifies precisely which clustering algorithm we are using; $p=0$ reduces eqn.~\eqref{eqn:thiseqn} to the Cambridge-Aachen scheme while
-	$p=\pm1$ give the $k_T$ and anti-$k_T$ algorithms respectively.  The question of which to use is outlined in detail in
-	\cite{Cacciari:2008gp} but we give a brief summary here.\\The choice of jet algorithm boils down to a handful of key
+	$p=\pm1$ give the $k_T$ and anti-$k_T$ algorithms respectively.  The question of which to use is outlined in detail in~\cite{Cacciari:2008gp} but we give a brief summary here.\\The choice of jet algorithm boils down to a handful of key
 	properties the algorithm must exhibit.  Given a set of hard QCD final states we require that the result of the
 	clustering algorithm, i.e. the jets and jet shapes, are not unduly sensitive to additional soft and collinear radiation.
 	This is intuitively clear since, for example, a final state with a single high energy quark with momentum, $k_{Ti}$,
@@ -676,7 +675,7 @@
 	since these things are, at present, poorly understood.  It is also worth mentioning that since jet clustering algorithms
 	are used in experimental triggers to quickly catagorise events they should be as computationally cheap as possible.\\Although
 	the Cambridge-Aachen algorithm has advantages in some experimental searches such as studies where the substructure of
-	jets is of particular interest \cite{Butterworth:2008iy, Aad:2015owa}, the most widely used sequential recombination algorithm is
+	jets is of particular interest~\cite{Butterworth:2008iy, Aad:2015owa}, the most widely used sequential recombination algorithm is
 	the anti-$k_t$ algorithm ($p=-1$) and so all of the work which follows and all of the experimental comparisons made will
 	use this as the method for mapping simulated parton level results to a more useful set of jet level results.  The jet size
 	parameter $R$ varies between experiments but is typically either 0.4 for ATLAS analyses or 0.5 for CMS analyses.
@@ -684,7 +683,7 @@
 \section{Perturbative QCD and Resummation}
 	\label{sec:pqcdAndResum}
 
-	In section \ref{sec:partonicCrossSection} we saw that we could separate out the QCD Lagrangian into
+	In section~\ref{sec:partonicCrossSection} we saw that we could separate out the QCD Lagrangian into
 	free and interacting components and that vacuum expectations of time ordered fields could be found by
 	taking functional derivatives of the free partition function (eqn.~\eqref{eqn:fnDerviatesOfLagrangian}).
 	Since terms which give rise to interactions in the Lagrangian come with a factor of the coupling strength,
@@ -695,7 +694,7 @@
 
 	\subsection{Fixed-order Perturbation Theory}
 
-		The fixed-order perturbative approach operates on the assumption that since, as we saw in section \ref{sec:betaFunction},
+		The fixed-order perturbative approach operates on the assumption that since, as we saw in section~\ref{sec:betaFunction},
 		the coupling strength $\alpha_s$ in the expansion becomes small at large energy scales we may simply truncate the series at some
 		power of $\alpha_s$.  For example given a cross-section of some scattering $X\rightarrow Y$ we wish to calculate, the fixed
 		order picture of the expansion would be:
@@ -710,10 +709,9 @@
 		truncated series will approximate the full result we should choose $N$ as large as possible though in principal
 		it is determined by the complexity and the computational cost of the relevant calculation of the coefficient
 		functions.  Recent progress has allowed the automation of next-to-leading order QCD calculations ($N=2$) in
-		packages such in \texttt{MadGraph\_aMC@NLO} (v5) \cite{Alwall:2011uj}, \texttt{BlackHat+Sherpa} \cite{Bern:2012my}, \texttt{MC@NLO}
-		\cite{Frixione:2010wd} and \texttt{Powheg} \cite{Frixione:2007vw}. It is not known in general how to compute
-		multi-loop ($N\geq2$) calculations and while process specific calculations have been completed
-		\cite{Cacciari:2015jma, Grazzini:2015nwa, Gehrmann:2014fva}, it is still very much a hot topic in theoretical particle
+		packages such in \texttt{MadGraph\_aMC@NLO} (v5)~\cite{Alwall:2011uj}, \texttt{BlackHat+Sherpa}~\cite{Bern:2012my},
+		\texttt{MC@NLO}~\cite{Frixione:2010wd} and \texttt{Powheg}~\cite{Frixione:2007vw}. It is not known in general how to compute
+		multi-loop ($N\geq2$) calculations and while process specific calculations have been completed~\cite{Cacciari:2015jma, Grazzini:2015nwa, Gehrmann:2014fva}, it is still very much a hot topic in theoretical particle
 		physics.
 
 		It is important to note the limitations of this fixed-order scheme.  For example, if we were to consider
@@ -725,19 +723,18 @@
 		number of jets.  Note that the higher-order corrections here are \emph{not} the same in the case of
 		\texttt{POWHEJ+PYTHIA} and \texttt{HEJ} (although the two predictions have been seen to both agree well with data in the past~\cite{Alioli:2012tp}.  Also note that although the scale uncertainty band of the NLO
 		calculation \emph{does} exceed $\langle jets\rangle=3$ this is not a result of the formalism but instead comes
-		about as the result of the instability of NLO at large values of $H_T$.  This scale dependence of observables will be discussed in more detail in chapter
-		\ref{chap:HEQCD}.
+		about as the result of the instability of NLO at large values of $H_T$.  This scale dependence of observables will be discussed in more detail in chapter~\ref{chap:HEQCD}.
 
 		There are frameworks to allow the `merging' of NLO calculations of different multiplicity.  A comprehensive
-		review of such methods may be found in \cite{Alwall:2007fs}.
+		review of such methods may be found in~\cite{Alwall:2007fs}.
 
 		We now present an instructive fixed-order calculation of the next-to-leading corrections to quark-antiquark pair
-		production via an off-shell photon \cite{fieldBook}.
+		production via an off-shell photon~\cite{fieldBook}.
 
 		\begin{figure}[hbt]
 			\centering
-			\includegraphics[width=\textwidth]{NLOfail}
-			\caption{Simulations of the average number of jets as a function of the sum of the transverse momenta in the event, $H_T$,
+			\includegraphics[width=0.8\textwidth]{NLOfail}
+			\caption{Predictions for the average number of jets as a function of the sum of the transverse momenta in the event, $H_T$,
 			         for inclusive dijets at a 7~TeV LHC.}
 			\label{fig:NLO3jets}
   		\end{figure}
@@ -926,8 +923,8 @@
 				\label{eqn:258}
 			\end{equation}
 
-			Before we can proceed any further we must evaluate the trace term in eqn.~\eqref{eqn:258}.  As mentioned briefly in section
-			\ref{sub:regularising} this is not as easy as it seems because, although the Dirac matrices still satisfy the Clifford
+			Before we can proceed any further we must evaluate the trace term in eqn.~\eqref{eqn:258}.  As mentioned briefly in
+			section~\ref{sub:regularising} this is not as easy as it seems because, although the Dirac matrices still satisfy the Clifford
 			algebra, the various identities for their contractions and traces change when we are in $d$ dimensions.  Two useful
 			examples are shown below:
 
@@ -1306,23 +1303,24 @@
 		\end{split}
 		\end{align}
 
-		where $L$ is some logarithm which may be large.  A fixed-order scheme aims to exactly calculate as many of the rows of equation
-		\eqref{eqn:schematicExpn} as possible under the assumption that all remaining terms are sufficiently suppressed to ignore.  The problem with this
+		where $L$ is some logarithm which may be large.  A fixed-order scheme aims to exactly calculate as many of the rows of
+		equation~\eqref{eqn:schematicExpn} as possible under the assumption that all remaining terms are sufficiently suppressed to ignore.  The problem with this
 		picture is that the logarithms may be large enough that the combination $\alpha_s^nL^{2n}\sim\mathcal{O}(1)$.  In this case it would appear
 		that it would be better for us to calculate the first column of the terms (called the `leading logarithmic' or LL
 		approximation) than to find the first \emph{row} of terms (the LO approximation).\\Fig.~\eqref{fig:higgsratios} shows how
 		the ratio of the inclusive Higgs-plus-three jet cross-section to inclusive Higgs-plus-two jet cross-section varies as
-		a function of the rapidity gap between the two leading jets in $p_T$ \cite{jeppeTalk}.  The \texttt{HEJ} prediction is formally leading logarithmic
+		a function of the rapidity gap between the two leading jets in $p_T$~\cite{jeppeTalk}.  The \texttt{HEJ} prediction is
+		formally leading logarithmic
 		accurate (with leading order matching for final states with up to three jets) while \texttt{MCFM} is formally next-to-leading order
-		accurate.  It is shown in chapter \ref{chap:HEQCD} that this rapidity gap is approximately equal to the logarithm, $L$, which
+		accurate.  It is shown in chapter~\ref{chap:HEQCD} that this rapidity gap is approximately equal to the logarithm, $L$, which
 		we claim violates the key assumptions underlying fixed-order perturbation theory.  Hence, as we move to large $\Delta y(j_1, j_2)$
 		we increase the size of $L$ in eqn.~\eqref{eqn:schematicExpn} and the terms neglected by the fixed-order scheme (but captured by a
 		LL calculation) grow in size.  The ratio of the inclusive $(n+1)$-jets to $n$-jet cross-sections is an interesting probe of the
 		convergence of the QCD perturbative expansion since we are directly comparing the size of the NLO contributions to the LO terms.
 		Fig.~\eqref{fig:hJetsRatio1} shows that at a centre-of-mass energy of $14$ TeV (the energy scales soon to be achieved at the LHC)
 		even at \emph{modest rapidity intervals} of around $4.0$ we see that \emph{half of all events} contain extra radiation and when we pull the leading
-		jets apart further in rapidity this increases to three quarters of all events.\\ Furthermore, figs.~\eqref{fig:hJetsRatio2} and
-		\eqref{fig:hJetsRatio3} show that as we increase the centre-of-mass energy to that of a potential hadronic future circular
+		jets apart further in rapidity this increases to three quarters of all events.\\ Furthermore, figs.~\eqref{fig:hJetsRatio2}
+		and~\eqref{fig:hJetsRatio3} show that as we increase the centre-of-mass energy to that of a potential hadronic future circular
 		collider, $33$ TeV and $100$ TeV respectively, these enhanced higher-order terms become even more important - in the case
 		of dijets with a separation of $\Delta y(j_1, j_2)\approx8.0$ at a $100$ TeV collider \emph{almost 90\% of the cross-section} is
 		coming from the next-to-leading term in the perturbative series: this is clear evidence that is not generally sufficient to think
@@ -1331,7 +1329,7 @@
 		We can also test this against existing data; fig.~\eqref{fig:d0wjets} show the probability of extra jet activity in inclusive
 		$W^\pm$-plus-dijets as a function of the rapidity gap
 		between the two leading jets \emph{in rapidity}, $\Delta y(j_F, j_B)$, taken from a very detailed study by the D$\oldemptyset$
-		collaboration \cite{Abazov:2013gpa} at the Tevatron experiment.  This is similar to the ratio of the inclusive $3j$ and
+		collaboration~\cite{Abazov:2013gpa} at the Tevatron experiment.  This is similar to the ratio of the inclusive $3j$ and
 		inclusive $2j$ cross-sections described in fig.~\eqref{fig:higgsratios}.  We observe the same behaviour that as we pull apart
 		the dijets we see a marked rise in the probability of extra emissions but, more importantly, we see that the data show this
 		strongly increasing trend too.
@@ -1343,7 +1341,7 @@
 			\captionsetup[subfigure]{oneside, margin={1cm, 0cm, 0cm}}
 			\centering
 			\hspace{-0.8cm}
-			\begin{subfigure}[b]{0.7\textwidth}
+			\begin{subfigure}[b]{0.6\textwidth}
 				\includegraphics[width=1.0\textwidth]{hJetsRatio1}
 				\caption{}
 				\label{fig:hJetsRatio1}
@@ -1381,7 +1379,7 @@
 	\label{sec:SpinorHelicity}
 
 	We now move towards the more mechanical aspects of this thesis to discuss a technique which eases calculations.
-	In chapters \ref{chap:HEQCD} and \ref{chap:Zs} we choose to work in the spinor-helicity formalism \cite{Dixon:1996wi,CBO9781107706620A004}.
+	In chapters~\ref{chap:HEQCD} and~\ref{chap:Zs} we choose to work in the spinor-helicity formalism~\cite{Dixon:1996wi,CBO9781107706620A004}.
 	This is a very convenient choice of notation which allows us to quickly evaluate complicated strings of products of
 	Dirac spinors and Dirac matrices which would otherwise be troublesome to work with.\\We begin by looking at the case
 	of massless particles; this is relevant for high energy QCD since gluons are massless and the quark masses are
@@ -1514,7 +1512,7 @@
 
 		To do calculations with massive partons using the spinor-helicity formalism we must be very careful since all of our favourite
 		identities and tricks rely on the spinor brackets, $|i\rangle$, representing massless partons with $p_i^2=0$. We begin by
-		defining `fundamental spinors' \cite{spinorThesis} which we can use to build more general spinors and go from there.
+		defining `fundamental spinors'~\cite{spinorThesis} which we can use to build more general spinors and go from there.
 		For some $k_0$, $k_1$ satisfying $k_0^2=0$, $k_1^2=-1$ and $k_0\cdot k_1=0$ we can define positive and negative helicity spinors as follows:
 
 		\begin{subequations}
@@ -1689,7 +1687,7 @@
 
 	Integrals are ubiquitous in every field of physics and particle physics is no different.  We have already seen many examples where meaningful physical results
 	can only be obtained after computing an integral, including: the convolution of the parton distribution functions with the partonic
-	cross-section seen in section \ref{sec:factorisation} and the more complex multi-dimensional integrals seen in section \ref{sub:eg1loop} for the calculation
+	cross-section seen in section~\ref{sec:factorisation} and the more complex multi-dimensional integrals seen in section~\ref{sub:eg1loop} for the calculation
 	of the one-loop correction to quark-antiquark production.
 
 	For some of the integrals derived here it is not always feasible (and sometimes not even possible) to calculate them analytically.  In these situations
@@ -1792,7 +1790,7 @@
 	\subsection{Variation Reduction Techniques}
 	\label{sub:VarReduction}
 
-	In equation~\eqref{eqn:HighDMC} we saw that the error estimate of a Monte Carlo approximation depends not only on the number of points sampled,
+	In eqn.~\eqref{eqn:HighDMC} we saw that the error estimate of a Monte Carlo approximation depends not only on the number of points sampled,
 	$N$, but also on $\sigma_{MC}$.  We can try to reduce $\sigma_{MC}$ by reducing how `variable' the integrand is over the domain of integration, for instance in the trivial
 	example where our integrand is $f(x)=f_0$, a constant, it is clear that one Monte Carlo sample is sufficient to compute the integral exactly.
 	Previously when computing $\mathbb{E}_p[I_{MC}]$ we used a uniform probability density function but in fact we are free to use any distribution we like
@@ -1816,7 +1814,7 @@
 	at the functional form of eqn.~\eqref{eqn:simpleIS} and fig.~\eqref{fig:simpleIS} that it isn't the most efficient approach since it is strongly peaked towards the
 	right hand side of the domain.  Hence that is where the largest contribution to the Monte Carlo sum will come from.  However if we sample
 	the modified integrand using pseudo-random numbers generated from a distribution proportional to $x^4$ (shown in green in fig.~\eqref{fig:simpleIS})
-	we can reduce the variance of our approximation significantly.  Table~\eqref{tab:simpleIS} shows how the approximation improves as we vary
+	we can reduce the variance of our approximation significantly.  Tab.~\eqref{tab:simpleIS} shows how the approximation improves as we vary
 	the number of samples, $N$, for the two cases of $q\sim\mathcal{U}(0,0.5)$ and $q\sim x^4$.
 
 	\begin{table}[hbt]
@@ -1830,7 +1828,7 @@
 		$10^4$    & $0.9456974 \pm 2.0415918$ & $0.0026633$ & $0.9430386 \pm 0.2665659$ & $4.504\times10^{-6}$ \\
 		$10^5$    & $0.9438040 \pm 2.0222993$ & $0.0007699$ & $0.9430241 \pm 0.0842942$ & $2.848\times10^{-6}$ \\
 		\end{tabular}
-		\caption{The Monte-Carlo approximation to equation~\eqref{eqn:simpleIS} as we vary the number of sampled points, $N$, shown in
+		\caption{The Monte-Carlo approximation to eqn.~\eqref{eqn:simpleIS} as we vary the number of sampled points, $N$, shown in
 		the na\"ive sampling case and in the importance sampled case.}
 		\label{tab:simpleIS}
 		\end{center}
@@ -1838,13 +1836,13 @@
 
 	\begin{figure}[hbt]
 		\includegraphics[width=\textwidth]{importanceSampling}
-		\caption{A simple importance sampling example (see equation~\eqref{eqn:simpleIS}).  The integrand, $f(x)$, is shown in blue,
+		\caption{A simple importance sampling example (see eqn.~\eqref{eqn:simpleIS}).  The integrand, $f(x)$, is shown in blue,
 		the importance sampling distribution is shown in green and, for comparison, the uniform probability density function used
 		in the na\"ive case of no importance sampling is also shown (in red).}
 		\label{fig:simpleIS}
   	\end{figure}
 
-  	Table~\eqref{tab:simpleIS} clearly shows the value of an importance sampling approach convergences to the correct result
+  	Tab.~\eqref{tab:simpleIS} clearly shows the value of an importance sampling approach convergences to the correct result
   	much faster than when we sample uniformly. Of course this tactic relies on us having some prior knowledge of the behaviour of our
   	integrand in order to select the correct probability density function to use which, in more complicated examples is not always
   	possible\footnote{More novel approaches whereby the sampling distribution is modified to improve convergence as the Monte-Carlo
