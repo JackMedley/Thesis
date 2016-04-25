@@ -40,7 +40,7 @@
 
 	\noindent where $g_s$ is the QCD coupling constant and $A_\mu^a$ is the QCD gauge field associated with the gluon.
 	With this replacement the local $SU(3)$ invariance of eqn.~\eqref{eqn:QCDLagrangian} is recovered.  We must also include
-	the effect of the kinetic term for the gluon field in our theory which we do this by considering the field-strength tensor for $A^a_\mu$,
+	the effect of the kinetic term for the gluon field in our theory which we do by considering the field-strength tensor for $A^a_\mu$,
 	$F^a_{\mu\nu}$.  This is given by:
 
 	\begin{equation}
@@ -54,7 +54,7 @@
 		\label{eqn:noncommuting}
 	\end{equation}
 
-	eqn.~\eqref{eqn:noncommuting} is what makes QCD fundamentally different from Quantum Electrodynamics (QED):  the simple
+	Eqn.~\eqref{eqn:noncommuting} is what makes QCD fundamentally different from Quantum Electrodynamics (QED):  the simple
 	fact that the generators of the underlying group \emph{do not} commute makes performing calculations in QCD
 	significantly more complicated than it's Abelian cousin QED.\\In summary then, the QCD Lagrangian is given by
 
@@ -84,7 +84,7 @@
 	by the penultimate term in eqn.~\eqref{eqn:fullQCD}.  $\xi$ is a free parameter in this process and, as we will see when we come
 	to define the gluon propagator, it's choice \emph{defines} a specific gauge.  The final term is a mathematical
 	quirk of this process and $c$ and $\overline{c}$ represent the resulting QCD ``ghost'' and ``anti-ghost'' fields respectively.
-	They are unphysical since they represent spin-1 anti-commuting fields.
+	They are unphysical since they represent spin-0 anti-commuting fields.
 
 \section{The Partonic Cross-Section}
 	\label{sec:partonicCrossSection}
@@ -110,7 +110,7 @@
 	and inverting this we find the following form for the creation operator $a^\dagger(\vec{k})$:
 
 	\begin{equation}
-		a^\dagger(\vec{k}) = i\int d^3xe^{-ix\cdot k}(\partial_0 - E)\phi(x),
+		a^\dagger(\vec{k}) = i\int d^3xe^{-ix\cdot k}(\partial_0 - E)\phi(x).
 		\label{eqn:creation}
 	\end{equation}
 
@@ -146,7 +146,7 @@
 	\end{align*}
 
 	This is the LSZ reduction formula for $2\rightarrow2$ scattering in phi-cubed theory.  It reduces the problem of finding scattering
-	amplitudes to the calculation of time-ordered problem of fields under the assumption that we may treat the fields at $t=\pm\infty$
+	amplitudes to the calculation of time-ordered product of fields under the assumption that we may treat the fields at $t=\pm\infty$
 	as free.\\The next step is to see how we can calculate these time-ordered products. This is most conveniently done by taking
 	functional derivatives of the QCD path integral given by:
 
@@ -205,8 +205,16 @@
 
 	We can read off the remaining QCD vertex factors directly from the interaction Lagrangian (or - more rigorously derive
 	them by Taylor expanding eqn.~\eqref{eqn:fnDerviatesOfLagrangian} and disregarding any irrelevant diagrams such
-	as those where no scattering occurs or those with bubble contributions).\\The full set of rules for the vertices and
-	propagators are summarised in tab. \eqref{tab:feynRules}.  The remaining \emph{Feynman rules} may be summarised as:
+	as those where no scattering occurs or those with bubble contributions).  We will use $u(p)$ and $v(p)$ are Dirac
+	spinors which solve the free Dirac equation for a plane-wave:
+
+	\begin{equation}
+		(i\slashed p - m)u(p)=0\hspace{1cm}(i\slashed p + m)v(p)=0.
+		\label{eqn:diracPW}
+	\end{equation}
+
+	The full set of rules for the vertices and propagators are summarised in table~\eqref{tab:feynRules}
+	and the remaining \emph{Feynman rules} may be summarised as:
 
 	\begin{table}[bth!]
 
@@ -307,14 +315,7 @@
 		      over all possible final spins and colours.
 	\end{enumerate}
 
-	Where the $u(p)$ and $v(p)$ are Dirac spinors which solve the free Dirac eq. for a plane-wave:
-
-	\begin{equation}
-		(i\slashed p - m)u(p)=0\hspace{1cm}(i\slashed p + m)v(p)=0.
-		\label{eqn:diracPW}
-	\end{equation}
-
-	The result of following these Feynman rules is what we refer to as the matrix element, $\mathcal{M}$.  We will now detail how
+	The result of following these Feynman rules is what we refer to as the matrix element, $i\mathcal{M}$.  We will now detail how
 	we go from the matrix element of some scattering process to a useful physical observable: the \emph{partonic cross-section},
 	$\hat{\sigma}$.  The matrix element is related to the fully-differential cross-section by `Fermi's golden rule' which, for
 	a scattering process $p_{a} + p_{b}\rightarrow p_{1} + \ldots + p_{m}$ is given by
@@ -329,24 +330,26 @@
 
 	where $F=4\sqrt{(p_ap_b)^2 - m_a^2m_b^2}$ is the flux of the incoming particles and the delta function
 	enforces momentum conservation for the process.\\We now have a procedure for going from a scattering process
-	we wish to calculate to the cross-section for that process.
+	we wish to calculate to the partonic cross-section for that process (this discussion will be continued in subsequent
+	chapters to include the considerations of parton distribution functions and jet clustering algorithms for the
+	initial and final states respectively).
 
 \section{Divergences and Regularisation}
 	\label{sec:divAndReg}
 
 	In the preceding section we saw that any unconstrained momenta in a Feynman diagram must be integrated over to account
-	for all possible ways the momenta in the process may flow.  We refer to these contributions as loop-level or
-	higher-order corrections.  When calculating these corrections we encounter divergences of various kinds which can be
-	divided up into three classes based on how they arise.
+	for all possible ways the momenta in the process may flow.  We refer to these contributions as loop-level corrections.
+	When calculating these corrections we encounter divergences of various kinds which can be divided up into three classes
+	based on how they arise.
 
 	\subsection{Ultraviolet divergences}
 
 		Ultraviolet divergences (UV) occur when all the components of a loop momenta grow large,
-		$k^\rightarrow\infty$, such that $k^2$ becomes the dominant term in propagator.
+		$k\to\infty$, such that $k^2$ becomes the dominant term in propagator.
 		Since these extremely high momentum modes correspond to physics at very short distance scales
 		we choose to interpret these divergences as an indication that our theory is only an effective
 		theory and we shouldn't attempt to apply it to all scales.  We can quickly spot diagrams with these
-		pathologies with a power counting argument.  For example, given a diagram which results in a
+		pathologies with a power counting argument.  For example, one might have a diagram which results in a
 		term such as the following:
 
 		\begin{equation}
@@ -399,8 +402,8 @@
 
 		Considering first the soft regime where we
 		let all the components of our integration variable, $k_\mu$ become small at the same rate, that is,
-		$k^\mu\sim\lambda\sqrt{q^2}$ where $\lambda\rightarrow0$ then after a change of variables equation
-		\eqref{eqn:IRCscaling} becomes:
+		$k^\mu\sim\lambda\sqrt{q^2}$ where $\lambda\rightarrow0$ then after a change of variables
+		eqn.~\eqref{eqn:IRCscaling} becomes:
 
 		\begin{equation}
 			I \sim\int\frac{d^4\lambda}{\lambda^4},
@@ -431,11 +434,11 @@
 		three common approaches.
 
 		Given that the integrands seen so far only diverge in certain regions (very large or very small momenta)
-		perhaps the most obvious thing to do is to manually introduced alter the limits of our integration. This
-		is the momentum cut-off scheme. we simply replace the upper (lower) bound with some finite large (small)
+		perhaps the most obvious thing to do is to manually alter the limits of our integration. This
+		is the momentum cut-off scheme. We simply replace the upper (lower) bound with some finite large (small)
 		value, $\Lambda^2$.  This will regulate any UV (soft) divergences and allow us to complete the calculation
 		provided there are no collinear singularities which this approach cannot regulate.  While this
-		method has the advantage of being conceptually very simple it also has the disadvantages of
+		method has the advantage of being conceptually very simple it also has the disadvantage of
 		breaking translational and gauge invariance.  Worse still is that simply limiting the integration to
 		avoid the extremities has no effect on the collinear sector.
 
@@ -491,7 +494,7 @@
 		\end{equation}
 
 		The introduction of this scale has important consequences for our theory.  Here we follow the instructive example
-		from \cite{pinkBook}.  If we have some dimensionless observable, $R$, which depends on one large scale, $Q$, which
+		from \cite{pinkBook}.  Say we have some dimensionless observable, $R$, which depends on one large scale, $Q$, which
 		is much larger than all other scales in the problem (e.g. the quark masses).  One would assume that $R$ is
 		approximately independent of this large scale but when we come to regulate and renormalise the divergences we have
 		seen in this section the problem becomes one involving two scales and $R$ develops a dependence on the ratio of
@@ -500,11 +503,11 @@
 		$\alpha_s$, and the ratio of the scales we must have that
 
 		\begin{equation}
-			\mu_r^2\frac{\partial R}{\partial\mu_r^2} + \mu_r^2\frac{\partial \alpha_s}{\partial \mu_r^2}\frac{\partial R}{\partial\alpha_s} = 0,
+			\mu_r^2\frac{\partial R}{\partial\mu_r^2} + \mu_r^2\frac{\partial \alpha_s}{\partial \mu_r^2}\frac{\partial R}{\partial\alpha_s} = 0.
 			\label{eqn:chainRuleOnR}
 		\end{equation}
 
-		for convenience we define $t = \ln\frac{Q^2}{\mu_r^2}$ and $\beta(\alpha_s) = \mu_r^2\frac{\partial \alpha_s}{\partial \mu_r^2}$
+		For convenience we define $t = \ln\frac{Q^2}{\mu_r^2}$ and $\beta(\alpha_s) = \mu_r^2\frac{\partial \alpha_s}{\partial \mu_r^2}$
 		and so we can write~\eqref{eqn:chainRuleOnR} as
 
 		\begin{equation}
@@ -554,7 +557,7 @@
 		\beta_0 = 11 - \frac{2n_f}{3}.
 	\end{equation}
 
-	If we truncate eq. \eqref{eqn:betaFunction} at leading-order in $\alpha_s$ then we can solve eq. \eqref{eqn:RSFlow}
+	If we truncate eqn.~\eqref{eqn:betaFunction} at leading-order in $\alpha_s$ then we can solve eqn.~\eqref{eqn:RSFlow}
 	and we see that the coupling, $\alpha_s(\mu_r)$, `runs' with the following form:
 
 	\begin{equation}
@@ -568,7 +571,7 @@
 	$e^+e^-\rightarrow \text{hadrons}$ cross-section to the $e^+e^-\rightarrow\mu^+\mu^-$ cross-section was investigated}
 	that as $Q^2$ tends to zero the coupling strength becomes very large and at high values for $Q^2$ we see that $\alpha_s(Q^2)\rightarrow0$.
 	This later limit is exactly the asymptotic freedom property of QCD and it holds even when we include the higher order
-	terms we neglected in the leading-order approximation used to arrive at eq. \eqref{eqn:runningAS} \cite{Beringer:1900zz}.
+	terms we neglected in the leading-order approximation used to arrive at eqn.~\eqref{eqn:runningAS} \cite{Beringer:1900zz}.
 	It is an essential result in that it allows us to perform perturbative expansions of observables and without this none of the
 	following work would be possible.  The evolution of the strong coupling with $Q^2$ is shown in fig.~\eqref{fig:runningAS},
 	it shows several extracted values of $\alpha_s$ based on six various types of experiment.  For example, the hadronic
@@ -612,7 +615,7 @@
 	manifestly distinct from the short distance hard scatter contained in the partonic cross-section.  The scale at which we separate the
 	long and short range physics is called the \emph{factorisation scale}, $\mu_f$.  As with the renormalisation scale it is not
 	\emph{a priori} clear what is the correct factorisation scale and results of perturbative calculations are often quoted with
-	a `scale uncertainty' band.
+	a `scale uncertainty' band derived from varying this parameter.
 
 \section{From Partons to Jets}
 
@@ -698,32 +701,31 @@
 		order picture of the expansion would be:
 
 		\begin{equation}
-			\sigma_{X\rightarrow Y} = \alpha_s^{i_0}(Q^2)\sum_{i=1}^N\alpha_s^{i}(Q^2)\mathcal{C}^{(i)}_{X\rightarrow Y}
+			\sigma_{X\rightarrow Y} = \alpha_s^{i_0}(Q^2)\sum_{i=0}^N\alpha_s^{i}(Q^2)\mathcal{C}^{(i)}_{X\rightarrow Y}
 		\end{equation}
 
-		where $i_0$ accounts for processes which start above tree level and $\mathcal{C}^{(i)}_{X\rightarrow Y}$
+		where $\mathcal{C}^{(i)}_{X\rightarrow Y}$
 		are the coefficient terms which encode the kinematics of the diagrams contributing at each `order'
 		in the series.  Since we expect that the more terms we can calculate the better our
 		truncated series will approximate the full result we should choose $N$ as large as possible though in principal
 		it is determined by the complexity and the computational cost of the relevant calculation of the coefficient
 		functions.  Recent progress has allowed the automation of next-to-leading order QCD calculations ($N=2$) in
-		packages such in \texttt{aMC@NLO\_MadGraph} (v5) \cite{Alwall:2011uj}, \texttt{BlackHat} \cite{Bern:2012my}, \texttt{MC@NLO}
+		packages such in \texttt{MadGraph\_aMC@NLO} (v5) \cite{Alwall:2011uj}, \texttt{BlackHat+Sherpa} \cite{Bern:2012my}, \texttt{MC@NLO}
 		\cite{Frixione:2010wd} and \texttt{Powheg} \cite{Frixione:2007vw}. It is not known in general how to compute
-		multi-loop ($N\geq3$) calculations and while process specific calculations have been completed
+		multi-loop ($N\geq2$) calculations and while process specific calculations have been completed
 		\cite{Cacciari:2015jma, Grazzini:2015nwa, Gehrmann:2014fva}, it is still very much a hot topic in theoretical particle
 		physics.
 
 		It is important to note the limitations of this fixed-order scheme.  For example, if we were to consider
 		NLO corrections to dijet production we would only be able to produce final states with two or three jets (since
-		we can only have one extra real emission).  Clearly this is a limitation since the external fermion lines can
-		radiate arbitrarily many extra gluons. Fig.~\eqref{fig:NLO3jets} shows precisely this phenomenon,
-		the NLO calculations (shown in green and black) are limited to $\langle jets\rangle\leq3$ which the predictions
+		we can only have one extra real emission).  Clearly this is a limitation since high energy partons can radiate
+		arbitrarily many extra gluons into the final state. Fig.~\eqref{fig:NLO3jets} shows precisely this phenomenon,
+		the NLO calculations (shown in green and black) are limited to $\langle jets\rangle\leq3$ while the predictions
 		from \texttt{POWHEJ+PYTHIA} and \texttt{HEJ} which include higher-order corrections predict a higher average
 		number of jets.  Note that the higher-order corrections here are \emph{not} the same in the case of
-		\texttt{POWHEJ+PYTHIA} and \texttt{HEJ}.  Also note that although the scale uncertainty band of the NLO
+		\texttt{POWHEJ+PYTHIA} and \texttt{HEJ} (although the two predictions have been seen to both agree well with data in the past~\cite{Alioli:2012tp}.  Also note that although the scale uncertainty band of the NLO
 		calculation \emph{does} exceed $\langle jets\rangle=3$ this is not a result of the formalism but instead comes
-		about as the result of an attempt to quantify the residual dependence of the calculation on the factorisation
-		and renormalisation scales.  This scale dependence of observables will be discussed in more detail in chapter
+		about as the result of the instability of NLO at large values of $H_T$.  This scale dependence of observables will be discussed in more detail in chapter
 		\ref{chap:HEQCD}.
 
 		There are frameworks to allow the `merging' of NLO calculations of different multiplicity.  A comprehensive
@@ -736,7 +738,7 @@
 			\centering
 			\includegraphics[width=\textwidth]{NLOfail}
 			\caption{Simulations of the average number of jets as a function of the sum of the transverse momenta in the event, $H_T$,
-			         for inclusive dijets at a 7TeV LHC.}
+			         for inclusive dijets at a 7~TeV LHC.}
 			\label{fig:NLO3jets}
   		\end{figure}
 
@@ -779,8 +781,8 @@
 			\end{subfigure}
 
 			\caption{Feynman diagrams for calculating the $O(\alpha_s)$ correction to $\gamma^*\rightarrow q\overline{q}$.
-			Fig.~\eqref{fig:NLOfig_1} is the leading order contribution.  Figs.~\eqref{fig:NLOfig_2} - \ref{fig:NLOfig_4}
-			are the virtual corrections and lastly figs.~\eqref{fig:NLOfig_5} -~\eqref{fig:NLOfig_6} are the real emission
+			Fig.~\eqref{fig:NLOfig_1} is the leading order contribution.  Figs.~\eqref{fig:NLOfig_2}-~\eqref{fig:NLOfig_4}
+			are the virtual corrections and lastly figs.~\eqref{fig:NLOfig_5}-~\eqref{fig:NLOfig_6} are the real emission
 			contributions.}
 			\label{fig:NLOContributions}
 
@@ -795,7 +797,7 @@
 
 		\begin{equation}
 		\begin{split}
-			|\mathcal{M}|^2 = &|\mathcal{A}_0 + \alpha_s\mathcal{A}_v + \alpha_s\mathcal{A}_{se1} + \alpha_s\mathcal{A}_{se2}|^2 + \mathcal{O}(\alpha_s^2) \\
+			|\mathcal{M}_{1\to2}|^2 = &|\mathcal{A}_0 + \alpha_s\mathcal{A}_v + \alpha_s\mathcal{A}_{se1} + \alpha_s\mathcal{A}_{se2}|^2 + \mathcal{O}(\alpha_s^2) \\
 			                = &|\mathcal{A}_0|^2 + 2\alpha_s\Re\{\mathcal{A}^*_0\mathcal{A}_v\} + 2\alpha_s\Re\{\mathcal{A}^*_0\mathcal{A}_{se1}\} \\
 			                  & + 2\alpha_s\Re\{\mathcal{A}^*_0\mathcal{A}_{se2}\} + \mathcal{O}(\alpha_s^2),
 			\label{eqn:MEBreakdown}
@@ -1015,19 +1017,19 @@
 
 			\begin{equation}
 				\sigma_v = -\frac{4\sigma_0}{3}g_d^2\mu^{2-\frac{d}{2}}\int\frac{d^{d}k}{(2\pi)^d}\int_0^1dy
-				\left(\frac{\mathcal{N}'_3(k_1, k_2, k)}{(k^2-2k\cdot k_y)^2k^2} +
-				\frac{\mathcal{N}''_3(k_1, k_2, k)}{(k^2-2k\cdot k_y)^2k^4}\right),
+				\left(\frac{\mathcal{N}^{(1)}_3(k_1, k_2, k)}{(k^2-2k\cdot k_y)^2k^2} +
+				\frac{\mathcal{N}^{(2)}_3(k_1, k_2, k)}{(k^2-2k\cdot k_y)^2k^4}\right),
 			\end{equation}
 
 			where,
 
 			\begin{equation}
-				\mathcal{N}'_3(k_1, k_2, k) = -2s + \frac{8k\cdot k_1k\cdot k_2}{s} +
+				\mathcal{N}^{(1)}_3(k_1, k_2, k) = -2s + \frac{8k\cdot k_1k\cdot k_2}{s} +
 				(6+2\xi)(k\cdot k_1 - k\cdot k_2) + k^2(d-4) - (1-\xi)k^2,
 			\end{equation}
 			and
 			\begin{equation}
-				\mathcal{N}''_3(k_1, k_2, k) = - 4(1-\xi)k\cdot k_1 k\cdot k_2.
+				\mathcal{N}^{(2)}_3(k_1, k_2, k) = - 4(1-\xi)k\cdot k_1 k\cdot k_2.
 			\end{equation}
 
 			Differentiating eqn.~\eqref{eqn:usefulParam} with respect to $a$ and $b$ we get the following useful parametrisations:
@@ -1044,8 +1046,8 @@
 			\begin{align}
 			\begin{split}
 				\sigma_v = -\frac{4\sigma_0}{3}g_d^2\mu^{2-\frac{d}{2}}\int\frac{d^{d}K}{(2\pi)^d}\int_0^1dy\int_0^1dx
-				\Bigg(&\frac{2x\mathcal{N}'_3(k_1, k_2, K+xk_y)}{(K^2-C)^3} + \\&\frac{6x(1-x)
-				\mathcal{N}''_3(k_1, k_2, K+xk_y)}{(K^2-C)^4}\Bigg),
+				\Bigg(&\frac{2x\mathcal{N}^{(1)}_3(k_1, k_2, K+xk_y)}{(K^2-C)^3} + \\&\frac{6x(1-x)
+				\mathcal{N}^{(2)}_3(k_1, k_2, K+xk_y)}{(K^2-C)^4}\Bigg),
 			\end{split}
 			\end{align}
 
@@ -1054,12 +1056,12 @@
 			\begin{subequations}
 				\begin{align}
 				\begin{split}
-					\mathcal{N}'_3(k_1, k_2, K+xk_y) = &-2s + K^2\Big(\frac{4}{d} + d - 5 + \xi\Big) \\ &- (3 + \xi)xs + x^2ys(1-y)(3-d-\xi),
+					\mathcal{N}^{(1)}_3(k_1, k_2, K+xk_y) = &-2s + K^2\Big(\frac{4}{d} + d - 5 + \xi\Big) \\ &- (3 + \xi)xs + x^2ys(1-y)(3-d-\xi),
 					\label{eqn:numeratorTerms1}
 				\end{split}
 				\end{align}
 				\begin{equation}
-				\mathcal{N}''_3(k_1, k_2, K+xk_y) = (1-\xi)\left(x^2ys^2(1-y)-\frac{2s}{d}K^2\right).
+				\mathcal{N}^{(2)}_3(k_1, k_2, K+xk_y) = (1-\xi)\left(x^2ys^2(1-y)-\frac{2s}{d}K^2\right).
 				\label{eqn:numeratorTerms2}
 				\end{equation}
 				\label{eqn:numeratorTerms}
@@ -1119,7 +1121,7 @@
 				\frac{6}{\epsilon} - \frac{8+4\epsilon}{1+\epsilon}\Big),
 			\end{equation}
 
-			where we have user $\alpha_s=\frac{g_d^2}{4\pi}$. Expanding the product of gamma matrices for $\epsilon\rightarrow0$
+			where we have used $\alpha_s=\frac{g_d^2}{4\pi}$. Expanding the product of gamma matrices for $\epsilon\rightarrow0$
 			gives:
 
 			\begin{subequations}
@@ -1142,8 +1144,8 @@
 			\end{split}
 			\end{align}
 
-			where $L = \ln{\left(\frac{s}{4\pi\mu^2}\right)}$.  We can now see that regardless of our choice of
-			gauge parameter, $\xi$, the result for the vertex correction is gauge independent.  We also see that
+			where $L = \ln{\left(\frac{s}{4\pi\mu^2}\right)}$.  We can now see that
+			the result for the vertex correction is gauge independent as the $\xi$ dependence has completely cancelled.  We also see that
 			the parameter introduced to fix the coupling to be dimensionless appears in the final result;  this
 			is often the case when using dimensional regularisation and the modified minimal subtraction renormalisation scheme.
 

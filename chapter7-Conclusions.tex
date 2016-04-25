@@ -34,7 +34,7 @@ to develop a new regularisation for the $\zg$ plus jets matrix elements - this w
 scheme was explicitly shown to be finite upon performing the phase space integration.  The resulting
 regularised matrix element was shown to be independent of our phase-space regularising
 parameter, $\lambda_{cut}$.  The procedure by which the \HEJ matrix elements are matched to the leading-order
-exact matrix elements (provided by \texttt{MadGraph}) was then detailed and a summary of the computational
+exact matrix elements (provided by \texttt{MadGraph\_aMC@NLO}) was then detailed and a summary of the computational
 challenges encountered throughout this work was presented.  We concluded by comparing the \HEJ $\zg$ plus jets
 package to several recent experimental comparisons from both the ATLAS and CMS experiments.  \HEJ was seen to
 be in excellent agreement with the data in the regions where the logarithms we capture are significant.
@@ -70,7 +70,7 @@ scale variation bands which are significantly larger than the fixed-order descri
 understood to be linked to our leading order matching - therefore the highest priority for \hej is to
 modify the matching scheme within the \hej framework must be improved to allow matching the next-to-leading
 order in $\alpha_s$ matrix elements.  Unfortunately this is not as simple as just replacing our current
-\texttt{MadGraph} interface to instead call an NLO matrix element since this would cause us to double
+\texttt{MadGraph\_aMC@NLO} interface to instead call an NLO matrix element since this would cause us to double
 count contributions.  Furthermore the collinear terms neglected by \hej's wide angle approximation must
 also be considered.  We saw in chapter~\ref{chap:ATLAS} that there are regions of phase space where the
 logarithms contributed by \ARIADNE are necessary for us to describe data and that, once included, we gave

@@ -65,7 +65,7 @@
 
 	The formal accuracy of the description given here is LO+LL.  The leading order
 	accuracy is achieved by performing a multiplicative matching to exact matrix
-	elements generated using \texttt{MadGraph5}.  As discussed in section~\ref{sec:HEJ}
+	elements generated using \texttt{MadGraph\_aMC@NLO}.  As discussed in section~\ref{sec:HEJ}
 	this required a completely new matching set-up and this too is described later in
 	this chapter along with some of the other computational challenges encountered
 	along the way.
@@ -190,7 +190,7 @@
 		approaches a constant; this is the result which would be obtained by using the BFKL
 		formalism in which all jets are taken be infinitely well separated in rapidity.\\As we
 		expect for the case of $2\to 2$ scattering we see exact agreement between our expression
-		and the leading order result obtained from \texttt{MadGraph5} \cite{Alwall:2014hca}.
+		and the leading order result obtained from \texttt{MadGraph\_aMC@NLO} \cite{Alwall:2014hca}.
 		It is clear that the BFKL limit is not reached until relatively large values for $\Delta$,
 		therefore it would be a poor approximation were we to just take the infinite rapidity limit
 		of this as our expression for the $Z^0$ matrix element.
@@ -200,7 +200,7 @@
 			\includegraphics[width=1.0\linewidth]{Z_NoI_qg.pdf}
 			\caption{$\overline{|\mathcal{M}_{qg\to Zqg}^{t}|}^2$ shown for a slice through the
 			final state phase-space defined by eqn.~\eqref{eq:momenta}.  We compare to the
-			leading order result obtained from \texttt{MadGraph}.}
+			leading order result obtained from \texttt{MadGraph\_aMC@NLO}.}
 			\label{fig:ZatLO}
 		\end{figure}
 
@@ -253,7 +253,7 @@
 		Fig.~\eqref{fig:twojets} shows the value of this matrix element squared scaled by the squared partonic
 		centre-of-mass energy for increasing rapidity separation of the two jets. Once again the
 		result is compared with that obtained from the full, tree-level matrix elements from
-		\texttt{MadGraph5}.  The slice through phase space here is the same as that used in the
+		\texttt{MadGraph\_aMC@NLO}.  The slice through phase space here is the same as that used in the
 		previous section given by eqn.~\eqref{eq:momenta}.  Fig.~\eqref{fig:twojets} also
 		shows the separate contributions to the total matrix element squared coming from the
 		$\zg$ emission from the forward moving quark line (black, dashed) and emission
@@ -351,7 +351,7 @@
 		          to an electron-positron pair.  The
 		          $\mathcal{O}(\alpha_s^2 \alpha_W)$ tree-level contribution
 		          as described in HEJ (red, dashed) exactly matches that of
-		          \texttt{MadGraph5} (blue, solid).  The terms corresponding to the production
+		          \texttt{MadGraph\_aMC@NLO} (blue, solid).  The terms corresponding to the production
 		          of a $Z^0$ boson only (green, dotted) significantly undershoots the
 		          full result.  The
 		          virtual photon terms are, therefore, clearly an important
@@ -944,11 +944,11 @@
 	dependence on the choice of $\lambda_{cut}$.
 	In practice, our default chosen value for $\lambda_{cut}$ is 0.2.
 
-	\begin{figure}[hbt!]
+	\begin{figure}[H]
 		\centering
-		\includegraphics[width=.5\textwidth]{Z_11a_2j.pdf}\hfill
-		\includegraphics[width=.5\textwidth]{Z_11a_3j.pdf}\hfill
-		\includegraphics[width=.5\textwidth]{Z_11a_4j.pdf}
+		\includegraphics[width=.32\textwidth]{Z_11a_2j.pdf}\hfill
+		\includegraphics[width=.32\textwidth]{Z_11a_3j.pdf}\hfill
+		\includegraphics[width=.32\textwidth]{Z_11a_4j.pdf}
 		\caption{The effect of varying $\lambda_{cut}$ on the differential distribution
 		in the rapidity gap between the two leading jets in $p_\perp$, $\Delta y_{j1, j2}$,
 		with the $N_{jet}=2,3,4$ exclusive selections shown from left to right.
@@ -957,11 +957,11 @@
 		\label{fig:lambdadist}
 	\end{figure}
 
-	\begin{figure}[hbt!]
+	\begin{figure}[H]
 		\centering
-		\includegraphics[width=.5\textwidth]{Z_11c_2j.pdf}\hfill
-		\includegraphics[width=.5\textwidth]{Z_11c_3j.pdf}\hfill
-		\includegraphics[width=.5\textwidth]{Z_11c_4j.pdf}
+		\includegraphics[width=.32\textwidth]{Z_11c_2j.pdf}\hfill
+		\includegraphics[width=.32\textwidth]{Z_11c_3j.pdf}\hfill
+		\includegraphics[width=.32\textwidth]{Z_11c_4j.pdf}
 		\caption{The effect of varying $\lambda_{cut}$ on the differential distribution
 		in the rapidity gap between the two extremal jets in rapidity, $\Delta y_{jf, jb}$,
 		with the $N_{jet}=2,3,4$ exclusive selections shown from left to right.
@@ -1004,7 +1004,7 @@
 	We can therefore further improve upon eqn.~\eqref{eq:sigma} by
 	matching our results to fixed order results.  Here, we match to
 	high-multiplicity tree-level
-	results obtained from \texttt{Madgraph5}~\cite{Alwall:2014hca} in two different ways.
+	results obtained from \texttt{MadGraph\_aMC@NLO}~\cite{Alwall:2014hca} in two different ways.
 	This amounts to merging tree-level samples of different orders according to the
 	logarithmic prescription of HEJ.
 
@@ -1160,7 +1160,7 @@
 
 	In previous \HEJ releases the matching mentioned above was performed using
 	\texttt{MadGraph} version 4.  However, due to increases in speed and efficiency
-	we chose to match the $\zg$+jets \HEJ matrix elements to \texttt{MadGraph} version 5.
+	we chose to match the $\zg$+jets \HEJ matrix elements to \texttt{MadGraph\_aMC@NLO} version 5.
 	While this might seem like a trivial change the underlying computational work
 	was anything but simple; since the latest version of \texttt{MadGraph} outputs
 	matrix elements in C++ (as well as Fortran 90) a completely new approach
@@ -1298,7 +1298,24 @@
 		fixed-order based predictions shown in Fig.~\eqref{fig:ATLAS_2a} are all fairly
 		flat above about 0.2, but the ratio of the data differs by about 10\%.
 
-		\newpage
+		In all of the figures presented in this section we see that \HEJ has scale uncertainty bands
+		significantly larger than other theoretical descriptions, including \texttt{Alpgen} who also
+		have only leading order accuracy.  We see from figure~\eqref{fig:HEJ_ATLAS_2a} that we describe
+		the experimentally observed inclusive two jet rate very well and, as such, do not require
+		normalisation to agree with the data.  However, applying a normalisation
+		procedure which consistently applies scale variation simultaneously in numerator
+		and denominator significantly reduces the size of the scale uncertainty bands
+		for High Energy Jets (or any theoretical prediction).  In
+		figs.~\eqref{fig:ATLAS_Z_7b_norm},~\eqref{fig:ATLAS_Z_11a_norm} and~\eqref{fig:ATLAS_Z_11b_norm}
+		we show the results from figures~\eqref{fig:HEJ_ATLAS_7b},~\eqref{fig:HEJ_ATLAS_11a} and~\eqref{fig:HEJ_ATLAS_11b}.
+		We see that, as expected, the central value of HEJ still describes the data well in the
+		regions discussed above and now the size of the theoretical uncertainty band is significantly
+		reduced (by a factor of around 250 for example in the last bin of the
+		$p_{\perp 2}/p_{\perp 1}$-distribution.  This illustrates that varying $\mu_R$ and $\mu_F$
+		leads to a change in overall normalisation but not
+		to any significant change in shape.  Therefore, it is still valuable to discuss
+		the quality of agreement of the central line, despite their apparently large accompanying
+		uncertainty bands.
 
 		\begin{figure}[H]
 		  \centering
@@ -1338,7 +1355,7 @@
 		  \label{fig:ATLAS_11b}
 		\end{figure}
 
-		\begin{figure}[h]
+		\begin{figure}[H]
 		  \centering
 		  \begin{subfigure}[b]{0.48\textwidth}
 		    \includegraphics[width=\textwidth, height=1.2\textwidth]{ATLAS_Z_11a}
@@ -1372,6 +1389,35 @@
 		     and second leading jet in $p_T$ from (a) \texttt{HEJ} and (b) other
 		    theory descriptions and data~\cite{Aad:2013ysa}.}
 		  \label{fig:ATLAS_7b}
+		\end{figure}
+
+		\begin{figure}[H]
+
+		  \centering
+
+		  \begin{subfigure}[b]{0.48\textwidth}
+		    \includegraphics[width=0.9\textwidth]{ATLAS_Z_7b_norm}
+		    \vspace{0.2cm}
+		    \caption{}
+		    \label{fig:ATLAS_Z_7b_norm}
+		  \end{subfigure}
+
+		  \begin{subfigure}[b]{0.48\textwidth}
+		    \includegraphics[width=0.9\textwidth]{ATLAS_Z_11a_norm}
+		    \vspace{0.2cm}
+		    \caption{}
+		    \label{fig:ATLAS_Z_11a_norm}
+		  \end{subfigure}
+		  ~
+		  \begin{subfigure}[b]{0.48\textwidth}
+		    \includegraphics[width=0.96\textwidth]{ATLAS_Z_11b_norm}
+		    \caption{}
+		    \label{fig:ATLAS_Z_11b_norm}
+		  \end{subfigure}
+		  \caption{The predictions of figs.~\eqref{fig:HEJ_ATLAS_7b},~\eqref{fig:HEJ_ATLAS_11a} and~\eqref{fig:HEJ_ATLAS_11b}
+		  normalised to the total cross-section, with scale variation consistently applied to numerator and denominator.}
+
+		  \label{fig:ATLAS_norm}
 		\end{figure}
 
 	\subsection{The $W^\pm$+Jets to $\zg$+Jets Ratio at the ATLAS Experiment}
@@ -1438,7 +1484,7 @@
 		in association with jets~\cite{Khachatryan:2014zya}.  We show, for comparison,
 		the plots from that analysis which contain theoretical predictions from
 		Sherpa~\cite{Gleisberg:2008ta,Hoeche:2012yf}, \texttt{Powheg}~\cite{Alioli:2010qp} and
-		MadGraph~\cite{Alwall:2014hca}.The cuts used for this analysis are summarised in
+		\texttt{MadGraph\_aMC@NLO}~\cite{Alwall:2014hca}.The cuts used for this analysis are summarised in
 		tab.~\eqref{tab:cmscuts}.
 
 		\begin{table}[hbt]
@@ -1474,7 +1520,7 @@
 		cuts.  The \texttt{HEJ} predictions give a good description, especially for the 2- and
 		3-jet inclusive rates in this narrower phase space. The uncertainty bands are
 		larger for \texttt{HEJ} than for the \texttt{Sherpa} and \texttt{Powheg} predictions
-		due to our LO matching prescription (those for \texttt{Madgraph} are not shown).
+		due to our LO matching prescription (those for \texttt{MadGraph\_aMC@NLO} are not shown).
 
 		In Figs.~\eqref{fig:CMS_3b}--~\eqref{fig:CMS_3c}, we show the transverse momentum
 		distributions for the second and third jet respectively (the leading jet
@@ -1485,17 +1531,17 @@
 		controlled by the high-energy resummation.  The \texttt{HEJ} predictions are broadly
 		similar to \texttt{Powheg}'s $Z^0$-plus-one-jet NLO calculation matched with the Pythia
 		parton shower.  In contrast, \texttt{Sherpa}'s prediction significantly undershoots the
-		data at large transverse momentum.  Here the \texttt{Madgraph} prediction gives the best
+		data at large transverse momentum.  Here the \texttt{MadGraph\_aMC@NLO} prediction gives the best
 		description of the data.
 
 		Fig.~\eqref{fig:CMS_3c} shows the transverse momentum distribution of the third
 		jet in this data sample.  Here, the ratio of the \texttt{HEJ} prediction to data shows a
 		linear increase with transverse momentum (until the last bin where all the
 		theory predictions show the same dip).  Both the \texttt{Sherpa} and \texttt{Powheg} predictions
-		show similar deviations for this variable while the \texttt{Madgraph} prediction again
+		show similar deviations for this variable while the \texttt{MadGraph\_aMC@NLO} prediction again
 		performs very well.
 
-		\begin{figure}[h]
+		\begin{figure}[H]
 		  \centering
 		  \begin{subfigure}[b]{0.46\textwidth}
 		    \includegraphics[width=\textwidth, height=1.2\textwidth]{CMS_Z_2a}
@@ -1561,7 +1607,7 @@
 		$\zg$ boson and the leading jet in $p_\perp$ and in the invariant mass of the di-lepton decay
 		products.  This is \emph{not} a region of phase space where resummation is expected to reign
 		supreme and we therefore anticipate that the matching of our \hej amplitudes to exact leading
-		order results obtained using \texttt{MadGraph} (v5) will be significant.
+		order results obtained using \texttt{MadGraph\_aMC@NLO} will be significant.
 
 		The study focussed on 0-, 1- and 2-jet events in addition to a di-muon pair; since we can
 		only describe final states with at least two jets we only consider the later final state.  The
@@ -1587,7 +1633,7 @@
 		leading order exact and \HEJ give a good description of data in this range.
 		Figs.~\eqref{fig:HEJ_CMS2_3} and ~\eqref{fig:HEJ_CMS2_5} show the same distribution
 		but for a reconstructed $\zg$ mass of between 30-60~GeV and 120-1500~GeV respectively.
-		Here we see that both \texttt{MadGraph} and \HEJ give a poor description of the data but
+		Here we see that both \texttt{MadGraph\_aMC@NLO} and \HEJ give a poor description of the data but
 		agree well with one another.  This is exactly because the \HEJ predictions are being
 		driven by the leading order matching in the regions considered.  This is a good
 		consistency check of both the \hej matching scheme and the implementation of the
@@ -1609,7 +1655,7 @@
 		sampling whereas fig.~\eqref{fig:HEJ_CMS2_5} used a modified scheme:  the same behaviour can be
 		seen with the default sampling describing the data poorly and being statistically limited.
 
-		\begin{figure}[h]
+		\begin{figure}[H]
 			\centering
 			\begin{subfigure}[b]{0.47\textwidth}
 				\includegraphics[width=\textwidth]{CMS2_Z_M60_120H}
@@ -1640,7 +1686,7 @@
 				\caption{}
 				\label{fig:HEJ_CMS2_5}
 			\end{subfigure}
-			\caption{Comparisons of \HEJ and \texttt{MadGraph} (v5) to data from a CMS study of double-differential
+			\caption{Comparisons of \HEJ and \texttt{MadGraph\_aMC@NLO} to data from a CMS study of double-differential
 			Drell-Yan production.  Fig.~\eqref{fig:HEJ_CMS2_1} shows the mass range focussed on the $Z^0$ peak
 			(60-120~GeV), figs.~\eqref{fig:HEJ_CMS2_2} and ~\eqref{fig:HEJ_CMS2_3} show the di-lepton invariant
 			mass range from 30-60~GeV and lastly figs.~\eqref{fig:HEJ_CMS2_4} and ~\eqref{fig:HEJ_CMS2_5} show
