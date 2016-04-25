@@ -1173,7 +1173,7 @@
 			and $i=3$ is the external gluon).  In terms of these invariants the contraction of any two external
 			particles simplifies to $p_i\cdot p_j = \frac{1}{2}s(1-x_k)$ which (since we are still assuming our
 			quarks can be taken to be massless) gives a simple expression for the Mandelstam variables.
-			Evaluating the mod. squared terms gives:
+			Evaluating the modulus squared terms gives:
 
 			\begin{subequations}
 				\begin{equation}
@@ -1212,7 +1212,7 @@
 				\label{eqn:eqn67}
 			\end{equation}
 
-			As with the virtual contributions we are interested in the observable cross-section and so we must
+			As with the virtual contributions, we are interested in the observable cross-section and so we must
 			include the phase space factor for a three particle final state.  Unlike the two particle phase space
 			calculation the three particle phase space, $\int d^{3d-3}R_3$, cannot be integrated completely and we are left with a
 			differential in terms of the energy fractions defined above:
@@ -1239,7 +1239,7 @@
 				{\frac{\epsilon}{2}}\frac{1}{\Gamma(2+\frac{\epsilon}{2})}\left(\frac{1-z^2}{4}\right)^{\frac{\epsilon}{2}}x_1^\epsilon x_2^\epsilon.
 			\end{equation}
 
-			Integrating over the allowed region of $x_1$ and $x_2$:
+			Integrating over the allowed region of $x_1$ and $x_2$ gives:
 
 			\begin{equation}
 				\sigma_r = \frac{2\alpha_s\sigma_0}{3\pi}\left(\frac{s}{4\pi\mu^2}\right)^{\frac{\epsilon}{2}}\frac{1}{\Gamma(2+\frac{\epsilon}{2})}
@@ -1281,13 +1281,15 @@
 
 
 			The fact that the infrared divergences in both the real and virtual emission NLO diagrams cancel is an example of the
-			KLN theorem which states that the Standard Model is completely free of infrared divergences at all orders.
+			KLN theorem~\cite{KLN} which states that the Standard Model is completely free of infrared divergences at all orders.
 
 	\subsection{Resumming Higher-Order Corrections}
 
 		As we have seen we can evaluate the truncated perturbative series and, provided we remember to include higher
 		multiplicity diagrams which contribute in the soft limit, we will be left with a finite result which is invariant
-		under gauge transformations.\\ It would seem then that this is the best way to proceed: we calculate as many corrections
+		under gauge transformations.
+
+		It would seem then that this is the best way to proceed: we calculate as many corrections
 		as we can and reason that all of the higher-order terms we have neglected are suppressed by powers of a small expansion
 		parameter - the strong coupling, $\alpha_s$.  If this is indeed the case we should see that each time we go to a higher-order
 		in perturbation theory our series begins to converge.  For example the effect of the NLO terms should be small relative
@@ -1311,13 +1313,13 @@
 		the ratio of the inclusive Higgs-plus-three jet cross-section to inclusive Higgs-plus-two jet cross-section varies as
 		a function of the rapidity gap between the two leading jets in $p_T$~\cite{jeppeTalk}.  The \texttt{HEJ} prediction is
 		formally leading logarithmic
-		accurate (with leading order matching for final states with up to three jets) while \texttt{MCFM} is formally next-to-leading order
-		accurate.  It is shown in chapter~\ref{chap:HEQCD} that this rapidity gap is approximately equal to the logarithm, $L$, which
-		we claim violates the key assumptions underlying fixed-order perturbation theory.  Hence, as we move to large $\Delta y(j_1, j_2)$
+		accurate (with leading order matching for final states with up to three jets) while \texttt{MCFM}~\cite{Campbell:2012ft} is formally next-to-leading order
+		accurate.  It is shown in chapter~\ref{chap:HEQCD} that this rapidity gap is approximately equal to the logarithm, $L$.  Hence,
+		as we move to large $\Delta y(j_1, j_2)$
 		we increase the size of $L$ in eqn.~\eqref{eqn:schematicExpn} and the terms neglected by the fixed-order scheme (but captured by a
-		LL calculation) grow in size.  The ratio of the inclusive $(n+1)$-jets to $n$-jet cross-sections is an interesting probe of the
+		LL calculation) grow in size.  The ratio of the inclusive $(n+1)$-jet to $n$-jet cross-sections is an interesting probe of the
 		convergence of the QCD perturbative expansion since we are directly comparing the size of the NLO contributions to the LO terms.
-		Fig.~\eqref{fig:hJetsRatio1} shows that at a centre-of-mass energy of $14$ TeV (the energy scales soon to be achieved at the LHC)
+		Fig.~\eqref{fig:hJetsRatio1} shows that at a centre-of-mass energy of $14$ TeV (the energy scales close to be being achieved at the LHC)
 		even at \emph{modest rapidity intervals} of around $4.0$ we see that \emph{half of all events} contain extra radiation and when we pull the leading
 		jets apart further in rapidity this increases to three quarters of all events.\\ Furthermore, figs.~\eqref{fig:hJetsRatio2}
 		and~\eqref{fig:hJetsRatio3} show that as we increase the centre-of-mass energy to that of a potential hadronic future circular
@@ -1335,7 +1337,8 @@
 		strongly increasing trend too.
 
 		The remaining chapters of this thesis will focus on deriving a formalism for calculating these higher-order corrections in order
-		to describe $\zg$ events at high energy hadronic colliders.
+		to describe $\zg$ events at high energy hadronic colliders.  However, we must first derive some technical methods for performing
+		calculations.
 
 		\begin{figure}[tpb]
 			\captionsetup[subfigure]{oneside, margin={1cm, 0cm, 0cm}}
@@ -1370,7 +1373,7 @@
 			\includegraphics[width=0.75\textwidth]{d0wjets}
 			\caption{The probability of a third jet emission in $W^\pm$ plus inclusive dijets as a function of the rapidity gap
 			         between the two leading jets in rapidity at the D$\oldemptyset$ experiment at the Tevatron experiment.
-			         The data are compared to a number of generators including the leading logarithmic accurate \texttt{HEJ}
+			         The data are compared to a number of fixed-order generators plus the leading logarithmic accurate \texttt{HEJ}
 			         and the NLO accurate \texttt{Blackhat+Sherpa}.}
 			\label{fig:d0wjets}
   		\end{figure}
@@ -1403,7 +1406,7 @@
 	\end{equation}
 
 	In the massless limit we also have the following relation $u^\pm(p) = v^\mp(p)$ which allows us to use the same notation for both
-	quarks and anti-quarks.  Often the helicity information will be suppressed in the interests in being concise.  We also define the
+	quarks and anti-quarks.  Often the helicity information will be suppressed in the interests of being concise.  We also define the
 	following spinor-brackets:
 
 	\begin{equation}
@@ -1428,13 +1431,13 @@
 	$u^+(p)$ ($u^-(p)$) we have:
 
 	\begin{align}
-	    u^+(p) &= \begin{pmatrix}
+	    u^+(p) = \begin{pmatrix}
 	           \sqrt{p^+} \\
 	           \sqrt{p^-}\frac{p_\perp}{|p_\perp|} \\
 	           0 \\
 	           0 \\
 	         \end{pmatrix}\hspace{0.75cm}
-	    u^+(p) &= \begin{pmatrix}
+	    u^-(p) = \begin{pmatrix}
 	           0 \\
 	           0 \\
 	           \sqrt{p^-}\frac{p_\perp^*}{|p_\perp|} \\
@@ -1464,13 +1467,13 @@
 	$u^+(p)$ ($u^-(p)$) we have:
 
 	\begin{align}
-	    u^+(p) &= \begin{pmatrix}
+	    u^+(p) = \begin{pmatrix}
 	           0 \\
 	           -\sqrt{p^-} \\
 	           0 \\
 	           0 \\
 	         \end{pmatrix}\hspace{0.75cm}
-	    u^-(p) &= \begin{pmatrix}
+	    u^-(p) = \begin{pmatrix}
 	           0 \\
 	           0 \\
 	           -\sqrt{p^-} \\
@@ -1492,7 +1495,7 @@
 	           0 & 0 & -1 & 0\\
 	           0 & 1 & 0 & 0\\
 	           1 & 0 & 0 & 0\\
-	         \end{pmatrix}.\\
+	         \end{pmatrix},\\
 	    \gamma^2 &= \begin{pmatrix}
 	           0 & 0 & 0 & i\\
 	           0 & 0 & -i & 0\\
@@ -1554,7 +1557,7 @@
 		\end{subequations}
 
 		where we have used ${\gu{\mu}, \gu{\mu}}=2g^{\mu\nu}$, ${\gu{\mu}, \gu{5}}=0$ and $\slashed k_1\slashed k_1=k_1^2=0$.
-		This proves the property of eqn.~\eqref{eqn:props} and inserting the definition of $\omega_\lambda$ gives:
+		This proves the property of eqn.~\eqref{eqn:prop1} and inserting the definition of $\omega_\lambda$ gives:
 
 		\begin{subequations}
 		\begin{align*}
@@ -1563,7 +1566,7 @@
 		\end{align*}
 		\end{subequations}
 
-		which is eqn.~\eqref{eqn:props} for a massless particle.\\We can use these fundamental spinors
+		which is eqn.~\eqref{eqn:prop2} for a massless particle.\\We can use these fundamental spinors
 		to form spinors for any given momenta, $p$ (which has $p^2=0$), as follows:
 
 		\begin{equation}
@@ -1606,7 +1609,7 @@
 		\end{subequations}
 
 		where the last line defines the spin vector $s = \frac{1}{m} q - \frac{m}{q\cdot k}k$.  Conjecturing
-		a similar form for an antiquark spinor with with spin 4-vector $s$, mass $m$ and momentum $q$:
+		a similar form for an antiquark spinor with spin 4-vector $s$, mass $m$ and momentum $q$:
 
 		\begin{equation}
 			\label{v_def}
@@ -1635,7 +1638,7 @@
 		\end{subequations}
 
 		We now define some momentum $\widetilde{q}$ through the relation $q = \widetilde{q} + k_0$ such that $\widetilde{q}^2=0$ and
-		$q\cdot k = \widetilde{q}\cdot k$.  Since $q^2=2\widetilde{q}\cdot k=m^2$ we may write
+		$q\cdot k_0 = \widetilde{q}\cdot k_0$.  Since $q^2=2\widetilde{q}\cdot k_0=m^2$ we may write
 
 		\begin{subequations}
 		\begin{align*}
@@ -1675,7 +1678,7 @@
 		\begin{align}
 			u(q, -s) &= \frac{\langle \widetilde{q}k\rangle}{m}|\widetilde{q}^-\rangle + |k^+\rangle, \\
 			v(q,  s) &= \frac{[\widetilde{q}k]}{m}|\widetilde{q}^+\rangle - |k^-\rangle, \\
-			v(q, -s) &= \frac{\langle \widetilde{q}k\rangle}{m}|\widetilde{q}^-\rangle - |k^+\rangle
+			v(q, -s) &= \frac{\langle \widetilde{q}k\rangle}{m}|\widetilde{q}^-\rangle - |k^+\rangle.
 		\end{align}
 		\end{subequations}
 
@@ -1692,7 +1695,7 @@
 
 	For some of the integrals derived here it is not always feasible (and sometimes not even possible) to calculate them analytically.  In these situations
 	we must use a numerical approach to approximate the exact result.  Such approaches generally fall into one of two categories; quadrature
-	or Monte Carlo random sampling approaches.  The most appropriate solution depends the integrand itself, and in particular our prior knowledge of
+	or Monte Carlo random sampling approaches.  The most appropriate solution depends on the integrand itself, and in particular our prior knowledge of
 	the integrand, and the number of dimensions we are integrating over.
 
 	We begin by considering the one-dimensional case.  Given an integral:
@@ -1714,7 +1717,7 @@
 	from the size of the domain of integration and on derivatives of the integrand, $f(x)$.  The $\mathcal{O}(N^{-4})$ scaling of the error in this method makes it a good choice
 	for numerics in one-dimension.
 
-	The Monte-Carlo approach to approximating eqn.~\eqref{eqn:1DIntegral} would be to (pseudo-)randomly select a series of $N$ points, $x_i$, from within the domain of integration
+	The Monte-Carlo approach to approximating eqn.~\eqref{eqn:1DIntegral} would be to pseudo-randomly select a series of $N$ points, $x_i$, from within the domain of integration
 	and then compute the integral as follows:
 
 	\begin{equation}
@@ -1753,7 +1756,7 @@
 		I = \int_{[a, b]}f(\vec{x})d\vec{x} = \int_{x_1=a_1}^{x_1=b_1}\cdots\int_{x_n=a_n}^{x_n=b_n}f(x_1, \ldots, x_n)dx_1\ldots dx_n,
 	\end{equation}
 
-	we can still look to generalisations of the quadrature methods touched on in section above however the convergence of
+	we can still look to generalisations of the quadrature methods touched on in the section above however the convergence of
 	these methods is now less favourable.  Quadrature methods have errors which scale with the number of dimensions we are integrating over,
 	e.g. $\mathcal{O}(N^{-\frac{4}{d}})$ for the Compound Simpson's Rule.  We can argue this intuitively since if we have $N$ points in one
 	dimension to get an error which scales as $\mathcal{O}(N^{-4})$ then in two dimensions we would require $N^2$ to achieve
@@ -1794,7 +1797,7 @@
 	$N$, but also on $\sigma_{MC}$.  We can try to reduce $\sigma_{MC}$ by reducing how `variable' the integrand is over the domain of integration, for instance in the trivial
 	example where our integrand is $f(x)=f_0$, a constant, it is clear that one Monte Carlo sample is sufficient to compute the integral exactly.
 	Previously when computing $\mathbb{E}_p[I_{MC}]$ we used a uniform probability density function but in fact we are free to use any distribution we like
-	to perform the integration.  This can be seen since:
+	to perform the integration.  This can be seen through the change of variables:
 
 	\begin{align*}
 		\mathbb{E}_p[I_{MC}] &= \int f(x)p(x)dx, \\
@@ -1842,7 +1845,7 @@
 		\label{fig:simpleIS}
   	\end{figure}
 
-  	Tab.~\eqref{tab:simpleIS} clearly shows the value of an importance sampling approach convergences to the correct result
+  	Tab.~\eqref{tab:simpleIS} clearly shows the value of an importance sampling approach; this result converges to the correct result
   	much faster than when we sample uniformly. Of course this tactic relies on us having some prior knowledge of the behaviour of our
   	integrand in order to select the correct probability density function to use which, in more complicated examples is not always
   	possible\footnote{More novel approaches whereby the sampling distribution is modified to improve convergence as the Monte-Carlo

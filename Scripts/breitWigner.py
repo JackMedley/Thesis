@@ -1,8 +1,6 @@
 # Importance sampling
 
 from matplotlib import pyplot as plt
-from math import sqrt
-import cmath
 import numpy as np
 
 X = np.linspace(0.0, 20.0, 200, endpoint=True)
@@ -28,8 +26,8 @@ plt.plot(X, fn2, linewidth=3)
 plt.ylim([1e-3, 5.0])
 
 # Sort out labels
-plt.xlabel(r'$p_Z^2$', size=14)
-plt.ylabel(r'$\Bigg|\frac{1}{p_Z^2 - M_Z^2 + i\Gamma_ZM_Z}\Bigg|^2$', size=14)
+plt.xlabel(r'$p_Z^2~\mathrm{[GeV^2]}$', size=14)
+plt.ylabel(r'$\Bigg|\frac{1}{p_Z^2 - M_Z^2 + i\Gamma_ZM_Z}\Bigg|^2 ~\mathrm{[GeV^{-4}]}$', size=14)
 
 plt.yscale('log')
 
