@@ -492,7 +492,7 @@
 			$p_a$ and $p_b$ we have:
 
 			\begin{equation}
-				V^2(q_{ti}, q_{ti}) = - \frac{4s_{ab}}{s_{bi}s_{ai}}q^4_{i}
+				V^2(q_{ti}, q_{ti}) = - \frac{4s_{ab}}{s_{bi}s_{ai}}q^4_{ti}
 				\label{eqn:temp}
 			\end{equation}
 
@@ -501,13 +501,12 @@
 			therefore we may take:
 
 			\begin{align}
-				s_{ab}= 2p_a\cdot p_b \sim 2p^+_ap^-_b,
-				s_{bi}= 2p_b\cdot p_i \sim 2p^-_bp^+_i,
-				\intertext{and,}
-				s_{ai}= 2p_a\cdot p_i \sim 2p^+_ap^-_i,
+				s_{ab}= 2p_a\cdot p_b \sim 2p^+_ap^-_b,\\
+				s_{bi}= 2p_b\cdot p_i \sim 2p^-_bp^+_i,\\
+				s_{ai}= 2p_a\cdot p_i \sim 2p^+_ap^-_i.
 			\end{align}
 
-			but since $E^2-\vec{p}_1^2=0$ for the on-shell external parton this can be written as:
+			Using this we can write eqn.~\eqref{eqn:temp} as:
 
 			\begin{equation}
 				V^2(q_{ti}, q_{ti}) = - \frac{4}{|\vec{p}_{1\perp}|^2}q^4_{ti},
@@ -525,7 +524,6 @@
 			\end{equation}
 
 		\subsubsection{$V(q_{ti}, q_{t(i+1)})\cdot V(q_{bi}, q_{b(i+1)})$ Terms}
-			\label{sub:subsection_name}
 
 			Taking the mixed dot-product of the two vertex terms we have:
 
@@ -548,7 +546,6 @@
 			\end{equation}
 
 		\subsubsection{Integration of Soft Divergences}
-			\label{sub:subsection_name}
 
 			As discussed above the divergences contained in eqn.~\eqref{eqn:apparent} only become
 			apparent after we have attempted to integrate over phase space.  The Lorentz
@@ -580,9 +577,8 @@
 			where we have analytically continued the integral to $2+2\epsilon$ dimensions to regulate the anticipated
 			divergences and introduced the parameter $\mu$ to keep the coupling dimensionless in the process.
 			We have also introduced an upper bound on the transverse momentum integration of $\lambda_{\text{cut}}$ -
-			this parameter will be discussed in more detail later.
-			Converting to polar coordinates and using the result for the volume of a unit hypersphere gives
-			the integrated soft contribution:
+			this parameter will be discussed in more detail later.  Converting to polar coordinates and using
+			the result for the volume of a unit hypersphere gives the integrated soft contribution:
 
 			\begin{equation}
 				\frac{4C_Ag_s^2}{(2\pi)^{2+2\epsilon}4\pi}\Delta_{i-1, i+1}
@@ -594,7 +590,6 @@
 			As promised eqn.~\eqref{eqn:soft} is clearly divergent in the limit where $\epsilon\to0$.
 
 	\subsection{Virtual Emissions}
-		\label{sub:subsection_name}
 
 		As discussed in chapter~\ref{chap:HEQCD} the virtual emission diagrams are included
 		using the Lipatov ansatz for the gluon propagator:
