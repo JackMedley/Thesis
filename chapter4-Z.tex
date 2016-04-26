@@ -15,7 +15,7 @@
 
 \section{Introducing $\zg$+Jets at the LHC}
 
-	The Large Hadron Collider (LHC) opens up a new range of energies for hadronic
+	The Large Hadron Collider (LHC) has opened up a new range of energies for hadronic
 	collisions.  It has already been a resounding success with the discovery of the
 	scalar Higgs boson completing the particle content of the Standard Model (SM).
 	Hadronic colliders, by their very nature, lead to final states with large
@@ -36,9 +36,10 @@
 	It is also possible to combine the
 	theoretical ideas behind fixed order and parton shower predictions.  These schemes typically
 	produce resummed results and then match to either leading order or next-to-leading
-	results giving a formal accuracy of LO+LL and NLO+LL respectively.  This approach gives a
-	better description of multi-jet states however the current state-of-the-art for the
-	fixed order component is still limited to next-to-leading order in $\alpha_s$.
+	results giving a formal accuracy of LO+LL~\cite{Mangano:2001xp} and NLO+LL~\cite{Alioli:2012yfa}
+	respectively.  This approach gives a better description of multi-jet states however the current state-of-the-art for the
+	fixed order component is still limited to next-to-leading order in $\alpha_s$ (with the
+	exception of the recent $\text{N}^3$LO result~\cite{Anastasiou:2015ema}).
 
 	In the \hej framework we aim to resum the large logarithmic corrections
 	arising from well separated (in rapidity), hard final state jets.  We capture these
@@ -92,7 +93,7 @@
 		$Z^0$ per fermion i.e. two for $qg$ and $\bar qg$ scattering and four for $qq$,
 		$\bar qq$ and $\bar q\bar q$ scattering. The emission sites on a single fermion line
 		are illustrated in fig.~\eqref{fig:emissionsites}.  In the language of currents discussed
-		previously we call the left hand side of fig.~\eqref{fig:emissionsites} $j_\mu^\zg$.
+		previously we call the left hand side of fig.~\eqref{fig:emissionsites} $j_\mu^{Z}$.
 		It is given by:
 
 		\begin{align}
@@ -216,8 +217,8 @@
 		either line could have been the emitter and so these are PDF suppressed. Secondly, in order to have
 		interference the $W$ boson must be able to be emitted from multiple legs \emph{and} have the same charge
 		wherever you attach it - again this is because the $W^\pm$ will decay to a distinct final state and no
-		interference can occur. With these constraints in mind there are very few diagrams which contribute to the
-		interference effects in $W^\pm$-plus-jets.  However as we will see later this leads to an approximate matrix
+		interference can occur. With these constraints in mind there are far fewer diagrams which contribute to the
+		interference effects in $W^\pm$-plus-jets.  However as we will see later in the case of $\zg$ this leads to an approximate matrix
 		element which differs significantly from the leading-order result and so here we will include not only the
 		contributions to the matrix element arising from the $Z^0$ being emitted from both (anti-)quark
 		legs separately but also the resulting interference term.
@@ -227,7 +228,7 @@
 		Our high-energy
 		description of the matrix elements relies on the correct description of the
 		$t$-channel momenta, and this obviously depends on which of the quark lines
-		the $Z^0$ or $\gamma^*$ was emitted from.  We therefore need to modify the simple
+		the $Z^0$ was emitted from.  We therefore need to modify the simple
 		framework outlined above.  We will use the subscript $a$ ($b$) to label the
 		current at the lowest (highest) end of the rapidity chain.  We then define $t_a$
 		($t_b$) to be the $t$-channel momentum exchanged when the bosons are emitted at
@@ -271,9 +272,10 @@
 		Fig.~\eqref{fig:twojets} shows that in the region of very high rapidity separation
 		the full matrix element squared (scaled by $s^2$ and an irrelevant phase space factor)
 		approaches a constant.  We could have predicted this behaviour by considering
-		eqn.~\eqref{eqn:HEfail2}; in the strict High Energy limit \emph{all} the rapidity
+		eqn.~\eqref{eqn:HEfail2}; in the strict High Energy limit all the absolute rapidity
 		information becomes lost and we only have dependence on $s$ and the transverse
-		momenta of the outgoing partons.  In this case we also have the $Z^0$ propagator
+		momenta of the outgoing partons (we still have information about the rapidity gap through
+		$s$ using eqn.~\eqref{eqn:mandel2}).  In this case we also have the $Z^0$ propagator
 		and its couplings to the partons and leptons to consider but the kinematics of the
 		$t$-channel gluon still dominates.  The limit approached can be easily evaluated
 		by applying the high energy limit, since in the $\Delta y\to\infty$ limit only
@@ -309,7 +311,7 @@
 
 	\subsection{Photonic Interference}
 
-		Since any virtual $Z^0$ could also have proceeded via an off-shell virtual photon,
+		Since any virtual $Z^0$ decaying to an $e^+e^-$ pair could also have proceeded via an off-shell virtual photon,
 		$\gamma^*$, we must also include these processes and the resulting interference
 		between the $Z^0$ and $\gamma^*$.
 
@@ -371,9 +373,9 @@
 		currents are included.
 
 		Following in the vein of the previous chapter we now look to extend our description
-		to higher multiplicity final states.  Based on eqn.~\eqref{eqn:factorised2ToN} from
-		chapter~\ref{chap:HEQCD} we can write the squared matrix element for
-		$qQ\to (\zg\to ) e^+e^- q (n-2)g Q$ is:
+		to higher multiplicity final states.  Since our expression for the effective vertices are
+		independent of the currents at either end of the $t$-chain we can write the squared matrix element for
+		$qQ\to (\zg\to ) e^+e^- q (n-2)g Q$ as:
 
 		\begin{align}
 		\begin{split}
@@ -395,14 +397,14 @@
 		and one can set the relevant $j_a^{\zg}$ or $j_b^{\zg}$ to
 		zero in eqn.~\eqref{eqn:interference}.
 
-		Fig.~\eqref{fig:3jslice} and fig.~\eqref{fig:4jslice} show the phase space
+		Fig.s~\eqref{fig:3jslice} and~\eqref{fig:4jslice} show the phase space
 		slices for $qQ\to(\zg\to)e^+e^-qgQ$ and $qQ\to(\zg\to)e^+e^-qggQ$
 		respectively, we see the same behaviour as observed for the 2 jet final state described in
 		fig.~\eqref{fig:ZatLO}.  For these higher multiplicity final states we only
 		approximate the leading order matrix element however we see that at large rapidity separations
 		our approximation converges to the exact result as indeed it must in the High Energy limit.
 
-		Eqn.~\eqref{eq:allorderreal} gives us the all-orders real corrections to $\zg$ plus jets.
+		Eqn.~\eqref{eq:allorderreal} gives us the all-orders real corrections to $\zg$ plus jets which we wish to sum for all $n$.
 		However, before proceeding to calculate the cross-section we must carefully render eqn.~\eqref{eq:allorderreal}
 		finite by including the corresponding virtual corrections whose divergences will cancel the pathologies
 		in the effective vertices.
@@ -411,7 +413,7 @@
 		  \begin{center}
 		    \includegraphics[width=1.0\linewidth]{slice3j.pdf}
 		    \caption{A slice through phase space for the $\zg$+ 3 jet final state.  The slice defined is
-		    akin to that described for the 2 jet case in fig.~\eqref{fig:ZatLO} whereby as $\Delta$ increases
+		    akin to that described for the 2 jet case in fig.~\eqref{fig:ZatLO} where as $\Delta$ increases
 		    we pull apart all three jets and the leptonic decay products are emitted increasingly far into
 		    the forward direction.}
 		    \label{fig:3jslice}
@@ -437,7 +439,7 @@
 		To calculate useful quantities such as cross sections etc. we must integrate equation
 		eqn.~\eqref{eq:allorderreal} over all of phase space.  However, as discussed in chapter~\ref{chap:theory}
 		problems arise when we attempt to integrate over the soft regions of phase space.  It is well understood
-		that the divergences coming from soft real emissions cancel with those coming from soft
+		that the divergences coming from soft real emissions cancel with those coming from
 		virtual emissions and so we must explicitly show this cancellation and calculate the remaining
 		finite contribution multiplying the $(n-1)$-final state parton matrix element.
 
@@ -458,7 +460,7 @@
 		is of the same form for the interference term which was previously excluded.\\We start by looking
 		at a $2\rightarrow n$ process and take the limit of one final state parton momentum, $p_i$, becoming
 		small.  Because of the form of eqn.~\eqref{eq:allorderreal} this amounts to looking at the
-		effect of an external gluon becoming soft on out expression for the effective vertex for real emissions.
+		effect of an external gluon becoming soft on our expression for the effective vertex for real emissions.
 
 		We can immediately see that for $p_i$ going soft the gluon `chain' momenta going into,
 		and coming out of, the $j^{th}$ emission site will coincide: $q_{j+1}\sim q_j$, therefore:
@@ -495,43 +497,25 @@
 			\end{equation}
 
 			We must now explicitly calculate the invariant mass terms.  Since we are in the
-			High Energy regime we may take:
+			High Energy regime we have that $p_a^+\gg p_a^-, p_{a\perp}$ and $p_b^+\gg p_b^-, p_{b\perp}$
+			therefore we may take:
 
 			\begin{align}
-				p_a\sim p_1 = p_+ = \Big(\frac12 p_z, 0, 0, \frac12 p_z\Big),\\
+				s_{ab}= 2p_a\cdot p_b \sim 2p^+_ap^-_b,
+				s_{bi}= 2p_b\cdot p_i \sim 2p^-_bp^+_i,
 				\intertext{and,}
-				p_b\sim p_n = p_- = \Big(\frac12 p_z, 0, 0, -\frac12 p_z\Big).
+				s_{ai}= 2p_a\cdot p_i \sim 2p^+_ap^-_i,
 			\end{align}
-
-			We describe our soft gluon with $p_i=(E, \vec{p})$ and therefore we may express the
-			products of momenta as follows:
-
-			\begin{align}
-				s_{ai} &= 2p_a\cdot p_i\sim2p_+\cdot p_i = \frac12p_zE - \frac12p_z^2,\\
-				s_{bi} &= 2p_b\cdot p_i\sim2p_-\cdot p_i = \frac12p_zE + \frac12p_z^2,\\
-				s_{ab} &= \frac12p_z^2.
-			\end{align}
-
-			Using these to extract the leading divergence in eqn.~\eqref{eqn:temp} we get:
-
-			\begin{subequations}
-				\begin{equation}
-				V^2(q_{ti}, q_{ti}) = - \frac{4p_z^2}{(p_zE - p_z^2)(p_zE + p_z^2)}q^4_{i} + \mathcal{O}\left(\frac{1}{|p_i|}\right),
-				\end{equation}
-				\begin{equation}
-				V^2(q_{ti}, q_{ti}) = - \frac{4p_z^2}{p_z^2(E^2-p_z^2)}q^4_{i} + \mathcal{O}\left(\frac{1}{|p_i|}\right),
-				\end{equation}
-			\end{subequations}
 
 			but since $E^2-\vec{p}_1^2=0$ for the on-shell external parton this can be written as:
 
 			\begin{equation}
-				V^2(q_{ti}, q_{ti}) = - \frac{4}{|\vec{p}_{1\perp}|^2}q^4_{i} + \mathcal{O}\left(\frac{1}{|p_i|}\right),
+				V^2(q_{ti}, q_{ti}) = - \frac{4}{|\vec{p}_{1\perp}|^2}q^4_{ti},
 				\label{eqn:temp2}
 			\end{equation}
 
 			Now looking back to eqn.~\eqref{eq:allorderreal} we see that each vertex is associated with factors of
-			$q^{-2}_{ti}q^{-2}_{t(i+1)}$ but since the emission is soft this becomes $q^{-4}_{ti}$.
+			$q^{-2}_{ti}q^{-2}_{t(i+1)}$ but since the emission is soft $q_{ti}=q_{t(i+1)}$ and this becomes $q^{-4}_{ti}$.
 			That factor conspires to cancel with the corresponding factor of $q^{4}_{ti}$ in eqn.~\eqref{eqn:temp2}.
 			Including the additional factors of $C_A$ and $g_s$ the finite factor remaining is given by:
 
@@ -546,13 +530,13 @@
 			Taking the mixed dot-product of the two vertex terms we have:
 
 			\begin{equation}
-				V(q_{ti}, q_{ti})\cdot V(q_{bi}, q_{bi}) = -\frac{s_{ab}}{s_{ai}s_{bi}}t_i^tt_i^b
+				V(q_{ti}, q_{ti})\cdot V(q_{bi}, q_{bi}) = -\frac{s_{ab}}{s_{ai}s_{bi}}t_{ti}t_{bi}
 			\end{equation}
 
 			having simplified the expression using $p_a^2=0$ and $p_b^2=0$ once again.  The invariant mass terms
-			here are identical to those we saw in the $V^2$ terms and the products of $t_i^tt_i^b$ also appear
+			here are identical to those we saw in the $V^2$ terms and the products of $t_{ti}t_{bi}$ also appear
 			in the denominator of the interference term in eqn.~\eqref{eq:allorderreal}.
-			After this cancelling we are left with exactly what we had before in eqn.~\eqref{eqn:finalsoft}.
+			After this cancellation we are left with exactly what we had before in eqn.~\eqref{eqn:finalsoft}.
 			Since exactly the same factor comes from all three terms at the amplitude squared level we may factor
 			them out and express the amplitude squared for an $n$-parton final state with one soft emission in
 			terms of an $(n-1)$-parton final state amplitude squared multiplied by a common factor:
@@ -588,7 +572,7 @@
 			and therefore the rewritten phase space integral then reads:
 
 			\begin{equation}
-				\int_{\text{soft}}\frac{d^{2+2\epsilon}\vec{p}_{\perp}}{(2\pi)^{2+2\epsilon}}\frac{dy}{4\pi}\frac{4C_Ag_s^2}
+				\int_{\text{soft}}\frac{d^{2+2\epsilon}\vec{p}_{\perp}}{(2\pi)^{2+2\epsilon}}\int_{y_{i-1}}^{y_{i+1}}\frac{dy}{4\pi}\frac{4C_Ag_s^2}
 					{|\vec{p}_\perp|^2}\mu^{-2\epsilon} = \frac{4C_Ag_s^2\mu^{-2\epsilon}}{(2\pi)^{2+2\epsilon}4\pi}
 					\Delta_{i-1, i+1}\int_0^{\lambda_{\text{cut}}}\frac{d^{2+2\epsilon}\vec{p}_{\perp}}{|\vec{p}_\perp|^2},
 			\end{equation}
@@ -598,7 +582,7 @@
 			We have also introduced an upper bound on the transverse momentum integration of $\lambda_{\text{cut}}$ -
 			this parameter will be discussed in more detail later.
 			Converting to polar coordinates and using the result for the volume of a unit hypersphere gives
-			to the integrated soft contribution:
+			the integrated soft contribution:
 
 			\begin{equation}
 				\frac{4C_Ag_s^2}{(2\pi)^{2+2\epsilon}4\pi}\Delta_{i-1, i+1}

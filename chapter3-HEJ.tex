@@ -35,7 +35,7 @@
 	state the criteria in eqn.~\eqref{eqn:MRK} equivalently as:
 
 	\begin{equation}
-		s_{ij}\rightarrow\infty\text{ for all i, j,}
+		s_{ij}\rightarrow\infty\text{ for all } i, j\text{ with }|p_{i\perp}|\text{ fixed,}
 	\end{equation}
 
 	where $s_{ij} = (p_i + p_j)^2$ is the invariant mass of a pair of outgoing partons.  We sometimes
@@ -53,7 +53,7 @@
 	\label{sub:MandelstamVariables}
 
 	The $2\rightarrow 2$ QCD scattering amplitudes can be expressed in terms of the well-known Mandestam
-	variables $s$, $t$ and $u$.  Which, in terms of the momenta in the process, are given by:
+	variables $s$, $t$ and $u$, which, in terms of the momenta in the process, are given by:
 
 	\begin{align}
 	\begin{split}
@@ -76,7 +76,7 @@
 	\end{split}
 	\end{align}
 
-	then we can express eqs.~\eqref{eqn:mandel} as follows
+	then we can express eqs.~\eqref{eqn:mandel} as follows:
 
 	\begin{align}
 	\begin{split}
@@ -163,7 +163,7 @@
 	This is exactly the behaviour expected when a particle exchanged in the $t$-channel has
 	`reggeised'~\cite{sabioThesis,DelDuca:1995hf,lipatovBook}.  $\alpha(t)$ is the Regge trajectory and is equal to
 	the intrinsic spin of the state exchanged.  In our example we have a gluon exchanged
-	and accordingly we can see from eqn.~\eqref{eqn:reggeTraj} that $\alpha(t)=1$ for $qQ\rightarrow qQ$.
+	and accordingly we can see from eqn.~\eqref{eqn:reggeTraj} that $\alpha(t)=1$ for $qQ\rightarrow qQ$ at leading order.
 
 	It is also interesting to consider the same process but with helicity structure $q^-Q^+\to q^-Q^+$.
 	The calculation proceeds similarly to the $q^-Q^-\to q^-Q^-$ and when we write the result in
@@ -188,9 +188,9 @@
 	\end{split}
 	\end{align}
 
-	So we see that since in the strict High Energy limit we have that $s=-u$
+	So we see that in the strict High Energy limit we have that $s=-u$
 	exactly.  Whereas when we leave the amplitude in terms of vector currents we are able to keep
-	more of the physics by having the weaker constraint $s\sim-u$; at the LHC $t$ and $k_\perp^2$
+	more of the physics by keeping $s\sim-u$; at the LHC $t$ and $k_\perp^2$
 	can often differ significantly and so the over-approximating the kinematics here would
 	lead to a poor description of the data.
 
@@ -206,7 +206,7 @@
 	\label{sec:qg}
 
 	We now explore the more involved case of $q^-g^+\to q^-g^+$ scattering.  At leading order this
-	consists of three diagrams shown in fig.~\eqref{fig:TwoToTwo2}.  We use the following gauge
+	consists of the three diagrams shown in fig.~\eqref{fig:TwoToTwo2}.  We use the following gauge
 	choice for the gluon polarisations:
 
 	\begin{align}
@@ -362,7 +362,7 @@
 		\end{equation}
 
 		We also see that eqn.~\eqref{eqn:fullsum} has the same spinor-helicity brackets contracted as eqn.~\eqref{eqn:similarBrackets}
-		and so the dominant behaviour of $q^-g^+\to q^-g^+$ in the high energy limit is $\frac{s}{t}$.
+		and so the dominant behaviour of $q^-g^+\to q^-g^+$ in the high energy limit is $\frac{s}{t}$ as predicted by Regge theory.
 		In the High Energy limit we have $p_b^-\thicksim p_2^-$ and so eqn.~\eqref{eqn:fullsum} could be simplified
 		further to:
 
@@ -373,11 +373,11 @@
 		\end{equation}
 
 		which is identical to the result found in the previous $qQ\rightarrow qQ$ calculation (save for a phase which cancels
-		at the amplitude squared level). The kinematics of eqn.~\eqref{eqn:fullsum} are exactly in the form of two `currents' contracted as
+		at the amplitude squared level and a different colour factor). The kinematics of eqn.~\eqref{eqn:fullsum} are exactly in the form of two `currents' contracted as
 		seen in section~\ref{sec:qQScat}.  We have:
 
 		\begin{equation}
-			\mathcal{M}_{qg\to qg}^{\text{LO}} = \frac{C_A}{C_f} \mathcal{M}_{qQ\to qQ}^{\text{LO}},
+			|\mathcal{M}_{qg\to qg}^{\text{LO}}|^2 = \frac{C_A}{C_f} |\mathcal{M}_{qQ\to qQ}^{\text{LO}}|^2,
 		\end{equation}
 
 		in the High Energy limit. In practice we actually choose \emph{not} to take the High Energy limit to obtain
@@ -385,9 +385,9 @@
 		eqn.~\eqref{eqn:fullsum} is still exactly the form of a $t$-channel gluon exchange as seen in
 		eqn.~\eqref{eqn:similarBrackets}.
 
-		In section~\ref{sec:HEJ} we will return this result and the results of section~\ref{sec:qQScat} and discuss how,
-		despite their simplicity, they can be used to construct very general approximate forms for matrix elements which
-		could otherwise not be evaluated
+		In section~\ref{sec:HEJ} we will return to this result and the results of section~\ref{sec:qQScat} and discuss how,
+		despite their simplicity, they act as a basis and can be used to construct very general approximate forms for matrix elements which
+		could now otherwise be evaluated
 
 \section{$qQ$-scattering at High Energy (at NLO)}
 	\label{sub:HE22_NLO}
@@ -396,7 +396,7 @@
 	elements we briefly look at higher order (in $\alpha_s$) corrections to the process we studied in
 	section~\ref{sec:qQScat}.  So far we have seen the leading order processes with a $t$-channel
 	exchange are enhanced but in eqn.~\eqref{eqn:schematicExpn} we sketched out a form for
-	the perturbative expansion which also had enhanced contributions at higher order orders.
+	the perturbative expansion which also had enhanced contributions at higher order.
 
 	Here we continue on from section~\ref{sec:qQScat} and calculate the virtual diagrams which contribute
 	a leading logarithm for $qQ\to qQ$ at next-to-leading in $\alpha_s$~\cite{sabioThesis,DelDuca:1995hf}.
@@ -407,7 +407,7 @@
 	virtual diagrams which contribute at this order since they will contain (anti-)quark propagators along
 	the $p_{a/1}$ or $p_{b/2}$ lines and in the high energy limit these will be suppressed.
 
-	These diagrams in fig.~\eqref{fig:NLO-leadingContrib} can be elegantly computed by using the `Cutkosky
+	The diagrams in fig.~\eqref{fig:NLO-leadingContrib} can be elegantly computed by using the `Cutkosky
 	rules' which are used to relate two sub-diagrams to the imaginary part of a higher order diagram through
 	the Optical theorem.  This can be seen very quickly since the scattering matrix, $S$, must be unitary i.e.
 	$S^\dagger S=1$.  If we write this instead in terms of the transition matrix, $T$, defined by $S=1+iT$
@@ -470,7 +470,7 @@
 	\end{align}
 
 	where $\text{Im}(\cdot)$ denotes the imaginary part, $k$ is the loop momentum, $q$ is the momentum
-	transfer and $\dagger$ denotes Hermitian conjugation.  The sum a complete of states here
+	transfer and $\dagger$ denotes Hermitian conjugation.  The sum over a complete of states here
 	corresponds to integrating over all possible momenta flowing around the loop. In the High Energy
 	limit we can perform the integration to give:
 
@@ -510,7 +510,7 @@
 
 	\begin{equation}
 		\text{Re}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big) =
-		-\frac{1}{\pi}\text{Im}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big)
+		-\frac{1}{\pi}\text{Im}\Big(\mathcal{M}_{qQ\rightarrow qQ}^{\text{NLO, II}}\Big)\ln\left|\frac{s}{t}\right|
 	\end{equation}
 
 	and we can therefore reconstruct the real part of the amplitude as:
@@ -523,7 +523,7 @@
 	\end{equation}
 
 	The crossed-diagram,~\eqref{fig:NLO-crossed}, also contributes a leading logarithmic piece and is related to
-	eqn.~\eqref{fig:NLO-uncrossed} by a crossing symmetry and so we simply replace $u$ with $s$ in
+	eqn.~\eqref{fig:NLO-uncrossed} by a crossing symmetry and so we simply replace $s$ with $u$ in
 	eqn.~\eqref{eqn:uncrossedNLOcontrib} and calculate a new colour factor, $\mathcal{C}_2(T^a,T^b)$:
 
 	\begin{equation}
@@ -564,7 +564,7 @@
 
 	In what follows we construct high multiplicity matrix elements by approximating the full result
 	by the contraction of two currents and a number of effective vertices.  This choice allows us
-	to construct matrix elements which contains the leading logarithms.\\
+	to construct all the matrix elements which contain the leading logarithms.\\
 	As a simple example we consider the production of 4 exclusive jets in the High Energy limit.
 	We present a brief argument for precisely which diagrams contribute these leading logarithms.
 	Although heuristic it is sufficient to motivate the construction of high multiplicity amplitudes from
@@ -632,7 +632,7 @@
 	the maximum spin of any particle which could be exchanged in the $t$-channels between final
 	state partons neighbouring in rapidity.  We can then find the scaling of a process, for example
 	$qg\to qg$, in particular regions of phase space where either $y_g\gg y_q$ or $y_q\gg y_g$ simply
-	by drawing the associated colour connection diagrams for it.  This is shown in~\eqref{fig:colorConns}.
+	by drawing the associated colour connection diagrams for it.  This is shown in fig.~\eqref{fig:colorConns}.
 	Since when we have $y_g\gg y_q$ it is only possible to exchange a colour singlet (with spin one half)
 	the cross-section will be dominated by the region where $y_q\gg y_g$.  The case for $2\to n$ is similar
 	with the limiting behaviour of the matrix element given by
@@ -688,8 +688,8 @@
 	Conversely, processes in which a $t$-channel gluon diagram can not contribute are
 	suppressed in this limit.  For example $q\bar{q}\to Q\bar{Q}$ can only proceed via an
 	$s$-channel gluon and we can see that in the limit $s\to\infty$ and keeping $t$ finite it's matrix
-	element tends to $-\nicefrac{4}{9}$ (since $s\sim-u$ in the High Energy limit).  Processes
-	like $gg\to gg$ have diagrams with and without the exchange we are interested in
+	element tends to $\nicefrac{u^2}{s^2}$ which is $\mathcal{O}(1)$ since $s\sim-u$ in the High Energy limit).
+	Processes like $gg\to gg$ have diagrams with and without the exchange we are interested in
 	and, as such, only some of the terms from the exact leading order matrix element
 	contribute - but they do still contribute.
 
@@ -748,7 +748,7 @@
 	\end{align}
 
 	In the High Energy limit the second term in each of the lines is suppressed with respect to the
-	first and can therefore be disregarded.  This turns out to be equivalent to if considering
+	first and can therefore be disregarded.  This turns out to be equivalent to considering
 	$p_2$ as a soft emission using the Eikonal approximation.  The resulting amplitude for the sum
 	of all four may be written as:
 
@@ -896,7 +896,7 @@
 	\end{split}
 	\end{align}
 
-	Using eqn.~\eqref{eqn:factorised2ToN} we can describe the real emission high order
+	Using eqn.~\eqref{eqn:factorised2ToN} we can describe the real emission higher order
 	corrections but this expression is manifestly divergent.
 
 \section{Virtual Corrections To All Orders}
@@ -938,8 +938,8 @@
 
 	The keen reader will have noticed that eqn.~\eqref{eqn:lipDiverge2} is exactly what we
 	found in our next-to-leading order calculation in eqn.~\eqref{eqn:lipDiverge} expressed
-	in $2+2\epsilon$ dimensions rather than 2 (save for a few numerical factors) as we have
-	now chosen to use.  This is no coincidence and, indeed, is the source of the ansatz.  Higher
+	in $2+2\epsilon$ dimensions rather than 2 (save for a few numerical factors).  This is
+	no coincidence and, indeed, is the source of the ansatz.  Higher
 	order (in $\alpha_s$) calculations~\cite{DelDuca:1995hf,9780511524387} have shown that to
 	two loops the leading logarithmic virtual part of the full $2\to2$ amplitude agrees exactly with what
 	we get when we Taylor expand the exponential term in eqn.~\eqref{eqn:lipAns}.
@@ -961,7 +961,7 @@
 		matrix elements in the form of two vector `currents' contracted over a $t$-channel pole.  While
 		one could argue that the fact that the $qQ\to qQ$ matrix element would factorise into a contraction
 		of two vector currents with a $t$-channel pole was obvious (since the only contribution was
-		from a $t$-channel diagram), but it was not at all obvious that this would also be the case for the
+		from a $t$-channel diagram), it was not at all obvious that this would also be the case for the
 		$qg\to qg$ amplitude.  It can also be shown that the same structure is found even in the case of
 		gluon-gluon scattering\cite{Andersen:2011hs}.
 
@@ -995,10 +995,10 @@
 
 		where $N_c=3$ and $C_F=\nicefrac{4}{3}$ for QCD, $S$ is the matrix element for a $2\rightarrow2$ process
 		in the form of a contraction of two currents, and $t_i$ are the squared $t$-channel momenta - in this
-		case $t_1=(p_a-p_1)^2$ and $t_1=(p_2-p_b)^2$.
+		case $t_1=(p_a-p_1)^2$ and $t_2=(p_2-p_b)^2$.
 
 		While for the $2\to2$ examples in section~\eqref{sec:qQScat} and section~\eqref{sec:qg} eqn.~\eqref{eqn:factorised}
-		is just an exact rewriting of a previous result however we will use the form shown here to generalise to describing
+		is just an exact rewriting of a previous result, we will use the form shown here to generalise to describing
 		extra final state radiation in the next section at which point the $t$-channel factorisation weakens to
 		an approximation of the full result (but one which contains enough of the underlying physics to be useful
 		nonetheless).
@@ -1006,7 +1006,17 @@
 		Extending eqn.~\eqref{eqn:factorised} to higher multiplicity final states within the \hej
 		framework is then done by using chains of products of effective vertices discussed in section
 		~\eqref{sec:effectiveVertices} (for the real emissions) and the Lipatov ansatz described in section
-		~\eqref{sub:virtuals} (for the virtual emissions).
+		~\eqref{sub:virtuals} (for the virtual emissions):
+
+		\begin{align}
+		\begin{split}
+			|\overline{\mathcal{M}}^t_{qQ\rightarrow qg\cdots gQ}|^2 = \frac{1}{4(N_c^2-1)}
+			\frac{g^2C_F}{t_1}\frac{g^2C_F}{t_2} \sum_{h_a, h_b, h_1, h_2}
+			|S_{qQ\rightarrow qQ}^{h_ah_b\rightarrow h_1h_2}|^2\\
+			\times\prod_{i=1}^{n-1}\left(\frac{-g_sC_A}{t_it_{i+1}}V^\mu(q_i, q_{i+1})V_\mu(q_i, q_{i+1})e^{\hat{\alpha}(q_i^2)\Delta y_{i, i+1}}\right).
+			\label{eqn:factorised2ToNwithExp}
+		\end{split}
+		\end{align}
 
 		Eqn.~\eqref{eqn:factorised} can also be easily generalised to describing different final states by using
 		different current expressions in the contraction in $S$.  For example by constructing a current
@@ -1063,7 +1073,15 @@
 			\texttt{MadGraph\_aMC@NLO} (v5), the details of which will be discussed further in chapter
 			~\ref{chap:Zs}.
 
-			\item \textbf{Analysis}: In the analysis stage the event is passed off to either
+			We include the 2-, 3- and 4-jet non-FKL contributions as exclusive sums to correct the
+			total cross section.  This is done separately to the resummation Monte Carlo calls, it
+			can either be computed as a stand-alone run and then summed with the FKL matched resummation
+			events upon completion or both FKL and non-FKL configurations can be calculated as a single run.
+			In practise the majority of the computer time is spent on these non-FKL terms as processes
+			such as $gg\to(\zg\to)e^+e^-ggggg$ are complex matrix elements and therefore are slow to
+			evaluate even at leading order.
+
+			\item \textbf{Analysis}: In the analysis stage the event is passed to either
 			the \HEJ analysis framework or to \texttt{Rivet}.
 			Here we enforce kinematic constraints on our final state to study the regions of
 			phase space we are interested in - or those regions probed by a particular
@@ -1104,17 +1122,17 @@
 
 	\subsection{Matching to \ARIADNE}
 
-		The current scheme for describing all-order corrections to jet rates at hadronic colliders
+		The \HEJ scheme for describing all-order corrections to jet rates at hadronic colliders
 		is based on the limit in which emissions are both hard and well separated.  Of course, some
 		radiation at hadronic colliders is soft or produced collinear to other radiation (or both) and
 		such emissions also lead to large logarithmic enhancements similar to those discussed in this
-		work and so it is obviously advantageous to describe both.
+		work and so it is obviously advantageous to describe both.  These effects can be included through a parton shower description.
 
-		These effects can be through a parton shower description.  Several schemes for performing this
-		merging.  The CKKW(L) and MLM schemes work by generating showered predictions and then applying
-		a correction above some merging scale above which the hard scatter is considered to be the
-		dominant force.  In this way fixed order predictions can be augmented to also contain the leading
-		logarithms from the parton shower.
+		% The CKKW(L) and MLM
+		% schemes work by generating showered predictions and then applying
+		% a correction above some merging scale above which the hard scatter is considered to be the
+		% dominant force.  In this way fixed order predictions can be augmented to also contain the leading
+		% logarithms from the parton shower.
 
 		\HEJ has been matched to the \ARIADNE parton shower~\cite{Andersen:2011zd}.  \ARIADNE~\cite{Lonnblad:1992tz}
 		is based on the Lund colour dipole model~\cite{Gustafson:180791} which attempts to describe final state QCD
@@ -1137,7 +1155,7 @@
 			\int dy\mathcal{D}(p_\perp^2, y)\right).
 		\end{equation}
 
-		Matching \HEJ to \ARIADNE is very different that the usual hard-scatter matching to a parton shower. As we
+		Matching \HEJ to \ARIADNE is very different to the usual hard-scatter matching to a parton shower. As we
 		will see in chapter~\ref{chap:Zs}, \HEJ includes radiation down to a very soft scale and so were we to perform
 		a na\"ive matching to a parton shower we would be double-counting all of the soft non-collinear radiation.
 		Fig.~\eqref{fig:heja1} shows the average \ARIADNE splitting function, $\mathcal{D}/z$, compared to
@@ -1145,13 +1163,13 @@
 		$\Delta r=0.5$ away from the emitting parton in order to probe only the soft contributions coming from
 		the shower.  \HEJ includes soft emissions and therefore we expect to see that the majority of
 		the emissions from \ARIADNE are already being described by the partonic description.  Indeed fig.~\eqref{fig:heja1}
-		shows that, aside from extremely soft radiation, the average splitting function of \HEJ is greater than that of
+		shows that, aside from extremely soft radiation, the average splitting function of \HEJ is indeed greater than that of
 		\ARIADNE. Fig.~\eqref{fig:heja2} shows a similar comparison where the extra emissions were required to have
 		transverse momentum of 10~GeV but no cut on $\Delta r$ was applied so that we are now investigating the effect of
 		the collinearity of the extra emission on the splitting function.  This time we see a much bigger difference in
 		the splitting functions at low values of $r$, i.e.~collinear emissions.  This is expected since one of the key
-		approximations required to derive our matrix element expressions is that emissions are well separated in rapidity
-		and so cannot have small $r$.  At values of $r$ greater than the jet definition of 0.6 we see that as in the soft
+		approximations required to derive our matrix element expressions is that emissions are well separated in rapidity.
+		At values of $r$ greater than the jet definition of 0.6 we see that as in the soft
 		radiation case the \HEJ splitting function is greater than the shower splitting function.  When generating showered
 		events with \HEJA we must be careful not to double count terms; it is clear from figs.~\eqref{fig:heja1} and
 		~\eqref{fig:heja2} that soft and wide-angle emissions are taken care of by \HEJ and so it would be a mistake
@@ -1161,7 +1179,9 @@
 
 		\begin{itemize}
 			\item \HEJ generates a partonic state.  The extremal partons are required to form jets while
-			the gluon emissions from the effective vertices are allowed to be soft (but still above some very soft scale, $\lambda_{cut}$.
+			the gluon emissions from the effective vertices are allowed to be soft (but still above some very soft scale, $\lambda_{cut}$
+			(e.g. 0.2~GeV).
+
 			\item \ARIADNE then begins it's dipole cascade.  Each additional dipole generated by \ARIADNE is checked to see
 			if it is an emission that could have been generated by \HEJ.  If it could be a \hej emission then the emission
 			is rejected with probability $r_{\text{HEJ}} / r_{\text{ARIADNE}}$, where:
@@ -1199,11 +1219,11 @@
 	\subsection{Comparisons to data}
 
 		The \hej framework has been thoroughly tested for a number of the currently available final states (jets,
-		$W^\pm$+jets and $\zg$+jets) against other theoretical descriptions and experimental data in all of
-		papers by the ATLAS, CMS and D$\emptyset$ collaborations~\cite{Aad:2011jz,Aad:2014pua,Aad:2014qxa,Aad:2014rta,
+		$W^\pm$+jets and $\zg$+jets) against other theoretical descriptions and experimental data in analyses
+		by the ATLAS, CMS and D$\emptyset$ collaborations~\cite{Aad:2011jz,Aad:2014pua,Aad:2014qxa,Aad:2014rta,
 		Chatrchyan:2012gwa,Abazov:2013gpa,ZPaper}.
 
-		These studies probe wide ranges of experimental observables with a variety of cuts designed to prove
+		These studies probe wide ranges of experimental observables with a variety of cuts designed to probe
 		specific regions of phase space. \hej is seen to provide an excellent description of data in all of these
 		studies in the regions of phase space close to the High Energy limit.  Interestingly there are cases where
 		\HEJ is seen to be competitive with other state-of-the-art theoretical descriptions even when we are far from
@@ -1221,11 +1241,12 @@
 		resummed by \hej become significant for large values of $m_{12}$ and so we expect that \HEJ should
 		describe this distribution well while fixed-order schemes who cannot capture these large logarithmic
 		corrections may not. In fact, \HEJ gives the best description of data across almost the entire range of $m_{jj}$
-		with the other theoretical predictions only agreeing with data below an invariant mass of approximately $300$~GeV
-		and deviate badly by $2$~TeV.  This high invariant mass region is an important region for VBF studies and so it
+		with the other theoretical predictions only agreeing with data below an invariant mass of approximately $300$~GeV,
+		deviating badly by $2$~TeV.  This high invariant mass region is an important region for VBF studies and so it
 		is important that we are able to describe QCD emissions here.  The failure of fixed order calculations show that
-		perturbative stability already begins to breakdown in $7$~TeV LHC data.  As we will see in chapter~\ref{chap:100TeV}
-		this is a challenge we must face at a potential high energy Future Circular Collider.
+		perturbative stability already begins to breakdown in $7$~TeV LHC data.  This is a challenge we must face in LHC
+		run II and as we will see in chapter~\ref{chap:100TeV} this is a challenge we must face at a potential high
+		energy Future Circular Collider.
 
 		\begin{figure}[hbt]
 			\centering
