@@ -1358,6 +1358,31 @@
 		\end{align}
 		\end{subequations}
 
+		We can now construct spinors for states with the on-shell condition $p^2=m^2$ for non-zero mass, $m$.
+		By performing a Lorentz boost such that we are in the comoving frame we can write the momenta, $p$, of
+		parton (denoted $\widetilde p$ in this new frame) as:
+
+		\begin{equation}
+			\widetilde{p}^\nu = \Lambda_\mu^\nu(\beta_x, \beta_y, \beta_z)p^\mu = \left(m, 0, 0, 0\right),
+		\end{equation}
+
+		where $\vec{\beta}$ are the parameters of the Lorentz boost.  In this frame it is
+		trivial to decompose the momenta in to two null momenta
+
+		\begin{equation*}
+			\widetilde{p_2} = \frac{p_+ + p_-}{2},
+		\end{equation*}
+
+		where $p_+=(m, m, 0, 0)$ and $p_-=(m, -m, 0, 0)$.  Then in order to find the basis vectors back in the original frame we simply boost by $-\vec{\beta}$:
+
+		\begin{subequations}
+		\begin{align*}
+			p_2^\nu &= \frac{\Lambda^\nu_\mu(-\beta_x, -\beta_y, -\beta_z)p_+^\mu}{2} + \frac{\Lambda^\nu_\mu(-\beta_x, -\beta_y, -\beta_z)p_-^\mu}{2}, \\
+			        &\equiv k_1 + k_2.
+		\end{align*}
+		\end{subequations}
+
+
 \section{Monte Carlo Techniques}
 	\label{sec:MC}
 

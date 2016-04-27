@@ -121,6 +121,14 @@
 	in fig.~\eqref{fig:TwoToTwo}.  Using the Feynman rules detailed in section~\ref{sec:partonicCrossSection} we can
 	write the matrix element as:
 
+	\begin{figure}[bth]
+		\begin{center}
+		\includegraphics[width=0.35\linewidth]{TwoToTwo}
+		\caption{The only diagram which contributes to $qQ\rightarrow qQ$ at leading order in $\alpha_s$.}
+		\label{fig:TwoToTwo}
+		\end{center}
+	\end{figure}
+
 	\begin{align}
 		i\mathcal{M}_{q^-Q^-\rightarrow q^-Q^-}^{\text{LO}} &= ig_s^2T^d_{1a}T^d_{2b}
 		\frac{\overline{u}^-(p_1)\gamma^\mu
@@ -194,14 +202,6 @@
 	can often differ significantly and so the over-approximating the kinematics here would
 	lead to a poor description of the data.
 
-	\begin{figure}
-		\begin{center}
-		\includegraphics[width=0.35\linewidth]{TwoToTwo}
-		\caption{The only diagram which contributes to $qQ\rightarrow qQ$ at leading order in $\alpha_s$.}
-		\label{fig:TwoToTwo}
-		\end{center}
-	\end{figure}
-
 \section{$qg$ scattering at High Energy}
 	\label{sec:qg}
 
@@ -220,7 +220,7 @@
 	to describe positive helicities we can use the transposition property of spinor-helicity brackets discussed
 	in section~\ref{sec:SpinorHelicity}.
 
-	\begin{figure}[h]
+	\begin{figure}[bth]
 		\centering
 		\begin{subfigure}[b]{0.3\textwidth}
 			\includegraphics[width=\textwidth]{qg2qg-s}
@@ -669,7 +669,7 @@
 	respectively.  Since $s_{ij}$ are all large here, the processes with a (anti)quark exchanged
 	in the $t$-channel will be highly suppressed relative to fig.~\eqref{fig:quadJets1}.
 
-	\begin{figure}[hbt]
+	\begin{figure}[bt]
 		\begin{center}
 		\includegraphics[width=1.0\linewidth]{ColourConns}
 		\caption{The limiting behaviour of $qg\to qg$ in the regions of phase space where
@@ -688,24 +688,33 @@
 	Conversely, processes in which a $t$-channel gluon diagram can not contribute are
 	suppressed in this limit.  For example $q\bar{q}\to Q\bar{Q}$ can only proceed via an
 	$s$-channel gluon and we can see that in the limit $s\to\infty$ and keeping $t$ finite it's matrix
-	element tends to $\nicefrac{u^2}{s^2}$ which is $\mathcal{O}(1)$ since $s\sim-u$ in the High Energy limit).
-	Processes like $gg\to gg$ have diagrams with and without the exchange we are interested in
-	and, as such, only some of the terms from the exact leading order matrix element
-	contribute - but they do still contribute.
+	element tends to $\nicefrac{4}{9}\frac{u^2}{s^2}$ which is $\mathcal{O}(1)$ in the High Energy
+	limit (since $s\sim-u$ here).  Processes like $gg\to gg$ have diagrams with and without the
+	exchange we are interested in and, as such, only some of the terms from the exact leading
+	order matrix element contribute - but they do still contribute.
 
-	\begin{table}[hbt!]
+	\begin{table}[hbt]
 		\begin{center}
-		\begin{tabular}{c | c }
-		Process                 & $\nicefrac{1}{g^4}|\bar{\mathcal{M}}|^2$ \\ \hline
-		$qQ\to qQ$              & $\frac{4}{9}\frac{s^2 + u^2}{t^2}$       \\
-		$q\bar{Q}\to q\bar{Q}$  & $\frac{4}{9}\frac{s^2 + u^2}{t^2}$       \\
-		$qq\to qq$              & $\frac{4}{9}\left(\frac{s^2 + u^2}{t^2} + \frac{s^2 + t^2}{u^2}\right) - \frac{8}{27}\frac{s^2}{ut}$\\
-		$q\bar{q}\to Q\bar{Q}$  & $\frac{4}{9}\frac{t^2 + u^2}{s^2}$       \\
-		$gg\to gg$              & $\frac{9}{2}\left(3-\frac{tu}{s^2}-\frac{su}{t^2}-\frac{st}{u^2}\right)$\\
+		\begin{tabular}{c | c | c }
+		Process                 & $\nicefrac{1}{g^4}|\bar{\mathcal{M}}|^2$     & High Energy Limit                \\ \hline
+		$qQ\to qQ$              & $\nicefrac{4}{9}\frac{s^2 + u^2}{t^2}$       & $\nicefrac{4}{9}\frac{s^2}{t^2}$ \\
+		$q\bar{Q}\to q\bar{Q}$  & $\nicefrac{4}{9}\frac{s^2 + u^2}{t^2}$       & $\nicefrac{4}{9}\frac{s^2}{t^2}$ \\
+		$qq\to qq$              & $\nicefrac{4}{9}\left(\frac{s^2 + u^2}{t^2}
+		                          + \frac{s^2+t^2}{u^2}\right)
+		                          - \nicefrac{8}{27}\frac{s^2}{ut}$            & $\nicefrac{4}{9}\left(\frac{2s^2}{t^2}+1\right) - \nicefrac{8}{27}\frac{s}{t}$ \\
+		$q\bar{q}\to Q\bar{Q}$  & $\nicefrac{4}{9}\frac{t^2 + u^2}{s^2}$       & $\nicefrac{4}{9}$          \\
+		$gg\to gg$              & $\nicefrac{9}{2}\left(3-\frac{tu}{s^2}
+		                          -\frac{su}{t^2}
+		                          -\frac{st}{u^2}\right)$                      & $\nicefrac{9}{2}\left(3+\frac{s^2}{t^2}\right)$  \\
 		\end{tabular}
+
 		\caption{Some examples of $2\to2$ leading order matrix elements which contribute to the
-		two jet exclusive cross-section.}
+		two jet exclusive cross-section.  We also show the strict high energy limit of each process
+		in which we take $u=-s$ - from this we can see that, in this limit, those processes which admit
+		a $t$-channel gluon exchange dominate.}
+
 		\label{tab:LOatHE}
+
 		\end{center}
 	\end{table}
 
@@ -1198,23 +1207,27 @@
 			\item Upon completion of the cascade the final state is passed to \texttt{PYTHIA} to perform hadronisation.
 		\end{itemize}
 
-		\begin{figure}[hbt]
-			\centering
-			\includegraphics[width=0.65\linewidth]{heja1}
-			\caption{The average splitting function for \HEJ and \ARIADNE as a function of the transverse momentum, $k_\perp$.
-			Emissions are required to be well separated from the emitting parton by enforcing a cut of $\Delta r\geq0.5$
-			Figure from~\cite{Andersen:2011zd}.}
+	\begin{figure}[bth]
+		\centering
+		\begin{subfigure}[b]{0.6\textwidth}
+			\includegraphics[width=\textwidth]{heja1}
+			\caption{}
 			\label{fig:heja1}
-		\end{figure}
+		\end{subfigure}
 
-		\begin{figure}[hbt]
-			\centering
-			\includegraphics[width=0.65\linewidth]{heja2}
-			\caption{The average splitting function for \HEJ and \ARIADNE as a function of the collinearity, $r$.
+		\begin{subfigure}[b]{0.6\textwidth}
+			\includegraphics[width=\textwidth]{heja2}
+			\caption{}
+			\label{fig:heja2}
+		\end{subfigure}
+
+		\caption{(a) The average splitting function for \HEJ and \ARIADNE as a function of the transverse momentum, $k_\perp$.
+			Emissions are required to be well separated from the emitting parton by enforcing a cut of $\Delta r\geq0.5$
+			Figure from~\cite{Andersen:2011zd}.  (b) The average splitting function for \HEJ and \ARIADNE as a function of the collinearity, $r$.
 			Emissions were kept from becoming soft by enforcing a cut on the transverse momentum of $k_\perp\geq10$~GeV.
 			Figure from~\cite{Andersen:2011zd}.}
-			\label{fig:heja2}
-		\end{figure}
+		\label{fig:heja3}
+	\end{figure}
 
 	\subsection{Comparisons to data}
 
@@ -1250,7 +1263,7 @@
 
 		\begin{figure}[hbt]
 			\centering
-			\includegraphics[width=1.0\linewidth]{wJetsEg}
+			\includegraphics[width=0.9\linewidth]{wJetsEg}
 			\caption{The distribution of $W^\pm$ plus inclusive dijets with at least
 			2 jets differential in the invariant mass of the leading dijets in $p_\perp$, $m_{12}$.
 			Fig. from~\cite{Aad:2014qxa}.}

@@ -27,19 +27,20 @@
 	The current best approach for describing QCD radiation is through the use of
 	a Monte Carlo (MC) generators using the principles outlined in section~\ref{sec:MC}.
 	A wide range of such MC generators are available implementing everything from
-	fixed-order perturbative schemes such as those described in~\cite{Mangano:2002ea,Badger:2012pg} to parton
-	shower models which resum the logarithms arising from soft and collinear logarithms~\cite{Gleisberg:2008ta,Sjostrand:2007gs,Corcella:2000bw}.
+	the fixed-order perturbative schemes discussed in chapter~\ref{chap:theory} to parton
+	shower models which resum the logarithms arising from soft and collinear logarithms.
+	The current state-of-the-art for fixed-order is the next-to-leading order calculation
+	of $\zg$ plus 4 jets by the \texttt{BlackHat} collaboration~\cite{Ita:2011wn} while
+	jet production in association with $\zg$ has only been computed for QCD merged with
+	a parton shower for up to 2 jets~\cite{Re:2012zi,Campbell:2013vha}.
 	This soft and collinear radiation is experimentally observed to cascade from outgoing
 	high energy quarks and gluons in chaotic patterns we refer to as jets.  While parton
 	showers do a good job of describing the composition of jets they cannot be expected to give the correct
-	description of the $p_T$ spectrum of events with a high multiplicity of jets.
-	It is also possible to combine the
-	theoretical ideas behind fixed order and parton shower predictions.  These schemes typically
-	produce resummed results and then match to either leading order or next-to-leading
-	results giving a formal accuracy of LO+LL~\cite{Mangano:2001xp} and NLO+LL~\cite{Alioli:2012yfa}
-	respectively.  This approach gives a better description of multi-jet states however the current state-of-the-art for the
-	fixed order component is still limited to next-to-leading order in $\alpha_s$ (with the
-	exception of the recent $\text{N}^3$LO result~\cite{Anastasiou:2015ema}).
+	description of the large invariant mass region based solely on their resummation of soft and collinear logarithms.
+	Merging parton showers with fixed order schemes helps give a better description of
+	multi-jet states however the current state-of-the-art for the fixed order component is
+	still limited to next-to-leading order in $\alpha_s$ (with the exception of the recent
+	$\text{N}^3$LO result~\cite{Anastasiou:2015ema}).
 
 	In the \hej framework we aim to resum the large logarithmic corrections
 	arising from well separated (in rapidity), hard final state jets.  We capture these
@@ -528,16 +529,16 @@
 			Taking the mixed dot-product of the two vertex terms we have:
 
 			\begin{equation}
-				V(q_{ti}, q_{ti})\cdot V(q_{bi}, q_{bi}) = -\frac{s_{ab}}{s_{ai}s_{bi}}t_{ti}t_{bi}
+				V(q_{ti}, q_{ti})\cdot V(q_{bi}, q_{bi}) = -\frac{s_{ab}}{s_{ai}s_{bi}}t_{ti}t_{bi},
 			\end{equation}
 
 			having simplified the expression using $p_a^2=0$ and $p_b^2=0$ once again.  The invariant mass terms
 			here are identical to those we saw in the $V^2$ terms and the products of $t_{ti}t_{bi}$ also appear
 			in the denominator of the interference term in eqn.~\eqref{eq:allorderreal}.
 			After this cancellation we are left with exactly what we had before in eqn.~\eqref{eqn:finalsoft}.
-			Since exactly the same factor comes from all three terms at the amplitude squared level we may factor
+			Since the same factor comes from all three terms at the amplitude squared level we factor
 			them out and express the amplitude squared for an $n$-parton final state with one soft emission in
-			terms of an $(n-1)$-parton final state amplitude squared multiplied by a common factor:
+			terms of an $(n-1)$-parton final state amplitude squared multiplied by the common factor:
 
 			\begin{equation}
 				\lim_{p_i\rightarrow0} |\mathcal{A}_{Z/\gamma}^{2\rightarrow n}|^2 = \left(\frac{4C_Ag_s^2}{|\vec{p}_{i\perp}|^2}\right)
@@ -555,18 +556,15 @@
 				\int\frac{d^3\vec{p_i}}{(2\pi)^32E_i}\frac{4C_Ag_s^2}{|\vec{p}_\perp|^2}.
 			\end{equation}
 
-			It is convenient to replace the integral over the $z$-component of momentum with one over rapidity,
+			It is convenient to exchange the integral over the $z$-component of momentum with one over rapidity,
 			$y_2$.  Rapidity and transverse momentum are related through the definition of rapidity given
-			in eqn.~\eqref{eqn:rap}.  The Jacobian of this transformation is given by:
+			in eqn.~\eqref{eqn:rap} and the Jacobian of this transformation is given by:
 
 			\begin{align*}
-				\frac{dy}{dp_z} &= \frac{1}{2(E+p_z)} \frac{\partial}{\partial p_z}(E+p_z) - \frac{1}{2(E-p_z)}\frac{\partial}{\partial p_z}(E-p_z),\\
-				&= \frac{E}{E^2-p_z^2} - \frac{p_z}{E^2-p_z^2}\frac{\partial E}{\partial p_z},\\
-				&= \frac{E}{E^2-p_z^2} - \frac{p_z}{E^2-p_z^2}\frac{p_z}{E},\\
-				&= \frac{1}{E},
+				\frac{dy}{dp_z} = \frac{1}{E}.
 			\end{align*}
 
-			and therefore the rewritten phase space integral then reads:
+			Therefore upon performing the change of variables the phase space integral reads:
 
 			\begin{equation}
 				\int_{\text{soft}}\frac{d^{2+2\epsilon}\vec{p}_{\perp}}{(2\pi)^{2+2\epsilon}}\int_{y_{i-1}}^{y_{i+1}}\frac{dy}{4\pi}\frac{4C_Ag_s^2}
@@ -678,7 +676,7 @@
 		\end{align}
 
 		We can now go through term-by-term to show the divergences cancel and find the finite contribution to
-		the matrix element squared.  Similarly to when we calculated the soft terms the arguments for the pure
+		the matrix element squared.  As when we calculated the soft terms the arguments for the pure
 		top- and bottom-line emissions follow similarly and so here we will only state the procedure for
 		the top emission.\\For the top line emission we identify the following terms that will appear in the
 		sum of the $2\rightarrow (n-1)$ virtual and $2\rightarrow n$ real matrix elements.  The finite
@@ -719,12 +717,13 @@
 		\begin{split}
 			\frac{1}{\Gamma(1+\epsilon)} &= 1 + \gamma_E\epsilon + \mathcal{O}(\epsilon^2),
 			\Gamma(1-\epsilon) = 1 + \gamma_E\epsilon + \mathcal{O}(\epsilon^2),\\
+			\intertext{and,}
 			\left(\frac{x}{y}\right)^\epsilon &= 1 + \epsilon\ln\left(\frac{x}{y}\right) +
 			\mathcal{O}(\epsilon^2).
 		\end{split}
 		\end{align}
 
-		Similarly, for the terms arising from the bottom quark-line emission we have:
+		For the terms arising from the bottom quark-line emission we have:
 
 		\begin{equation}
 		\mathcal{F}_{\text{bottom}} = \frac{\alpha_sC_A\Delta_{i-1, i+1}}{\pi}\ln\left(\frac{\lambda_{cut}^2}{q_{bi\perp}^2}\right),
@@ -890,7 +889,7 @@
 	We now show the stability of the High Energy Jets predictions with respect to the
 	$\lambda_{cut}$ scale described above.\\We
 	increase our sensitivity to the parameter by showing results for FKL momentum
-	configurations only.  The non-FKL samples which are added to give the total
+	configurations only.  The non-FKL samples which are included to give the total
 	cross sections have no dependence on $\lambda_{cut}$ and would therefore dilute
 	any dependence in the full sample.  We begin with tab.~\eqref{tab:lambdaxs} where we show the value of
 	the cross section for different values of $\lambda_{cut}$ for exclusive 2-, 3-
@@ -919,7 +918,7 @@
 	differential distribution in both the rapidity gap between the two leading jets in $p_\perp$,
 	$\Delta y_{j1, j2}$, (a)--(c), and the rapidity gap between the two extremal jets in
 	rapidity, $\Delta y_{jf, jb}$, (d)--(f).  Results are shown for exclusive 2-, 3-
-	and 4-jet samples in each case.The distributions also show a very weak
+	and 4-jet samples in each case.  The distributions also show a very weak
 	dependence on the choice of $\lambda_{cut}$.
 	In practice, our default chosen value for $\lambda_{cut}$ is 0.2.
 
@@ -971,7 +970,7 @@
 
 	where $x_{a,b}$ are the momentum fractions of the incoming partons and
 	$f_{f_k}(x_k,Q_k)$ are the corresponding parton density functions for beam,
-	k, and flavour $f_k$.  The function $\Theta_{\rm cut}$ imposes any desired cuts on the final
+	k, and flavour $f_k$.  The function $\Theta_{\rm cut}$ imposes the desired cuts on the final
 	state.  The minimum requirement is that the final state momenta cluster into at
 	least two jets for the desired jet clustering algorithm.
 
@@ -981,7 +980,7 @@
 	phase space, the differences due to the approximations used in
 	$|\mathcal{M}^{HEJ-{\rm reg}}_{qQ\to \zg q(n-2)gQ}|^2$ will become more
 	significant as we saw in figs.~\eqref{fig:ZatLO},~\eqref{fig:3jslice} and~\eqref{fig:4jslice}.
-	We can therefore further improve upon eqn.~\eqref{eq:sigma} by
+	We therefore further improve upon eqn.~\eqref{eq:sigma} by
 	matching our results to fixed order results.  Here, we match to
 	high-multiplicity tree-level
 	results obtained from \texttt{MadGraph\_aMC@NLO}~\cite{Alwall:2014hca} in two different ways.
@@ -1154,7 +1153,7 @@
 	distinction made between FKL and non-FKL configurations).
 
 	Throughout the course of this work it became apparent that the \hej
-	codebase as it was at the time needed to be restructured.  Each physics
+	codebase, as it was at the time, needed to be restructured.  Each physics
 	process (pure jets, $W^\pm$+jets, Higgs+jets and $\zg$+jets) was structured
 	individually as a stand-alone piece of code.  This became a problem when testing
 	and modifying \HEJ since there are large sections of code which are the same
@@ -1195,6 +1194,22 @@
 		to data.  We begin with a recent ATLAS analysis of $Z^0$-plus-jets events from
 		7~TeV collisions~\cite{Aad:2013ysa}.  We summarise the cuts in tab.~\eqref{tab:atlascuts}.
 
+		\begin{table}[bth]
+		  \centering
+		  \begin{tabular}{|l|c|}
+		    \hline
+		    Lepton Cuts & $p_{T\ell}>20$~GeV, \; $|\eta_\ell|<2.5$ \\
+		    & $\Delta R^{\ell^+\ell^-} > 0.2$, \; $66$~GeV $\leq m^{\ell^+\ell^-} \leq
+		      116$~GeV \\ \hline
+		    Jet Cuts (anti-$k_T$, 0.4) & $p_{Tj}>30$~GeV, \; $|y_j|<4.4$ \\
+		    & $\Delta R^{j\ell} >0.5$ \\
+		\hline
+		  \end{tabular}
+		  \caption{Cuts applied to theory simulations in the ATLAS
+		    $Z^0$-plus-jets analysis results shown in Figs.~\eqref{fig:ATLAS_2a}--\eqref{fig:ATLAS_7b}.}
+		  \label{tab:atlascuts}
+		\end{table}
+
 		Any jet which failed the final isolation cut was removed from the event, but the
 		event itself is kept provided there are a sufficient number of other jets
 		present.  Throughout the central value of the \texttt{HEJ} predictions has been
@@ -1214,7 +1229,10 @@
 		prediction drops below the data because it only contains the hard-scattering
 		matrix element for $\zg$ production and relies on a parton shower for additional
 		emissions. The \texttt{HEJ} predictions have a larger uncertainty band which largely
-		arises from the use of leading-order results in the matching procedures.
+		arises from the use of leading-order results in the matching procedures.  The effect
+		of normalising our predictions (taking scale variations into account both in the
+		numerator and denominator) on the size of our scale uncertainty bands is discussed
+		later in this section.
 
 		The first differential distribution we consider here is the distribution of the
 		invariant mass between the two hardest jets, Fig.~\eqref{fig:ATLAS_11b}.  The
@@ -1268,30 +1286,14 @@
 		consistently applies scale variation simultaneously in numerator and denominator significantly
 		reduces the size of the scale uncertainty bands for High Energy Jets (or any theoretical prediction).
 		In figs.~\eqref{fig:ATLAS_Z_7b_norm},~\eqref{fig:ATLAS_Z_11a_norm} and~\eqref{fig:ATLAS_Z_11b_norm}
-		we show the results from figs.~\eqref{fig:HEJ_ATLAS_7b},~\eqref{fig:HEJ_ATLAS_11a} and~\eqref{fig:HEJ_ATLAS_11b}.
+		we show the normalised results from figs.~\eqref{fig:HEJ_ATLAS_7b},~\eqref{fig:HEJ_ATLAS_11a} and~\eqref{fig:HEJ_ATLAS_11b}.
 		We see that, as expected, the central value of HEJ still describes the data well in the
 		regions discussed above and now the size of the theoretical uncertainty band is significantly
-		reduced (by a factor of around 250 for example in the last bin of the
-		$p_{\perp 2}/p_{\perp 1}$-distribution.  This illustrates that varying $\mu_R$ and $\mu_F$
+		reduced (for example a reduction of approximately a factor of 250 is seen in the last bin of the
+		$p_{\perp 2}/p_{\perp 1}$-distribution).  This illustrates that varying $\mu_R$ and $\mu_F$
 		leads to a change in overall normalisation but not to any significant change in shape.  Therefore,
 		it is still valuable to discuss the quality of agreement of the central line, despite their
 		apparently large accompanying uncertainty bands.
-
-		\begin{table}[bth]
-		  \centering
-		  \begin{tabular}{|l|c|}
-		    \hline
-		    Lepton Cuts & $p_{T\ell}>20$~GeV, \; $|\eta_\ell|<2.5$ \\
-		    & $\Delta R^{\ell^+\ell^-} > 0.2$, \; $66$~GeV $\leq m^{\ell^+\ell^-} \leq
-		      116$~GeV \\ \hline
-		    Jet Cuts (anti-$k_T$, 0.4) & $p_{Tj}>30$~GeV, \; $|y_j|<4.4$ \\
-		    & $\Delta R^{j\ell} >0.5$ \\
-		\hline
-		  \end{tabular}
-		  \caption{Cuts applied to theory simulations in the ATLAS
-		    $Z^0$-plus-jets analysis results shown in Figs.~\eqref{fig:ATLAS_2a}--\eqref{fig:ATLAS_7b}.}
-		  \label{tab:atlascuts}
-		\end{table}
 
 		\begin{figure}[H]
 		  \centering
@@ -1575,14 +1577,15 @@
 
 		Throughout the course of this work many analyses were used to compare \hej to experimental
 		data.  Though we usually only take part in studies illuminating for a discussion of higher order
-		logarithmic corrections of QCD processes at hadronic colliders the \hej collaboration was asked to
-		generate numbers discuss a Drell-Yan study undertaken by the CMS experiment~\cite{CMS:2014vtk}.
+		logarithmic corrections of QCD processes at hadronic colliders the CMS collaboration asked that I
+		contribute numbers (on behalf of the \hej collaboration) to a study of double-differential Drell-Yan
+		at the LHC~\cite{CMS:2014vtk}.
 
 		In particular, we consider
 		the Drell-Yan cross-section differential in both the pseudo-rapidity gap between the reconstructed
 		$\zg$ boson and the leading jet in $p_\perp$ and in the invariant mass of the di-lepton decay
 		products.  This is \emph{not} a region of phase space where resummation is expected to reign
-		supreme and we therefore anticipate that the matching of our \hej amplitudes to exact leading
+		supreme and we therefore anticipate that the effect of matching our \hej amplitudes to exact leading
 		order results obtained using \texttt{MadGraph\_aMC@NLO} will be significant.
 
 		The study focussed on 0-, 1- and 2-jet events in addition to a di-muon pair; since we can
